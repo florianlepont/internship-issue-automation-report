@@ -1,16 +1,28 @@
 \documentclass[a4paper,11pt]{report}
 
+\usepackage[francais]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel} 
-\usepackage{lmodern}
+\usepackage[pdftex]{graphicx}
+\usepackage{setspace}
+\usepackage{color}
 \usepackage{makeidx}
-
-\usepackage{fancyhdr}
+\usepackage{blkarray}
+\usepackage{verbatim}
+\usepackage[final]{pdfpages} 
+\usepackage{hyperref}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr} %pour header
+\usepackage[Lenny]{fncychap}
+\usepackage[french]{varioref}
+\usepackage [paper=a4paper,tmargin=2cm,bmargin=2.5cm,lmargin=3cm,rmargin=3cm]{geometry}
+\usepackage{caption}
+\usepackage{amsmath}% http://ctan.org/pkg/amsmath
 \pagestyle{fancy}
-\renewcommand{\headrulewidth}{1pt}
-\fancyhead[LE]{\leftmark}
-\fancyhead[LO]{\title}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt} %barre header et foot
+\renewcommand{\footrulewidth}{1pt}
 
 \title{Automatisation de l'analyse d'incidents par l'utilisation du Machine Learning}
 \author{\textsc{Lepont} Florian}
