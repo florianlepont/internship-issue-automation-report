@@ -4,7 +4,7 @@
 
 \section{Expression du besoin}
 \label{Introduction:Expression du besoin}
-L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une montée en puissance de la production. Afin de la guider, des outils de vérification des produits en fin de ligne de production sont mis en place. Parmi celui-ci le "Filtering Test", ce test de dix heures vise à stresser l'ensemble des parties mécaniques du robot afin de faire ressortir d'éventuels problèmes ou erreurs sur celui-ci. Si une anomalie survient lors du déroulement du test, différentes données relatives à l'état des systèmes mécaniques et électroniques du robot sont enregistrées dans un fichier journal (e.g. température des fusibles, valeur des accéléromètres, etc.). Afin d'identifier les causes de l'apparitions de problèmes sur Pepper, un certain nombre d'hypothèses sont émises à partir des données en sortie du système. 
+L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une montée en puissance de la production. Afin de la guider, des outils de vérification des produits en fin de ligne de production sont mis en place. Parmi celui-ci le "Filtering Test", ce test de vingts heures vise à stresser l'ensemble des parties mécaniques du robot afin de faire ressortir d'éventuels problèmes ou erreurs sur celui-ci. Si une anomalie survient lors du déroulement du test, différentes données relatives à l'état des systèmes mécaniques et électroniques du robot sont enregistrées dans un fichier journal (e.g. température des fusibles, valeur des accéléromètres, etc.). Afin d'identifier les causes de l'apparitions de problèmes sur Pepper, un certain nombre d'hypothèses sont émises à partir des données en sortie du système. 
 
 \begin{table}[h]
 	\begin{tabular}{ | l | l | l | }
@@ -15,7 +15,9 @@ L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une mont�
 		\hline 
 		Cycles de WakeUp / Rest & 3 à 4 minutes & 10 minutes \\
 		\hline 
-		Faux dialogues & 2 minutes 
+		Faux dialogues & 2 minutes & 12 minutes \\
+		\hline 
+		Rest & 3 minutes & 15 minutes \\
 	\end{tabular}
 	\caption[Déroulement d'un Filtering test]{Déroulement d'un Filtering test}
 	\label {tab: Déroulement d'un Filtering test}
