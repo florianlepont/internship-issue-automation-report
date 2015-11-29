@@ -1,0 +1,14 @@
+
+*.aux
+
+*.log
+
+*.lot
+
+*.gz
+
+*.toc
+
+*.md
+
+*.out
