@@ -8,6 +8,12 @@
 \label{Introduction:Expression du besoin:Présentation du produit}
 Afin de mieux cerner les différents problèmes techniques que peut rencontrer le robot, une description succincte de l'architecture mécanique et électronique de Pepper est donnée dans cette partie. 
 
+\begin{figure}[h]
+	\centering\includegraphics[height=7cm]{images/pepper_motors.png}
+	\caption{Répartition des actionneurs de Pepper}
+	\label{fig:Répartition des actionneurs de Pepper}
+\end{figure}
+
 \section{Expression du besoin}
 \label{Introduction:Expression du besoin}
 L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une montée en puissance de la production. Afin de la guider, des outils de vérification des produits en fin de ligne de production sont mis en place. Parmi eux, on retrouve le "Filtering Test" qui consiste à réaliser une série de tests durant six heures. Il vise notamment à stresser l'ensemble des parties mécaniques du robot afin de faire ressortir d'éventuelles erreurs. Si une anomalie survient lors du déroulement du test, les différentes données relatives à l'état des systèmes mécaniques et électroniques du robot sont enregistrées dans un fichier journal (e.g. température des fusibles, valeur des accéléromètres, etc.). Afin d'identifier les causes de l'apparition de problèmes sur Pepper, un certain nombre d'hypothèses sont émises à partir de l'étude des données en sortie du système. 
@@ -36,12 +42,6 @@ L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une mont�
 	\caption[Déroulement d'un Filtering test]{Déroulement d'un Filtering test}
 	\label {tab: Déroulement d'un Filtering test}
 \end{table}
-
-\begin{figure}[h]
-	\centering\includegraphics[height=7cm]{images/pepper_motors.png}
-	\caption{Répartition des actionneurs de Pepper}
-	\label{fig:Répartition des actionneurs de Pepper}
-\end{figure}
  
 \subsection{Hiérarchisation des erreurs}
 \label{Introduction:Expression du besoin:Hiérarchisation des erreurs}
