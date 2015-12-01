@@ -30,6 +30,43 @@ On offre ici deux définitions de l'apprentissage automatique: une première dit
 Au regard des deux définitions stipulées ci-dessus, on peut définir le principe de base de l'apprentissage automatique sous la forme d'un schéma bloc.
 % Ajouter le schéma bloc high level du machine learning icitte 
 
+L'apprentissage automatique peut donc être vu dans sa globalité comme un processus composé de deux étapes successives : 
+\begin{enumerate}
+		\item [Apprentissage]
+		 \begin{enumerate}
+			\item  Un ensemble de données est présenté au système (X\_train).
+			\item A partir de ces informations, le système (f) apprend - s'entraîne- afin d'être par la suite en capacité de prendre décision vis à vis de la tâche qui lui sera demandée. 
+		\end{enumerate}
+		
+		\item [Prise de décision] 
+		\begin{enumerate}
+			\item  On a en entrée du système une ou des donnée(s) brutes (X).  
+			\item cette donnée est traitée et analysée par le système.
+			\item En sortie, une décision est prise quant à la tâche demandée (Y). 
+		\end{enumerate}
+\end{enumerate}
+
+\paragraph{Un exemple concret}
+Afin de présenter de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on présente l'exemple suivant:
+
+\textit{On cherche à déterminer à quelle période de l'année nous nous trouvons (i.e. printemps, été, automne ou hiver) à partir de l'humidité, la température et la pression atmosphérique d'aujourd'hui. \\
+	La première étape de notre processus sera donc d'entrainer notre système afin que celui-ci soit en mesure de prendre une décision vis à vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
+	Une fois le système entrainé, on attend de celui-ci d'avoir ce type de comportement : \\
+	Je présente en entrée de mon système une température de -2 degrés, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La réponse attendue en sortie du système est: Hiver}
+
+Afin de caractériser et de désigner plus précisément les différents éléments de notre système, on présente ci-dessous le champs lexical utilisé dans le domaine du Machine Learning:
+
+\paragraph{Lexique} 
+\begin{description}
+	\item [les features] Le type de données présenté en entrée. \\
+	\textit{La température, la pression atmosphérique et l'humidité.}
+	\item [échantillons ou exemples] Les données permettant d'entrainer le système (X\_train). \\
+	\textit{De nombreux échantillons de température, pression atmosphériques et humidité pris à différents périodes de l'année, sur plusieurs années.}
+	\item [le modèle d'apprentissage] Le cœur du système décisionnel (f).
+	\item [La décision] La sortie ou réponse du système (Y) \\
+	\textit{Printemps, été, automne ou hiver.}
+\end{description}
+
 \subsection{Les données}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Les données}
 
