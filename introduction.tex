@@ -30,13 +30,24 @@ Il est possible de contrôler la position et la rigidité de chaque moteur.
 \subsection{Les senseurs}
 Pepper comporte également une multitude de capteurs. Certains d'entre eux sont utilisés afin de s'assurer du bon comportement des parties électroniques et mécaniques du robot, ou pour réaliser du contrôle-commande. D'autres senseurs sont en revanche intégrés au robot pour que l'utilisateur puisse interagir avec. 
 
-\subsubsection{Les senseurs liés aux actionneurs}
-Chaque moteur du robot est lié à 3 senseurs donnant des informations sur la valeur du courant délivrée au moteur (A), la température du moteur (C) et la position du moteur.
+\begin{table}[h]
+	\begin{tabular}{ | l | p{10cm} | }
+		\hline
+		Senseur & position & description \\
+		\hline
+		Capteurs liés au actionneurs & sur les moteurs & Chaque moteur du robot est lié à 3 senseurs donnant des informations sur la valeur du courant délivrée au moteur (A), la température du moteur (C) et la position du moteur.
+		\hline
+		Senseurs tactiles & 1 sur chaque main, 1 sur la tête & Permet à l'utilisateur d'interagir avec le robot par le toucher.		
+		\hline 
+		Les boutons & 1 sur le buste, 3 bumpers sur la base du robot & Les bumpers permettent au robot de détecter si il rencontre un obstacle à proximité directe. Le bouton du buste permet quant à lui de 
+		\hline 
+		
+		
+	\end{tabular}
+	\caption[Les différents capteurs de Pepper]{Les différents capteurs de l'architecture sensorielle de Pepper}
+	\label {tab: Les différents capteurs de Pepper}
+\end{table}
 
-\subsubsection{Les senseurs tactiles}
-Les 3 senseurs tactiles permettent à l'utilisateur d'interagir avec le robot. 2 sont situés sur chacune des mains, l'autre sur le dessus de la tête. 
-
-\subsubsection{title}
 
 \section{Expression du besoin}
 \label{Introduction:Expression du besoin}
