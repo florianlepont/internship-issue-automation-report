@@ -132,23 +132,15 @@ for tree={
 	align=center,
 	child anchor=north
 },
-[{Supplier\\Selection}, align=center, name=SS
-[{Production\\Development\\Capability}, name=PDC
-[Max Size, name=MS]
-[{Casting\\Complexity}]
-[{Min. Sec.\\Thickness}]
-[{Software\\ Aid}]
-[{Pattern\\Making}]
-]
-[{Manufacturing\\Capability}]
-[{Quality\\Capability}]
-[{Cost and \\Time}
-[{Total\\Costing\\Cost}]
-[{Sample\\Delivery\\Time}]
+[{Chute du robot}, align=center, name=SS
+	[{Production\\Development\\Capability}, name=PDC]
+	[{Manufacturing\\Capability}]
+	[{Quality\\Capability}]
+	[{Cost and \\Time}
+	[{Total\\Costing\\Cost}]
+	[{Sample\\Delivery\\Time}]
 ]
 ]
-\node[anchor=west,align=left] 
-at ([xshift=-2cm]MS.west) {Level 3\\Criteria};
 \node[anchor=west,align=left] 
 at ([xshift=-2cm]MS.west|-PDC) {Level 2\\ Group Criteria};
 \node[anchor=west,align=left] 
