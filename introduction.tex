@@ -103,7 +103,38 @@ Afin de gérer au mieux les anomalies, celles-ci sont hiérarchisées en deux ca
 \end{description} 
 
 En suivant la logique exprimée par ces définitions, une "error name" sera constituée d'une ou plusieurs "root cause". 
-%Ajouter un schéma bloc de la hiérarchie des errors
+
+\begin{forest}
+	for tree={
+		draw,
+		minimum height=2cm,
+		anchor=north,
+		align=center,
+		child anchor=north
+	},
+	[{Supplier\\Selection}, align=center, name=SS
+	[{Production\\Development\\Capability}, name=PDC
+	[Max Size, name=MS]
+	[{Casting\\Complexity}]
+	[{Min. Sec.\\Thickness}]
+	[{Software\\ Aid}]
+	[{Pattern\\Making}]
+	]
+	[{Manufacturing\\Capability}]
+	[{Quality\\Capability}]
+	[{Cost and \\Time}
+	[{Total\\Costing\\Cost}]
+	[{Sample\\Delivery\\Time}]
+	]
+	]
+	\node[anchor=west,align=left] 
+	at ([xshift=-2cm]MS.west) {Level 3\\Criteria};
+	\node[anchor=west,align=left] 
+	at ([xshift=-2cm]MS.west|-PDC) {Level 2\\ Group Criteria};
+	\node[anchor=west,align=left] 
+	at ([xshift=-2cm]MS.west|-SS) {Level 1\\Overall Objective};
+\end{forest}
+
 
 \subsection{Exemple d'analyse d'un fichier}
 \label{Introduction:Expression du besoin:Exemple d'analyse d'un fichier}
