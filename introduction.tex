@@ -129,16 +129,17 @@ En suivant la logique exprimée par ces définitions, une "error name" sera cons
 
 \subsection{Exemple d'analyse d'un fichier}
 \label{Introduction:Expression du besoin:Exemple d'analyse d'un fichier}
-\begin{description}
-	\item[Observation:] 
-	\begin{itemize}
-		\item Lors du déroulement du test, le robot tombe à t = 16972 secondes, soit lorsque le robot réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.
-		\item On analyse alors les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur.
-		%Préviser à quel moment l'augmentation du courant arrive
-		\item On remarque également une augmentation anormale du courant dans le moteur de l'articulation. 
-	\end{itemize} 
-	\item [Hypothèse émise:] Lors de l'exécution de l' animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche entrainant un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro.  Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation ce qui entraine le passage en mode protégé du robot, désactivant sa rigidité.  Sans cette rigidité, le robot tombe ("error name"). Une étude plus poussée nous apprendra que la "root cause" du problème correspondait à une dent cassé sur l'engrenage de la hanche. 
-\end{description}
+
+\subsubsection{Observation}
+\begin{itemize}
+	\item Lors du déroulement du test, le robot tombe à t = 16972 secondes, soit lorsque le robot réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.
+	\item On analyse alors les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur.
+	%Préviser à quel moment l'augmentation du courant arrive
+	\item On remarque également une augmentation anormale du courant dans le moteur de l'articulation. 
+\end{itemize} 
+\subsubsection{Hypothèse émise}
+ Lors de l'exécution de l' animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche entrainant un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro.  Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation ce qui entraine le passage en mode protégé du robot, désactivant sa rigidité.  Sans cette rigidité, le robot tombe ("error name"). Une étude plus poussée nous apprendra que la "root cause" du problème correspondait à une dent cassé sur l'engrenage de la hanche. 
+
 
 \section{Solution proposée}
 De part la quantité d'informations à analyser, cette tâche peut rapidement devenir rébarbative, d'où le souhait d'automatiser ce processus d'investigation. De part la variabilité des types de données, on ne peut réduire le nombre d'information à analyser en recherchant des caractéristiques communes (e.g. moyenne, écart type, etc.). On se propose donc d'utiliser des approches algorithmiques plus poussées via des méthodes d'apprentissages automatiques (plus connues sous le terme anglais de Machine Learning). La multiplicité des modèles composant l'apprentissage automatique nous permettra de répondre au mieux à la problématique.
