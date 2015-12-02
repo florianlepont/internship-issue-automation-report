@@ -112,17 +112,48 @@ En suivant la logique exprimée par ces définitions, une "error name" sera cons
 		align=center,
 		child anchor=north
 	},
-	[{Chute du robot}, align=center, name=CR
-		[{Engrenage cassé}, name=EC]
-		[{Courant dans les\\fusibles trop élevés}]
-		[{Erreur de la\\centrale inertielle}]
+	[{Supplier\\Selection}, align=center, name=SS
+	[{Production\\Development\\Capability}, name=PDC
+	[Max Size, name=MS]
+	[{Casting\\Complexity}]
+	[{Min. Sec.\\Thickness}]
+	[{Software\\ Aid}]
+	[{Pattern\\Making}]
 	]
-
+	[{Manufacturing\\Capability}]
+	[{Quality\\Capability}]
+	[{Cost and \\Time}
+	[{Total\\Costing\\Cost}]
+	[{Sample\\Delivery\\Time}]
+	]
+	]
 	\node[anchor=west,align=left] 
-	at ([xshift=-2cm]MS.west|-EC) {Level 2\\Root cause};
+	at ([xshift=-2cm]MS.west) {Level 3\\Criteria};
 	\node[anchor=west,align=left] 
-	at ([xshift=-2cm]MS.west|-CR) {Level 1\\Error name};
+	at ([xshift=-2cm]MS.west|-PDC) {Level 2\\ Group Criteria};
+	\node[anchor=west,align=left] 
+	at ([xshift=-2cm]MS.west|-SS) {Level 1\\Overall Objective};
 \end{forest}
+
+%\begin{forest}
+%for tree={
+%	draw,
+%	minimum height=2cm,
+%	anchor=north,
+%	align=center,
+%	child anchor=north
+%},
+%[{Chute du robot}, align=center, name=CR
+%	[{Engrenage cassé}, name=EC]
+%	[{Courant dans les\\fusibles trop élevés}]
+%	[{Erreur de la\\centrale inertielle}]
+%]
+%
+%\node[anchor=west,align=left] 
+%at ([xshift=-2cm]MS.west|-EC) {Level 2\\Root cause};
+%\node[anchor=west,align=left] 
+%at ([xshift=-2cm]MS.west|-CR) {Level 1\\Error name};
+%\end{forest}
 
 
 \subsection{Exemple d'analyse d'un fichier}
