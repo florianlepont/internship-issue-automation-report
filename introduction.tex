@@ -10,7 +10,7 @@ On présente ici de manière succincte l'architecture Hardware du robot Pepper a
 \label{Introduction:Présentation du produit:Les actionneurs}
 \subsubsection{Les moteurs}
 \label{Introduction:Présentation du produit:Les actionneurs: Les moteurs}
-Le robot Pepper est constitué de 20 moteurs dont il est possible de contrôler la position et la rigidité. \ref*{fig:Répartition des actionneurs de Pepper}
+Le robot Pepper est constitué de 20 moteurs dont il est possible de contrôler la position et la rigidité. \ref{fig:Répartition des actionneurs de Pepper}
 \begin{description}
 	\item [Tête:] 2 moteurs pour les mouvements de lacet (HeadYaw) et de tangage (HeadPitch)
 	\item [Bras:] 4 moteurs par bras, répartis de la manière suivante: 
@@ -132,7 +132,7 @@ En suivant la logique exprimée par ces définitions, une "error name" sera cons
 
 \subsubsection{Observation}
 \begin{itemize}
-	\item Lors du déroulement du test, le robot tombe à t = 16972 secondes, soit lorsque le robot réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.	
+	\item Lors du déroulement du test, le robot tombe à t = 16972 secondes, soit lorsque le robot réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.	\ref{fig:analyse d'une anomalie: accéléromètre}
 	\item On analyse alors les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur.
 	%Préviser à quel moment l'augmentation du courant arrive
 	\item On remarque également une augmentation anormale du courant dans le moteur de l'articulation. 
@@ -140,20 +140,20 @@ En suivant la logique exprimée par ces définitions, une "error name" sera cons
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/analse_1.png}
-	\caption{Analyse d'}
-	\label{fig:Répartition des actionneurs de Pepper}
+	\caption{Analyse d'une anomalie: accéléromètre}
+	\label{fig:analyse d'une anomalie: accéléromètre}
 \end{figure}
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/analse_2.png}
-	\caption{Répartition des actionneurs de Pepper}
-	\label{fig:Répartition des actionneurs de Pepper}
+	\caption{Analyse d'une anomalie: les genoux}
+	\label{fig:analyse d'une anomalie: kneePitch}
 \end{figure}
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/analse_3.png}
-	\caption{Répartition des actionneurs de Pepper}
-	\label{fig:Répartition des actionneurs de Pepper}
+	\caption{Analyse d'une anomalie: la hanche}
+	\label{fig:analyse d'une anomalie: hipitch}
 \end{figure}
 
 \subsubsection{Hypothèse émise}
