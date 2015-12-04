@@ -152,6 +152,29 @@ Il existe différents types d'apprentissages. Le choix d'un modèle en particuli
 L'apprentissage supervisé nécessite d'avoir des données labellisées en entrée, i.e. que l'on connait le type de décision que l'on aura en sortie du système en fonction des exemples en entrée: il y'a une corrélation entre la sortie et l'entrée. C'est cette notion qui s'exprime au travers du terme \emph{supervisé}. 
 L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'une base de donnée non labellisée pour son apprentissage, i.e qu'on ne connait pas le type de décision associé aux exemples en entrée. Afin de matérialiser les différences entres les deux méthodes et les applications possibles pour chacune d'elles, on propose les deux exemples suivants: 
 
+\begin{table}[h]
+	\begin{tabular}{ | p {2.5cm} | p {4cm} | p {4cm} |}
+		\hline 
+		\multicolumn{4}{| l |}{5 étapes successives sur 6 heures de test}\\
+		\hline
+		Activité & Durée (en minutes) & Temps cumulé (en minutes)  & Description\\
+		\hline
+		\multicolumn{4}{| l |}{Test 1 : succession de divers actions effectué 40 fois durant les 10 heures }\\
+		\hline
+		Intro, Danse, Outro & 6 à 7  & 6 à 7 & Réalisation des mouvements d'introduction et d'outro\\
+		\hline 
+		Cycles de WakeUp, Rest & 3 à 4  & 10  & Passage successif en mode autonome et veille\\
+		\hline 
+		Faux dialogues & 2  & 12 &  Réalisation des mouvements effectués lors de dialogues\\
+		\hline 
+		Rest & 3  & 15 & Réalisation des mouvements lors du passage en mode Rest\\
+		\hline
+		\multicolumn{4}{| l |}{Test 12: enchainement de 8 danses répété 5 fois durant les dix heures} \\
+		\hline
+	\end{tabular}
+	\caption[Déroulement d'un Filtering test]{Déroulement d'un Filtering test}
+	\label {tab: Déroulement d'un Filtering test}
+\end{table}
 
 
 \subsubsection{Apprentissage non supervisé} 
