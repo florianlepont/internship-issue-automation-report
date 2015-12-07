@@ -291,17 +291,25 @@ avec:
 	\item $Y^i$ la sortie 
 \end{itemize}
 
+
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/cost.png}
 	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. les valeurs calculées via l'hypothèse et les valeurs réelles. Cela revient à minimiser la distance entre un exemple et l'hypothèse.}
 	\label{fig:Régression linéaire, optimisation de la fonction coût}
 \end{figure}
 
-On cherchera donc à minimiser la valeur de a fonction coût $J(\theta_0,\theta_1)$. En jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Mathématiquement, trouver le minimum peut être déterminé en appliquant l'algorithme du gradient (en anglais, gradient descent), tel que:
+On cherchera donc à minimiser la valeur de a fonction coût $J(\theta_0,\theta_1)$. En jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de \theta et de "faire un pas" vers la direction la plus basse. Mathématiquement, trouver le minimum peut être déterminé en appliquant l'algorithme du gradient (en anglais, gradient descent), tel que:
 
 \begin{equation}
-	\theta_j = \theta_j - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_j}
+	\theta_0 = \theta_0 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_0}
+	\theta_1 = \theta_1 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_1}
 \end{equation}
+
+avec:
+\begin{itemize}
+	\item $\theta_j$
+	\item $\alpha$ 
+\end{itemize}
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/apprentissage_meteo.jpeg}
