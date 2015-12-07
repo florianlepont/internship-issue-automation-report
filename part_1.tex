@@ -240,7 +240,7 @@ La régression linéaire cherche à expliquer une variable de sortie $Y$ par une
 \subsubsection{Exemple de régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
 On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix connus du parc immobilier. 
-La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie $Y$. Soit le tableau \ref {tab:parc immobilier} les exemples $X$, on obtient la représentation graphique en figure 	\ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
+La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie $Y$. Soit le tableau \ref {tab:parc immobilier} les exemples $X$, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
 
 \begin{table}[h]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
@@ -276,7 +276,9 @@ Cet exemple est dit uni-variable car un seul jeu de données $X$ (superficie) co
 \subsubsection{Déterminer les paramètres de l'hypothèse}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Déterminer les paramètres de l'hypothèse}
 
-\paragraph{La fonction coût} La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
+\paragraph{La fonction coût}
+La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
+
 \begin{equation}
 	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^{i})^2
 \end{equation}
@@ -297,7 +299,8 @@ avec:
 	\label{fig:Régression linéaire, optimisation de la fonction coût}
 \end{figure}
 
-\paragraph{Algorithme du gradient} On cherche donc à minimiser la valeur de la fonction coût $J(\theta_0,\theta_1)$ en jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit donc d'un calcul itératif. Mathématiquement, trouver le minimum peut être effectué en appliquant l'algorithme du gradient (en anglais, gradient descent), tel que:
+\paragraph{Algorithme du gradient}
+On cherche donc à minimiser la valeur de la fonction coût $J(\theta_0,\theta_1)$ en jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit donc d'un calcul itératif. Mathématiquement, trouver le minimum peut être effectué en appliquant l'algorithme du gradient (en anglais, gradient descent), tel que:
 
 \begin{equation}
 	\begin{split}
@@ -347,8 +350,21 @@ On a cette fois ci plusieurs entrées $X$ (surface, nombre de pièces, nombre d'
 	\label {tab:parc immobilier multi}
 \end{table}
 
+La fonction coût s'exprime donc sou cette forme: 
+
+\begin{equation}
+	h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3
+\end{equation}
+
+Où
+
 \subsubsection{Généralisation de la fonction coût}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de la fonction coût}
+On peut généraliser la fonction coût utilisée lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable, tel que :
+
+\begin{equation}
+	contenu...
+\end{equation}
 
 \subsubsection{Généralisation de l'algorithme du gradient}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de l'algorithme du gradient}
