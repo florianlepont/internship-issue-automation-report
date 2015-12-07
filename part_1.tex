@@ -318,8 +318,35 @@ avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. 
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable}
 On peut également réaliser de la régression linéaire avec plusieurs variables en entrée.
 
-\subsubsection{Exemple de régression linéaire uni-variable}
- Afin de montrer ce qu'est la régression linéaire multi-variable, on ajuste l'exemple \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour correspondre à un problème multi-variable.
+\subsubsection{Exemple de régression linéaire multi-variable}
+\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
+Afin de montrer ce qu'est la régression linéaire multi-variable, on ajuste l'exemple \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour correspondre à un problème multi-variable.
+ 
+On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix connus du parc immobilier. 
+La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie $Y$. Soit le tableau \ref {tab:parc immobilier} les exemples $X$, on obtient la représentation graphique en figure 	\ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
+
+\begin{table}[h]
+	\begin{tabular}{ | p {4cm} | p {4cm} |}
+		\hline
+		taille ($m^2$) & prix (\euro) \\
+		\hline
+		2104 & 460 \\
+		1416 & 232 \\
+		1534 & 314 \\
+		852 & 178 \\
+		500 & 100 \\ 
+		1012 & 212 \\
+		126 & 75 \\
+		1775 & 432 \\
+		600 & 150 \\
+		2114 & 510 \\
+		1316 & 270 \\
+		1634 & 334 \\
+		\hline 
+	\end{tabular}
+	\caption[parc immobilier]{exemples du prix des logements en fonction de leur taille}
+	\label {tab:parc immobilier}
+\end{table}
  
 \subsection{La régression logistique}
 \label{ILe Machine Learning: Les différents algorithmes: La regression logistique}
