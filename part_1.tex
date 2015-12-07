@@ -464,15 +464,15 @@ On cherche à séparer des groupes de données homogènes dans un ensemble hét�
 On reprend l'exemple de la prévision saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on lui applique de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans la classe printemps ou hiver en fonction de la température (figure \ref{fig:Classification via regression linéaire}). 
 Pour cela, on met en place un seuil de classification:
 \begin{itemize}
-	\item Si $\theta(x) > 0,5$ alors $y=1$
-	\item Si $\theta(x) < 0,5$ alors $y=0$
+	\item Si $h_\theta(x) > 0,5$ alors $y=1$
+	\item Si $h_\theta(x) < 0,5$ alors $y=0$
 \end{itemize}
 
 Où $y = 0$ correspond à la période hiver et $y = 1$ l' été. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=5cm]{images/class_reg_lineaire.png}
-	\caption[Classification via regression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5 degrés, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement }
+	\caption[Classification via regression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5 degrés, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, on observe  que le le seuil de différentiation entre les deux classes se situe aux alentours de  }
 	\label{fig:Classification via regression linéaire}
 \end{figure}
 
