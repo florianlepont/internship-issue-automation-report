@@ -231,7 +231,7 @@ Il existe différents algorithmes d'apprentissage supervisé utilisés pour rés
 
 \subsection{La régression linéaire}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
-La régression linéaire cherche à expliquer une variable de sortie $Y$ par une fonction affine de $X$. Cette fonction affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé autrement, on a un jeu de données $X$ auquel correspond un jeu de données $Y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
+La régression linéaire cherche à expliquer une variable de sortie $Y$ par une fonction affine de $X$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé autrement, on a un jeu de données $X$ auquel correspond un jeu de données $Y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
 
 \begin{equation}
 	h_\theta (x) = \theta_0 + \theta_1 x
@@ -276,6 +276,10 @@ Cet exemple est dit uni-variable car un seul jeu de données $X$ (superficie) co
 \subsubsection{Déterminer les paramètres de l'hypothèse}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Déterminer les paramètres de l'hypothèse}
 
+\paragraph{La fonction cout} La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles. Soit: 
+\begin{equation}
+	$J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x(i))-y^{i})^2
+\end{equation}
 
 \subsection{La régression logistique}
 \label{ILe Machine Learning: Les différents algorithmes: La regression logistique}
