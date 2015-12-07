@@ -504,7 +504,12 @@ h_\theta(x)=\frac{1}{1 + e^{\theta^Tx}}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Ligne de décision}
 On a la propriété de la fonction sigmoïde suivante: 
 \begin{equation}
- \text{si }g(z) \ge 0,5 \text{ lorsque } z \ge 0
+ g(z) \ge 0,5 \text{ lorsque } z \ge 0
+\end{equation}
+
+On a donc pour l'hypothèse la propriété suivante: 
+\begin{equation}
+h(x)=g(\theta^Tx) \ge 0,5 \text{ lorsque } z \ge 0
 \end{equation}
 
 
