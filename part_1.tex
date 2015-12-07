@@ -450,7 +450,9 @@ On peut alors réécrire l'hypothèse \eqref{hypotesis multivar} de la façon su
 \end{equation}
 
 L'algorithme du gradient \eqref{gradient descent multivar} s'exprime donc: 
-
+\begin{equation}
+\theta = \theta - \frac{\alpha}{m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)X^i
+\end{equation}
 
 \subsection{La régression logistique}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique}
