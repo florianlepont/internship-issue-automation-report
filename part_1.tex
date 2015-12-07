@@ -381,7 +381,7 @@ La fonction coût s'exprime donc sous cette forme:
 	h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3
 \end{equation}
 
-Où $X_1$, $X_2$ et $X_3$ correspondent respectivement aux features surfacen nombre d'étages et nombre de pièces.
+Où $X_1$, $X_2$ et $X_3$ correspondent respectivement aux features surface, nombre d'étages et nombre de pièces.
 
 On peut généraliser la fonction coût: 
 
@@ -449,7 +449,7 @@ On peut alors réécrire l'hypothèse \eqref{hypotesis multivar} de la façon su
 	h_\theta(x) = \theta^TX
 \end{equation}
 
-L'algorithme du gradient \eqref{gradient descent multivar} s'exprime donc: 
+L'algorithme du gradient \eqref{gradient descent multivar} s'exprime donc sous cette forme: 
 \begin{equation}
 \theta = \theta - \frac{\alpha}{m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)X^i
 \end{equation}
