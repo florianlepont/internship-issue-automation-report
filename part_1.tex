@@ -276,7 +276,7 @@ Cet exemple est dit uni-variable car un seul jeu de données $X$ (superficie) co
 \subsubsection{Déterminer les paramètres de l'hypothèse}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Déterminer les paramètres de l'hypothèse}
 
-\paragraph{La fonction cout} La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles. Soit: 
+\paragraph{La fonction cout} La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
 \begin{equation}
 	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^{i})^2
 \end{equation}
@@ -290,6 +290,12 @@ avec:
 	\item $X^i$ l'exemple
 	\item $Y^i$ la sortie 
 \end{itemize}
+
+\begin{figure}[h]
+	\centering\includegraphics[height=7cm]{images/apprentissage_meteo.jpeg}
+	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. On cherche à minimiser l'écart entre les valeurs }
+	\label{fig:Régression linéaire, optimisation de la fonction coût}
+\end{figure}
 
 On cherchera donc à minimiser la valeur de a fonction coût $J(\theta_0,\theta_1)$. En jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$.
 \subsection{La régression logistique}
