@@ -301,8 +301,10 @@ avec:
 On cherchera donc à minimiser la valeur de a fonction coût $J(\theta_0,\theta_1)$. En jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit donc d'un calcul itératif. Mathématiquement, trouver le minimum peut être déterminé en appliquant l'algorithme du gradient (en anglais, gradient descent), tel que:
 
 \begin{equation}
-	\theta_0 = \theta_0 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_0} \newline
-	\theta_1 = \theta_1 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_1}
+	\begin{split}
+		\theta_0 = \theta_0 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_0} \\
+		\theta_1 = \theta_1 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_1}
+	\end{split}
 \end{equation}
 
 avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse.
