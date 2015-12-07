@@ -2,6 +2,9 @@
 \label{Le Machine Learning}
 \thispagestyle{fancy}
 
+
+
+
 \section{Généralités sur le Machine Learning}
 \label{Le Machine Learning: Généralités sur le Machine Learning}
 Le Machine Learning (traduire par apprentissage automatique) est une ramification de l'intelligence artificielle. Cependant, son statut de subdivision n'informe en rien sur l'étendu des notions contenues dans cette matière scientifique. Son champ d'étude est vaste et en perpétuelle évolution. Les solutions offertes par cette discipline permettent d'étudier toute sortes de données et d'automatiser une multitude de systèmes. L'apprentissage automatique rencontre un succès croissant qui est corrélé avec l'essor des nouvelles technologies et l'automatisation de l'analyse de volumes conséquents de données utilisateurs (Big Data). Les applications sont donc multiples. En voici quelques exemples:  
@@ -14,6 +17,8 @@ Le Machine Learning (traduire par apprentissage automatique) est une ramificatio
 	\item Robotique (vision, mouvements, prise de décision, etc.)
 	\item Neurosciences 
 \end{itemize}
+
+
 
 \subsection{Définition et principe général du Machine Learning}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général}
@@ -51,6 +56,7 @@ L'apprentissage automatique peut donc être vu dans sa globalité comme un proce
 		\end{enumerate}
 \end{enumerate}
 
+
 \subsubsection{Un exemple concret}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}
 Afin de présenter de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on présente l'exemple suivant:
@@ -70,6 +76,7 @@ On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre 
 
 Pour caractériser et  désigner plus précisément les différents éléments de notre système, on présente ci-dessous le champs lexical utilisé dans le domaine du Machine Learning:
 
+
 \subsubsection{Lexique} 
 \begin{description}
 	\item [les features] Le type de données présenté en entrée. \\
@@ -80,6 +87,8 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 	\item [La décision] La sortie ou réponse du système (Y) \\
 	\textit{Printemps, été, automne ou hiver.}
 \end{description}
+
+
 
 \subsection{Les exemples}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Les données}
@@ -98,6 +107,7 @@ Exemple_n & 10 & 81 &  1032 \\
 \end{block}
 \end{blockarray}
 \end{equation}
+
 
 \subsubsection{Différents types de données}
 Il existe deux types de données: les données labellisées et non labellisées.
@@ -138,9 +148,12 @@ Exemple_n & 10 & 81 &  1032 & ??\\
 \end{equation}
 On ne connait pas la sortie qui correspond aux données d'entrée, i.e. que on \emph{ne} sait \emph{pas} à quelle période de l'année les échantillons ont été prélevé. 
 
+
+
 \subsection{La décision}
 \label{Le Machine Learning: Généralités sur le Machine Learning: La décision}
 La sortie de notre système peut être également nommé décision. Toujours selon notre exemple \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, cela correspond au choix fait par l'algorithme entre les différentes saisons: printemps, été, automne et hiver.  
+
 
 \subsubsection{Différents types de sorties}
 Il existe différents types de sortie: les sorties continues et discrètes.
@@ -155,6 +168,7 @@ Il existe différents types de sortie: les sorties continues et discrètes.
 \end{description}
 
 
+
 \subsection{Le modèle}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle}
 Il existe différents types d'apprentissages. Le choix d'un modèle en particulier est influencé par le type d'exemples que l'on a en entrée du système et du type de décision que l'on souhaite obtenir en sortie. Nous nous intéresserons à différentes catégories d'apprentissages automatiques: 
@@ -162,6 +176,7 @@ Il existe différents types d'apprentissages. Le choix d'un modèle en particuli
 	\item Les apprentissages supervisés et non-supervisés. Cette caractéristique dépend du type d'exemples que l'on a en entrée du système.
 	\item Les régression ou les classifications. Cette caractéristique dépend du type de sortie que l'on souhaite obtenir . 
 \end{itemize}
+
 
 \subsubsection{apprentissage supervisé et non supervisé} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle: apprentissage supervisé et non supervisé}
@@ -178,7 +193,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 	 Une institutrice souhaite apprendre à ses élèves à différencier un chat d'un chien: c'est la décision qu'on attend d'eux. Pour ce faire, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les exemples utilisés pour l'apprentissage. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc: il s'agit des features. Lorsque que l'institutrice leur présente les différentes images, elle stipule clairement si il s'agit d'un chien ou d'un chat: il y'a donc une corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
 	 On retrouve cette même institutrice donnant à ses élèves le même exercice à la différence que, contrairement à précédemment, lorsque qu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit donc d'un apprentissage non supervisé. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur leurs similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaitrons certes pas le nom des deux animaux, mais ils auront su les différencier. C'est la même approche qui est réalisé en apprentissage automatique non supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
 	\hline 
-	\begin{tabular}{c} exemple n\degres2:\\prévisions \\saisonnières \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}\end{tabular} &
+	\begin{tabular}{c} exemple n\degres2:\\prévisions \\saisonnières \\ \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}\end{tabular} &
 	 On reprend l'exemple dans lequel on souhaite prendre une décision quant à la période de l'année à laquelle on se trouve actuellement, en fonction des features humidité, température et pression atmosphérique. Pour se faire, on prélève des échantillons à différentes périodes de l'année en notant à quelle saison ces données ont été prélevées: se sont des exemples labellisées, i.e. il y'a une corrélation entre les données et la sortie du système. Il s'agit donc d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, a). &
 	On reprend le même problème mais cette fois-ci on ne note pas la saison à laquelle les échantillons ont été prélevé. Pour résoudre le problème, l'algorithme doit donc associer les données les plus similaires entre elles et ainsi créer des groupes homogènes d'informations qui correspondront aux 4 décisions possibles (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, b). \\
 	\hline
@@ -201,6 +216,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 \end{figure}
 
 Il existe deux types d'apprentissage supervisé: la régression et la classification.
+
 
 \subsubsection{Apprentissage supervisé: régression et classification} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle:Regression et classification}
@@ -225,9 +241,15 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 	\label{fig:Comparaison par l'exemple de la régression et la classification}
 \end{figure}
 
+
+
+
+
 \section{Les différents algorithmes d'apprentissage supervisé}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé}
 Il existe différents algorithmes d'apprentissage supervisé utilisés pour résoudre des problèmes de régression et de classification. 
+
+
 
 \subsection{La régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
@@ -236,6 +258,7 @@ La régression linéaire cherche à expliquer une variable de sortie $Y$ par une
 \begin{equation}
 	h_\theta (x) = \theta_0 + \theta_1 X
 \end{equation}
+
 
 \subsubsection{Exemple de régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
@@ -272,6 +295,7 @@ La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie 
 \end{figure}
 
 Cet exemple est dit uni-variable car un seul jeu de données $X$ (superficie) correspond à un jeu de données $Y$ (prix).
+
 
 \subsubsection{Déterminer les paramètres de l'hypothèse}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Déterminer les paramètres de l'hypothèse}
@@ -317,9 +341,12 @@ avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. 
 	\label{fig:Régression linéaire, calcul des paramètres de l'hypothèse}
 \end{figure}
  
+ 
+ 
 \subsection{La régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable}
 On peut également réaliser de la régression linéaire avec plusieurs variables en entrée.
+
 
 \subsubsection{Exemple de régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
@@ -364,6 +391,7 @@ On peut généraliser la fonction coût:
 h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3 + ... + \theta_nX_n
 \end{equation}
 
+
 \subsubsection{Généralisation de la fonction coût}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de la fonction coût}
 On peut généraliser la fonction coût utilisée lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable, tel que :
@@ -371,6 +399,7 @@ On peut généraliser la fonction coût utilisée lors de la régression linéai
 \begin{equation}
 J(\theta_1,\theta_2,\theta_3,...,\theta_n) =  \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^{i})^2
 \end{equation}
+
 
 \subsubsection{Généralisation de l'algorithme du gradient}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de l'algorithme du gradient}
@@ -381,17 +410,31 @@ On peut généraliser l'algorithme du gradient utilisé lors de la régression l
 \end{equation}
 
 Où l'on met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
- 
+
+
+\subsubsection{Vectorisation des calculs}
+\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Vectorisation des calculs}
+
+
+
 \subsection{La régression logistique}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique}
 La régression logistique permet de résoudre des problèmes de classification. Elle découle de la régression linéaire et s'appuie sur les mêmes concepts.
-On cherche à séparer des groupes de données homogènes dans un ensemble hétérogène. Si reprend l'exemple de la prévision saisonnière ()
+On cherche à séparer des groupes de données homogènes dans un ensemble hétérogène. 
+
+On reprend l'exemple de la prévision saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on lui applique de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans la classe printemps ou hiver. 
 
 %\subsection{Les réseaux neuronaux}
 %\label{Le Machine Learning: Les différents algorithmes: Les réseaux neuronaux}
 
+
+
 \subsection{SVM -Support Vector Machine-}
 \label{Le Machine Learning: Les différents algorithmes: SVM}
 
+
+
 \subsection{Comparaison des algorithmes}
 \label{Le Machine Learning: Les différents algorithmes: Comparaison des algorithmes}
+
+
