@@ -298,10 +298,10 @@ Cet exemple est dit uni-variable car un seul jeu de données $x$ (superficie) co
 
 
 \subsubsection{La fonction coût}
-La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
+La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $x$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
 
 \begin{equation}
-	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^{i})^2
+	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^(i))-y^(i))^2
 \end{equation}
 
 avec:
@@ -310,8 +310,8 @@ avec:
 	\item $\theta_0$ et $\theta_1$ les paramètres de l'hypothèse $h(x)$
 	\item $m$ le nombre d'exemples disponibles pour l'entrainement 
 	\item $h_\theta(x)$ l'hypothèse $h_\theta (x) = \theta_0 + \theta_1 x$
-	\item $X^i$ l'exemple
-	\item $Y^i$ la sortie 
+	\item $x^i$ exemples de l'entrainement $i$
+	\item $y^i$ sorties de l'entrainement $i$
 \end{itemize}
 
 \begin{figure}[h]
