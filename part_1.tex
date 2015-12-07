@@ -175,7 +175,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 	 & apprentissage supervisé & apprentissage non supervisé \\
 	\hline
 	\begin{tabular}{c} exemple n\degres1:\\apprendre aux \\ humains \end{tabular}  &
-	 Une institutrice souhaite apprendre à ses élèves à différencier un chat d'un chien: c'est la décision qu'on attend d'eux. Pour ce faire, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les exemples utilisés pour l'apprentissage. Ces exemples peuvent être ségementés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc: il s'agit des features. Lorsque que l'institutrice leur présente les différentes images, elle stipule clairement si il s'agit d'un chien ou d'un chat: il y'a donc une corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
+	 Une institutrice souhaite apprendre à ses élèves à différencier un chat d'un chien: c'est la décision qu'on attend d'eux. Pour ce faire, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les exemples utilisés pour l'apprentissage. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc: il s'agit des features. Lorsque que l'institutrice leur présente les différentes images, elle stipule clairement si il s'agit d'un chien ou d'un chat: il y'a donc une corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
 	 On retrouve cette même institutrice donnant à ses élèves le même exercice à la différence que, contrairement à précédemment, lorsque qu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit donc d'un apprentissage non supervisé. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur leurs similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaitrons certes pas le nom des deux animaux, mais ils auront su les différencier. C'est la même approche qui est réalisé en apprentissage automatique non supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
 	\hline 
 	\begin{tabular}{c} exemple n\degres2:\\la météo \ref*{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}\end{tabular} &
@@ -196,7 +196,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/apprentissage_meteo.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y'a la formation de deux groupes de données homogènes: un où les échantillons sont pris lors de saisons globalement chaudes et sèches etc un autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe l'hiver.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y'a la formation de deux groupes de données homogènes: un où les échantillons sont pris lors de saisons globalement chaudes et sèches etc un autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe l'hiver.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}
 \end{figure}
 
@@ -204,8 +204,7 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 
 \subsubsection{Apprentissage supervisé: régression et classification} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle:Regression et classification}
- La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. 
-La classification est quant à lui un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète, elle peut être vu comme un cas particulier de la régression où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique que l'on souhaite classer un exemple parmi différentes. Afin de représenter concrètement les différences entre les deux méthodes et les applications possibles pour chacune d'elle, on propose un exemple.
+ La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. La classification est quant à elle un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète, elle peut être vu comme un cas particulier de la régression où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique que l'on souhaite \emph{classer} un exemple parmi différentes catégories. Afin de représenter concrètement les nuances entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
 
 \begin{table}[h]
 	\begin{tabular}{ | p {7cm} | p {7cm} |}
@@ -213,7 +212,7 @@ La classification est quant à lui un type d'apprentissage avec lequel on souhai
 		régression & classification \\
 		\hline
 		On souhaite connaitre le temps (température et humidité) qu'il fera pendant les jours suivants. Pour cela, on s'appuie sur les différents échantillons de température et d'humidité enregistrés lors des mois et des années précédentes (exemples labellisés). Le fait de déterminer la température des jours suivants relève de la prédiction (figure \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}, a).  
-		 &  L'exemple de la prédiction saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} est bien un problème de classification: on cherche à classer notre donnée d'entrée parmi plusieurs groupes de données homogènes: printemps, été automne ou hiver (figure \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}, b). \\
+		 &  L'exemple de la prédiction saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} est un problème de classification: on cherche à classer notre donnée d'entrée parmi plusieurs groupes de données homogènes: printemps, été automne ou hiver (figure \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}, b). \\
 		\hline 
 	\end{tabular}
 	\caption[Comparaison des différentes catégories d'apprentissage supervisé]{Comparaison entre l'apprentissage supervisé de type régression et supervisé de type classification}
@@ -221,18 +220,18 @@ La classification est quant à lui un type d'apprentissage avec lequel on souhai
 \end{table}
 
 \begin{figure}[h]
-	\centering\includegraphics[height=7cm]{images/regression_class.jpeg}
+	\centering\includegraphics[height=7.5cm]{images/regression_class.jpeg}
 	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repères en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
 	\label{fig:Comparaison par l'exemple de la régression et la classification}
 \end{figure}
 
 \section{Les différents algorithmes d'apprentissage supervisé}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé}
-Il existe différents algorithmes d'apprentissage supervisés utilisés pour résoudre des problèmes de régression et de classification. 
+Il existe différents algorithmes d'apprentissage supervisé utilisés pour résoudre des problèmes de régression et de classification. 
 
 \subsection{La régression linéaire}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
-La régression linéaire cherche à expliquer une variable de sortie $Y$ par une fonction affine de $X$.  Cette fonction affine est appelée \emph{hypothèse} $h$. Exprimé autrement, on a un jeu de données $X$ auquel correspond un jeu de données $Y^$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
+La régression linéaire cherche à expliquer une variable de sortie $Y$ par une fonction affine de $X$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé autrement, on a un jeu de données $X$ auquel correspond un jeu de données $Y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
 
 \begin{equation}
 	h_\theta (x) = \theta_0 + \theta_1 x
@@ -246,20 +245,20 @@ La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie 
 \begin{table}[h]
 	\begin{tabular}{ | p {7cm} | p {7cm} |}
 		\hline
-		taille (m^2) & prix (€) \\
+		taille ($m^2$) & prix (\euro) \\
 		\hline
-		2104&460
-		1416&232
-		1534&314
-		852&178
-		500&100
-		1012&212
-		126&75
-		1775&432
-		600&150
-		2114&510
-		1316&270
-		1634&334
+		2104 & 460 \\
+		1416 & 232 \\
+		1534 & 314 \\
+		852 & 178 \\
+		500 & 100 \\ 
+		1012 & 212 \\
+		126 & 75 \\
+		1775 & 432 \\
+		600 & 150 \\
+		2114 & 510 \\
+		1316 & 270 \\
+		1634 & 334 \\
 		\hline 
 	\end{tabular}
 	\caption[parc immobilier]{exemples du prix des logements en fonction de leur taille}
@@ -267,17 +266,32 @@ La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie 
 \end{table}
 
 \begin{figure}[h]
-	\centering\includegraphics[height=7cm]{images/graph_immobilier.png}
-	\caption[évolution du prix de l'immobilier en fonction de la surface]{évolution du prix de l'immobilier en fonction de la surface. L'ensemble des données semble globalement évoluer de manière linéaire. Cette linéarité est représentée par l'hypothèse ($h(x)$). Grâce à celle-ci, on peut déterminer le prix d'un logement en fonction de sa superficie, et inversement. Par exemple, un appartement d'une surface de 1750 m^2 coutera aux alentours de 390 €.}
+	\centering\includegraphics[height=8cm]{images/graph_immobilier.png}
+	\caption[évolution du prix de l'immobilier en fonction de la surface]{évolution du prix de l'immobilier en fonction de la surface. L'ensemble des données semble globalement évoluer de manière linéaire. Cette linéarité est représentée par l'hypothèse $h(x)$. Grâce à celle-ci, on peut déterminer le prix d'un logement en fonction de sa superficie, et inversement. Par exemple, un appartement d'une surface de 1750 $m^2$ coutera aux alentours de 390\euro.}
 	\label{fig:évolution du prix de l'immobilier en fonction de la surface}
 \end{figure}
 
-Cet exemple est dit uni-variable car un seul jeu de données $X$ (superficie) correspond à un jeu de données $Y^$ (prix).
+Cet exemple est dit uni-variable car un seul jeu de données $X$ (superficie) correspond à un jeu de données $Y$ (prix).
 
 \subsubsection{Déterminer les paramètres de l'hypothèse}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Déterminer les paramètres de l'hypothèse}
 
+\paragraph{La fonction cout} La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $X$ et les sorties actuelles $Y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles. Soit: 
+\begin{equation}
+	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^{i})^2
+\end{equation}
 
+avec:
+\begin{itemize}
+	\item $J$ la fonction coût
+	\item $\theta_0$ et $\theta_1$ les paramètres de l'hypothèse $h(x)$
+	\item $m$ le nombre d'exemples disponibles pour l'entrainement 
+	\item $h_\theta(x)$ l'hypothèse $h_\theta (x) = \theta_0 + \theta_1 x$
+	\item $X^i$ l'exemple
+	\item $Y^i$ la sortie 
+\end{itemize}
+
+On cherchera donc à minimiser la fonction coût $J(\theta_0,\theta_1)$ afin d'optimiser l'hypothèse.
 \subsection{La régression logistique}
 \label{ILe Machine Learning: Les différents algorithmes: La regression logistique}
 
