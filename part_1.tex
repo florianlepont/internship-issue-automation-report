@@ -219,29 +219,29 @@ La classification est quant à lui un type d'apprentissage avec lequel on souhai
 	\caption[Comparaison des différentes catégories d'apprentissage supervisé]{Comparaison entre l'apprentissage supervisé de type régression et supervisé de type classification}
 	\label {tab: Comparaison des différentes catégories d'apprentissage supervisé}
 \end{table}
-%
-%\begin{figure}[h]
-%	\centering\includegraphics[height=7cm]{images/regression_class.jpeg}
-%	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repères en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
-%	\label{fig:Comparaison par l'exemple de la régression et la classification}
-%\end{figure}
-%
-%\section{Les différents algorithmes d'apprentissage supervisé}
-%\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé}
-%Il existe différents algorithmes d'apprentissage supervisés utilisés pour résoudre des problèmes de régression et de classification. 
-%
-%\subsection{La régression linéaire}
-%\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
-%La régression linéaire cherche à expliquer une variable de sortie $Y$ par une fonction affine de $X$.  Cette fonction affine est appelée \emph{hypothèse} $h$. Exprimé autrement, on a un jeu de données $X$ auquel correspond un jeu de données $Y^$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
-%
-%\begin{equation}
-%	h_\theta (x) = \theta_0 + \theta_1 x
-%\end{equation}
-%
-%\subsubsection{Exemple de régression linéaire uni-variable}
-%\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
-%On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix connus du parc immobilier. 
-%La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie $Y$. Soit le tableau \ref {tab:parc immobilier} les exemples $X$, on obtient la représentation graphique en figure 	\ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
+
+\begin{figure}[h]
+	\centering\includegraphics[height=7cm]{images/regression_class.jpeg}
+	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repères en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
+	\label{fig:Comparaison par l'exemple de la régression et la classification}
+\end{figure}
+
+\section{Les différents algorithmes d'apprentissage supervisé}
+\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé}
+Il existe différents algorithmes d'apprentissage supervisés utilisés pour résoudre des problèmes de régression et de classification. 
+
+\subsection{La régression linéaire}
+\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
+La régression linéaire cherche à expliquer une variable de sortie $Y$ par une fonction affine de $X$.  Cette fonction affine est appelée \emph{hypothèse} $h$. Exprimé autrement, on a un jeu de données $X$ auquel correspond un jeu de données $Y^$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
+
+\begin{equation}
+	h_\theta (x) = \theta_0 + \theta_1 x
+\end{equation}
+
+\subsubsection{Exemple de régression linéaire uni-variable}
+\label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
+On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix connus du parc immobilier. 
+La surface au sol est donc l'entrée $X$ de notre système et le prix la sortie $Y$. Soit le tableau \ref {tab:parc immobilier} les exemples $X$, on obtient la représentation graphique en figure 	\ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
 %
 %\begin{table}[h]
 %	\begin{tabular}{ | p {7cm} | p {7cm} |}
