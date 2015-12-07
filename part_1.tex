@@ -483,12 +483,14 @@ Cette méthode fonctionne dans ce cas ci car les exemples sont régulièrement e
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Régression logistique et fonction sigmoïde}
 Afin de classer des données à partir d'une régression,  on modifie la forme linéaire de l'hypothèse utilisée lors de la régression linéaire en une sigmoïde. 
 soit $g(x) = \frac{1}{1 + e^{-z}}$  la fonction sigmoïde, on a l'hypothèse $h_\theta(x)$ suivante: 
-
 \begin{equation}
 	h_\theta(x)=g(\theta^Tx) 
 \end{equation}
 
-avec 
+soit: 
+\begin{equation}
+h_\theta(x)=\frac{1}{1 + e^{\theta^Tx}} 
+\end{equation}
 
 %\subsection{Les réseaux neuronaux}
 %\label{Le Machine Learning: Les différents algorithmes: Les réseaux neuronaux}
