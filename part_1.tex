@@ -412,7 +412,11 @@ On peut généraliser l'algorithme du gradient utilisé lors de la régression l
 On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
 
 \begin{equation}
+\begin{split}
+\text{Repeat \{} \\
 \theta_j = \theta_j - \alpha \frac{1}{m}\sum_{m}^{i=1}(h_\theta(x^i) - y^i)x_j^i \\
+\text{Repeat \}} \\
+\end{split}
 \label{gradient descent multivar}
 \end{equation}
 
