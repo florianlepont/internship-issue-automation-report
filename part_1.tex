@@ -310,7 +310,7 @@ avec:
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/cost.png}
-	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcule de la fonction coût revient à minimiser la distance entre un exemple et l'hypothèse et ce pour chaque exemple.}
+	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcul de la fonction coût revient à minimiser la distance entre un exemple et l'hypothèse, et ce pour chaque exemple.}
 	\label{fig:Régression linéaire, optimisation de la fonction coût}
 \end{figure}
 
@@ -378,7 +378,7 @@ La fonction coût s'exprime sous cette forme:
 
 Où $X_1$, $X_2$ et $X_3$ correspondent respectivement aux features surface, nombre d'étages et nombre de pièces.
 
-On peut la généraliser en : 
+On peut la généraliser: 
 
 \begin{equation}
 h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3 + ... + \theta_nX_n
@@ -410,7 +410,7 @@ On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque 
 \label{gradient descent multivar}
 \end{equation}
 
-avec $x_j^i$ l'entrée $j$ de l'exemple $i$.
+avec $x_j^i$ l'entrée $j$ de l'entrainement $i$.
 
 
 \subsubsection{Vectorisation des calculs}
