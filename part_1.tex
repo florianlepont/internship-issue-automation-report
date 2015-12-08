@@ -575,9 +575,15 @@ cost(h_\theta(x),y)=\begin{blockarray}{ll}
 \end{equation}
 
 Sous cette forme, la fonction coût est convexe. \\
-Intuitivement, lorsque l'on observe la forme de la fonction $log(h(\theta))$ qui est vraie quand $y=1$, on remarque que lorsque $h(x)$ tend vers 1, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 0, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=1),plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé.  \\
-Intuitivement, lorsque l'on observe la forme de la fonction $log(h(\theta))$ qui est vraie quand $y=0$, on remarque que lorsque $h(x)$ tend vers 0, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 1, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=0), plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé. \\
+Intuitivement, lorsque l'on observe la forme de la fonction $-log(h(\theta))$ (figure ) qui est vraie quand $y=1$, on remarque que lorsque $h(x)$ tend vers 1, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 0, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=1),plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé.  \\
+Intuitivement, lorsque l'on observe la forme de la fonction $-log(1-h(\theta))$ (figure ) qui est vraie quand $y=0$, on remarque que lorsque $h(x)$ tend vers 0, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 1, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=0), plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé. \\
 Ce comportement correspond à l'attitude que l'on attend de la fonction coût, i.e. d'optimiser l'hypothèse.
+
+\begin{figure}[h]
+	\centering\includegraphics[height=6cm]{images/regression_logistique.png}
+	\caption[fonctions $-log(h_\theta(x))$ et $-log_\theta(1-h(x))$]{fonctions $-log_\theta(h(x))$ et $-log_\theta(1-h(x))$}
+	\label{fig:fonctions -log(h(x)) et -log(1-h(x))}
+\end{figure}
 
 \subsubsection{L'algorithme du gradient}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: L'algorithme du gradient}
