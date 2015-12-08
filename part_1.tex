@@ -581,7 +581,15 @@ Ce comportement correspond à l'attitude que l'on attend de la fonction coût, i
 
 \subsubsection{L'algorithme du gradient}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: L'algorithme du gradient}
+La formule de l'algorithme du gradient reste identique que dans le cas de la régression linéaire, seule la valeur de $_\theta(x)$ change, selon la démarche présentée en partie \ref{Le Machine Learning: Les différents algorithmes: La regression logistique: Fonction coût}.
 
+\begin{equation}
+\begin{split}
+\text{Repeat \{} \\
+\theta_j = \theta_j - \alpha \frac{1}{m}\sum_{m}^{i=1}(h_\theta(x^i) - y^i)x_j^i \\
+\text{\}} \\
+\end{split}
+\end{equation}
 
 \subsection{SVM -Support Vector Machine-}
 \label{Le Machine Learning: Les différents algorithmes: SVM}
