@@ -331,7 +331,7 @@ avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/gradient.png}
-	\caption[Régression linéaire, calcul des paramètres de l'hypothèse]{Régression linéaire, calcul des paramètres de l'hypothèse. Ce graphique représente la variation des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse en fonction de la valeur de la fonction coût. On cherche les valeurs  $\theta_0$ et $\theta_1$ minimisant$J(\theta_0,\theta_1)$. La courbe ayant la forme d'une cuvette, les valeurs optimales de $\theta_0$ et $\theta_1$ correspondent à celles au fond de la cuvette.}
+	\caption[Régression linéaire, calcul des paramètres de l'hypothèse]{Régression linéaire, calcul des paramètres de l'hypothèse. Ce graphique représente la variation des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse en fonction de la valeur de la fonction coût. On cherche les valeurs  $\theta_0$ et $\theta_1$ minimisant $J(\theta_0,\theta_1)$. La courbe ayant la forme d'une "cuvette", les valeurs optimales de $\theta_0$ et $\theta_1$ correspondent à celles au fond de la "cuvette".}
 	\label{fig:Régression linéaire, calcul des paramètres de l'hypothèse}
 \end{figure}
  
@@ -398,13 +398,13 @@ J(\theta_1,\theta_2,\theta_3,...,\theta_n) =  \frac{1}{2m}\sum_{i=1}^{m}(h_\thet
 
 \subsubsection{Généralisation de l'algorithme du gradient}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de l'algorithme du gradient}
-On peut généraliser l'algorithme du gradient utilisé lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable, tel que :
+On peut généraliser l'algorithme du gradient utilisé lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable:
  
 \begin{equation}
 \theta_j = \theta_j - \alpha \frac{\partial J(\theta_0, \theta_1, \theta_2, \theta_3, ... , \theta_n)}{\partial\theta_j} \\
 \end{equation}
 
-Où l'on met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
+On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
 
 \begin{equation}
 \theta_j = \theta_j - \alpha \frac{1}{m}\sum_{m}^{i=1}(h_\theta(x^i) - y^i)x_j^i \\
@@ -416,7 +416,7 @@ avec $x_j^i$ l'entrée $j$ de l'exemple $i$.
 
 \subsubsection{Vectorisation des calculs}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Vectorisation des calculs}
-On peut écrire les exemples en entrée du système sous forme matricielle: 
+On peut exprimer les exemples en entrée du système sous forme matricielle: 
 
 \begin{equation}
 \begin{blockarray}{[c]}
@@ -428,7 +428,7 @@ X_n
 \end{blockarray} = X
 \end{equation}
 
-De même, on exprime les paramètres $\theta$ de l'hypothèse sous forme matricielle:
+De même, on réécrit les paramètres $\theta$ de l'hypothèse sous forme matricielle:
 
 \begin{equation}
 \begin{blockarray}{[c]}
@@ -440,12 +440,12 @@ De même, on exprime les paramètres $\theta$ de l'hypothèse sous forme matrici
 \end{blockarray} = \theta
 \end{equation}
 
-On peut alors réécrire l'hypothèse \eqref{hypotesis multivar} de la façon suivante:
+On peut alors réécrire l'hypothèse (équation \eqref{hypotesis multivar}):
 \begin{equation}
 	h_\theta(x) = \theta^TX
 \end{equation}
 
-L'algorithme du gradient \eqref{gradient descent multivar} s'exprime donc sous cette forme: 
+L'algorithme du gradient (équation \eqref{gradient descent multivar}) s'exprime donc sous sa nouvelle forme vectorielle: 
 \begin{equation}
 \theta = \theta - \frac{\alpha}{m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)X^i
 \end{equation}
