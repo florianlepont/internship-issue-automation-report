@@ -401,7 +401,12 @@ J(\theta_1,\theta_2,\theta_3,...,\theta_n) =  \frac{1}{2m}\sum_{i=1}^{m}(h_\thet
 On peut généraliser l'algorithme du gradient utilisé lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable:
  
 \begin{equation}
+\begin{split}
+\text{Repeat \{} \\
 \theta_j = \theta_j - \alpha \frac{\partial J(\theta_0, \theta_1, \theta_2, \theta_3, ... , \theta_n)}{\partial\theta_j} \\
+\text{\}}
+\end{split}
+
 \end{equation}
 
 On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
