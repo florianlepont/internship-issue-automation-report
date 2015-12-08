@@ -10,7 +10,7 @@ On présente ici de manière succincte l'architecture Hardware du robot Pepper a
 \label{Introduction:Présentation du produit:Les actionneurs}
 \subsubsection{Les moteurs}
 \label{Introduction:Présentation du produit:Les actionneurs: Les moteurs}
-Le robot Pepper est constitué de 20 moteurs dont il est possible de contrôler la position et la rigidité. \ref{fig:Répartition des actionneurs de Pepper}
+Le robot Pepper est constitué de 20 moteurs dont il est possible de contrôler la position et la rigidité (figure \ref{fig:Répartition des actionneurs de Pepper})
 \begin{description}
 	\item [Tête:] 2 moteurs pour les mouvements de lacet (HeadYaw) et de tangage (HeadPitch)
 	\item [Bras:] 4 moteurs par bras, répartis de la manière suivante: 
@@ -32,30 +32,30 @@ Le robot Pepper est constitué de 20 moteurs dont il est possible de contrôler 
 
 \subsubsection{Les Leds}
 \label{Introduction:Présentation du produit:Les actionneurs: Les leds}
-Les leds placés sur les épaules de Pepper et autour de ces yeux permettent d'obtenir un certain nombre d'informations sur son état.
+Les Leds placées sur les épaules de Pepper, autour de ces yeux et de ces oreilles permettent d'obtenir un certain nombre d'informations sur son état. Par exemple, des Leds bleues en rotations autour des yeux indique que le robot écoute, des Leds sur les épaules clignotant lentement indique de le robot démarre.  
 
 \subsection{Les senseurs}
 \label{Introduction:Présentation du produit:Les senseurs}
-Pepper comporte également une multitude de capteurs. Certains d'entre eux sont utilisés afin de s'assurer du bon comportement des parties électroniques et mécaniques du robot, ou pour réaliser du contrôle-commande. D'autres senseurs sont en revanche intégrés au robot pour que l'utilisateur puisse interagir avec. \ref{tab: Les différents capteurs de Pepper}
+Pepper comporte également une multitude de capteurs. Certains d'entre eux sont utilisés afin de s'assurer du bon comportement des parties électroniques et mécaniques du robot, ou pour réaliser du contrôle-commande. D'autres senseurs sont en revanche intégrés sur le robot afin que l'utilisateur interagisse avec (tableau \ref{tab: Les différents capteurs de Pepper}).
 
 \begin{table}[h]
 	\begin{tabular}{ | p{3cm} | p{4cm} | p{7cm} | }
 		\hline
 		Senseur & position & description \\
 		\hline
-		Capteurs liés au actionneurs & sur les moteurs & Chaque moteur du robot est lié à 3 senseurs donnant des informations sur la valeur du courant délivrée au moteur (A), la température du moteur (C) et la position du moteur. \\
+		Capteurs liés aux actionneurs & sur les moteurs & Chaque moteur du robot est lié à 3 senseurs, donnant des informations sur la valeur du courant délivrée au moteur (A), la température du moteur (C) et la position du moteur. \\
 		\hline
-		Senseurs tactiles & 1 sur chaque main, 1 sur la tête & Permet à l'utilisateur d'interagir avec le robot par le toucher.	\\	
+		Senseurs tactiles & 1 sur chaque main, 1 sur la tête & Permet à l'utilisateur d'interagir avec le robot en le touchant.	\\	
 		\hline 
-		Les boutons & 1 sur le buste, 3 bumpers sur la base du robot & Les bumpers permettent au robot de détecter si il rencontre un obstacle à proximité directe. Le bouton du buste permet quant à lui de modifier le mode dans lequel est le robot (autonome, veille). \\
+		Les boutons & 1 bouton poussoir sur le buste, 3 bumpers sur la base & Les bumpers permettent au robot de détecter si il rencontre un obstacle à proximité directe. Le bouton du buste permet quant à lui de modifier le mode dans lequel est le robot (autonome, veille). \\
 		\hline 
-		Centrale inertielle & 1 dans le buste, 1 dans la base & Informe sur la position et l'orientation du robot, ainsi que les données qui en découlent (vitesse, accélération). \\
+		Centrale inertielle & 1 dans le buste, 1 dans la base & Informe sur la position et l'orientation du robot, ainsi que la vitesse et l'accélération. \\
 		\hline
-		Sonars & 2 sonars à l'avant et l'arrière de la base & Permet de détecter la présence d'un objet situé à partir de 65 cm du robot. \\
+		Sonars & 2 sonars à l'avant et l'arrière de la base & Permet de détecter la présence d'un objet situé au delà de 65 cm du robot. \\
 		\hline 
-		Capteurs batterie & Au niveau de la batterie & Renseigne sur le courant et la tension délivré, le pourcentage de charge et la température. \\
+		Capteurs batterie & batterie & Renseigne sur le courant et la tension délivré, le pourcentage de charge et la température. \\
 		\hline
-		Capteurs infra-rouges & 2 sur la base &  Permet de détecter la présence d'un objet situé entre à et 50 cm du robot. \\
+		Capteurs infra-rouges & 2 sur la base &  Permet de détecter la présence d'un objet situé entre 0 et 50 cm du robot. \\
 		\hline
 		Lasers & 6 lasers sur la base du robot & Permet de détecter la présence d'un objet \\
 		\hline 
@@ -77,7 +77,7 @@ L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une mont�
 		\hline
 		Activité & Durée (en minutes) & Temps cumulé (en minutes)  & Description\\
 		\hline
-		\multicolumn{4}{| l |}{Test 1 : succession de divers actions effectué 40 fois durant les 10 heures }\\
+		\multicolumn{4}{| l |}{Test 1 : succession de divers actions effectuées 40 fois durant les 10 heures }\\
 		\hline
 		Intro, Danse, Outro & 6 à 7  & 6 à 7 & Réalisation des mouvements d'introduction et d'outro\\
 		\hline 
@@ -87,7 +87,7 @@ L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une mont�
 		\hline 
 		Rest & 3  & 15 & Réalisation des mouvements lors du passage en mode Rest\\
 		\hline
-		\multicolumn{4}{| l |}{Test 12: enchainement de 8 danses répété 5 fois durant les dix heures} \\
+		\multicolumn{4}{| l |}{Test 12: enchainement de 8 danses répétées 5 fois durant les dix heures} \\
 		\hline
 	\end{tabular}
 	\caption[Déroulement d'un Filtering test]{Déroulement d'un Filtering test}
@@ -96,13 +96,13 @@ L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une mont�
  
 \subsection{Hiérarchisation des erreurs}
 \label{Introduction:Expression du besoin:Hiérarchisation des erreurs}
-Afin de gérer au mieux les anomalies, celles-ci sont hiérarchisées en deux catégories.
+Pour de gérer au mieux les anomalies, celles-ci sont hiérarchisées en deux catégories: les "errors name" et les "root causes".
 \begin{description}
-	\item [Error name] Cela correspond à l'erreur visible, c'est à dire de la conséquence liée à une anomalie hardware ou software. Cela peut correspondre par exemple à la chute du robot. 
-	\item [root cause] Il s'agit de l'anomalie en elle même, c'est à dire de la cause ayant entraîné l'apparition d'une "error name". Si l' "error name" est la chute d'un robot, la "root cause" peut par exemple correspondre à la détérioration d'un engrenage de la hanche.   
+	\item [Error name] Cela correspond à l'erreur visible, i.e. la conséquence liée à une anomalie hardware ou software. Cela peut correspondre par exemple à la chute du robot. 
+	\item [root cause] Il s'agit de l'anomalie en elle même, i.e. la cause ayant entraînée l'apparition d'une "error name". Si l' "error name" est la chute d'un robot, la "root cause" peut par exemple correspondre à la détérioration d'un engrenage de la hanche.   
 \end{description} 
 
-En suivant la logique exprimée par ces définitions, une "error name" sera constituée d'une ou plusieurs "root cause". 
+En suivant la logique exprimée par ces définitions, une "error name" peut être constituée d'une ou plusieurs "root cause". 
 
 \begin{table}
 	\begin{forest}
@@ -132,10 +132,10 @@ En suivant la logique exprimée par ces définitions, une "error name" sera cons
 
 \subsubsection{Observation}
 \begin{itemize}
-	\item Lors du déroulement du test, le robot tombe à t = 16972 secondes, soit lorsque le robot réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.	\ref{fig:analyse d'une anomalie: accéléromètre}
-	\item On analyse alors les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur \ref{fig:analyse d'une anomalie: kneePitch}. On remarque également que le senseur du genou suit correctement la commande du moteur \ref{fig:analyse d'une anomalie: hipitch}.
+	\item Lors du déroulement du Filtering test, le robot tombe à t = 16972 secondes, soit lorsqu'il réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.	\ref{fig:analyse d'une anomalie: accéléromètre}
+	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le senseur du genou suit correctement la commande du moteur (figure \ref{fig:analyse d'une anomalie: hipitch}).
 	%Préviser à quel moment l'augmentation du courant arrive
-	\item On remarque également une augmentation anormale du courant dans le moteur de l'articulation. 
+	\item On observe également une augmentation anormale du courant dans le moteur de l'articulation. 
 \end{itemize} 
 
 \begin{figure}[h]
@@ -157,8 +157,8 @@ En suivant la logique exprimée par ces définitions, une "error name" sera cons
 \end{figure}
 
 \subsubsection{Hypothèse émise}
- Lors de l'exécution de l'animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche, causant un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro. Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation, ce qui entraine le passage en mode protégé du robot, ce qui désactive sa rigidité. Sans cette rigidité, le robot tombe ("error name"). Une étude plus poussée nous apprendra que la "root cause" du problème correspondait à une dent cassée au niveau de l'engrenage de la hanche. 
+ Lors de l'exécution de l'animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche, causant un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro. Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation, ce qui entraine le passage en mode protégé du robot et a pour effet de désactiver sa rigidité. Sans cette rigidité, Pepper tombe ("error name"). Une étude plus poussée nous apprendra que la "root cause" du problème correspondait à une dent cassée au niveau de l'engrenage de la hanche. 
 
 
 \section{Solution proposée}
-De part la quantité d'informations à analyser, cette tâche d'analyse peut rapidement devenir rébarbative, d'où le souhait d'automatiser ce processus d'investigation. De part la variabilité des types de données, on ne peut réduire pas le nombre d'informations à analyser à de simples caractéristiques communes (e.g. moyenne, écart type, etc.). On s'appuiera donc sur des approches algorithmiques plus poussées en utilisant notamment des méthodes d'apprentissages automatiques (plus connues sous le terme anglais de Machine Learning). La multiplicité des modèles englobés dans cette discipline nous permettra de répondre au mieux à la problématique.
+De part la quantité d'informations à analyser, cette tâche d'analyse peut rapidement devenir rébarbative, d'où le souhait d'automatiser ce processus d'investigation. La variabilité des types de données nous empêche de réduire pas le nombre d'informations à analyser à de simples caractéristiques communes (e.g. moyenne, écart type, etc.). On s'appuiera donc sur des approches algorithmiques plus poussées, en utilisant notamment des méthodes d'apprentissages automatiques (plus connues sous le terme anglais de Machine Learning). La multiplicité des modèles englobés dans cette discipline nous permettra de répondre au mieux à la problématique.

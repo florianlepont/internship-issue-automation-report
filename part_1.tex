@@ -7,10 +7,10 @@
 
 \section{Généralités sur le Machine Learning}
 \label{Le Machine Learning: Généralités sur le Machine Learning}
-Le Machine Learning (traduire par apprentissage automatique) est une ramification de l'intelligence artificielle. Cependant, son statut de subdivision n'informe en rien sur l'étendu des notions contenues dans cette matière scientifique. Son champ d'étude est vaste et en perpétuelle évolution. Les solutions offertes par cette discipline permettent d'étudier toute sortes de données et d'automatiser une multitude de systèmes. L'apprentissage automatique rencontre un succès croissant qui est corrélé avec l'essor des nouvelles technologies et l'automatisation de l'analyse de volumes conséquents de données utilisateurs (Big Data). Les applications sont donc multiples. En voici quelques exemples:  
+Le Machine Learning (traduire par apprentissage automatique) est une ramification de l'intelligence artificielle. Son champ d'étude est vaste et en perpétuelle évolution. Les solutions offertes par cette discipline permettent d'étudier toute sortes de données et d'automatiser une multitude de systèmes. L'apprentissage automatique rencontre un succès croissant qui est corrélé avec l'essor des nouvelles technologies et l'automatisation de l'analyse de volumes conséquents de données utilisateurs (Big Data). Les applications sont multiples, en voici quelques exemples:  
 
 \begin{itemize}
-	\item Algorithmes des moteurs de recherches (Google Deep Dream, Google TensorFlow)
+	\item Algorithmes des moteurs de recherches (Google Deep Dream\cite{DeepDream}, Google TensorFlow \cite{TensorFlow})
 	\item Analyse boursière
 	\item Analyse de rapports d'erreurs
 	\item Reconnaissance vocale, biométrie, reconnaissance d'écriture
@@ -26,13 +26,11 @@ Le champ d'étude et d'application du Machine Learning étant immense, on propos
 On offre ici deux définitions de l'apprentissage automatique: une première dite "High Level" qui le caractérise de manière générale et une seconde qui reflète sa dimension algorithmique. 
 
 \begin{description}
-	\item[High Level]: Le Machine Learning permet à un système d'évoluer grâce à un processus d'apprentissage et ainsi de remplir des tâches qu'il est difficile, voir impossible, de remplir par d'autres moyens algorithmiques plus classiques. 
+	\item[High Level]: Le Machine Learning permet à un système d'évoluer grâce à un processus d'apprentissage et ainsi de remplir des tâches qu'il est difficile, voire impossible, de remplir par d'autres moyens algorithmiques plus classiques. 
 	\item[Mathématique] Le Machine Learning fourni les outils pour prédire une/des donnée(s) de sortie Y à partir des données d'entrée X via un processus d'apprentissage. 
 \end{description}
  
- De nombreuses autres définitions existent, mais elles ne correspondent pas à la dimension recherchée dans le cadre de ce projet.
- 
-Au regard des deux définitions stipulées ci-dessus, on peut définir le principe de base de l'apprentissage automatique sous la forme d'un schéma bloc 	ref{fig:Schéma fonctionnel haut niveau du Machine Learning}.
+Au regard des deux définitions stipulées ci-dessus, on peut représenter le principe de base de l'apprentissage automatique sous la forme d'un schéma bloc (figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}).
 
 \begin{figure}[h]
 	\centering\includegraphics[height=5cm]{images/ML_high_level.jpeg}
@@ -40,33 +38,33 @@ Au regard des deux définitions stipulées ci-dessus, on peut définir le princi
 	\label{fig:Schéma fonctionnel haut niveau du Machine Learning}
 \end{figure}
 
-L'apprentissage automatique peut donc être vu dans sa globalité comme un processus composé de deux étapes successives : 
+L'apprentissage automatique peut être vu dans sa globalité comme un processus composé de deux étapes successives : 
 \begin{enumerate}
 		\item [Apprentissage]
 		 \begin{enumerate}
-			\item  Un ensemble de données est présenté au système (X\_train).
-			\item A partir de ces informations, le système (f) apprend - s'entraîne- afin d'être par la suite en capacité de prendre décision vis à vis de la tâche qui lui sera demandée. 
+			\item  Un ensemble de données est mis à l'entrée du système lors de la phase d'apprentissage (x\_train).
+			\item A partir de ces informations, le système (f) apprend - s'entraîne- afin d'être par la suite en capacité de prendre une décision vis à vis de la tâche qui lui sera demandée. 
 		\end{enumerate}
 		
 		\item [Prise de décision] 
 		\begin{enumerate}
-			\item  On a en entrée du système une ou des donnée(s) brutes (X).  
+			\item  On a en entrée du système une ou des donnée(s) brutes (x).  
 			\item Cette donnée est traitée et analysée par le système.
-			\item En sortie, une décision est prise quant à la tâche demandée (Y). 
+			\item En sortie, une décision (y) est prise quant à la tâche demandée grâce à l'apprentissage effectué en amont. 
 		\end{enumerate}
 \end{enumerate}
 
 
 \subsubsection{Un exemple concret}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}
-Afin de présenter de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on présente l'exemple suivant:
+Afin d'exposer de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on soumet l'exemple suivant:
 
-\textit{On cherche à déterminer à quelle période de l'année nous nous trouvons (i.e. printemps, été, automne ou hiver) à partir de l'humidité, la température et la pression atmosphérique d'aujourd'hui. \\
-	La première étape de notre processus sera donc d'entrainer notre système afin que celui-ci soit en mesure de prendre une décision vis à vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
-	Une fois le système entrainé, on attend que celui-ci ai ce type de comportement : \\
-	On présente en entrée de mon système une température de -2 degrés, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La réponse attendue en sortie du système est: hiver}
+\textit{On cherche à déterminer la période de l'année à laquelle on se trouve actuellement (i.e. printemps, été, automne ou hiver) grâce à l'analyse de l'humidité, la température et la pression atmosphérique d'aujourd'hui. \\
+	La première étape est d'entrainer notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
+	Une fois le système entrainé, on attend de celui-ci ce type de comportement : \\
+	On présente en entrée du système une température de -2 degrés, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision espérée est: \emph{hiver}}
 
-On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}. 
+On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=5cm]{images/ML_high_level_expl.jpeg}
@@ -74,17 +72,16 @@ On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre 
 	\label{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}
 \end{figure}
 
-Pour caractériser et  désigner plus précisément les différents éléments de notre système, on présente ci-dessous le champs lexical utilisé dans le domaine du Machine Learning:
-
-
 \subsubsection{Lexique} 
+Pour caractériser et  désigner plus précisément les différents éléments de notre système, on présente ci-dessous le champs lexical rattaché au Machine Learning:
+
 \begin{description}
 	\item [les features] Le type de données présenté en entrée. \\
 	\textit{La température, la pression atmosphérique et l'humidité.}
 	\item [échantillons ou exemples] Les données permettant d'entrainer le système (x\_train). \\
-	\textit{De nombreux échantillons de température, pression atmosphériques et humidité pris à différents périodes de l'année, sur plusieurs années.}
+	\textit{Des échantillons de température, pression atmosphériques et humidité pris à différents périodes de l'année.}
 	\item [le modèle d'apprentissage] Le cœur du système décisionnel (f).
-	\item [La décision] La sortie ou réponse du système (Y) \\
+	\item [La décision] La sortie ou réponse du système (y) \\
 	\textit{Printemps, été, automne ou hiver.}
 \end{description}
 
@@ -92,8 +89,8 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 
 \subsection{Les exemples}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Les données}
-Les exemples correspondent aux données utilisées pour entraîner mon algorithme d'apprentissage. On parle également d'échantillons. Celles-ci sont regroupées en "features" (terme anglais, traduire par caractéristiques). 
-Pour reprendre l'exemple cité précédemment \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, nos données sont regroupées en 3 features: la température, l'humidité et la pression atmosphérique. On données sont donc structurées de la manière suivante: 
+Les exemples sont les données utilisées pour entraîner mon algorithme d'apprentissage. On parle également d'échantillons. Ils sont regroupés en "features" (terme anglais, traduire par caractéristiques). 
+Pour reprendre l'exemple cité précédemment (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), nos données sont regroupées en 3 features: la température, l'humidité et la pression atmosphérique. Les exemples sont donc structurées de la manière suivante: 
 
 \begin{equation}
 \begin{blockarray}{cccc}
@@ -109,16 +106,13 @@ Exemple_n & 10 & 81 &  1032 \\
 \end{equation}
 
 
-\subsubsection{Différents types de données}
-Il existe deux types de données: les données labellisées et non labellisées.
-\begin{itemize}
-	\item Les données labellisées correspondent à des exemples corrélés à une sortie - un label - connue.
-	\item Les données non labellisées ne sont quant à elles pas associées à une sortie. 
-\end{itemize}
+\subsubsection{Différents types d'exemples}
+Il existe deux types de données: les échantillons labellisés et non labellisés.
 
-Pour reprendre l'exemple précédent \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, on a les jeux de données suivants: 
+Pour reprendre l'exemple précédent (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), on a les jeux de données suivants: 
 
-\textbf{Données labellisées} 
+\paragraph{Données labellisées} 
+Les échantillons labellisés correspondent à des exemples corrélés à une sortie - un label - connue.
 \begin{equation}
 \begin{blockarray}{ccccc}
 & température (\degres C) & humidite (\%) & pression(HPa) \\
@@ -133,7 +127,8 @@ Exemple_n & 10 & 81 &  1032 & printemps\\
 \end{equation}
 On connait la sortie qui correspond aux données d'entrée, i.e. que on sait à quelle période de l'année les échantillons ont été prélevé.
  
-\textbf{Données non labellisées} 
+\paragraph{Données non labellisées} 
+Les échantillons non labellisés ne sont quant à elles pas associées à une sortie. 
 \begin{equation}
 \begin{blockarray}{ccccc}
 & température (\degres C) & humidite (\%) & pression(HPa) \\
@@ -152,8 +147,7 @@ On ne connait pas la sortie qui correspond aux données d'entrée, i.e. que on \
 
 \subsection{La décision}
 \label{Le Machine Learning: Généralités sur le Machine Learning: La décision}
-La sortie de notre système peut être également nommé décision. Toujours selon notre exemple \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, cela correspond au choix fait par l'algorithme entre les différentes saisons: printemps, été, automne et hiver.  
-
+La sortie de notre système peut être également nommé décision. l'exemple partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, cela correspond au choix fait par l'algorithme entre les différentes saisons: printemps, été, automne et hiver.  
 
 \subsubsection{Différents types de sorties}
 Il existe différents types de sortie: les sorties continues et discrètes.
@@ -161,10 +155,10 @@ Il existe différents types de sortie: les sorties continues et discrètes.
 \begin{description}
 	\item [Les sorties continues] peuvent prendre n'importe quelle valeur. \\
 	 $y \in R$ \\
-	 Déterminer l'évolution de la température en fonction des échantillons enregistrés les mois précédents correspond à une sortie continue.
+	 \textit{Déterminer l'évolution de la température en fonction des échantillons enregistrés les mois précédents correspond à une sortie continue.}
 	\item [Les sorties discrètes] ne peuvent prendre que des valeurs prédéterminées. \\
 	 $y \in {1, 2, 3, ...,C}$ \\
-	 L'exemple \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} a une sortie discrète. En effet, la sortie ne peut prendre que des valeurs prédéterminées: printemps, été, automne et hiver.
+	\textit{ L'exemple partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} a une sortie discrète. En effet, la sortie ne peut prendre que des valeurs prédéterminées: printemps, été, automne et hiver.}
 \end{description}
 
 
@@ -173,16 +167,16 @@ Il existe différents types de sortie: les sorties continues et discrètes.
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle}
 Il existe différents types d'apprentissages. Le choix d'un modèle en particulier est influencé par le type d'exemples que l'on a en entrée du système et du type de décision que l'on souhaite obtenir en sortie. Nous nous intéresserons à différentes catégories d'apprentissages automatiques: 
 \begin{itemize}
-	\item Les apprentissages supervisés et non-supervisés. Cette caractéristique dépend du type d'exemples que l'on a en entrée du système.
-	\item Les régression ou les classifications. Cette caractéristique dépend du type de sortie que l'on souhaite obtenir . 
+	\item Les apprentissages supervisés et non-supervisés. La nature de ces algorithmes dépend du type d'exemples que l'on a en entrée du système.
+	\item Les régression ou les classifications.La nature de ces algorithmes dépend du type de sortie que l'on souhaite obtenir . 
 \end{itemize}
 
 
 \subsubsection{apprentissage supervisé et non supervisé} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle: apprentissage supervisé et non supervisé}
 L'apprentissage supervisé nécessite d'avoir des données labellisées en entrée, i.e. que l'on connait le type de décision que l'on aura en sortie du système en fonction des exemples en entrée: il y'a une corrélation entre la sortie et l'entrée. C'est cette notion qui s'exprime au travers du terme \emph{supervisé}. 
-L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'une base de donnée non labellisée pour son apprentissage, i.e qu'on ne connait pas le type de décision associé aux exemples en entrée. Dans le cas d'un apprentissage non supervisé, pour parvenir à prendre une décision, l'algorithme devra diviser ce groupes de données hétérogènes en sous-groupes homogènes d'informations similaires. On appelle ces subdivisions des \emph{clusters}.
-Afin de matérialiser les différences entres les deux méthodes et les applications possibles pour chacune d'elles, on propose deux exemples \ref {tab: Comparaison des différentes méthodes d'apprentissage}.
+L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'une base de donnée non labellisée pour son apprentissage, i.e qu'on ne connait pas le type de décision associé aux exemples en entrée. Dans le cas d'un apprentissage non supervisé, pour parvenir à prendre une décision, l'algorithme devra diviser les groupes de données hétérogènes en sous-groupes homogènes d'informations au caractéristiques similaires. On appelle ces subdivisions des \emph{clusters}.
+Afin de matérialiser les différences entres les deux méthodes et les applications possibles pour chacune d'elles, on propose deux exemples tableau \ref {tab: Comparaison des différentes méthodes d'apprentissage}.
 
 \begin{table}[h]
 	\begin{tabular}{ | p {2.5cm} | p {6cm} | p {6cm} |}
@@ -190,12 +184,12 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 	 & apprentissage supervisé & apprentissage non supervisé \\
 	\hline
 	\begin{tabular}{c} exemple n\degres1:\\apprendre aux \\ humains \end{tabular}  &
-	 Une institutrice souhaite apprendre à ses élèves à différencier un chat d'un chien: c'est la décision qu'on attend d'eux. Pour ce faire, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les exemples utilisés pour l'apprentissage. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc: il s'agit des features. Lorsque que l'institutrice leur présente les différentes images, elle stipule clairement si il s'agit d'un chien ou d'un chat: il y'a donc une corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
-	 On retrouve cette même institutrice donnant à ses élèves le même exercice à la différence que, contrairement à précédemment, lorsque qu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit donc d'un apprentissage non supervisé. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur leurs similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaitrons certes pas le nom des deux animaux, mais ils auront su les différencier. C'est la même approche qui est réalisé en apprentissage automatique non supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
+	 Une institutrice enseigne à ses élèves à différencier un chat d'un chien: c'est la décision qu'on attend d'eux. Pour cela, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les exemples utilisés pour l'apprentissage. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc: il s'agit des features. Lorsque que l'institutrice leur présente les différentes images, elle stipule clairement si il s'agit d'un chien ou d'un chat: il y'a donc une corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
+	 Une institutrice donne à ses élèves le même exercice que dans le cadre de l'apprentissage supervisé, à la différence que lorsque qu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage, il s'agit donc d'un apprentissage non supervisé. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur leurs similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaitrons certes pas le nom des deux animaux, mais ils auront su les différencier. C'est la même approche qui est mis en œuvre en apprentissage automatique non supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
 	\hline 
 	\begin{tabular}{c} exemple n\degres2:\\prévisions \\saisonnières \\ \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}\end{tabular} &
-	 On reprend l'exemple dans lequel on souhaite prendre une décision quant à la période de l'année à laquelle on se trouve actuellement, en fonction des features humidité, température et pression atmosphérique. Pour se faire, on prélève des échantillons à différentes périodes de l'année en notant à quelle saison ces données ont été prélevées: se sont des exemples labellisées, i.e. il y'a une corrélation entre les données et la sortie du système. Il s'agit donc d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, a). &
-	On reprend le même problème mais cette fois-ci on ne note pas la saison à laquelle les échantillons ont été prélevé. Pour résoudre le problème, l'algorithme doit donc associer les données les plus similaires entre elles et ainsi créer des groupes homogènes d'informations qui correspondront aux 4 décisions possibles (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, b). \\
+	On reprend l'exemple dans lequel on souhaite prendre une décision quant à la période de l'année à laquelle on se trouve actuellement, en fonction des features humidité, température et pression atmosphérique. On prélève des échantillons à différentes périodes de l'année en notant à quelle saison ces données ont été prélevées: se sont des exemples labellisées, i.e. il y'a une corrélation entre les données et la sortie du système. Il s'agit donc d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, a). &
+	Cette fois-ci on ne note pas la saison à laquelle les échantillons ont été prélevé. Pour résoudre le problème, l'algorithme doit donc associer les données les plus similaires entre elles et ainsi créer des groupes homogènes d'informations qui correspondront aux 4 décisions possibles (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, b). \\
 	\hline
 	\end{tabular}
 	\caption[Comparaison des différents modèles d'apprentissage]{Comparaison de l'apprentissage supervisé et non supervisé par des exemples}
@@ -205,13 +199,13 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 %inverser les labels taille et longueur du pelage
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/apprentissage_chat.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux features "taille" et "longueur de pelage". On remarque qu'il y'a la formation de deux groupes de données homogènes: les animaux de taille globalement élevée avec un pelage court et les animaux de taille moindre avec un poil globalement plus long. Les données étant labellisées, on sait que le premier groupe correspond à des chiens et le deuxième à des chats.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux features "taille" et "longueur de pelage". On remarque qu'il y'a la formation de deux groupes de données homogènes: les animaux de taille globalement élevée avec un pelage court et les animaux de taille moindre avec un poil globalement plus long. Les données étant labellisées, on sait que le premier groupe correspond à des chiens et le deuxième à des chats. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regroupes les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}
 \end{figure}
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/apprentissage_meteo.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y'a la formation de deux groupes de données homogènes: un où les échantillons sont pris lors de saisons globalement chaudes et sèches etc un autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe l'hiver.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y'a la formation de deux groupes de données homogènes: un où les échantillons sont pris lors de saisons globalement chaudes et sèches etc un autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe l'hiver. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regroupes les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}
 \end{figure}
 
@@ -220,7 +214,7 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 
 \subsubsection{Apprentissage supervisé: régression et classification} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle:Regression et classification}
- La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. La classification est quant à elle un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète, elle peut être vu comme un cas particulier de la régression où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique que l'on souhaite \emph{classer} un exemple parmi différentes catégories. Afin de représenter concrètement les nuances entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
+ La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique le fait que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. La classification est quant à elle un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète, elle peut être vue comme un cas particulier de la régression où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique le fait que l'on souhaite \emph{classer} un exemple parmi différentes catégories. Afin de mettre en avant les nuances existantes entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
 
 \begin{table}[h]
 	\begin{tabular}{ | p {7cm} | p {7cm} |}
@@ -237,7 +231,7 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.5cm]{images/regression_class.jpeg}
-	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repères en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
+	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repère en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
 	\label{fig:Comparaison par l'exemple de la régression et la classification}
 \end{figure}
 
@@ -253,7 +247,7 @@ Il existe différents algorithmes d'apprentissage supervisé utilisés pour rés
 
 \subsection{La régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
-La régression linéaire cherche à expliquer une variable de sortie $y$ par une fonction affine de $x$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé autrement, on a un jeu de données $y$ auquel correspond un jeu de données $y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
+La régression linéaire cherche à expliquer une variable de sortie $y$ par une fonction affine de $x$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé différemment, on a un jeu de données $x$ auquel correspond un jeu de données $y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
 
 \begin{equation}
 	h_\theta (x) = \theta_0 + \theta_1 x
@@ -262,8 +256,8 @@ La régression linéaire cherche à expliquer une variable de sortie $y$ par une
 
 \subsubsection{Exemple de régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
-On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix connus du parc immobilier. 
-La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie $y$. Soit le tableau \ref {tab:parc immobilier} les exemples $x$, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
+On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix du parc immobilier. 
+La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie $y$. A partir des exemples du tableau \ref {tab:parc immobilier} les exemples $x$, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
 
 \begin{table}[h]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
@@ -290,7 +284,7 @@ La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/graph_immobilier.png}
-	\caption[évolution du prix de l'immobilier en fonction de la surface]{évolution du prix de l'immobilier en fonction de la surface. L'ensemble des données semble globalement évoluer de manière linéaire. Cette linéarité est représentée par l'hypothèse $h(x)$. Grâce à celle-ci, on peut déterminer le prix d'un logement en fonction de sa superficie, et inversement. Par exemple, un appartement d'une surface de 1750 $m^2$ coutera aux alentours de 390\euro.}
+	\caption[évolution du prix de l'immobilier en fonction de la surface]{évolution du prix de l'immobilier en fonction de la surface. L'ensemble des données semblent globalement évoluer de manière linéaire. Cette linéarité est représentée par l'hypothèse $h(x)$. Grâce à celle-ci, on peut déterminer le prix d'un logement en fonction de sa superficie, et inversement. Par exemple, un appartement d'une surface de 1750 $m^2$ coutera aux alentours de 390\euro.}
 	\label{fig:évolution du prix de l'immobilier en fonction de la surface}
 \end{figure}
 
@@ -298,7 +292,7 @@ Cet exemple est dit uni-variable car un seul jeu de données $x$ (superficie) co
 
 
 \subsubsection{La fonction coût}
-La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $x$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
+La fonction coût (en anglais cost function) compare la moyenne des différences entre les résultats de l'hypothèse $h(x)$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
 
 \begin{equation}
 	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2
@@ -306,7 +300,7 @@ La fonction coût (en anglais cost function) correspond à la comparaison de la 
 
 avec:
 \begin{itemize}
-	\item $J$ la fonction coût
+	\item $J(\theta_0,\theta_1)$ la fonction coût
 	\item $\theta_0$ et $\theta_1$ les paramètres de l'hypothèse $h(x)$
 	\item $m$ le nombre d'exemples disponibles pour l'entrainement 
 	\item $h_\theta(x)$ l'hypothèse $h_\theta (x) = \theta_0 + \theta_1 x$
@@ -316,26 +310,28 @@ avec:
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/cost.png}
-	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. les valeurs calculées via l'hypothèse et les valeurs réelles. Cela revient à minimiser la distance entre un exemple et l'hypothèse.}
+	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcule de la fonction coût revient à minimiser la distance entre un exemple et l'hypothèse et ce pour chaque exemple.}
 	\label{fig:Régression linéaire, optimisation de la fonction coût}
 \end{figure}
 
 
 \subsubsection{Algorithme du gradient}
-On cherche donc à minimiser la valeur de la fonction coût $J(\theta_0,\theta_1)$ en jouant sur la valeur des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit donc d'un calcul itératif. Mathématiquement, trouver le minimum peut être effectué en appliquant l'algorithme du gradient (en anglais, gradient descent), tel que:
+On cherche à minimiser la valeur de la fonction coût $J(\theta_0,\theta_1)$ en jouant sur les paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit d'un calcul itératif. Mathématiquement, trouver le minimum peut être effectué en appliquant l'algorithme du gradient (en anglais, gradient descent):
 
 \begin{equation}
 	\begin{split}
+		\text{repeat: \{} \\
 		\theta_0 = \theta_0 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_0} \\
-		\theta_1 = \theta_1 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_1}
+		\theta_1 = \theta_1 - \alpha \frac{\partial J(\theta_0,\theta_1)}{\partial\theta_1} \\
+		\text{\}}
 	\end{split}
 \end{equation}
 
-avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. Si la valeur de $\alpha$ est trop petite, le nombre d'itération sera plus important, augmentant ainsi le temps de calcul. Si la valeur de $\alpha$ est trop grande, on risque de ne pas atteindre le minimum et de diverger.  
+avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. Si la valeur de $\alpha$ est trop petite, le nombre d'itération sera plus important, augmentant ainsi le temps de calcul. Si la valeur de $\alpha$ est trop grande, on risque de ne pas pouvoir atteindre le minimum et de diverger.  
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/gradient.png}
-	\caption[Régression linéaire, calcul des paramètres de l'hypothèse]{Régression linéaire, calcul des paramètres de l'hypothèse. Ce graphique représente la variation des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse en fonction de la valeur de la fonction coût. On cherche les valeurs  $\theta_0$ et $\theta_1$ minimisant$J(\theta_0,\theta_1)$. La courbe ayant la forme d'une cuvette, les valeurs optimales de $\theta_0$ et $\theta_1$ correspondent à celles au fond de la cuvette.}
+	\caption[Régression linéaire, calcul des paramètres de l'hypothèse]{Régression linéaire, calcul des paramètres de l'hypothèse. Ce graphique représente la variation des paramètres $\theta_0$ et $\theta_1$ de l'hypothèse en fonction de la valeur de la fonction coût. On cherche les valeurs  $\theta_0$ et $\theta_1$ minimisant $J(\theta_0,\theta_1)$. La courbe ayant la forme d'une "cuvette", les valeurs optimales de $\theta_0$ et $\theta_1$ correspondent à celles au fond de la "cuvette".}
 	\label{fig:Régression linéaire, calcul des paramètres de l'hypothèse}
 \end{figure}
  
@@ -343,15 +339,15 @@ avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. 
  
 \subsection{La régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable}
-On peut également réaliser de la régression linéaire avec plusieurs variables en entrée.
+On peut également réaliser de la régression linéaire avec plusieurs types de variables en entrée.
 
 
 \subsubsection{Exemple de régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
-Afin de montrer ce qu'est la régression linéaire multi-variable, on ajuste l'exemple \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour correspondre à un problème multi-variable.
+Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour le faire correspondre à un problème multi-variable.
  
-On souhaite déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages en se basant sur les exemples de prix connus du parc immobilier. 
-On a cette fois ci plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier muli} des exemples $x$ \ref {tab:parc immobilier multi}
+On souhaite déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages en se basant sur les exemples de prix du parc immobilier. 
+On a cette fois ci plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau des exemples $x$ \ref {tab:parc immobilier multi}
 \begin{table}[h]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
 		\hline
@@ -402,13 +398,13 @@ J(\theta_1,\theta_2,\theta_3,...,\theta_n) =  \frac{1}{2m}\sum_{i=1}^{m}(h_\thet
 
 \subsubsection{Généralisation de l'algorithme du gradient}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de l'algorithme du gradient}
-On peut généraliser l'algorithme du gradient utilisé lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable, tel que :
+On peut généraliser l'algorithme du gradient utilisé lors de la régression linéaire uni-variable pour l'appliquer à un problème de régression linéaire multi-variable:
  
 \begin{equation}
 \theta_j = \theta_j - \alpha \frac{\partial J(\theta_0, \theta_1, \theta_2, \theta_3, ... , \theta_n)}{\partial\theta_j} \\
 \end{equation}
 
-Où l'on met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
+On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque itération. 
 
 \begin{equation}
 \theta_j = \theta_j - \alpha \frac{1}{m}\sum_{m}^{i=1}(h_\theta(x^i) - y^i)x_j^i \\
@@ -420,7 +416,7 @@ avec $x_j^i$ l'entrée $j$ de l'exemple $i$.
 
 \subsubsection{Vectorisation des calculs}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Vectorisation des calculs}
-On peut écrire les exemples en entrée du système sous forme matricielle: 
+On peut exprimer les exemples en entrée du système sous forme matricielle: 
 
 \begin{equation}
 \begin{blockarray}{[c]}
@@ -432,7 +428,7 @@ X_n
 \end{blockarray} = X
 \end{equation}
 
-De même, on exprime les paramètres $\theta$ de l'hypothèse sous forme matricielle:
+De même, on réécrit les paramètres $\theta$ de l'hypothèse sous forme matricielle:
 
 \begin{equation}
 \begin{blockarray}{[c]}
@@ -444,12 +440,12 @@ De même, on exprime les paramètres $\theta$ de l'hypothèse sous forme matrici
 \end{blockarray} = \theta
 \end{equation}
 
-On peut alors réécrire l'hypothèse \eqref{hypotesis multivar} de la façon suivante:
+On peut alors réécrire l'hypothèse (équation \eqref{hypotesis multivar}):
 \begin{equation}
 	h_\theta(x) = \theta^TX
 \end{equation}
 
-L'algorithme du gradient \eqref{gradient descent multivar} s'exprime donc sous cette forme: 
+L'algorithme du gradient (équation \eqref{gradient descent multivar}) s'exprime donc sous sa nouvelle forme vectorielle: 
 \begin{equation}
 \theta = \theta - \frac{\alpha}{m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)X^i
 \end{equation}
