@@ -106,16 +106,13 @@ Exemple_n & 10 & 81 &  1032 \\
 \end{equation}
 
 
-\subsubsection{Différents types de données}
-Il existe deux types de données: les données labellisées et non labellisées.
-\begin{itemize}
-	\item Les données labellisées correspondent à des exemples corrélés à une sortie - un label - connue.
-	\item Les données non labellisées ne sont quant à elles pas associées à une sortie. 
-\end{itemize}
+\subsubsection{Différents types d'exemples}
+Il existe deux types de données: les échantillons labellisés et non labellisés.
 
-Pour reprendre l'exemple précédent \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, on a les jeux de données suivants: 
+Pour reprendre l'exemple précédent (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), on a les jeux de données suivants: 
 
-\textbf{Données labellisées} 
+\paragraph{Données labellisées} 
+Les échantillons labellisés correspondent à des exemples corrélés à une sortie - un label - connue.
 \begin{equation}
 \begin{blockarray}{ccccc}
 & température (\degres C) & humidite (\%) & pression(HPa) \\
@@ -130,7 +127,8 @@ Exemple_n & 10 & 81 &  1032 & printemps\\
 \end{equation}
 On connait la sortie qui correspond aux données d'entrée, i.e. que on sait à quelle période de l'année les échantillons ont été prélevé.
  
-\textbf{Données non labellisées} 
+\paragraph{Données non labellisées} 
+Les échantillons non labellisés ne sont quant à elles pas associées à une sortie. 
 \begin{equation}
 \begin{blockarray}{ccccc}
 & température (\degres C) & humidite (\%) & pression(HPa) \\
