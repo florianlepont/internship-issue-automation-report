@@ -456,7 +456,7 @@ On cherche à séparer des groupes de données homogènes dans un ensemble hét�
 
 \subsubsection{Régression linéaire et classification}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Régression linéaire et classification}
-On reprend l'exemple de la prévision saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on lui applique de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans la classe printemps ou hiver en fonction de la température (figure \ref{fig:Classification via regression linéaire}). 
+On reprend l'exemple de la prévision saisonnière en partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on lui applique de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans la classe printemps ou hiver, en fonction de la température (figure \ref{fig:Classification via regression linéaire}). 
 Pour cela, on met en place un seuil de classification:
 \begin{itemize}
 	\item Si $h_\theta(x) > 0,5$ alors $y=1$
@@ -466,13 +466,13 @@ Pour cela, on met en place un seuil de classification:
 Où $y = 0$ correspond à la période hiver et $y = 1$ l' été. 
 
 \begin{figure}[h]
-	\centering\includegraphics[height=5cm]{images/class_reg_lineaire.png}
-	\caption[Classification via regression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5 \degres, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15 \degres ce qui n'est pas représentatif des exemples.}
+	\centering\includegraphics[height=6cm]{images/class_reg_lineaire.png}
+	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5 \degres, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15 \degres ce qui n'est pas représentatif des exemples.}
 	%Reprendre ici avec de meilleurs arguments...
 	\label{fig:Classification via regression linéaire}
 \end{figure}
 
-Cette méthode fonctionne dans ce cas ci car les exemples sont régulièrement espacés entres eux. Si ils ne l'étaient pas, le seuil serait alors mal placé et la classification serait erronée. La régression linéaire n'est donc pas adaptée pour la classification. 
+Cette méthode fonctionne dans ce cas car les exemples sont régulièrement espacés entres eux. Si ils ne l'étaient pas, le seuil serait alors mal placé et la classification serait erronée. La régression linéaire n'est donc pas adaptée pour la classification. 
 
 \subsubsection{Régression logistique et fonction sigmoïde}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Régression logistique et fonction sigmoïde}
