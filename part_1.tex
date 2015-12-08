@@ -552,12 +552,12 @@ Soit la fonction coût utilisée pour la régression linéaire:
 	J(\theta) = \frac{1}{m}\sum_{i=1}^{m}\frac{1}{2}(h_\theta(x^i)-y^i)^2
 \end{equation}
 
-On simplifie la formulation de la fonction coût:
+Soit Avec $Cost(h_\theta,y) = \frac{1}{2}(h_\theta(x^i)-y^i)^2$ le terme de coût, On a:
 \begin{equation}
 J(\theta) = \frac{1}{m}\sum_{i=1}^{m}Cost(h_\theta,y)
 \end{equation}
 
-Avec $Cost(h_\theta,y) = \frac{1}{2}(h_\theta(x^i)-y^i)^2$ le terme de coût, que l'on remplace par sa nouvelle expression:
+On reformule le coût avec l'équation suivante:
 \begin{equation}
 cost(h_\theta(x),y)=\begin{blockarray}{ll}
 \begin{block}{\{ll}
