@@ -12,7 +12,7 @@ Constituée au départ d'une équipe de douze collaborateurs, la toute jeune ent
 
 \subsection{La famille s'agrandit}
 \label{Entreprise: La famille Aldebaran}
-Lors de l'année 2012, Aldebaran Robotics est racheté par SoftBank, société spécialisée dans le commerce électronique au Japon, et devient alors Aldebaran. Débute alors la conception d'un tout nouveau produit, le robot humanoïde Pepper. Dévoilé au grand public en 2014, il est dans un premier temps vendu au Japon auprès des entreprises. Les premiers clients à en bénéficier seront les magasins de téléphonie mobile du groupe SoftBank. Les ventes s'ouvrent dans un second temps aux particuliers Japonais. La société compte aujourd'hui plus de 400 collaborateurs et poursuit le développement de ses trois produits afin de les améliorer et de conquérir de nouveaux marchés (en Europe , en Chine et aux États-Unis).
+Lors de l'année 2012, Aldebaran Robotics est racheté par SoftBank, société spécialisée dans le commerce électronique au Japon, et prend le nom d'Aldebaran (supperssion du terme "Robotics"). Débute alors la conception d'un tout nouveau produit, le robot humanoïde Pepper. Dévoilé au grand public en 2014, il est dans un premier temps vendu au Japon auprès des entreprises. Les premiers clients à en bénéficier seront les magasins de téléphonie mobile du groupe SoftBank. Les ventes s'ouvrent par la suite aux particuliers Japonais. La société compte aujourd'hui plus de 400 collaborateurs et poursuit le développement de ses trois produits afin de les améliorer et de conquérir de nouveaux marchés (Europe , Chine et États-Unis).
 
 \section{Les produits}
 \label{Entreprise: Les produits}
@@ -20,7 +20,7 @@ Aldebaran commercialise à ce jours deux produits: Nao et Pepper. Le robot Romé
 
 \subsection{Nao}
 \label{Entreprise: Les produits: Nao}
-Nao est un robot humanoïde de 58 cm de hauteur. Son public cible est principalement les laboratoires de recherche et le monde de l'éducation (allant des écoles primaires aux universités). Il est actuellement le produit le plus connu de l'entreprise auprès du grand public. 
+Nao est un robot humanoïde de 58 cm de hauteur. Le public ciblé par le produit sont principalement les laboratoires de recherche et le monde de l'éducation (des écoles primaires jusqu'aux universités). Il est actuellement le produit le plus connu de l'entreprise auprès du grand public. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/nao.jpg}
@@ -65,7 +65,7 @@ Caractéristiques techniques de la dernière version de Nao (V5, Evolution). \re
 
 \subsection{Pepper}
 \label{Entreprise: Les produits: Pepper}
-Dernier né d'Aldebaran, le robot Pepper est conçu pour vivre au côté des humains. Imaginé au départ pour accompagner et informer les clients dans les magasins de téléphonie du groupe japonais SoftBank, l'entreprise cherche à présent à placer son produit chez les particuliers. Le robot se base sur la structure software et hardware de Nao. Cependant, contrairement à son compagnon Nao, celui-ci se déplace non pas grâce à une paire de jambes, mais via trois roues omnidirectionnelles, facilitant son déplacement. A noter également que Pepper est équipé d'une tablette tactile sur son torse afin de faciliter les interactions Homme-Machine.
+Dernier né d'Aldebaran, le robot Pepper est conçu pour vivre au côté des humains. Imaginé au départ pour accompagner et informer les clients dans les magasins de téléphonie du groupe japonais SoftBank, l'entreprise cherche à présent à placer son produit chez les particuliers. Le robot reprend la structure software et hardware de Nao. Contrairement à son compagnon Nao, Pepper se déplace non pas grâce à une paire de jambes, mais via trois roues omnidirectionnelles, facilitant son déplacement. A noter également que celui-ci est équipé d'une tablette tactile sur son torse afin de faciliter les interactions Homme-Machine.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/pepper.jpg}
@@ -111,7 +111,7 @@ Caractéristiques techniques de la dernière version commerciale de Pepper (V1.7
 
 \subsection{Roméo}
 \label{Entreprise: Les produits: Roméo}
-Roméo est un nouveau type de robot d'accompagnement et d'assistance à la personne. Cette plateforme de recherche est soutenue par Aldebaran ainsi que d'autres partenaires universitaires et laboratoires de recherche (e.g. INRIA, LAAS-CNRS, ISIR, ENSTA, Telecom, etc.). Roméo est actuellement au stade de prototype et sert principalement de plateforme de tests pour les prochaines innovations majeures d'Aldebaran (e.g. les yeux mobiles, le système vestibulaire, etc.). 
+Roméo est un nouveau type de robot d'accompagnement et d'assistance à la personne. Cette plateforme de recherche est soutenue par Aldebaran ainsi que d'autres partenaires universitaires et laboratoires de recherche (e.g. INRIA, LAAS-CNRS, ISIR, ENSTA, Telecom, etc.). Il s'agit pour l'instant d'un prototype et sert principalement de plateforme de tests pour les prochaines innovations majeures d'Aldebaran (e.g. yeux mobiles, système vestibulaire, etc.). 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6cm]{images/romeo.jpg}
@@ -155,13 +155,13 @@ Caractéristiques techniques de la dernière version commerciale de Roméo (V2).
 
 \subsection{Le système d'exploitation NAOqi}
 \label{Entreprise: Les produits: NAOqi}
-NAOqi est le système d'exploitation commun aux robots d'Aldebaran. Il se base sur la distribution de Linux Gentoo et contient plusieurs API's afin de commander et contrôler les robots \cite{NAOqiTech}.
+NAOqi est le système d'exploitation commun aux 3 robots d'Aldebaran. Il se base sur la distribution de Linux Gentoo et contient plusieurs API's afin de commander et contrôler les robots \cite{NAOqiTech}.
 \begin{description}
 	\item [NAOqi Core:] Gestion de l'ensemble des fonctions de base des robots (e.g. mémoire, "autonomous Life", comportements du robots, etc.).
 	\item [NAOqi Motion:] Gestion des mouvements des robots.
 	\item [NAOqi Audio:]  Gestion de la partie audio des robots.
 	\item [NAOqi Vision:] Gestion de la partie vidéo des robots
-	\item [NAOqi People Perception:] Ce module est utilisé pour étudier les personnes présentes autour du robot.
+	\item [NAOqi People Perception:] Ce module est utilisé pour détecter la présence de personnes autour du robot.
 	\item [NAOqi Sensors:]  Gestion de l'ensemble des senseurs équipant les robots.
 \end{description} 
 
