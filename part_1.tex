@@ -339,15 +339,14 @@ avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. 
  
 \subsection{La régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable}
-On peut également réaliser de la régression linéaire avec plusieurs types de variables en entrée.
+On peut réaliser de la régression linéaire avec plusieurs types de variables en entrée.
 
 
 \subsubsection{Exemple de régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
-Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour le faire correspondre à un problème multi-variable.
+Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple partie \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour le faire correspondre à un problème multi-variable.
  
-On souhaite déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages en se basant sur les exemples de prix du parc immobilier. 
-On a cette fois ci plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau des exemples $x$ \ref {tab:parc immobilier multi}
+On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages, en se basant sur les exemples de prix du parc immobilier. On a donc plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier multi}, les exemples $x$ utilisés pour l'entrainement.
 \begin{table}[h]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
 		\hline
@@ -371,7 +370,7 @@ On a cette fois ci plusieurs entrées (surface, nombre de pièces, nombre d'éta
 	\label {tab:parc immobilier multi}
 \end{table}
 
-La fonction coût s'exprime donc sous cette forme: 
+La fonction coût s'exprime sous cette forme: 
 
 \begin{equation}
 	h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3
@@ -379,7 +378,7 @@ La fonction coût s'exprime donc sous cette forme:
 
 Où $X_1$, $X_2$ et $X_3$ correspondent respectivement aux features surface, nombre d'étages et nombre de pièces.
 
-On peut généraliser la fonction coût: 
+On peut la généraliser en : 
 
 \begin{equation}
 h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3 + ... + \theta_nX_n
