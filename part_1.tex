@@ -214,7 +214,7 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 
 \subsubsection{Apprentissage supervisé: régression et classification} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle:Regression et classification}
- La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. La classification est quant à elle un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète, elle peut être vu comme un cas particulier de la régression où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique que l'on souhaite \emph{classer} un exemple parmi différentes catégories. Afin de représenter concrètement les nuances entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
+ La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique le fait que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. La classification est quant à elle un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète, elle peut être vue comme un cas particulier de la régression où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique le fait que l'on souhaite \emph{classer} un exemple parmi différentes catégories. Afin de mettre en avant les nuances existantes entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
 
 \begin{table}[h]
 	\begin{tabular}{ | p {7cm} | p {7cm} |}
@@ -231,7 +231,7 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.5cm]{images/regression_class.jpeg}
-	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repères en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
+	\caption[Comparaison par l'exemple de la régression et la classification]{Comparaison par l'exemple de la régression et la classification. Sur la figure a), on observe deux jeux de données homogènes (été et hiver) s'exprimant dans un repère en deux dimensions (features humidité et température). Le but est ici de classer la donnée en entrée du système parmi ces deux ensembles, il s'agit donc d'un problème de classification. Dans la figure b), on observe une succession d'exemples exprimés dans un repère en deux dimensions (features température et humidité). On remarque une évolution globalement linéaire de ces exemples, nous permettant ainsi de prédire la température et l'humidité sur les prochains mois: il s'agit d'un problème de régression.}
 	\label{fig:Comparaison par l'exemple de la régression et la classification}
 \end{figure}
 
@@ -247,7 +247,7 @@ Il existe différents algorithmes d'apprentissage supervisé utilisés pour rés
 
 \subsection{La régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
-La régression linéaire cherche à expliquer une variable de sortie $y$ par une fonction affine de $x$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé autrement, on a un jeu de données $y$ auquel correspond un jeu de données $y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
+La régression linéaire cherche à expliquer une variable de sortie $y$ par une fonction affine de $x$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Exprimé différemment, on a un jeu de données $x$ auquel correspond un jeu de données $y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
 
 \begin{equation}
 	h_\theta (x) = \theta_0 + \theta_1 x
@@ -256,8 +256,8 @@ La régression linéaire cherche à expliquer une variable de sortie $y$ par une
 
 \subsubsection{Exemple de régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
-On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix connus du parc immobilier. 
-La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie $y$. Soit le tableau \ref {tab:parc immobilier} les exemples $x$, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
+On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix du parc immobilier. 
+La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie $y$. A partir des exemples du tableau \ref {tab:parc immobilier} les exemples $x$, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
 
 \begin{table}[h]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
@@ -292,7 +292,7 @@ Cet exemple est dit uni-variable car un seul jeu de données $x$ (superficie) co
 
 
 \subsubsection{La fonction coût}
-La fonction coût (en anglais cost function) correspond à la comparaison de la moyenne des différences entre les résultats de l'hypothèse $h(x)$ avec les entrées $x$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
+La fonction coût (en anglais cost function) compare la moyenne des différences entre les résultats de l'hypothèse $h(x)$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
 
 \begin{equation}
 	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2
@@ -300,7 +300,7 @@ La fonction coût (en anglais cost function) correspond à la comparaison de la 
 
 avec:
 \begin{itemize}
-	\item $J$ la fonction coût
+	\item $J(\theta_0,\theta_1)$ la fonction coût
 	\item $\theta_0$ et $\theta_1$ les paramètres de l'hypothèse $h(x)$
 	\item $m$ le nombre d'exemples disponibles pour l'entrainement 
 	\item $h_\theta(x)$ l'hypothèse $h_\theta (x) = \theta_0 + \theta_1 x$
