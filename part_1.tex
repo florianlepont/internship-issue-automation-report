@@ -292,7 +292,8 @@ Cet exemple est dit uni-variable car un seul jeu de données $x$ (superficie) co
 
 
 \subsubsection{La fonction coût}
-La fonction coût (en anglais cost function) compare la moyenne des différences entre les résultats de l'hypothèse $h(x)$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). Soit: 
+La fonction coût (en anglais cost function) compare la moyenne des différences entre les résultats de l'hypothèse $h(x)$ et les sorties actuelles $y$. Cela signifie qu'elle cherche à minimiser les valeurs calculées via l'hypothèse et les valeurs réelles (figure \ref{fig:Régression linéaire, optimisation de la fonction coût}). 
+Soit: 
 
 \begin{equation}
 	J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2
@@ -310,13 +311,13 @@ avec:
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/cost.png}
-	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcule de la fonction coût revient à minimiser la distance entre un exemple et l'hypothèse et ce pour chaque exemple.}
+	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcul de la fonction coût revient à minimiser la distance entre un exemple et l'hypothèse, et ce pour chaque exemple.}
 	\label{fig:Régression linéaire, optimisation de la fonction coût}
 \end{figure}
 
 
 \subsubsection{Algorithme du gradient}
-On cherche à minimiser la valeur de la fonction coût $J(\theta_0,\theta_1)$ en jouant sur les paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$ (figure \ref{Régression linéaire, calcul des paramètres de l'hypothèse}). Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit d'un calcul itératif. Mathématiquement, trouver le minimum peut être effectué en appliquant l'algorithme du gradient (en anglais, gradient descent):
+On cherche à minimiser la valeur de la fonction coût $J(\theta_0,\theta_1)$ en jouant sur les paramètres $\theta_0$ et $\theta_1$ de l'hypothèse. Pour cela, on calcule la fonction coût pour différentes valeurs de $\theta_0$ et $\theta_1$ et on cherche la valeur minimale de $J(\theta_0,\theta_1)$. Dans l'idée, cela revient à choisir une valeur de $\theta$ et de "faire un pas" vers la direction la plus basse, il s'agit d'un calcul itératif. La forme de la courbe $J$ en fonction de  $\theta_0$ et $\theta_1$ étant convexe (figure \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}), cela revient à trouver le minimum global de la courbe en appliquant l'algorithme du gradient (en anglais, gradient descent):
 
 \begin{equation}
 	\begin{split}
@@ -339,15 +340,14 @@ avec $\alpha$ la taille du "pas" que l'on fait vers la direction la plus basse. 
  
 \subsection{La régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable}
-On peut également réaliser de la régression linéaire avec plusieurs types de variables en entrée.
+On peut réaliser de la régression linéaire avec plusieurs types de variables en entrée.
 
 
 \subsubsection{Exemple de régression linéaire multi-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
-Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour le faire correspondre à un problème multi-variable.
+Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple partie \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour le faire correspondre à un problème multi-variable.
  
-On souhaite déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages en se basant sur les exemples de prix du parc immobilier. 
-On a cette fois ci plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau des exemples $x$ \ref {tab:parc immobilier multi}
+On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages, en se basant sur les exemples de prix du parc immobilier. On a donc plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier multi}, les exemples $x$ utilisés pour l'entrainement.
 \begin{table}[h]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
 		\hline
@@ -371,7 +371,7 @@ On a cette fois ci plusieurs entrées (surface, nombre de pièces, nombre d'éta
 	\label {tab:parc immobilier multi}
 \end{table}
 
-La fonction coût s'exprime donc sous cette forme: 
+La fonction coût s'exprime sous cette forme: 
 
 \begin{equation}
 	h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3
@@ -379,7 +379,7 @@ La fonction coût s'exprime donc sous cette forme:
 
 Où $X_1$, $X_2$ et $X_3$ correspondent respectivement aux features surface, nombre d'étages et nombre de pièces.
 
-On peut généraliser la fonction coût: 
+On peut la généraliser: 
 
 \begin{equation}
 h_\theta(x) = \theta_0 + \theta_1X_1 + \theta_2X_2 + \theta_3X_3 + ... + \theta_nX_n
@@ -411,12 +411,12 @@ On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque 
 \label{gradient descent multivar}
 \end{equation}
 
-avec $x_j^i$ l'entrée $j$ de l'exemple $i$.
+avec $x_j^i$ l'entrée $j$ de l'entrainement $i$.
 
 
 \subsubsection{Vectorisation des calculs}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Vectorisation des calculs}
-On peut exprimer les exemples en entrée du système sous forme matricielle: 
+On peut exprimer les exemples en entrée du système sous forme vectorielle: 
 
 \begin{equation}
 \begin{blockarray}{[c]}
@@ -428,7 +428,7 @@ X_n
 \end{blockarray} = X
 \end{equation}
 
-De même, on réécrit les paramètres $\theta$ de l'hypothèse sous forme matricielle:
+De même, on réécrit les paramètres $\theta$ de l'hypothèse sous forme vectorielle:
 
 \begin{equation}
 \begin{blockarray}{[c]}
@@ -457,7 +457,7 @@ On cherche à séparer des groupes de données homogènes dans un ensemble hét�
 
 \subsubsection{Régression linéaire et classification}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Régression linéaire et classification}
-On reprend l'exemple de la prévision saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on lui applique de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans la classe printemps ou hiver en fonction de la température (figure \ref{fig:Classification via regression linéaire}). 
+On reprend l'exemple de la prévision saisonnière en partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on lui applique de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans la classe printemps ou hiver, en fonction de la température (figure \ref{fig:Classification via regression linéaire}). 
 Pour cela, on met en place un seuil de classification:
 \begin{itemize}
 	\item Si $h_\theta(x) > 0,5$ alors $y=1$
@@ -467,17 +467,17 @@ Pour cela, on met en place un seuil de classification:
 Où $y = 0$ correspond à la période hiver et $y = 1$ l' été. 
 
 \begin{figure}[h]
-	\centering\includegraphics[height=5cm]{images/class_reg_lineaire.png}
-	\caption[Classification via regression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5 \degres, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15 \degres ce qui n'est pas représentatif des exemples.}
+	\centering\includegraphics[height=5.5cm]{images/class_reg_lineaire.png}
+	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5 \degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15 \degres C, ce qui n'est pas représentatif des exemples.}
 	%Reprendre ici avec de meilleurs arguments...
 	\label{fig:Classification via regression linéaire}
 \end{figure}
 
-Cette méthode fonctionne dans ce cas ci car les exemples sont régulièrement espacés entres eux. Si ils ne l'étaient pas, le seuil serait alors mal placé et la classification serait erronée. La régression linéaire n'est donc pas adaptée pour la classification. 
+Cette méthode fonctionne dans ce cas car les exemples sont régulièrement espacés entres eux. Si ils ne l'étaient pas, le seuil serait alors mal placé et la classification serait erronée. La régression linéaire n'est donc pas adaptée pour la classification. 
 
 \subsubsection{Régression logistique et fonction sigmoïde}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Régression logistique et fonction sigmoïde}
-Afin de classer des données à partir d'une régression,  on modifie la forme linéaire de l'hypothèse utilisée lors de la régression linéaire en une sigmoïde (figure 	\ref{fig:Fonction sigmoïde}). On l'appelle également fonction logistique ou de répartition. Du point de vu des probabilités, cela signifie que l'hypothèse sous cette forme représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$ signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.  
+Afin de classer des données à partir d'une régression,  on modifie la forme linéaire de l'hypothèse en une sigmoïde (figure \ref{fig:Fonction sigmoïde}). On l'appelle également fonction logistique ou fonction de répartition. Du point de vu des probabilités, cela signifie que l'hypothèse sous cette forme représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$ signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.  
 
 soit $g(x) = \frac{1}{1 + e^{-z}}$  la fonction sigmoïde, on a l'hypothèse $h_\theta(x)$ suivante: 
 \begin{equation}
@@ -517,8 +517,7 @@ On peut alors émettre les deux affirmations suivantes:
 \end{equation}
 
 \paragraph{application:}
-Soit $h_\theta(x) = g(\theta_0 + \theta_1x_1 + \theta_2x_2)$ avec $\theta = \begin{blockarray}{[c]} -3 \\ 1 \\ 1 \end{blockarray}$
-on a la condition suivante :
+Soit $h_\theta(x) = g(\theta_0 + \theta_1x_1 + \theta_2x_2)$ avec $\theta = \begin{blockarray}{[c]} -3 \\ 1 \\ 1 \end{blockarray}$, on a la condition suivante :
 \begin{equation}
 	y=1 \text{ si } -3 + x_1 + x_2 \ge 0 \text{i.e.} x_1 + x_2 \ge 3
 \end{equation}
@@ -527,7 +526,7 @@ Cette expression correspond à la ligne (ou frontière) de décision de la régr
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6cm]{images/regression_logistique.png}
-	\caption[Exemple d'une regression logistique]{Exemple d'une regression logistique}
+	\caption[Exemple d'une régression logistique]{Exemple d'une régression logistique. Les données en jaune sont séparées des données vertes par la frontière de décision (ligne rouge sur le graphe).}
 	\label{fig:Exemple d'une regression logistique}
 \end{figure}
 
@@ -547,6 +546,7 @@ Cette frontière de décision correspond à l'équation d'un cercle. Plus le nom
 
 \subsubsection{Fonction coût}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Fonction coût}
+Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Dans le cas de la régression logistique, celle-ci ne l'est plus (forme sigmoïde). La fonction coût n'est donc ici pas convexe (graphe convexe de la régression linéaire \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}) et on ne peut déterminer un minimum globale (et donc la valeur des paramètres de l'hypothèse), celle-ci pouvant posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une nouvelle formule de la fonction coût:
 
 \subsubsection{L'algorithme du gradient}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: L'algorithme du gradient}
@@ -556,8 +556,7 @@ Cette frontière de décision correspond à l'équation d'un cercle. Plus le nom
 \label{Le Machine Learning: Les différents algorithmes: SVM}
 
 
-
-\subsection{Comparaison des algorithmes}
-\label{Le Machine Learning: Les différents algorithmes: Comparaison des algorithmes}
+\subsection{D'autres algorithmes}
+\label{Le Machine Learning: Les différents algorithmes: D'autres algorithmes}
 
 
