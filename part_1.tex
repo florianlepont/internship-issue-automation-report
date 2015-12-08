@@ -64,7 +64,7 @@ Afin d'exposer de manière plus concrète le processus fonctionnel haut niveau d
 	Une fois le système entrainé, on attend de celui-ci ce type de comportement : \\
 	On présente en entrée du système une température de -2 degrés, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision espérée est: \emph{hiver}}
 
-On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple partie \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}. 
+On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=5cm]{images/ML_high_level_expl.jpeg}
@@ -79,9 +79,9 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 	\item [les features] Le type de données présenté en entrée. \\
 	\textit{La température, la pression atmosphérique et l'humidité.}
 	\item [échantillons ou exemples] Les données permettant d'entrainer le système (x\_train). \\
-	\textit{De nombreux échantillons de température, pression atmosphériques et humidité pris à différents périodes de l'année, sur plusieurs années.}
+	\textit{Des échantillons de température, pression atmosphériques et humidité pris à différents périodes de l'année.}
 	\item [le modèle d'apprentissage] Le cœur du système décisionnel (f).
-	\item [La décision] La sortie ou réponse du système (Y) \\
+	\item [La décision] La sortie ou réponse du système (y) \\
 	\textit{Printemps, été, automne ou hiver.}
 \end{description}
 
@@ -89,8 +89,8 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 
 \subsection{Les exemples}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Les données}
-Les exemples correspondent aux données utilisées pour entraîner mon algorithme d'apprentissage. On parle également d'échantillons. Celles-ci sont regroupées en "features" (terme anglais, traduire par caractéristiques). 
-Pour reprendre l'exemple cité précédemment \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}, nos données sont regroupées en 3 features: la température, l'humidité et la pression atmosphérique. On données sont donc structurées de la manière suivante: 
+Les exemples sont les données utilisées pour entraîner mon algorithme d'apprentissage. On parle également d'échantillons. Ils sont regroupés en "features" (terme anglais, traduire par caractéristiques). 
+Pour reprendre l'exemple cité précédemment (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), nos données sont regroupées en 3 features: la température, l'humidité et la pression atmosphérique. On données sont donc structurées de la manière suivante: 
 
 \begin{equation}
 \begin{blockarray}{cccc}
