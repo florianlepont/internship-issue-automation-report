@@ -21,7 +21,7 @@ Un synoptique illustrant le fonctionnement systémique de l'architecture High Le
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/synoptique_error.png}
-	\caption[Synoptique haut niveau de la couche error name]{Synoptique haut niveau de la couche error name}
+	\caption[Synoptique haut niveau de la couche error name]{Synoptique haut niveau de la couche error name. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle ils sont rattachés. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnu dans le fichier log}
 	\label{fig:synoptique haut niveau de la solution proposée: couche error name}
 \end{figure}
 
