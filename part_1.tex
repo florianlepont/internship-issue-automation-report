@@ -616,7 +616,7 @@ Les exemples de classification présentés jusqu'ici ne comportaient que deux cl
 \label{Le Machine Learning: Les différents algorithmes: SVM}
 Le Support Vector Machine (traduire en français par "Machine à vecteurs de support") permet de résoudre des problèmes de classification. De manière conceptuelle, le SVM reprend les concepts de la régression logistique. Il y ajoute cependant deux notions supplémentaires la marge maximale et les fonctions noyaux.
 
-\subsubsection{SVM -Support Vector Machine-}
+\subsubsection{La marge maximale}
 \label{Le Machine Learning: Les différents algorithmes: SVM: la marge maximale}
 Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemple où les données son séparables par une hypothèse linéaire. Dans le cas de la figure (\ref{fig:Svm: cas simple d'une regression logistique avec une hypothèse linéaire}), on observe un problème de classification composé de deux jeux homogènes de données. Le but est donc de déterminer une valeur de l'hypothèse permettant de séparer ces deux régions (représenté par la frontière de décision). On remarque qu'elle peut prendre une infinité de valeurs (i.e. il existe une infinité de combinaison de valeurs des paramètres $\theta$ de l'hypothèse résolvant le problème de classification). On cherche donc à déterminer l'hypothèse permettant de répondre de manière optimale à ce problème. Pour cela, on introduit la notion de marge. Comme on peut l'observer sur la figure \ref{fig:Svm: optimisation du calcul de l'hypothèse par l'introduction de marges}, la ligne de décision est bordée de deux marges qui prennent appui sur les valeurs à l'extrémité de chacune des deux régions homogènes de données. Afin de déterminer la meilleur position pour la ligne de décision (et donc le paramétrage optimal de l'hypothèse), on maximise la distance entre ces deux marges. 
 
@@ -631,9 +631,6 @@ Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemp
 	\caption[SVM: optimisation du calcul de l'hypothèse par l'introduction de marges]{Svm: optimisation du calcul de l'hypothèse par l'introduction de marges. Afin de déterminer la position optimale pour la frontière de décision, on introduit deux marges entres les échantillons à l'extrémité de la structure de données homogène et la ligne de décision. On cherche à maximiser la distance entre ces deux marges afin d'obtenir l'hypothèse optimale.}
 	\label{fig:Svm: optimisation du calcul de l'hypothèse par l'introduction de marges}
 \end{figure}
-
-D'un point de vue mathématique, il se produit la chose suivante: \\
-On approxime les courbes du coût (figure \ref{fig:fonctions -log(h(x)) et -log(1-h(x))})
 
 \subsubsection{SVM -Support Vector Machine-}
 \label{Le Machine Learning: Les différents algorithmes: SVM: les fonctions noyaux}
