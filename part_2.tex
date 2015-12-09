@@ -8,7 +8,7 @@ Lorsqu'une error est révélée (partie \ref{Introduction:Expression du besoin:H
 L'architecture haut niveau de la solution que l'on propose est composée de deux couches: une couche "root cause" et une couche "error name".
 \begin{description}
 	\item [Couche root cause] La couche root cause permet de détecter la présence d'une root cause en analysant le fichier log.
-	\item [Couche error name] La couche error name est constituée d'un ensemble de couches root cause, de telle manière que lorsqu'un fichier historique est mis en entrée du système, la couche error name active l'ensemble des couches root cause qu'elle contient. Ainsi, une analyse de chaque root cause sera effectué sur le fichier.
+	\item [Couche error name] La couche error name est constituée d'un ensemble de couches root cause, de telle manière que lorsqu'un fichier historique est mis en entrée du système, la couche error name active l'ensemble des couches root cause qu'elle contient. Ainsi, une analyse de chaque root cause sera effectué sur le fichier. On obtient donc en sortie de la couche error name la 
 \end{description} 
 
 Un synoptique illustrant le fonctionnement systémique de notre architecture High Level est proposé figure \ref{fig:synoptique haut niveau de la solution proposée: couche root cause} et \ref{fig:synoptique haut niveau de la solution proposée: couche error name}.
