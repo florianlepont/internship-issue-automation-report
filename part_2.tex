@@ -1,7 +1,7 @@
 \chapter{Automatisation du processus d'investigation}
 \label{Automatisation du processus d'investigation}
 \thispagestyle{fancy}
-Lorsqu'une error name (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}) durant le Filtering test, de nombreuses données du robot sont enregistrées dans un fichier journal (que l'on retrouve plus souvent sous le terme anglais de fichier "log".) Une analyse poussée de ces données peut nous permettre de déterminer la root cause (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}) liée à l'error name. Afin d'automatiser ce processus d'analyse, on s'appuie sur l'utilisation d'algorithmes d'apprentissage automatique.
+Lorsqu'une error name (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}) durant le Filtering test, de nombreuses données du robot sont enregistrées dans un fichier journal (que l'on retrouve plus souvent sous le terme anglais de fichier "log".) Une analyse poussée des données contenues dans ce fichier nous permettre de déterminer la root cause (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}) liée à l'error name. Afin d'automatiser ce processus d'analyse, on s'appuie sur l'utilisation d'algorithmes d'apprentissage automatique.
 
 \section{Architecture High Level du système proposé}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé}
@@ -9,7 +9,10 @@ On présente l'architecture haut niveau de notre système permettant l'automatis
 
 \subsubsection{Schéma synoptique High Level}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Schéma synoptique High Level}
-Le schéma fonctionnel de la solution que l'on propose est composé de deux couches: une couche "error name" et une couche "root cause". 
+Le schéma fonctionnel de la solution que l'on propose est composé de deux couches: une couche "root cause" et la couche "error name".
+\begin{description}
+	\item [Couche root cause] La couche root cuase gère la detection d'une contient l'ensemble des 
+\end{description} 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=5cm]{images/ML_high_level.jpeg}
