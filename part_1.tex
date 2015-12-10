@@ -567,18 +567,18 @@ Cette frontière de décision correspond à l'équation d'un cercle. Plus le nom
 
 \subsubsection{Fonction coût}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Fonction coût}
-Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Pour la régression logistique, celle-ci ne l'est plus (forme sigmoïde). La fonction coût n'est donc ici pas convexe (graphe convexe de la régression linéaire \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}) et on ne peut pas déterminer le minimum globale (et donc la valeur des paramètres de l'hypothèse), celle-ci pouvant posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une nouvelle formule de la fonction coût. 
+Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Pour la régression logistique, elle ne l'est plus (forme sigmoïde). La fonction coût n'est donc ici pas convexe (graphe convexe de la régression linéaire figure \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}) et on ne peut pas déterminer le minimum globale (et donc la valeur optimale des paramètres de l'hypothèse), celle-ci pouvant posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une reformulation de la fonction coût. \\
 Soit la fonction coût utilisée pour la régression linéaire:
 \begin{equation}
 	J(\theta) = \frac{1}{m}\sum_{i=1}^{m}\frac{1}{2}(h_\theta(x^i)-y^i)^2
 \end{equation}
 
-Soit Avec $Cost(h_\theta,y) = \frac{1}{2}(h_\theta(x^i)-y^i)^2$ le terme de coût, On a:
+On pose $Cost(h_\theta,y) = \frac{1}{2}(h_\theta(x^i)-y^i)^2$ le coût, on obtient:
 \begin{equation}
 J(\theta) = \frac{1}{m}\sum_{i=1}^{m}Cost(h_\theta,y)
 \end{equation}
 
-On reformule le coût avec l'équation suivante:
+On reformule le coût dans le cadre de la régression logistique:
 \begin{equation}
 cost(h_\theta(x),y)=\begin{blockarray}{ll}
 \begin{block}{\{ll}
@@ -598,7 +598,7 @@ La fonction coût devient alors:
 J(\theta) = \frac{1}{m}[\sum_{i=1}^{m}y^ilog(h_\theta(x))+(1-y^i)log(1-h_\theta(x^i))]
 \end{equation}
 
-Sous cette forme, la fonction coût est convexe. \\
+Sous cette forme, la fonction coût est convexe. \\ \\
 Intuitivement, lorsque l'on observe la forme de la fonction $-log(h(\theta))$ (figure \ref{fig:fonctions -log(h(x)) et -log(1-h(x))}) qui est vraie quand $y=1$, on remarque que lorsque $h(x)$ tend vers 1, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 0, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=1),plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé.  \\
 Intuitivement, lorsque l'on observe la forme de la fonction $-log(1-h(\theta))$ (figure \ref{fig:fonctions -log(h(x)) et -log(1-h(x))}) qui est vraie quand $y=0$, on remarque que lorsque $h(x)$ tend vers 0, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 1, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=0), plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé. \\
 Ce comportement correspond à l'attitude que l'on attend de la fonction coût, i.e. d'optimiser l'hypothèse.
