@@ -627,12 +627,12 @@ La formule de l'algorithme du gradient reste identique à celle utilisée pour r
 
 \subsubsection{La classification multiclasse}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: La classification multi-classe}
-Les exemples de classification proposés jusqu'ici ne comportaient que deux classes. Or il est possible de résoudre des problèmes dont la décision prise parmi plus de deux classes. Soit l'exemple de la prévision saisonière (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), on a en sortie une décision à prendre parmi les 4 classes printemps, été, automne et hiver. Pour résoudre ce problème, on compare une classe par rapport à l'ensemble des autres classes (considérées alors comme un seul et même ensemble homogène). Cette méthode s'appelle la "One-vs-All". On réalise donc une classification entre la sortie \emph{printemps} et le reste des valeurs de sorties possibles, puis \emph{été}, \emph{automne} et enfin \emph{hiver}.
+Les exemples de classification proposés jusqu'ici ne comportaient que deux classes. Or il est possible de résoudre des problèmes dont la décision prise parmi plus de deux classes. Soit l'exemple de la prévision saisonnière (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), on a en sortie une décision à prendre parmi les 4 classes: printemps, été, automne et hiver. Pour résoudre ce problème, on compare une classe par rapport à l'ensemble des autres classes (considérées alors comme un seul et même ensemble homogène). On répète ensuite le même procédé pour les autres classes. L'exemple analysé appartient à la classe ayant eu la probabilité la plus élevée en sortie. Cette méthode s'appelle la "One-vs-All".
 
 
 \subsection{SVM -Support Vector Machine-}
 \label{Le Machine Learning: Les différents algorithmes: SVM}
-Le Support Vector Machine (traduire en français par "Machine à vecteurs de support") permet de résoudre des problèmes de classification. De manière conceptuelle, le SVM reprend les concepts de la régression logistique. Il y ajoute cependant deux notions supplémentaires la marge maximale et les fonctions noyaux.
+Le Support Vector Machine (traduire en français par "Machine à vecteurs de support") permet de résoudre des problèmes de classification. Conceptuellement, le SVM reprend les théories appliquées à la régression logistique. On y ajoute deux notions supplémentaires: la marge maximale et les fonctions noyaux.
 
 \subsubsection{La marge maximale}
 \label{Le Machine Learning: Les différents algorithmes: SVM: la marge maximale}
