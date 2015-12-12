@@ -15,11 +15,11 @@ L'architecture haut niveau de la solution que l'on propose est composée de deux
 Afin d'exposer de manière concrète le fonctionnement de l'architecture haut niveau de la solution proposée, on soumet un exemple de mise en place d'une architecture de détection et son utilisation . \\
 
 \paragraph{Mise en place du système de détection / Apprentissage}
-On souhaite dans un premier temps mettre en place l'architecture permettant de détecter la cause (root cause) ayant entrainé la chute du robot lors du Filtering test (error name). Cette étape consiste à créer les couches root cause, i.e. entrainer différents algorithmes d'apprentissage automatique à reconnaitre la root cause pour laquelle ils ont été crée (figure \ref{fig:synoptique haut niveau de la solution proposée: couche root cause} )
+On souhaite dans un premier temps mettre en place l'architecture permettant de détecter la cause (root cause) ayant entrainé la chute du robot lors du Filtering test (error name). Cette étape consiste à créer les couches root cause, i.e. entrainer différents algorithmes d'apprentissage automatique à reconnaitre la root cause pour laquelle ils ont été crée (figure \ref{fig:synoptique haut niveau de la solution proposée: couche root cause}).
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6.5cm]{images/synoptique_root.png}
-	\caption[Synoptique haut niveau de la couche root cause]{Synoptique haut niveau de la couche root cause. Le schéma de la couche root cause reprend celui du fonctionnement High Level de l'apprentissage automatique (figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}). En effet, le système doit détecter la présence d'une root cause, à partir de l'analyse du fichier log à l'entrée du système. Pour cela, l'algorithme est préalablement entraîne à partir d'exemples de fichiers logs labellisés.}
+	\caption[Synoptique haut niveau de la couche root cause]{Synoptique haut niveau des couches root cause. Le schéma de la couche root cause reprend celui du fonctionnement High Level de l'apprentissage automatique (figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}). En effet, le système doit détecter la présence d'une root cause, à partir de l'analyse du fichier log à l'entrée du système. Pour cela, l'algorithme est préalablement entraîne à partir d'exemples de fichiers logs labellisés.}
 	\label{fig:synoptique haut niveau de la solution proposée: couche root cause}
 \end{figure}
 
