@@ -99,7 +99,7 @@ Lorsque l'on veut construire une nouvelle couche root cause, i.e. entraîner un 
 \subsection{Parallèle avec l'exemple de la prévision saisonnière et mise  en avant du problème de l'évolution temporelle }
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}
 Si on fait le parallèle avec les exemples de l'exemple "prévision saisonnière" (c.f. tableau \ref{exemples prévision saisonnière}) et ceux de notre solution (c.f. tableau \ref {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}), on observe que dans les deux cas les données sont structurées en exemples et features. Cependant, dans la solution que l'on propose, les données de chaque exemple évoluent temporellement (e.g. la "HipPitchPositionSensorValue" de l'exemple 1 correspond à la colonne "HipPitchPositionSensorValue" du fichier $log_1$ qui a une évolution temporelle), alors que celles de la prévision saisonnière sont discrètes (e.g la température de l'exemple 1 est de -10\degres C, elle est discrète ) \\
-Le problème est qu'on peut réaliser de l'apprentissage supervisé uniquement avec des données discrètes. Sous leurs formes actuelles, les données de nos exemples ne peuvent donc pas servir à entrainer les algorithmes SVM de nos couches root cause.
+Le problème est qu'on peut réaliser de l'apprentissage supervisé uniquement avec des données discrètes. Sous leurs formes actuelles, les données de nos exemples ne peuvent donc pas servir à entrainer les algorithmes SVM de nos couches root cause. Une solution sera soumise ultérieument en partie \ref{Automatisation du processus d'investigation: Solutions testées} 
 
 
 \subsection{Le modèle d'apprentissage}
@@ -110,8 +110,8 @@ Le problème est qu'on peut réaliser de l'apprentissage supervisé uniquement a
 
 
 
-\section{Solutions techniques testées}
-\label{Automatisation du processus d'investigation: Solutions techniques testées}
+\section{Solutions  testées}
+\label{Automatisation du processus d'investigation: Solutions testées}
 
 
 
