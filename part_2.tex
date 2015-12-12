@@ -1,21 +1,71 @@
 \chapter{Automatisation du processus d'investigation}
 \label{Automatisation du processus d'investigation}
 \thispagestyle{fancy}
-Lorsqu'une error name est révélée (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}) durant le Filtering test, de nombreuses données sont enregistrées dans un fichier journal (que l'on retrouve plus souvent sous le terme anglais de fichier "log".) Une analyse poussée de ces informations permet de déterminer la root cause liée à l'error name (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}). Afin d'automatiser ce processus d'analyse, on s'appuie sur l'utilisation d'algorithmes d'apprentissage automatique. 
+Lorsqu'une \emph{\emph{error name
+}
+
+}
+
+ est révélée (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}) durant le Filtering test, de nombreuses données sont enregistrées dans un fichier journal (que l'on retrouve plus souvent sous le terme anglais de fichier "log".) Une analyse poussée de ces informations permet de déterminer la root cause liée à l'\emph{\emph{error name
+}
+
+}
+
+ (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}). Afin d'automatiser ce processus d'analyse, on s'appuie sur l'utilisation d'algorithmes d'apprentissage automatique. 
 
 \section{Architecture High Level du système proposé}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé}
-L'architecture haut niveau de la solution que l'on propose est composée de deux couches: une couche "root cause" et une couche "error name".
+L'architecture haut niveau de la solution que l'on propose est composée de deux couches: une couche "root cause" et une couche "\emph{\emph{error name
+}
+
+}
+
+".
 \begin{description}
 	\item [Couche root cause] La couche root cause permet de détecter la présence d'une root cause dans l'exemple que l'on analyse. Il s'agit d'un algorithme d'apprentissage automatique entraîné à effectuer cette tâche.
-	\item [Couche error name] La couche error name est constituée d'un ensemble de couches root cause de telle manière que lorsqu'un fichier historique est mis en entrée du système, l'ensemble des couches root cause sont activées. Ainsi, le système recherche la présence de chaque root cause connue dans l'exemple étudié. On obtient en sortie de la couche error name le nom de la root cause ayant la plus forte probabilité d'avoir été reconnue.
+	\item [Couche \emph{\emph{error name
+}
+
+}
+
+] La couche \emph{\emph{error name
+}
+
+}
+
+ est constituée d'un ensemble de couches root cause de telle manière que lorsqu'un fichier historique est mis en entrée du système, l'ensemble des couches root cause sont activées. Ainsi, le système recherche la présence de chaque root cause connue dans l'exemple étudié. On obtient en sortie de la couche \emph{\emph{error name
+}
+
+}
+
+ le nom de la root cause ayant la plus forte probabilité d'avoir été reconnue.
 \end{description} 
 
-\subsubsection{Exemple de mise en place  d'une couche error name et de ses couches root cause}
+\subsubsection{Exemple de mise en place  d'une couche \emph{\emph{error name
+}
+
+}
+
+ et de ses couches root cause}
 Afin d'exposer de manière concrète le fonctionnement de l'architecture haut niveau de la solution proposée, on soumet un exemple de mise en place d'une architecture de détection et son utilisation . \\
 
 \paragraph{Mise en place du système de détection d'une root cause / Apprentissage}
-On souhaite dans un premier temps mettre en place l'architecture permettant de détecter la cause (root cause) ayant entrainé la chute du robot lors du Filtering test (error name). Cette étape consiste à créer les couches root cause, i.e. entrainer différents algorithmes d'apprentissage automatique à reconnaitre la root cause pour laquelle ils ont été crée (figure \ref{fig:Creation des couches root cause}). Afin d'entraîner ces couches, on utilise les données utiles à chaque root cause, contenues dans le fichier log généré lors de la chute d'un robot durant du Filtering Test. Par exemple, dans le cas de la root cause "frottement des freins de la hanche", on utilisera les données "valeurs du senseur de la hanche" et "valeurs de l'actuateur de la hanche". Ces deux éléments correspondre aux features de notre apprentissage (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). L'ensemble de ces couches root cause sont placées dans la couche error name associée. Ici, il s'agit de la couche permettant de déterminer la cause de la chute d'un robot.
+On souhaite dans un premier temps mettre en place l'architecture permettant de détecter la cause (root cause) ayant entrainé la chute du robot lors du Filtering test (\emph{\emph{error name
+}
+
+}
+
+). Cette étape consiste à créer les couches root cause, i.e. entrainer différents algorithmes d'apprentissage automatique à reconnaitre la root cause pour laquelle ils ont été crée (figure \ref{fig:Creation des couches root cause}). Afin d'entraîner ces couches, on utilise les données utiles à chaque root cause, contenues dans le fichier log généré lors de la chute d'un robot durant du Filtering Test. Par exemple, dans le cas de la root cause "frottement des freins de la hanche", on utilisera les données "valeurs du senseur de la hanche" et "valeurs de l'actuateur de la hanche". Ces deux éléments correspondre aux \emph{\emph{\emph{\emph{\emph{\emph{features}
+
+}
+}
+}
+}} de notre apprentissage (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). L'ensemble de ces couches root cause sont placées dans la couche \emph{\emph{error name
+}
+
+}
+
+ associée. Ici, il s'agit de la couche permettant de déterminer la cause de la chute d'un robot.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.5cm]{images/synoptique_root.png}
@@ -24,29 +74,76 @@ On souhaite dans un premier temps mettre en place l'architecture permettant de d
 \end{figure}
 
 \paragraph{Utilisation du système de détection d'une root cause}
-Une fois nos différentes couches root cause crées, on souhaite utiliser notre système afin de détecter la cause de la chute d'un robot (c.f. figure \ref{fig:utilisation de la couche error name}). Pour cela, on place à l'entrée de notre couche error name le fichier log que l'on souhaite analyser. Chaque couche root cause extrait du fichier log les features qui lui sont liées (e.g. la root cause "frottement des freins de la hanche" est liée aux features senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche root cause va alors émettre une décision quant à la présence ou non de la root cause dans le fichier log; Cette décision correspond à la probabilité que la root cause ai été détecté (en \%). La couche root cause ayant la probabilité la plus élevé en sortie est considéré comme la root cause (cause) ayant entrainé l'error name (i.e. la conséquence, ici la chute du robot) 
+Une fois nos différentes couches root cause crées, on souhaite utiliser notre système afin de détecter la cause de la chute d'un robot (c.f. figure \ref{fig:utilisation de la couche \emph{\emph{error name
+}
+
+}
+
+}). Pour cela, on place à l'entrée de notre couche \emph{\emph{error name
+}
+
+}
+
+ le fichier log que l'on souhaite analyser. Chaque couche root cause extrait du fichier log les \emph{\emph{\emph{\emph{\emph{\emph{features}
+
+}
+}
+}
+}} qui lui sont liées (e.g. la root cause "frottement des freins de la hanche" est liée aux \emph{\emph{\emph{\emph{\emph{\emph{features}
+
+}
+}
+}
+}} senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche root cause va alors émettre une décision quant à la présence ou non de la root cause dans le fichier log; Cette décision correspond à la probabilité que la root cause ai été détecté (en \%). La couche root cause ayant la probabilité la plus élevé en sortie est considéré comme la root cause (cause) ayant entrainé l'\emph{error name}
+}
+
+}
+
+ (i.e. la conséquence, ici la chute du robot) 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8.5cm]{images/synoptique_error.png}
-	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche error name. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
-	\label{fig:utilisation de la couche error name}
+	\caption[Utilisation de la couche \emph{\emph{error name
+}
+
+}
+
+]{Synoptique haut niveau de l'utilisation de la couche \emph{error name}
+
+. La couche \emph{error name}
+
+ contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche \emph{error name}
+
+ la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
+	\label{fig:utilisation de la couche \emph{error name}
+
+}
 \end{figure}
 
 Chaque couche root cause peut être considérée comme un système à part entière. Le schéma fonctionnel d'une root cause (c.f. figure 	\ref{fig:Synoptique d'une couche root cause}) reprend la même structure que celui du Machine Learning (c.f. \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}) car, comme dit précédemment, chaque root cause est constitué d'un instance de l'algorithme SVM. Dans la suite de notre étude de l'architecture haut niveau de la solution proposée, on s'intéressera plus particulièrement  au fonctionnement de la couche root cause car elle contient l'ensemble du traitement et de l'analyse des données.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.4cm]{images/exemple_root.png}
-	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche root cause. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
+	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche root cause. La couche \emph{error name}
+
+ contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche \emph{error name}
+
+ la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
 	\label{fig:Synoptique d'une couche root cause}
 \end{figure}
 
 \subsection{Les exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples}
-Les exemples sont les éléments permettant d'entraîner l'algorithme d'apprentissage automatique (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Les données}). Dans le cadre de la résolution de notre problématique, ces exemples correspondent aux données générées et enregistrées dans le fichier log lorsqu'une erreur (error name) est détectée durant le Filtering Test.
+Les exemples sont les éléments permettant d'entraîner l'algorithme d'apprentissage automatique (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Les données}). Dans le cadre de la résolution de notre problématique, ces exemples correspondent aux données générées et enregistrées dans le fichier log lorsqu'une erreur (\emph{error name}
+
+) est détectée durant le Filtering Test.
 
 \subsection{Structure du fichier log}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Structure du fichier log}
-Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Ces données correspondent aux "rythmes vitaux" du robot. Il contient par exemple l'évolution temporelle des différents actuateurs et senseurs de Pepper, la température de différentes pièces mécaniques, etc. Ces "données vitales" correspondent aux features.
+Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Ces données correspondent aux "rythmes vitaux" du robot. Il contient par exemple l'évolution temporelle des différents actuateurs et senseurs de Pepper, la température de différentes pièces mécaniques, etc. Ces "données vitales" correspondent aux \emph{\emph{\emph{\emph{\emph{features}
+}
+}
+}}.
 
 \subsection{Le modèle d'apprentissage}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Le modèle d'apprentissage}
