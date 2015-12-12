@@ -49,23 +49,22 @@ Les exemples sont les éléments permettant d'entraîner l'algorithme d'apprenti
 Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Ces données correspondent aux "rythmes vitaux" du robot. Il contient par exemple l'évolution temporelle des différents actuateurs et senseurs de Pepper, la température de différentes pièces mécaniques, etc. Dans le cadre de l'entraînement de l'algorithme du Machine Learning (SVM), chacune de ces constantes correspond à une feature  (c.f. partie  \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). Soit le tableau \ref {tab: Extrait du contenu d'un fichier log}, un extrait ldu contenu d'un fichier log: 
 
 \begin{equation}
-	\begin{blockarray}{llllll}
-		
-		\begin{block}{[llllll]}
-			HeadPitchPositionActuatorValue & HeadPitchElectricCurrentSensorValue & HipPitchPositionSensorValue & HipPitchPositionActuatorValue &  KneePitchPositionSensorValue & KneePitchPositionActuatorValue \\
-			-0,404 & 0,64 & -0,023 & -0,04 & -0,008 & -0,007 \\
-			-0,404 & 0,64 & -0,029 & -0,038 & -0,006 & -0,006 \\
-			-0,404 & 0,576 & -0,029 & -0,033 & -0,008 & -0,012 \\
-			-0,402 & 0,544 & -0,029 & -0,027 & -0,012 & -0,022 \\
-			-0,401 & 0,448 & -0,029 & -0,027 & -0,015 & -0,029 \\
-			-0,401 & 0,448 & -0,023 & -0,029 & -0,017 & -0,031 \\
-			-0,408 & 0,096 & -0,021 & -0,031 & -0,015 & -0,032 \\
-			-0,444 & 0,096 & -0,021 & -0,032 & -0,015 & 0,035 \\
-			-0,486 & 0,096 & -0,021 & -0,033 & -0,017 & -0,039 \\
-			-0,523 & 0,128 & -0,021 & -0,033 & -0,018 & -0,043 \\
-			-0,564 & 0,16 & -0,021 & -0,034 & -0,026 & -0,049 \\
-			-0,586 & 0,032 & -0,021 & -0,038 & -0,029 & -0,051 \\
-			... & ... & ... & ... & ... & ... \\
+	\begin{blockarray}{lllllll}
+		\begin{block}{l[llllll]}
+			features & HeadPitchPositionActuatorValue & HeadPitchElectricCurrentSensorValue & HipPitchPositionSensorValue & HipPitchPositionActuatorValue &  KneePitchPositionSensorValue & KneePitchPositionActuatorValue \\
+			t_0 & -0,404 & 0,64 & -0,023 & -0,04 & -0,008 & -0,007 \\
+			t_1 & -0,404 & 0,64 & -0,029 & -0,038 & -0,006 & -0,006 \\
+			t_3 & -0,404 & 0,576 & -0,029 & -0,033 & -0,008 & -0,012 \\
+			t_4 & -0,402 & 0,544 & -0,029 & -0,027 & -0,012 & -0,022 \\
+			t_5 & -0,401 & 0,448 & -0,029 & -0,027 & -0,015 & -0,029 \\
+			t_6 & -0,401 & 0,448 & -0,023 & -0,029 & -0,017 & -0,031 \\
+			t_7 & -0,408 & 0,096 & -0,021 & -0,031 & -0,015 & -0,032 \\
+			t_8 & -0,444 & 0,096 & -0,021 & -0,032 & -0,015 & 0,035 \\
+			t_9 & -0,486 & 0,096 & -0,021 & -0,033 & -0,017 & -0,039 \\
+			t_10 & -0,523 & 0,128 & -0,021 & -0,033 & -0,018 & -0,043 \\
+			t_11 & -0,564 & 0,16 & -0,021 & -0,034 & -0,026 & -0,049 \\
+			t_12 & -0,586 & 0,032 & -0,021 & -0,038 & -0,029 & -0,051 \\
+			t_n & ... & ... & ... & ... & ... & ... \\
 		\end{block}
 	\end{blockarray}
 	\label {tab: Extrait du contenu d'un fichier log}
