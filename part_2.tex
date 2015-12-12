@@ -21,13 +21,13 @@ Une fois nos différentes couches root cause crées, on souhaite utiliser notre 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.5cm]{images/synoptique_root.png}
-	\caption[Creation des couche root cause]{Synoptique haut niveau des couches root cause. Les couches root cause correspondent à des algorithmes d'apprentissage automatique que l'ont entraîne à détecter la root cause à laquelle ils sont associés. Par exemple, créer la couche root cause "frottement du frein de la hanche" revient à entraîner un algorithme d'apprentissage de type SVM à partir des valeurs senseurs et actuateurs de la hanches contenues dans les différents exemples de fichiers logs générés lors de chutes de robot durant le filtering test. On réalise ce processus pour chaque couche root cause que l'on veut créer.}
+	\caption[Creation des couche root cause]{Synoptique haut niveau de la création des couches root cause. Les couches root cause correspondent à des algorithmes d'apprentissage automatique que l'ont entraîne à détecter la root cause à laquelle ils sont associés. Par exemple, créer la couche root cause "frottement du frein de la hanche" revient à entraîner un algorithme d'apprentissage de type SVM à partir des valeurs senseurs et actuateurs de la hanches contenues dans les différents exemples de fichiers logs générés lors de chutes de robot durant le filtering test. On réalise ce processus pour chaque couche root cause que l'on veut créer.}
 	\label{fig:Creation des couche root cause}
 \end{figure}
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.5cm]{images/synoptique_error.png}
-	\caption[Utilisation de la couche error name]{Synoptique haut niveau de la couche error name. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
+	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche error name. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
 	\label{fig:utilisation de la couche error name}
 \end{figure}
 
