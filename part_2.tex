@@ -49,7 +49,7 @@ Les exemples sont les éléments permettant d'entraîner l'algorithme d'apprenti
 Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Ces données correspondent aux "rythmes vitaux" du robot. Il contient par exemple l'évolution temporelle des différents actuateurs et senseurs de Pepper, la température de différentes pièces mécaniques, etc. Dans le cadre de l'entraînement de l'algorithme du Machine Learning (SVM), chacune de ces constantes correspond à une feature  (c.f. partie  \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). Soit le tableau \ref {tab: Extrait du contenu d'un fichier log}, un extrait ldu contenu d'un fichier log: 
 
 \begin{table}[h]
-	\begin{tabular}{ | l | p{10cm} | }
+	\begin{tabular}{ | l | l |  l | l |  l | l |}
 		\hline
 		HeadPitchPositionActuatorValue & HeadPitchElectricCurrentSensorValue & HipPitchPositionSensorValue & HipPitchPositionActuatorValue &  KneePitchPositionSensorValue & KneePitchPositionActuatorValue \\
 		-0,404 & 0,64 & -0,023 & -0,04 & -0,008 & -0,007 \\
