@@ -61,33 +61,19 @@ Une fois nos différentes couches root cause crées, on souhaite utiliser notre 
 }
 }
 }
-}} senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche root cause va alors émettre une décision quant à la présence ou non de la root cause dans le fichier log; Cette décision correspond à la probabilité que la root cause ai été détecté (en \%). La couche root cause ayant la probabilité la plus élevé en sortie est considéré comme la root cause (cause) ayant entrainé l'\emph{error name}
-
- (i.e. la conséquence, ici la chute du robot) 
+}} senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche root cause va alors émettre une décision quant à la présence ou non de la root cause dans le fichier log; Cette décision correspond à la probabilité que la root cause ai été détecté (en \%). La couche root cause ayant la probabilité la plus élevé en sortie est considéré comme la root cause (cause) ayant entrainé l'error name (i.e. la conséquence, ici la chute du robot) 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8.5cm]{images/synoptique_error.png}
-	\caption[Utilisation de la couche \emph{error name}
-
-]{Synoptique haut niveau de l'utilisation de la couche \emph{error name}
-
-. La couche \emph{error name}
-
- contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche \emph{error name}
-
- la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
-	\label{fig:utilisation de la couche \emph{error name}
-
-}
+	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche error name. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
+	\label{fig:utilisation de la couche error name}
 \end{figure}
 
 Chaque couche root cause peut être considérée comme un système à part entière. Le schéma fonctionnel d'une root cause (c.f. figure 	\ref{fig:Synoptique d'une couche root cause}) reprend la même structure que celui du Machine Learning (c.f. \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}) car, comme dit précédemment, chaque root cause est constitué d'un instance de l'algorithme SVM. Dans la suite de notre étude de l'architecture haut niveau de la solution proposée, on s'intéressera plus particulièrement  au fonctionnement de la couche root cause car elle contient l'ensemble du traitement et de l'analyse des données.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7.4cm]{images/exemple_root.png}
-	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche root cause. La couche \emph{error name}
-
- contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
+	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche root cause. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
 	\label{fig:Synoptique d'une couche root cause}
 \end{figure}
 
