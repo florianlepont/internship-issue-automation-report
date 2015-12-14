@@ -488,11 +488,11 @@ Pour cela, on met en place un seuil de classification:
 	\item Si $h_\theta(x) < 0,5$ alors $y=0$
 \end{itemize}
 
-Où $y = 0$ correspond à la période hiver et $y = 1$ l' été. 
+Où $y = 0$ correspond à la période hiver et $y = 1$ l'été. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=5.5cm]{images/class_reg_lineaire.png}
-	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5\degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque que une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15\degres C, ce qui n'est pas représentatif des exemples.}
+	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5\degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque qu'une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15\degres C, ce qui n'est pas représentatif des exemples.}
 	%Reprendre ici avec de meilleurs arguments...
 	\label{fig:Classification via regression linéaire}
 \end{figure}
@@ -501,7 +501,7 @@ Cette méthode fonctionne dans le cas présent car les exemples sont régulière
 
 \subsubsection{Régression logistique et fonction sigmoïde}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Régression logistique et fonction sigmoïde}
-Pour réaliser de la classification en utilisant de la régression,  on peut modifier la forme linéaire de l'hypothèse en une sigmoïde (figure \ref{fig:Fonction sigmoïde}). On appelle également cette courbe fonction logistique ou fonction de répartition. Du point de vu des probabilités, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$ signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.  
+Pour réaliser de la classification en utilisant de la régression,  on peut modifier la forme linéaire de l'hypothèse en une sigmoïde (figure \ref{fig:Fonction sigmoïde}). On appelle également cette courbe fonction logistique ou fonction de répartition. D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$ signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.  
 
 avec $g(x) = \frac{1}{1 + e^{-z}}$  la fonction sigmoïde, on a l'hypothèse $h_\theta(x)$ suivante: 
 \begin{equation}
@@ -558,7 +558,8 @@ Cette expression correspond à la ligne (ou frontière) de décision de la régr
 \subsubsection{Ligne de décision non linéaire}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Ligne de décision non linéaire}
 Il est possible d'utiliser des hypothèses plus complexes, permettant d'effectuer de la classification non linéaire. \\
-On a par exemple $h_\theta(x) = g(\theta_0+ \theta_1x_1 + \theta_2x_2 + \theta_1x_1^2 + \theta_1x_2^2)$ avec $\theta = \begin{blockarray}{[c]} -1 \\ 0 \\ 0 \\ 1 \\ 1 \end{blockarray}$. Cela revient à dire: 
+On a par exemple $h_\theta(x) = g(\theta_0+ \theta_1x_1 + \theta_2x_2 + \theta_1x_1^2 + \theta_1x_2^2)$ avec $\theta = \begin{blockarray}{[c]} -1 \\ 0 \\ 0 \\ 1 \\ 1 \end{blockarray}$.\\
+ Cela revient à dire: 
 
 \begin{equation}
 \begin{split}
