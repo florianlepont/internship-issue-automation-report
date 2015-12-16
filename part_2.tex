@@ -126,7 +126,7 @@ L'évolution temporelle des exemples utilisés pour l'entraînement de l'algorit
 On propose de créer de nouvelles features, constantes, caractéristiques des features actuelles. On peut par exemple calculer la moyenne d'une feature, sa valeur crête-à-crête, sa valeur maximum, etc. On se sert ensuite de ces nouvelles features pour réaliser l'entrainement de notre algorithme d'apprentissage automatique (c.f. exemple figure \ref{fig:Calcul de nouvelles features}).
 
 \begin{figure}[h]
-	\centering\includegraphics[height=7.4cm]{images/caracteristiques_simples_1.png}
+	\centering\includegraphics[height=8cm]{images/caracteristiques_simples_1.png}
 	\caption[Calcul de nouvelles features]{Calcul de nouvelles features. Les figures a) et b) représentent respectivement l'évolution de la valeur du senseur et de l'actuateur de la hanche au cours du temps, lors de la chute d'un robot. La ligne rouge représente la valeur moyenne de chacune des features. la ligne noire correspond à la valeur crête-à-crête de chacune des features. On a ainsi réduit nos features à deux valeurs constantes. On peut donc entraîner l'algorithme d'apprentissage automatique à partir de ces deux nouvelles features caractéristiques}
 	\label{fig:Calcul de nouvelles features}
 \end{figure}
@@ -135,7 +135,7 @@ On propose de créer de nouvelles features, constantes, caractéristiques des fe
 Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques caractéristiques (e.g. moyenne et valeur crête-à-crête). Comme le démontre la figure \ref{fig:Comparaison de deux caractéristiques}, cette diminution des informations peut entrainer des risques de confusion entre les différentes features, i.e. que deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}, le risque est que deux couches root cause soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle root cause est responsable de l'apparition d'un error name.
 
 \begin{figure}[h]
-	\centering\includegraphics[height=7.4cm]{images/caracteristiques_simples_2.png}
+	\centering\includegraphics[height=8cm]{images/caracteristiques_simples_2.png}
 	\caption[Comparaison de deux caractéristiques]{Calcul de nouvelles features. On retrouve sur la figure a) les valeurs du senseur et de l'actuateur de la hanche, ainsi que leurs caractéristiques. Sur la figure b), on observe deux nouvelles features et leurs caractéristiques. On remarque que, bien qu'il s'agisse de features différentes entres les figures a) et b), ces derniers possèdent les mêmes caractéristiques.}
 	\label{fig:Comparaison de deux caractéristiques}
 \end{figure}
