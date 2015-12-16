@@ -49,23 +49,23 @@ Les exemples sont les éléments permettant d'entraîner l'algorithme d'apprenti
 Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Ces données correspondent aux "rythmes vitaux" du robot. Il contient par exemple l'évolution temporelle des différents actuateurs et senseurs de Pepper, la température de différentes pièces mécaniques, etc. Dans le cadre de l'entraînement de l'algorithme du Machine Learning (SVM), chacune de ces constantes correspond à une feature  (c.f. partie  \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). Soit le tableau \ref {tab: Extrait du contenu d'un fichier log}, un extrait du contenu d'un fichier log:
 
 \begin{equation}
-	\begin{blockarray}{ccccccc}
-		\begin{block}{c[cccccc]}
-			features & HeadPitchPositionActuatorValue & HeadPitchElectricCurrentSensorValue & HipPitchPositionSensorValue & HipPitchPositionActuatorValue &  KneePitchPositionSensorValue & KneePitchPositionActuatorValue \\
-			t_0 & -0,404 & 0,64 & -0,023 & -0,04 & -0,008 & -0,007 \\
-			t_1 & -0,404 & 0,64 & -0,029 & -0,038 & -0,006 & -0,006 \\
-			t_3 & -0,404 & 0,576 & -0,029 & -0,033 & -0,008 & -0,012 \\
-			t_4 & -0,402 & 0,544 & -0,029 & -0,027 & -0,012 & -0,022 \\
-			t_5 & -0,401 & 0,448 & -0,029 & -0,027 & -0,015 & -0,029 \\
-			t_6 & -0,401 & 0,448 & -0,023 & -0,029 & -0,017 & -0,031 \\
-			t_7 & -0,408 & 0,096 & -0,021 & -0,031 & -0,015 & -0,032 \\
-			t_8 & -0,444 & 0,096 & -0,021 & -0,032 & -0,015 & 0,035 \\
-			t_9 & -0,486 & 0,096 & -0,021 & -0,033 & -0,017 & -0,039 \\
-			t_{10} & -0,523 & 0,128 & -0,021 & -0,033 & -0,018 & -0,043 \\
-			t_n & ... & ... & ... & ... & ... & ... \\
-		\end{block}
-	\end{blockarray}
-	\label {tab: Extrait du contenu d'un fichier log}
+\begin{blockarray}{ccccccc}
+\begin{block}{c[cccccc]}
+features & HeadPitchPositionActuatorValue & HeadPitchElectricCurrentSensorValue & HipPitchPositionSensorValue & HipPitchPositionActuatorValue &  KneePitchPositionSensorValue & KneePitchPositionActuatorValue \\
+t_0 & -0,404 & 0,64 & -0,023 & -0,04 & -0,008 & -0,007 \\
+t_1 & -0,404 & 0,64 & -0,029 & -0,038 & -0,006 & -0,006 \\
+t_3 & -0,404 & 0,576 & -0,029 & -0,033 & -0,008 & -0,012 \\
+t_4 & -0,402 & 0,544 & -0,029 & -0,027 & -0,012 & -0,022 \\
+t_5 & -0,401 & 0,448 & -0,029 & -0,027 & -0,015 & -0,029 \\
+t_6 & -0,401 & 0,448 & -0,023 & -0,029 & -0,017 & -0,031 \\
+t_7 & -0,408 & 0,096 & -0,021 & -0,031 & -0,015 & -0,032 \\
+t_8 & -0,444 & 0,096 & -0,021 & -0,032 & -0,015 & 0,035 \\
+t_9 & -0,486 & 0,096 & -0,021 & -0,033 & -0,017 & -0,039 \\
+t_{10} & -0,523 & 0,128 & -0,021 & -0,033 & -0,018 & -0,043 \\
+t_n & ... & ... & ... & ... & ... & ... \\
+\end{block}
+\end{blockarray}
+\label {tab: Extrait du contenu d'un fichier log}
 \end{equation}
 
 Le fichier log représenté par ce tableau correspond uniquement à un seul exemple de la base de données nous servant à entrainer chacun de nos algorithmes. 
@@ -115,7 +115,7 @@ Chaque couche root cause délivre en sortie la probabilité que la root cause à
 
 \section{Reconnaissance de motifs}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs}
-On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation de Machine Learning, afin de mettre en place l'automatisation du processus d'investigation. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de notre système (c.f. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raison ayant amené à choisir la reconnaissance de motifs. 
+On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation du Machine Learning, afin de mettre en place l'automatisation du processus d'investigation. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de notre système (c.f. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raison ayant amené à choisir la reconnaissance de motifs. 
 
 \subsection{Différentes approches étudiées}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées}
@@ -123,12 +123,20 @@ L'évolution temporelle des exemples utilisés pour l'entraînement de l'algorit
 
 \subsubsection{Création de nouvelles features}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Création de nouvelles features}
-On propose de créer de nouvelles features, constantes, caractéristiques des features actuelles. On peut par exemple calculer la moyenne d'une feature, sa valeur crête-à-crête, sa valeur maximum, etc. On se sert ensuite de ces nouvelles features pour réaliser l'entrainement de notre algorithme. Par exemple, la feature "BaseAccZ" de l'exemple présenté en figure ...  représente l'évolution de l'accélération du robot selon l'axe Z lorsque le robot chute. 
+On propose de créer de nouvelles features, constantes, caractéristiques des features actuelles. On peut par exemple calculer la moyenne d'une feature, sa valeur crête-à-crête, sa valeur maximum, etc. On se sert ensuite de ces nouvelles features pour réaliser l'entrainement de notre algorithme d'apprentissage automatique (c.f. exemple figure ...).
 
-Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques caractéristiques. Comme le démontre la figure ..., cette diminution des informations peut entrainer des risques de confusions entre les différentes features. 
+\begin{figure}[h]
+	\centering\includegraphics[height=7.4cm]{images/exemple_root.png}
+	\caption[Calcul de nouvelles features]{Calcul de nouvelles features. Les figures a) et b) représentent respectivement l'évolution de la valeur du senseur et de l'actuateur de la hanche au cours du temps, lors de la chute d'un robot. La ligne rouge représente la valeur moyenne de chacune des features. la ligne noire correspond à la valeur crête-à-crête de chacune des features. On a ainsi réduit nos features à deux valeurs constantes. On peut donc entraîner l'algorithme d'apprentissage automatique à partir de ces deux nouvelles features caractéristiques}
+	\label{fig:Synoptique d'une couche root cause}
+\end{figure}
+
+
+Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques caractéristiques (e.g. moyenne et valeur crête-à-crête). Comme le démontre la figure ..., cette diminution des informations peut entrainer des risques de confusion entre les différentes features, i.e. que deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}, le risque est que deux couches root cause soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle root cause est responsable de l'apparition d'un error name.
 
 \subsubsection{Passage des données dans le domaine fréquentiel}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Passage des données dans le domaine fréquentiel}
+Une solution envisagée pour supprimer l'évolution temporelle des exemples est 
 
 \subsubsection{Calcul de la convolution}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Calcul de la convolution}
@@ -145,4 +153,5 @@ Le problème de cette approche est qu'elle réduit le nombre d'informations que 
 
 \section{Difficultés notoires rencontrées}
 \label{Automatisation du processus d'investigation: Difficultés notoires rencontrées}
+
 
