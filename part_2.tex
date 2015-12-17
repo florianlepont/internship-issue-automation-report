@@ -118,13 +118,6 @@ Chaque couche root cause délivre en sortie la probabilité que la root cause à
 On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation du Machine Learning, afin de mettre en place l'automatisation du processus d'investigation. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de notre système (c.f. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raisons ayant amené à utiliser la reconnaissance de motifs. \\
 
 Afin de simplifier le développement du système de reconnaissance de motifs, on admet dans un premier temps que chaque couche root cause est un système d'apprentissage automatique capable d'apprendre uniquement à détecter une root cause dans une seule feature (e.g. BaseAccZ, HipPitchSensorValue, etc.) 
-On propose de considérer chaque unité de temps comme une feature caractéristique de nos différents exemples. Le nombre d'entrées du système d'apprentissage automatique est donc égal au nombre d'échantillons contenus dans une donnée temporelle. 
-
-\begin{figure}[h]
-	\centering\includegraphics[height=8cm]{images/unit_tps_feature.png}
-	\caption[Considérer chaque unité de temps comme une feature: exemple]{Considérer chaque unité de temps comme une feature: exemple. On souhaite dans cet exemple entraîner l'algorithme à reconnaitre le .}
-	\label{fig:Considérer chaque unité de temps comme une feature: exemple}
-\end{figure}
 
 \subsection{Différentes approches étudiées}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées}
@@ -140,13 +133,22 @@ On propose de créer de nouvelles features, constantes, caractéristiques des fe
 	\label{fig:Calcul de nouvelles features}
 \end{figure}
 
-
 Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques caractéristiques (e.g. moyenne et valeur crête-à-crête). Comme le démontre la figure \ref{fig:Comparaison de deux caractéristiques}, cette diminution des informations peut entrainer des risques de confusion entre différentes features, i.e. que deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}, le risque est que deux couches root cause soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle root cause est responsable de l'apparition d'un error name.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/caracteristiques_simples_2.png}
 	\caption[Comparaison de deux caractéristiques]{Calcul de nouvelles features. On retrouve sur la figure a) les valeurs du senseur et de l'actuateur de la hanche, ainsi que leurs caractéristiques simplifiées. Sur la figure b), on observe deux autres features et leurs caractéristiques simplifiées. On remarque que, bien qu'il s'agisse de features différentes entres les figures a) et b), ces derniers possèdent les mêmes caractéristiques simplifiées.}
 	\label{fig:Comparaison de deux caractéristiques}
+\end{figure}
+
+\subsubsection{Considérer chaque unité de temps comme une feature}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Considérer chaque unité de temps comme une feature}
+On propose de considérer chaque unité de temps comme une feature caractéristique de nos différents exemples. Le nombre d'entrées du système d'apprentissage automatique est donc égal au nombre d'échantillons contenus dans une donnée temporelle. 
+
+\begin{figure}[h]
+	\centering\includegraphics[height=8cm]{images/unit_tps_feature.png}
+	\caption[Considérer chaque unité de temps comme une feature: exemple]{Considérer chaque unité de temps comme une feature: exemple. On souhaite dans cet exemple entraîner l'algorithme à reconnaitre le .}
+	\label{fig:Considérer chaque unité de temps comme une feature: exemple}
 \end{figure}
 
 \subsubsection{Passage des données dans le domaine fréquentiel}
