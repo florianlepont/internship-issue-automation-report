@@ -118,7 +118,7 @@ Chaque couche root cause délivre en sortie la probabilité que la root cause à
 On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation du Machine Learning, afin de mettre en place l'automatisation du processus d'investigation. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de notre système (c.f. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raisons ayant amené à utiliser la reconnaissance de motifs. \\
 
 Afin de simplifier le développement du système de reconnaissance de motifs, on admet dans un premier temps que chaque couche root cause est un système d'apprentissage automatique capable d'apprendre uniquement à détecter une root cause dans une seule feature (e.g. BaseAccZ, HipPitchSensorValue, etc.) 
-On propose de considérer chaque unité de temps comme une feature caractéristique de nos différents exemples. Le nombre d'entrée du système d'apprentissage automatique est donc égal au nombre d'échantillons contenus dans une donnée temporelle. 
+On propose de considérer chaque unité de temps comme une feature caractéristique de nos différents exemples. Le nombre d'entrées du système d'apprentissage automatique est donc égal au nombre d'échantillons contenus dans une donnée temporelle. 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/unit_tps_feature.png}
