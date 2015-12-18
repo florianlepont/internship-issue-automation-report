@@ -151,10 +151,7 @@ Chaque feature peut être associée à deux formes distinctives:
 	\item Une forme caractéristique de la courbe, attestant de la présence d'une root cause. 
 \end{itemize}
 
-Entrainer le modèle revient à créer un patron représentatif de la feature liée à la présence d'une root cause. 
-
-
-Pour cela, on entraîne l'algorithme d'apprentissage automatique à partir des deux formes distinctes. Cela revient à apprendre la forme globale et caractéristique d'une feature en cas de présence ou non d'une root cause. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la root cause est présente ou non dans la feature. \\
+Entrainer le modèle revient à créer un patron représentatif de la feature liée à la présence d'une root cause. Pour cela, on entraîne l'algorithme d'apprentissage automatique à partir des deux formes distinctes. Cela revient à apprendre la forme globale et caractéristique d'une feature en cas de présence ou non d'une root cause. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la root cause est présente ou non dans la feature. \\
 Par exemple, on souhaite créer une nouvelle couche root cause (i.e. entraîner un algorithme d'apprentissage) à reconnaitre le frottement des freins de la hanche, entraînant la chute du robot durant le Filtering Test. Pour cela on va s'intéresser plus particulièrement à la courbe de 
 
 \begin{figure}[h]
@@ -189,6 +186,11 @@ Une fois l'architecture du système définie, on souhaite mesurer les performanc
 
 \subsection{Optimisation des paramètres du SVM}
 \label{Industrialisation du produit: Performances de la solution:Optimisation des paramètres du SVM}
+La prise de décision de la part de l'algorithme du SVM peut être contrôlé via deux paramètres: C et gamma.
+\begin{description}
+	\item gamma 
+	\item C
+\end{description}
 
 \subsection{Matrices de confusion}
 \label{Industrialisation du produit: Performances de la solution:Matrices de confusion}
