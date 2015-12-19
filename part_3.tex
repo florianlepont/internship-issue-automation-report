@@ -30,7 +30,7 @@ Le pré-traitement est composé de 5 étapes.
 
 \subsubsection{Format des données en sortie du pré-traitement}
 \label{Industrialisation du produit: Outils: API: Format des données en sortie du pré-traitement}
-On présente dans le tableau \ref {tab: Structure de la base de données d'exemples après prétraitement} la structure des données en sortie du pré traitement des données. On a deux vecteur : un contenant les exemples de motifs et un deuxième contenant le label associé à chaque motif. Le label 1 signifie que le motif lié correspond à un motif caractéristique 
+On présente dans le tableau \ref {tab: Structure de la base de données d'exemples après prétraitement} la structure des données en sortie du pré traitement des données. On a deux vecteur : un contenant les exemples de motifs et un deuxième contenant le label associé à chaque motif. Le label 1 signifie que le motif lié correspond à un motif caractéristique de la root cause que l'on cherche à détecter; 0 signifie que le motif lié ne correspond pas à un motif caractéristique de la root cause que l'on cherche à détecter. 
 \begin{equation}
 \begin{blockarray}{cc}
 exemples & label \\
@@ -46,6 +46,7 @@ exemple_m & \0 \\
 \label {tab: Structure de la base de données d'exemples après prétraitement}
 \end{equation}
 
+Chaque exemple correspond à une liste qui contient l'ensemble des échantillons  
 \subsection{Outils graphiques}
 \label{Industrialisation du produit: Présentation des outils: Outils graphiques}
 
