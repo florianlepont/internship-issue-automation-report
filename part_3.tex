@@ -66,7 +66,7 @@ On présente ici les différents outils graphiques permettant de réaliser la co
 \label{Industrialisation du produit: Outils graphiques: Pattern selection}
 Cet outil graphique permet de sélectionner les motifs contenus dans chaque exemple du \emph{training set} durant la phase de pré-traitement des données.  Il permet également  de labelliser les exemples. \\
 Il est formé de trois parties:
-\begin{item}
+\begin{itemize}
 	- La première partie (encadré vert de la figure \ref{fig:Interface graphique du pattern selector}) nous donne divers indications sur l'état actuel du pré-traitement des données : la taille du motif actuellement sélectionné, le nom de l'exemple étudié et le nombre d'exemples restant à traiter. 
 	- La seconde partie (encadré rouge de la figure  \ref{fig:Interface graphique du pattern selector}) est la partie graphique de l'interface graphique. Elle affiche les features de l'exemple actuellement étudiée. Dans le cas de la figure  \ref{fig:Interface graphique du pattern selector}, réalise par exemple l'entraînement de l'algorithme pour  que celui-ci puisse reconnaître le motif caractéristique de la root cause "frottement des freins de la hanche". La région en rouge permet de sélectionner le motif qui nous intéresse.
 	- La dernière partie (encadré bleu de la figure  \ref{fig:Interface graphique du pattern selector}) est une succession de boutons permettant d'interagir avec les différents exemples. De gauche à droite :   
@@ -75,7 +75,7 @@ Il est formé de trois parties:
 		\item Le bouton "Found" permet d'indiquer au système que le motif est présent sur l'exemple étudié, et qu'il a bien été sélectionné grâce à la région en rouge. Cela revient à labelliser l'exemple (Y = 1, c.f. partie \ref{Industrialisation du produit: API: Format des données en sortie du pré-traitement})
 		\item Le bouton "Not Found" permet d'indiquer au système que le motif n'est pas présent sur l'exemple étudié. Cela revient à labelliser l'exemple (Y = 0, c.f. partie \ref{Industrialisation du produit: API: Format des données en sortie du pré-traitement}) 
 	\end{itemize} 
-\end{item} 
+\end{itemize} 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6.4cm]{images/pattern_selector.png}
