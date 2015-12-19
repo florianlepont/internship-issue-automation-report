@@ -22,7 +22,7 @@ Le module "Data set" contenu dans l'API permet de pré-traiter les exemples et d
 Le pré-traitement est composé de ... étapes.
 \begin{description}
 	\item [Lecture] La première étape du pré-traitement consiste à lire les données contenues dans le fichier log. 
-	\item [Échantillonnage] Les fichiers logs générés par MEIGUI lors du déroulement du Filtering Test n'ont pas forcement tous la même période d'échantillonnage. Cela signifie que les exemples que l'on souhaite utiliser pour l'entraînement ne font pas la même taille. Or, l'utilisation l'utilisation de la librairie Scikit-learn nécessite que celles-ci aient le même nombre d'échantillons. Pour cette raison, on commence par extraire
+	\item [Échantillonnage] Les fichiers logs générés par MEIGUI lors du déroulement du Filtering Test n'ont pas forcement tous la même période d'échantillonnage. Cela signifie que les exemples que l'on souhaite utiliser pour l'entraînement ne font pas la même taille. Or, les spécificités des fonctions de la librairie Scikit-learn utilisées pour l'entraînement nécessite que celles-ci aient le même nombre d'échantillons. Pour cette raison, on commence par extraire
 	\item [Selection des motifs]
 	\item [Déroulement des données]
 	\item [Tri des données]
