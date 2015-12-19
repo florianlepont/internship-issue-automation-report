@@ -4,8 +4,8 @@
 Une fois le processus fonctionnel de notre système défini, on l'industrialise. Cela signifie que l'on crée un ensemble d'outils permettant de l'utiliser de la manière la plus simple possible et en répondant au mieux à la problématique initiale. \\
 On soumet deux types d'outils: l'API, qui permet d'utiliser le système d'automatisation de l'investigation, et les outils graphiques, qui accompagnent l'usage de l'API et permettent à l'utilisateur d'interagir avec le programme.  
 
-\subsection{API}
-\label{Industrialisation du produit: Outils: API}
+\section{API}
+\label{Industrialisation du produit: API}
 L'API que l'on propose est composée de 3 modules principaux:
 \begin{description}
 	\item [data base] Permet de gérer le stockage et la lecture des données nécessaires à l'exécution des algorithmes d'apprentissage. Deux types de fichiers sont sauvegardés dans la base de donnée: les fichiers logs, qui fournissent l'ensemble des exemples permettant d'entraîner l'algorithme et les fichiers générés par l'algorithme lors de son apprentissage.
@@ -15,8 +15,8 @@ L'API que l'on propose est composée de 3 modules principaux:
 
 La librairie utilise le langage de programmation Python \cite{Python}. \\
 
-\subsubsection{Pré-traitement et traitement des données}
-\label{Industrialisation du produit: Outils: API: Pré-traitement et traitement des données}
+\subsection{Pré-traitement et traitement des données}
+\label{Industrialisation du produit: API: Pré-traitement et traitement des données}
 Le module "Data set" contenu dans l'API permet de pré-traiter les exemples et de les structurer afin de pouvoir réaliser l'apprentissage. 
 Le pré-traitement est composé de 5 étapes.
 \begin{description}
