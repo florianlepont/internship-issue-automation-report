@@ -166,7 +166,12 @@ Il suffit pour cela d'indiquer le nom de la couche error name que l'on souhaite 
 \subsection{Nouvelle root cause}
 \label{Industrialisation du produit: Utilisation suggérée des outils: Nouvelle root cause}
 Le menu "Add a root cause to the knowledge base" (c.f. figure 	\ref{fig:Menu principal}) permet de créer une nouvelle root cause (i.e. entraîner un nouvel algorithme d'apprentissage à reconnaitre une root cause), à la lier à une couche error name, et à l'ajouter à la base données. \\
-Pour cela, on suit le processus décrit à la figure 
+Pour cela, on suit le processus suivant (c.f. figure \ref{fig: Nouvelle root cause}) : 
+\begin{enumerate}
+	\item On sélectionne l'error name à laquelle on souhaite lier cette nouvelle root cause. On indique ensuite le nom de cette nouvelle root cause. Dans le cas de la root cause frottement des freins de la hanche, on la lie à l'error name "fall down" et on l'appelle "frottement des freins de la hanche". 
+	\item On sélectionne la/les feature(s) liée(s) à la root cause. Dans le cas de la root cause du frottement des freins de la hanche, on sélectionne les clés HipPitchPositionSensorValue, HipPitchPositionActuatorValue, respectivement les valeurs du senseur et de l'actuateur de la hanche. 
+	\item On utilise le Pattern Selector (c.f. partie \label{Industrialisation du produit: Outils graphiques: Pattern selection})
+\end{enumerate}
 
 \begin{figure}[H]
 	\centering\includegraphics[height=7cm]{images/add_root_menu.png}
