@@ -29,7 +29,7 @@ Une fois nos différentes couches \emph{root cause} créées, on souhaite utilis
 
 \begin{figure}[h]
 	\centering\includegraphics[width=12cm]{images/synoptique_error.png}
-	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche \emph{error name}. La couche \emph{error name} contient plusieurs couches \emph{root cause} (on dit qu'elles sont liées). On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche \emph{root cause} va détecter la présence de sa \emph{root cause}. On obtient en sortie de la couche \emph{error name} la \emph{root cause}  ayant la plus forte probabilité d'avoir été reconnue.}
+	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche \emph{error name}. La couche \emph{error name} contient plusieurs couches \emph{root cause} (on dit qu'elles sont liées). On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche \emph{root cause} va détecter la présence de sa \emph{root cause}. On obtient en sortie de la couche \emph{error name} la \emph{root cause}  ayant eu la plus forte probabilité d'avoir été reconnue.}
 	\label{fig:utilisation de la couche error name}
 \end{figure}
 
@@ -43,7 +43,7 @@ Chaque couche \emph{root cause} peut être considérée comme un système d'appr
 
 \subsection{Les exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples}
-Les exemples sont les éléments permettant d'entraîner l'algorithme d'apprentissage automatique (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Les données}). Dans le cadre de la résolution de notre problématique, ces exemples correspondent aux données générées et enregistrées dans le fichier log lorsqu'une erreur (error name) est détectée durant le Filtering Test.
+Les exemples sont les éléments permettant d'entraîner un algorithme d'apprentissage automatique (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Les données}). Dans le cadre de la résolution de notre problématique, ils correspondent aux données générées et enregistrées dans le fichier log lorsqu'une erreur (\emph{error name}) est détectée durant le Filtering Test.
 
 \subsubsection{Structure du fichier log}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure du fichier log}
