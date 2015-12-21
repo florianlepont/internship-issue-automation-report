@@ -155,7 +155,7 @@ Le problème de cette approche est qu'elle réduit le nombre d'informations que 
 \subsubsection{Considérer chaque unité de temps comme une feature}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Considérer chaque unité de temps comme une feature}
 On propose de considérer chaque unité de temps comme une feature. Le nombre d'entrées du système d'apprentissage automatique est donc égal au nombre d'échantillons contenus dans un exemple (cf. figure \ref{fig:Considérer chaque unité de temps comme une feature: exemple}). \\
-De manière intuitive, entrainer le modèle revient à créer un patron représentatif de la feature liée à la présence d'une root cause. Pour cela, on entraîne l'algorithme d'apprentissage automatique à partir des deux formes distinctes. Cela revient à apprendre la forme globale et caractéristique d'une feature en cas de présence ou non d'une root cause. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la root cause est présente ou non dans la feature. \\
+De manière intuitive, entrainer le modèle revient à créer un patron représentatif de la feature liée à la présence d'une root cause. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la root cause est présente ou non dans la feature. \\
 Par exemple, on souhaite créer une nouvelle couche root cause (i.e. entraîner un algorithme d'apprentissage) à reconnaitre le frottement des freins de la hanche, entraînant la chute du robot durant le Filtering Test. Pour cela on va s'intéresser plus particulièrement à la courbe de 
 
 \begin{figure}[h]
