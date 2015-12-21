@@ -139,7 +139,7 @@ L'évolution temporelle des exemples utilisés pour l'entraînement de l'algorit
 On propose de créer de nouvelles features aux valeurs constantes. Elles sont des caractéristiques des features actuelles. Dans le cadre de cette étude, on les identifiera sous l'appellation de \emph{caractéristiques simplifiées}. Elles correspondent exemple au calcul de la moyenne d'une feature, la valeur crête-à-crête, la valeur maximum, etc. On se sert ensuite de ces nouvelles \emph{caractéristiques simplifiées} pour réaliser l'entrainement de notre algorithme d'apprentissage automatique (c.f. exemple figure \ref{fig:Calcul de nouvelles features}).
 
 \begin{figure}[h]
-	\centering\includegraphics[height=8cm]{images/caracteristiques_simples_1.png}
+	\centering\includegraphics[width=12cm]{images/caracteristiques_simples_1.png}
 	\caption[Calcul des caractéristiques simplifiées]{Calcul des \emph{caractéristiques simplifiées}. Les figures a) et b) représentent respectivement l'évolution de la valeur du senseur et de l'actuateur de la hanche au cours du temps, lors de la chute d'un robot. La ligne rouge représente la valeur moyenne de chacune des features. la ligne noire correspond à la valeur crête-à-crête de chacune des features. On a ainsi réduit nos features à deux valeurs constantes. On peut donc entraîner l'algorithme d'apprentissage automatique à partir de ces \emph{caractéristiques simplifiées}.}
 	\label{fig:Calcul de nouvelles features}
 \end{figure}
