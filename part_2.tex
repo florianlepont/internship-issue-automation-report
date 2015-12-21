@@ -161,7 +161,6 @@ De manière intuitive, entrainer le modèle revient à créer un patron représe
 \paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaitre lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. \\
 Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe $z$ fournit par l'accéléromètre de la base de Pepper (clé BaseAccZ). C'est donc la feature de notre système. \\
 D'après la figure ..., on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner à l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté.
- l'accélération en $z$ augmente instantanément
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/unit_tps_feature.png}
