@@ -37,7 +37,7 @@ Chaque couche \emph{root cause} peut être considérée comme un système d'appr
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/exemple_root.png}
-	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche root cause. La couche error name contient plusieurs couches root cause. On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche root cause va détecter la présence de la root cause à laquelle elle est rattachée. On obtient en sortie de la couche error name la root cause  ayant la plus forte probabilité d'avoir été reconnue.}
+	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche \emph{root cause}. Il correspond à celui du Machine Learning car chaque couche \emph{root cause} est en réalité un algorithme d'apprentissage supervisé SVM que l'on entraine à détecter une \emph{root cause} particulière.}
 	\label{fig:Synoptique d'une couche root cause}
 \end{figure}
 
@@ -52,7 +52,7 @@ Le fichier log renferme un ensemble de données enregistrées lors de la détect
 \begin{equation}
 \begin{blockarray}{ccccccc}
 \begin{block}{c[cccccc]}
-features & HeadPitchPositionActuatorValue & HeadPitchElectricCurrentSensorValue & HipPitchPositionSensorValue & HipPitchPositionActuatorValue &  KneePitchPositionSensorValue & KneePitchPositionActuatorValue \\
+features & X_1 & X_2 & X_3 & X_4 &  X_5 & X_6 \\
 t_0 & -0,404 & 0,64 & -0,023 & -0,04 & -0,008 & -0,007 \\
 t_1 & -0,404 & 0,64 & -0,029 & -0,038 & -0,006 & -0,006 \\
 t_3 & -0,404 & 0,576 & -0,029 & -0,033 & -0,008 & -0,012 \\
@@ -68,6 +68,16 @@ t_n & ... & ... & ... & ... & ... & ... \\
 \end{blockarray}
 \label {tab: Extrait du contenu d'un fichier log}
 \end{equation}
+
+Avec :
+\begin{itemize}
+	\item $X_1$ = HeadPitchPositionActuatorValue
+	\item $X_2$ = HeadPitchElectricCurrentSensorValue
+	\item $X_3$ = ipPitchPositionSensorValue
+	\item $X_4$ = HipPitchPositionActuatorValue
+	\item $X_5$ = KneePitchPositionSensorValue
+	\item $ X_6$ = KneePitchPositionActuatorValue
+\end{itemize}
 
 Le fichier log représenté par ce tableau correspond uniquement à un seul exemple de la base de données nous servant à entrainer chacun de nos algorithmes. 
 A chaque colonne du tableau correspond une feature. Chacune des lignes représente la valeur de la feature à un instant t (une ligne ne correspond pas à un exemple !). 
