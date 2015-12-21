@@ -52,7 +52,7 @@ exemple_m & 0 \\
 On retrouve cette structure pour chaque \emph{set} (i.e. \emph{training set} et \emph{test set}). \\
 Chaque exemple correspond à une liste qui contient l'ensemble des échantillons contenus dans un motif.
 
-\subsubsection{Module Marchine Learning}
+\subsection{Module Marchine Learning}
 \label{Industrialisation du produit:  API: Le module Machine Learning}
 Le module Machine Learning s'appuie sur l'utilisation de scikit-learn \cite{ScikitLearn}. Il s'agit d'une bibliothèque Open Source développée par l'INRIA (Institut National de Recherche en Informatique et en Automatique \cite{INRIA}). Elle propose de nombreux outils qui permet de réaliser de la classification (régression logistique, SVM), de la régression (SVR, régression linéaire) et du clustering (i.e. apprentissage non supervisé). On l'utilise dans le cadre ne notre projet pour réaliser de classification (i.e. apprentissage supervisé) en utilisant l'algorithme d'apprentissage automatique SVM. Elle est également utilisée afin de construire le \emph{training set} et le \emph{test set} et déterminer les performances de l'algorithme.
 
@@ -61,21 +61,21 @@ Le module Machine Learning s'appuie sur l'utilisation de scikit-learn \cite{Scik
 
 \section{Outils graphiques}
 \label{Industrialisation du produit: Outils graphiques}
-On présente ici les différents outils graphiques qui permettent de réaliser la construction d'une nouvelle couche root cause (i.e. un nouvel algorithme pour détecter une \emph{root cause}), d'investiguer un \emph{error name} et d'obtenir des informations sur les performances de l'algorithme. 
+On présente ici les différents outils graphiques qui permettent de réaliser la construction d'une nouvelle couche root cause (i.e. un nouvel algorithme pour détecter une \emph{root cause}), d'investiguer une \emph{error name} et d'obtenir des informations sur les performances de l'algorithme. 
 
 \subsection{Pattern selector}
 \label{Industrialisation du produit: Outils graphiques: Pattern selection}
-Cet outil graphique permet de sélectionner les motifs contenus dans chaque exemple du \emph{training set} durant la phase de pré-traitement des données.  Il permet également  de labelliser les exemples. \\
+Cet outil graphique permet de sélectionner les motifs contenus dans chaque exemple du \emph{training set} lors la phase de pré-traitement des exemples.  Il permet également  de labelliser les exemples. \\
 Il est formé de trois parties:
 \begin{itemize}
-	\item La première partie (encadré vert de la figure \ref{fig:Interface graphique du pattern selector}) nous donne divers indications sur l'état actuel du pré-traitement des données : la taille du motif actuellement sélectionné, le nom de l'exemple étudié et le nombre d'exemples restant à traiter. 
-	\item La seconde partie (encadré rouge de la figure  \ref{fig:Interface graphique du pattern selector}) est la partie graphique de l'interface graphique. Elle affiche les features de l'exemple actuellement étudiée. Dans le cas de la figure  \ref{fig:Interface graphique du pattern selector}, on réalise par exemple l'entraînement de l'algorithme pour que celui-ci puisse reconnaître le motif caractéristique de la root cause "frottement des freins de la hanche". La région en rouge permet de sélectionner le motif qui nous intéresse. D'après la première partie de l'IHM, on a ici sélectionné un motif dont la taille est de 60 échantillons.
-	\item La dernière partie (encadré bleu de la figure  \ref{fig:Interface graphique du pattern selector}) est une succession de boutons permettant d'interagir avec les différents exemples. De gauche à droite :   
+	\item La première partie (encadré vert de la figure \ref{fig:Interface graphique du pattern selector}) nous fournie des informations sur l'état actuel du pré-traitement des données : la taille du motif sélectionné, le nom de l'exemple étudié et le nombre d'exemples restant à traiter. 
+	\item La seconde partie (encadré rouge de la figure  \ref{fig:Interface graphique du pattern selector}) affiche les features de l'exemple actuellement étudiée. Dans le cas de la figure  \ref{fig:Interface graphique du pattern selector}, on réalise par exemple l'entraînement de l'algorithme pour que celui-ci puisse reconnaître le motif caractéristique de la root cause "frottement des freins de la hanche". La région en rouge permet de sélectionner le motif qui nous intéresse.
+	\item La dernière partie (encadré bleu de la figure  \ref{fig:Interface graphique du pattern selector}) est une succession de boutons qui permettent à l'utilisateur d'interagir avec les différents exemples. De gauche à droite :   
 	\begin{itemize}
 		\item Le  bouton "Previous" permet de revenir à l'exemple précédent.
-		\item Le bouton "Found" permet d'indiquer au système que le motif est présent sur l'exemple étudié, et qu'il a bien été sélectionné grâce à la région en rouge. Cela revient à labelliser l'exemple (Y = 1, c.f. partie \ref{Industrialisation du produit: API: Format des données en sortie du pré-traitement})
+		\item Le bouton "Found" permet d'indiquer au système que le motif est présent sur l'exemple étudié, et qu'il a bien été sélectionné grâce à la région en rouge. Cela revient à labelliser l'exemple (Y = 1, c.f. partie \ref{Industrialisation du produit: API: Format des données en sortie du pré-traitement}). Le prochain exemple à étudier s'affiche.
 		\item Le bouton "Not Found" permet d'indiquer au système que le motif n'est pas présent sur l'exemple étudié. Cela revient à labelliser l'exemple (Y = 0, c.f. partie \ref{Industrialisation du produit: API: Format des données en sortie du pré-traitement}). Le prochain exemple à étudier s'affiche.
-		\item Le bouton en forme d'œil ouvert permet d'activer le mode étendu (c.f. figure \ref{fig:Interface graphique du pattern selector en mode étendu}). Le prochain exemple à étudier s'affiche.
+		\item Le bouton en forme d'œil ouvert permet d'activer le mode étendu (c.f. figure \ref{fig:Interface graphique du pattern selector en mode étendu}).
 	\end{itemize} 
 \end{itemize} 
 
