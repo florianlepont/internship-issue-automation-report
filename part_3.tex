@@ -27,8 +27,8 @@ Le pré-traitement est composé de 5 étapes.
 	\item [Tri des données] Enfin, pour mesurer les performances de notre algorithme (c.f. partie \ref{Automatisation du processus d'investigation: Performances de la solution}), on sépare notre base de données d'exemples en deux groupes: le \emph{training set} et le \emph{test set}. Le premier sera utilisé pour entraîner notre algorithme, le deuxième pour le tester. 
 \end{description}
 
-\subsection{Sélection des motifs lors du pré-traitement des données }
-\label{Industrialisation du produit: API: Sélection des motifs pour entrainement}
+\subsection{Sélection des motifs}
+\label{Industrialisation du produit: API: Sélection des motifs}
 Comme étudié en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs}, la reconnaissance de motifs passe par la sélection des motifs caractéristiques de la root cause que l'on souhaite détecter pour chaque exemple de notre base de donnée. Elle s'accompagne également de  la sélection de sections de la courbe ne présentant pas ce motif afin de pouvoir réaliser l'apprentissage de l'algorithme correctement( c.f. partie \ref{Automatisation du processus d'investigation: Difficultés notoires rencontrées}). Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entrainement. Cette taille dépend de la largeur globale du motif caractéristique de la root cause étudiée et est déterminée lors de l'utilisation de l'interface graphique présentée partie ... .   
 
 \subsection{Format des données en sortie du pré-traitement des données}
