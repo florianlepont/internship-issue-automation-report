@@ -69,30 +69,6 @@ Pepper intègre également une multitude de capteurs. Certains d'entre eux sont 
 \label{Introduction:Expression du besoin}
 L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une montée en puissance de la production. Afin de la guider, des outils de vérification des produits en fin de ligne de production sont mis en place. Parmi eux, on retrouve le "Filtering Test" qui consiste à réaliser une série de tests durant six heures. Il vise notamment à stresser l'ensemble des parties mécaniques du robot afin de faire ressortir d'éventuelles erreurs. Si une anomalie survient lors du déroulement du test, les différentes données relatives à l'état des systèmes mécaniques de Pepper sont enregistrées dans un fichier journal (e.g. température des fusibles, valeur des accéléromètres, etc.). Afin d'identifier les causes de l'apparition de problèmes sur le robot, un certain nombre d'hypothèses sont émises à partir de l'étude des données du fichier log. 
 
-% Mettre à jour le déroulement du test à partir du code de Meigui et des explications de Thomas
-\begin{table}[h]
-	\begin{tabular}{ | p {4cm} | p {2.5cm} | p {2.5cm} |  p {4cm} |}
-		\hline 
-		\multicolumn{4}{| l |}{5 étapes successives sur 6 heures de test}\\
-		\hline
-		Activité & Durée (en minutes) & Temps cumulé (en minutes)  & Description\\
-		\hline
-		\multicolumn{4}{| l |}{Test 1 : succession de divers actions effectuées 40 fois durant les 10 heures }\\
-		\hline
-		Intro, Danse, Outro & 6 à 7  & 6 à 7 & Réalisation des mouvements d'introduction et d'outro\\
-		\hline 
-		Cycles de WakeUp, Rest & 3 à 4  & 10  & Passage successif en mode autonome et veille\\
-		\hline 
-		Faux dialogues & 2  & 12 &  Réalisation des mouvements effectués lors de dialogues\\
-		\hline 
-		Rest & 3  & 15 & Réalisation des mouvements lors du passage en mode Rest\\
-		\hline
-		\multicolumn{4}{| l |}{Test 2: enchainement de 8 danses répétées 5 fois durant les dix heures} \\
-		\hline
-	\end{tabular}
-	\caption[Déroulement d'un Filtering test]{Déroulement d'un Filtering test}
-	\label {tab: Déroulement d'un Filtering test}
-\end{table}
  
 \subsection{Hiérarchisation des erreurs}
 \label{Introduction:Expression du besoin:Hiérarchisation des erreurs}
