@@ -116,8 +116,8 @@ On présente ici un exemple d'analyse d'un fichier log :
 
 \subsubsection{Observation}
 \begin{itemize}
-	\item Lors du déroulement du Filtering test, le robot tombe à t = 16972 secondes, soit lorsqu'il réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute.	\ref{fig:analyse d'une anomalie: accéléromètre}
-	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le senseur du genou suit correctement la commande du moteur (figure \ref{fig:analyse d'une anomalie: hipitch}).
+	\item Lors du déroulement du Filtering test, le robot tombe à t = 16972 secondes, soit lorsqu'il réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute. (c.f. figure \ref{fig:analyse d'une anomalie: accéléromètre})
+	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le senseur du genou suit correctement la commande du moteur (cf. figure \ref{fig:analyse d'une anomalie: hipitch}).
 	%Préviser à quel moment l'augmentation du courant arrive
 	\item On observe également une augmentation anormale du courant dans le moteur de l'articulation. 
 \end{itemize} 
