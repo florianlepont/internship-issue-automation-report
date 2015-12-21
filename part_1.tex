@@ -257,10 +257,9 @@ Il existe deux types d'apprentissage supervisé: la régression et la classifica
 Il existe différents algorithmes d'apprentissage supervisé utilisés pour résoudre des problèmes de régression et de classification. 
 
 
-
 \subsection{La régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire}
-La régression linéaire cherche à expliquer une variable de sortie $y$ par une fonction affine de $x$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Dit autrement: on a un jeu de données $x$ auquel correspond un jeu de données $y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
+La régression linéaire cherche à expliquer une variable de sortie $y$ par une fonction affine de $x$. Cette fonction linéaire affine est appelée \emph{hypothèse} (notée $h(x)$). Dit de manière différente : on a un jeu de données $x$ auquel correspond un jeu de données $y$, on cherche les valeurs $\theta_1$ et $\theta_2$ permettant de "mapper" les données, tel que:
 
 \begin{equation}
 	h_\theta (x) = \theta_0 + \theta_1 x
@@ -270,9 +269,9 @@ La régression linéaire cherche à expliquer une variable de sortie $y$ par une
 \subsubsection{Exemple de régression linéaire uni-variable}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable}
 On souhaite déterminer le prix d'un logement en fonction de sa surface au sol en se basant sur les exemples de prix du parc immobilier. 
-La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie $y$. A partir des exemples du tableau \ref {tab:parc immobilier} les exemples $x$, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
+La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie $y$. A partir des exemples du tableau \ref {tab:parc immobilier}, on obtient la représentation graphique en figure \ref{fig:évolution du prix de l'immobilier en fonction de la surface}. Grâce à l'expression de l'hypothèse, on est capable de déterminer le prix d'un loyer en fonction de la surface au sol.  
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{tabular}{ | p {4cm} | p {4cm} |}
 		\hline
 		taille ($m^2$) & prix (k\euro) \\
