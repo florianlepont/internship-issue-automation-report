@@ -124,11 +124,11 @@ Chaque couche \emph{root cause} délivre en sortie la probabilité que la \emph{
 
 
 
-\section{Reconnaissance de motifs}
-\label{Automatisation du processus d'investigation: Reconnaissance de motifs}
-On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation du Machine Learning, afin de mettre en place l'automatisation du processus d'investigation. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de notre système (c.f. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raisons ayant amené à utiliser la reconnaissance de motifs. \\
+\section{Détection d'une root cause}
+\label{Automatisation du processus d'investigation: Détection d'une root cause}
+On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation du SVM, pour détecter la présence d'une \emph{root cause} dans un fichier log. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de l'algorithme (cf. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raisons ayant amené à utiliser la reconnaissance de motifs. \\
 
-Afin de simplifier le développement du système de reconnaissance de motifs, on admet dans un premier temps que chaque couche root cause est un système d'apprentissage automatique capable d'apprendre uniquement à détecter une root cause en analysant une seule feature (e.g. BaseAccZ, HipPitchSensorValue, etc.) 
+Afin de simplifier le développement du système de reconnaissance de motifs, on admet dans un premier temps que chaque couche \emph{root cause} est un système d'apprentissage automatique, capable de détecter une \emph{root cause} en analysant \textbf{une seule} feature (e.g. BaseAccZ, HipPitchSensorValue, etc.) 
 
 \subsection{Différentes approches étudiées}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées}
