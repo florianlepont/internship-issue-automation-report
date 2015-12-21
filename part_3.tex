@@ -30,9 +30,9 @@ Le pré-traitement est composé de 5 étapes.
 \subsubsection{Sélection des motifs}
 \label{Industrialisation du produit: API: Sélection des motifs}
 Comme étudié en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs}, la reconnaissance de motifs passe par la sélection des motifs caractéristiques de la root cause que l'on souhaite détecter, dans chaque exemple de notre base de données. Elle s'accompagne également de  la sélection de sections de la courbe ne présentant pas ce motif afin de pouvoir réaliser l'apprentissage de l'algorithme de manière optimale( c.f. partie \ref{Automatisation du processus d'investigation: Difficultés notoires rencontrées}).\\
- Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entrainement. Cette taille dépend de la largeur globale du motif caractéristique de la root cause étudiée et est déterminée lors de l'utilisation de l'interface graphique présentée partie ... .   
+ Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entrainement. Cette taille dépend de la largeur globale du motif caractéristique et est déterminée par l'utilisateur lors de l'utilisation de l'interface graphique présentée partie ... .   
 
-\subsubsection{Format des données en sortie du pré-traitement des données}
+\subsubsection{Format des données de sortie}
 \label{Industrialisation du produit: API: Format des données en sortie du pré-traitement}
 On présente dans le tableau \ref {tab: Structure de la base de données d'exemples après prétraitement} la structure des données en sortie du pré traitement des données. On a deux vecteur : un contenant les exemples de motifs et un deuxième contenant le label associé à chaque motif. Le label 1 signifie que le motif lié correspond à un motif caractéristique de la root cause que l'on cherche à détecter; 0 signifie que le motif lié ne correspond pas à un motif caractéristique de la root cause que l'on cherche à détecter. 
 \begin{equation}
