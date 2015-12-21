@@ -158,7 +158,8 @@ On propose de considérer chaque unité de temps comme une feature. Le nombre d'
 De manière intuitive, entrainer le modèle revient à créer un patron représentatif de la feature lorsqu'elle est liée à la présence d'une root cause. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la root cause est présente ou non dans la feature.
 \newline
 
-\paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaitre lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre.
+\paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaitre lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. 
+Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe z, fournit par l'accéléromètre de la base de Pepper.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/unit_tps_feature.png}
