@@ -15,4 +15,8 @@
 
 *.lof
 
+*.bbl
+
+*.blg
+
 remerciements.pdf
