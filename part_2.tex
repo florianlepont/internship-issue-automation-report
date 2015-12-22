@@ -189,12 +189,12 @@ Au regard des études réalisées sur les différentes solutions qui s'offraient
 
 \subsubsection{Principes généraux}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}
-D'une certaine manière, la reconnaissance de motif s'appuie sur une stratégie d'investigation proche de celle de l'Homme. On se place par exemple dans le cas où on souhaite déterminer la cause ayant entraîné la chute d'un robot. La cause correspond à la \emph{root cause} et la chute du robot à \emph{l'error name}. En tant qu'humain, je vais visualiser et analyser les différentes courbes contenues dans le fichier log, généré lors de la détection de la chute durant le Filtering Test. J'observe alors les courbes de l'évolution de la position du senseur et de l'actuateur de la hanche, figure ... . 
+D'une certaine manière, la reconnaissance de motif s'appuie sur une stratégie d'investigation proche de celle de l'Homme. On se place par exemple dans le cas où on souhaite déterminer la cause ayant entraîné la chute d'un robot. La cause correspond à la \emph{root cause} et la chute du robot à \emph{l'error name}. En tant qu'humain, je vais visualiser et analyser les différentes courbes contenues dans le fichier log, généré lors de la détection de la chute durant le Filtering Test. J'observe alors les courbes de l'évolution de la position du senseur et de l'actuateur de la hanche, figure \ref{fig:Évolution de la position du senseur et de l'actuateur de la hanche} . 
 
 \begin{figure}[H]
 	\centering\includegraphics[height=7cm]{images/patron_comp.png}
-	\caption[Détection d'une chute à partir du patron de BaseAccZ]{Détection d'une chute à partir du patron de BaseAccZ. Afin de savoir si l'exemple que l'on étudie est lié à une chute de robot ou non, on compare la valeur BaseAccZ du fichier log au patron caractéristique d'une chute de BaseAccZ. Sur le graphique supérieur, on observe que BaseAccZ est globalement contenu dans le patron, il s'agit donc d'un fichier log généré lors de la chute d'un robot. On observe en revanche sur le graphique inférieur que BaseAccZ n'est que \textbf{partiellement} incluse dans le patron. Il ne s'agit donc pas d'un exemple caractéristique d'une chute.}
-	\label{fig:Détection d'une chute à partir du patron de BaseAccZ}
+	\caption[Évolution de la position du senseur et de l'actuateur de la hanche]{Évolution de la position du senseur et de l'actuateur de la hanche.}
+	\label{fig:Évolution de la position du senseur et de l'actuateur de la hanche}
 \end{figure}
 
 \subsubsection{Étendre le problème à plusieurs dimensions }
