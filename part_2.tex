@@ -294,5 +294,22 @@ A partir de ces résultats, il est possible de déterminer la précision de l'al
  \paragraph{Exemple}
  On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement des freins de la hanche". 
  
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
+		\cline{3-4}
+		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
+		\hline
+		\multirow{2}*{Classe prédite} & Vrai & TP & FP \\
+		\cline{2-4}
+		& Faux & FN & TN \\
+		\hline
+	\end{tabular}
+	\caption[Matrice de confusion]{Matrice de confusion}
+	\label {tab:Matrice de confusion}
+\end{table}
+ 
 \subsection{Courbes d'apprentissage}
 \label{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}
