@@ -163,18 +163,23 @@ Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'
 D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner à l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entrainement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
 On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure ...).
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering\includegraphics[height=7cm]{images/fall_not_fall.png}
 	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
 	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering\includegraphics[height=7cm]{images/patron.png}
 	\caption[Créer un patron caractéristique de la chute du robot]{Créer un patron caractéristique de la chute du robot. Chaque échantillon qui forment un exemple est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre la forme de BaseAccZ, dans le case de robots tombés, revient à créer un patron de BaseAccZ qui caractérise la chute. L'entrainement s'effectue à partir de différents exemples de la feature BaseAccZ lorsque le robot tombe.}
 	\label{fig:Créer un patron caractéristique de la chute du robot}
 \end{figure}
 
+\begin{figure}[H]
+	\centering\includegraphics[height=7cm]{images/fall_not_fall.png}
+	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
+	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
+\end{figure}
 
 \subsection{Reconnaissance de motifs}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Concept}
