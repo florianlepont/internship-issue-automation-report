@@ -147,7 +147,7 @@ On propose de créer de nouvelles features aux valeurs constantes. Elles sont de
 Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques features (e.g. moyenne, valeur crête-à-crête). Comme le démontre la figure \ref{fig:Comparaison de deux caractéristiques}, cette diminution des informations peut entrainer des risques de confusion entre différentes features, i.e. deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}, le risque est que deux couches \emph{root cause} soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle \emph{root cause} est responsable de l'apparition d'une \emph{error name}.
 
 \begin{figure}[h]
-	\centering\includegraphics[width=11cm]{images/caracteristiques_simples_2.png}
+	\centering\includegraphics[width=15cm]{images/caracteristiques_simples_2.png}
 	\caption[Comparaison de deux caractéristiques]{Calcul de nouvelles features. On retrouve sur la figure a) la valeur de l'accélération selon l'axe $z$ et ses caractéristiques simplifiées. Sur la figure b), on observe une autre feature et ses caractéristiques simplifiées. On remarque que, bien qu'il s'agisse de features différentes entres les figures a) et b), ces dernières possèdent les mêmes caractéristiques simplifiées.}
 	\label{fig:Comparaison de deux caractéristiques}
 \end{figure}
