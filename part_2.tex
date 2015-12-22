@@ -261,6 +261,21 @@ Pour tester l'algorithme :
 
 Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une matrice de confusion.
 
+\begin{table}[h]
+	\begin{tabular}{ | p{7cm} | p{7cm} |}
+		\hline
+		Périmètres d'utilisation & Modèle d'apprentissage à favoriser \\
+		\hline 
+		le nombre de features est plus important que le nombre d'exemples (environ 1000 features pour 10 à 100 exemples) & Régression logistique ou SVM sans kernel \\
+		\hline
+		le nombre de features est faible (1 à 1000 features pour 10 à 10 000 exemples) & SVM avec un kernel \\
+		\hline 
+		si le nombre de features est faible et le nombre d'exemples élevé ( 1 à 10 000 features pour 50 000 à 1 million d'exemples) & Régression logistique ou svm sans kernel avec création de features. \\
+		\hline
+	\end{tabular}
+	\caption[Périmètre d'utilisation de la régression logistique et le SVM]{Périmètre d'utilisation de la régression logistique et le SVM}
+	\label {tab:Périmètre d'utilisation de la régression logistique et le SVM}
+\end{table}
 
  Chaque colonne de la matrice représente le nombre d'occurrences d'une classe estimée, tandis que chaque ligne représente le nombre d'occurrences d'une classe réelle (ou de référence). Les données utilisées pour chacun de ces groupes doivent être différentes. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
  
