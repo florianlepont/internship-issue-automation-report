@@ -289,6 +289,7 @@ Avec :
 A partir de ces résultats, il est possible de déterminer la précision de l'algorithme:
 \begin{equation}
 	\text{accuracy}= \frac{TP + TN}{TP + TN + FP + FN}
+	\label{accuracy}
 \end{equation}
  
  \paragraph{Exemple}
@@ -311,7 +312,7 @@ A partir de ces résultats, il est possible de déterminer la précision de l'al
 	\label {tab:Matrice de confusion de la root cause "frottement des freins de la hanche"}
 \end{table}
 
-On observe qu'il n'y a aucun faux négatifs et faux positifs. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme à parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement des freins de la hanche" dans le fichier log. D'après l'équation 
+On observe qu'il n'y a aucun faux négatifs et faux positifs. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme à parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement des freins de la hanche" dans le fichier log. D'après l'équation \ref{accuracy}, la précision de l'algorithme SVM de cette couche \emph{root cause} est donc de $100\%$.
  
 \subsection{Courbes d'apprentissage}
 \label{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}
