@@ -202,7 +202,7 @@ Dans le cadre du développement de notre algorithme, le principe est le même: o
 
 \begin{figure}[H]
 	\centering\includegraphics[height=7cm]{images/patron_motif.png}
-	\caption[Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"]{Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche". Chaque échantillon qui forment un exemple est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre la forme de BaseAccZ, dans le case de robots tombés, revient à créer un patron de BaseAccZ qui caractérise la chute. L'entrainement s'effectue à partir de différents exemples de la feature BaseAccZ lorsque le robot tombe.}
+	\caption[Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"]{Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche". Chaque échantillon qui forment un motif est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre le motif caractéristique formé par les courbes du HipPitchPositionSensorValue et HipPitchPositionActuatorValue revient à créer un patron caractéristique des deux features qui caractérise le frottement des freins de la hanche, dans le cadre de la chute robot. L'entrainement s'effectue à partir de différents exemples de motifs des deux features.}
 	\label{fig:Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"}
 \end{figure}
 
