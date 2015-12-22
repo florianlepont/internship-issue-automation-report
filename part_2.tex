@@ -259,7 +259,7 @@ Pour tester l'algorithme :
 	\item On compare ensuite la sortie prédite par l'algorithme et la sortie réelle (i.e. le label associé à chaque exemple). 
 \end{enumerate}
 
-Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une matrice de confusion.
+Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une matrice de confusion. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
 
 \begin{table}[H]
 	\centering
@@ -278,7 +278,13 @@ Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctem
 	\label {tab:Matrice de confusion}
 \end{table}
 
- Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
+Avec : 
+\begin{itemize}
+	\item TP = True positive (en français vrais positifs)
+	\item TN = True negative (en français vrais négatifs)
+	\item FP = False positive (en français faux positifs)
+	\item FN = False negative ( en français faux négatifs)
+\end{itemize}
  \newline
  
  A partir de ces résultats, il est possible de déterminer la précision de l'algorithme:
