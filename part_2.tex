@@ -240,7 +240,7 @@ On souhaite représenter de manière intuitive la répartition des exemples et d
 Chaque échantillon qui compose le motif caractéristique d'une \emph{root cause} devient lui même une feature (i.e. une entrée) du système d'apprentissage de l'algorithme SVM (cf figure \ref{fig:Créer un patron caractéristique de la chute du robot}). Par exemple, on se place de nouveau dans le cas de la \emph{root cause} "frottement des freins de la hanche". Si on s'intéresse aux features "HipPitchPositionSensorValue" et "HipPitchPositionSensorValue" et que l'on considère que le motif caractéristique à une taille de 125 échantillons, on aura donc 250 features en entrée de l'apprentissage ($125x2$ features). Cela signifie que si l'on souhaite représenter visuellement la répartition des exemples et des classes en fonction des features, on aurait un repère composé de 250 dimensions. On choisi au hasard deux de ses 250 dimensions et on les représente sur le repère figure 	\ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"} .
 
 \begin{figure}[h]
-	\centering\includegraphics[width=12cm]{images/classes_sys.png}
+	\centering\includegraphics[width=15cm]{images/classes_sys.png}
 	\caption[Représentation de la répartition des exemples et des classes en fonction des features,  approche fonctionnelle]{Représentation de la répartition des exemples et des classes en fonction des features. On a représenté ici deux graphiques dont chacun exprime la valeur des exemples en fonction de deux features choisies aléatoirement. Chaque feature correspond à un échantillon parmi les 250 qui composent chaque motif caractéristique de la \emph{root cause} "frottement des freins de la hanche".}
 	\label{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}
 \end{figure}
@@ -266,13 +266,13 @@ Afin de déterminer la meilleure combinaison de valeurs des deux paramètres, on
  On soumet en figure \ref{fig:Courbes de validation du paramètre C} et \ref{fig:Courbes de validation du paramètre gamma} les courbes de validation de la couche \emph{root cause} "frottement des freins de la hanche". On remarque que la valeur $C = 10$ optimise le mieux la précision de l'algorithme d'apprentissage. On remarque également que la valeur $gamma \approx 0.2$ optimise le mieux la précision de l'algorithme d'apprentissage.
 
  \begin{figure}[h]
- 	\centering\includegraphics[width=14cm]{images/courbe_validation_c.png}
+ 	\centering\includegraphics[width=15cm]{images/courbe_validation_c.png}
  	\caption[Courbes de validation du paramètre C]{Courbes de validation du paramètre C, pour la couche \emph{root cause} "frottement des freins de la hanche".}
  	\label{fig:Courbes de validation du paramètre C}
  \end{figure}
  
   \begin{figure}[h]
-  	\centering\includegraphics[width=14cm]{images/courbe_validation_gamma.png}
+  	\centering\includegraphics[width=15cm]{images/courbe_validation_gamma.png}
   	\caption[Courbes de validation du paramètre gamma]{Courbes de validation du paramètre gamma, pour la couche \emph{root cause} "frottement des freins de la hanche".}
   	\label{fig:Courbes de validation du paramètre gamma}
   \end{figure}
