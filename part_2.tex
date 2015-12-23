@@ -170,34 +170,34 @@
 %De manière intuitive, entrainer le modèle revient à créer un patron représentatif de la feature lorsque celle-ci est liée à la présence d'une \emph{root cause}. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la \emph{root cause} est présente ou non dans la feature.
 %\newline
 %
-%\paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaitre lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. \\
-%Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe $z$, fourni par l'accéléromètre de la base de Pepper (clé BaseAccZ). \\
-%D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entrainement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
-%On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}).
-%
-%\begin{figure}[h]
-%	\centering\includegraphics[width=12cm]{images/fall_not_fall.png}
-%	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
-%	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
-%\end{figure}
-%
-%\begin{figure}[h]
-%	\centering\includegraphics[width=12cm]{images/patron.png}
-%	\caption[Créer un patron caractéristique de la chute du robot]{Créer un patron caractéristique de la chute du robot. Chaque échantillon qui forme un exemple est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre la forme de BaseAccZ, dans le cas de robots tombés revient à créer un patron de BaseAccZ qui caractérise la chute. L'entrainement s'effectue à partir de différents exemples de la feature BaseAccZ lorsque le robot tombe.}
-%	\label{fig:Créer un patron caractéristique de la chute du robot}
-%\end{figure}
-%
-%\begin{figure}[h]
-%	\centering\includegraphics[width=12cm]{images/patron_comp.png}
-%	\caption[Détection d'une chute à partir du patron de BaseAccZ]{Détection d'une chute à partir du patron de BaseAccZ. Afin de savoir si l'exemple que l'on étudie est lié à une chute de robot ou non, on compare la valeur BaseAccZ du fichier log au patron caractéristique d'une chute de BaseAccZ. Sur le graphique supérieur, on observe que BaseAccZ est globalement contenu dans le patron, il s'agit donc d'un fichier log généré lors de la chute d'un robot. On observe en revanche sur le graphique inférieur que BaseAccZ n'est que \textbf{partiellement} incluse dans le patron. Il ne s'agit donc pas d'un exemple caractéristique d'une chute. }
-%	\label{fig:Détection d'une chute à partir du patron de BaseAccZ}
-%\end{figure}
-%
-%Au vu des tests réalisés, cette méthode ne semble pas viable. En effet, comme on peut l'observer sur le graphique inférieur de la figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}, même si la feature BaseAccZ n'est pas totalement inclue dans le patron, elle l'est \emph{partiellement} et ce sur pratiquement la moitié de son évolution. A cause de cela,  l'algorithme considère parfois un exemple comme caractéristique d'une chute alors qu'il ne l'est pas en réalité. Pour répondre à ce problème on propose que, plutôt que de créer un patron de la totalité de la courbe, de seulement entraîner un algorithme à reconnaitre une certaine portion caractéristique de la courbe. Dans le cas de la détection d'une chute du robot, il s'agit du saut de valeur qui apparait sur la valeur de l'accélération en z du robot (BaseAccZ). On réalise ce qu'on appelle de la reconnaissance de motifs. 
-%
-%\subsection{Reconnaissance de motifs}
-%\label{Automatisation du processus d'investigation: Reconnaissance de motifs}
-%
+\paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaitre lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. \\
+Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe $z$, fourni par l'accéléromètre de la base de Pepper (clé BaseAccZ). \\
+D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entrainement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
+On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}).
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/fall_not_fall.png}
+	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
+	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
+\end{figure}
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/patron.png}
+	\caption[Créer un patron caractéristique de la chute du robot]{Créer un patron caractéristique de la chute du robot. Chaque échantillon qui forme un exemple est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre la forme de BaseAccZ, dans le cas de robots tombés revient à créer un patron de BaseAccZ qui caractérise la chute. L'entrainement s'effectue à partir de différents exemples de la feature BaseAccZ lorsque le robot tombe.}
+	\label{fig:Créer un patron caractéristique de la chute du robot}
+\end{figure}
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/patron_comp.png}
+	\caption[Détection d'une chute à partir du patron de BaseAccZ]{Détection d'une chute à partir du patron de BaseAccZ. Afin de savoir si l'exemple que l'on étudie est lié à une chute de robot ou non, on compare la valeur BaseAccZ du fichier log au patron caractéristique d'une chute de BaseAccZ. Sur le graphique supérieur, on observe que BaseAccZ est globalement contenu dans le patron, il s'agit donc d'un fichier log généré lors de la chute d'un robot. On observe en revanche sur le graphique inférieur que BaseAccZ n'est que \textbf{partiellement} incluse dans le patron. Il ne s'agit donc pas d'un exemple caractéristique d'une chute. }
+	\label{fig:Détection d'une chute à partir du patron de BaseAccZ}
+\end{figure}
+
+Au vu des tests réalisés, cette méthode ne semble pas viable. En effet, comme on peut l'observer sur le graphique inférieur de la figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}, même si la feature BaseAccZ n'est pas totalement inclue dans le patron, elle l'est \emph{partiellement} et ce sur pratiquement la moitié de son évolution. A cause de cela,  l'algorithme considère parfois un exemple comme caractéristique d'une chute alors qu'il ne l'est pas en réalité. Pour répondre à ce problème on propose que, plutôt que de créer un patron de la totalité de la courbe, de seulement entraîner un algorithme à reconnaitre une certaine portion caractéristique de la courbe. Dans le cas de la détection d'une chute du robot, il s'agit du saut de valeur qui apparait sur la valeur de l'accélération en z du robot (BaseAccZ). On réalise ce qu'on appelle de la reconnaissance de motifs. 
+
+\subsection{Reconnaissance de motifs}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs}
+
 \subsubsection{Principe général}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}
 D'une certaine manière, la reconnaissance de motif s'appuie sur une stratégie d'investigation proche de celle de l'Homme. On se place par exemple dans le cas où on souhaite déterminer la cause ayant entraîné la chute d'un robot. La cause correspond à la \emph{root cause} et la chute du robot à \emph{l'error name}. En tant qu'humain, on visualise et analyse les différentes courbes contenues dans le fichier log, généré lors de la détection de la chute. On observe l'évolution de la position du senseur (clé HipPitchPositionSensorValue) et de l'actuateur (clé HipPitchPositionActuatorValue) de la hanche (cf. figure \ref{fig:Évolution de la position du senseur et de l'actuateur de la hanche}). On remarque qu' à $t \approx 440 s$, le senseur se met à ne plus suivre la valeur de l'actuateur. L'étude réalisée partie \ref{Introduction:Expression du besoin:Exemple d'analyse d'une anomalie} nous \textbf{apprend} que cette particularité est la caractéristique d'un frottement des freins de la hanche. Ainsi, si on étudie ultérieurement un autre fichier log généré lors de la chute d'un robot et qu'on découvre de nouveau ce motif, on en déduit aisément que le robot est également tombé à cause du frottement des freins de sa hanche. Plus on va observer de nouveaux cas, plus l'image que l'on aura du motif caractéristique de cette \emph{root cause} va se préciser.\\
