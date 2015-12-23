@@ -109,11 +109,11 @@
 %	\item La deuxième partie (encadré rouge sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche la courbe de progression de la probabilité, au cours du balayage des features de l'exemple (cf. partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Concept}). La ligne horizontale sur le graphique représente le seuil à partir duquel on considère que la \emph{root cause} est bien la cause ayant entraîné l'apparition de l'erreur.
 %\end{itemize}
 
-\begin{figure}[h]
-	\centering\includegraphics[height=7cm]{images/proba_visu.png}
-	\caption[Interface graphique du probability visualizator]{Interface graphique du probability visualizator.}
-	\label{fig:Interface graphique du probability visualizator}
-\end{figure}
+%\begin{figure}[h]
+%	\centering\includegraphics[height=7cm]{images/proba_visu.png}
+%	\caption[Interface graphique du probability visualizator]{Interface graphique du probability visualizator.}
+%	\label{fig:Interface graphique du probability visualizator}
+%\end{figure}
 
 \subsection{Control panel}
 \label{Industrialisation du produit: Outils graphiques: Control panel}
@@ -232,10 +232,10 @@ Le menu "Update a root cause"  (cf. figure \ref{fig:Menu principal}) permet d'aj
 Contrairement à l'étude réalisée en partie \ref{Automatisation du processus d'investigation: Performances de la solution}, on ne désire pas mesurer les performances intrinsèques, mais plutôt l'influence du facteur humain sur celle-ci. On s'intéresse notamment à l'impact qu'a l'évolution de la taille de la région de sélection du Pattern selector (cf. partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}). En effet, cette variable dépend de la forme du motif, mais également de l'appréciation de l'utilisateur (quand commence le motif, quand se termine-t-il ?). \\
 Afin de quantifier cette influence, on effectue plusieurs fois la création de la couche \emph{root cause}  "frottement des freins de la hanche" en augmentant à chaque fois la taille de la région de sélection. On observe la variation de la précision à chaque itération sur le graphique figure \ref{fig: Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection}
 
-\begin{figure}[h]
-	\centering\includegraphics[height=8cm]{images/precision_taille.png}
-	\caption[Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection]{Évolution de la précision de l'algorithme en fonction de la taille de la région de sélection.  On observe qu'entre une taille de 10 et 30 échantillons, la précision de l'algorithme augmente légèrement. A partir de 30 échantillons, la précision de l'algorithme diminue.}
-	\label{fig: Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection}
-\end{figure} 
+%\begin{figure}[h]
+%	\centering\includegraphics[height=8cm]{images/precision_taille.png}
+%	\caption[Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection]{Évolution de la précision de l'algorithme en fonction de la taille de la région de sélection.  On observe qu'entre une taille de 10 et 30 échantillons, la précision de l'algorithme augmente légèrement. A partir de 30 échantillons, la précision de l'algorithme diminue.}
+%	\label{fig: Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection}
+%\end{figure} 
 
 Au regard des valeurs obtenues, on en déduit que l'algorithme est plus performant lorsque la région de sélection est petite. Or, le but est également de sélectionner le plus précisément possible le motif caractéristique d'une \emph{root cause}. Il faut donc analyser chaque situation au cas par cas,  en gardant en tête ces deux contraintes. Par exemple, si on souhaite apprendre à notre algorithme à reconnaitre une région ayant une taille de 50 échantillons, il sera peut-être plus judicieux d'apprendre l'algorithme à reconnaitre seulement une partie du motif (de 30 échantillons environ).
