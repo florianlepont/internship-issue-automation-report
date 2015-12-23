@@ -111,6 +111,12 @@ Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraî
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}
 Pour construire chaque couche \emph{root cause}; on entraine l'algorithme de l'apprentissage automatique. Pour cela, on a besoin d'exemples labellisés positifs (dans notre cas, le terme positif signifie des exemples de motifs caractéristiques de la \emph{root cause}) et des exemples labellisés négatifs (des exemples qui ne correspondent pas au motif caractéristique de la \emph{root cause}). Ces deux groupes d'exemples forment alors des classes. Dans le cadre de la \emph{root cause} "frottement des freins de la hanche", on peut visualiser l'ensemble de ces exemples et ces classes dans un repère construit à partir des features "position du senseur de la hanche" (clé HipPitchPositionSensorValue) et "position de l'actuateur de la hanche" (clé HipPitchPositionActuatorValue). 
 
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/caracteristiques_simples_1.png}
+	\caption[Calcul des caractéristiques simplifiées]{Calcul des \emph{caractéristiques simplifiées}. La figure représente l'évolution de la feature "accélération du robot selon l'axe $z$",  caractéristique de la chute d'un robot. La ligne rouge représente sa valeur moyenne. la ligne noire correspond à sa valeur crête-à-crête. On a ainsi réduit notre feature à deux valeurs constantes. On peut donc entraîner l'algorithme d'apprentissage automatique à partir de ces \emph{caractéristiques simplifiées}.}
+	\label{fig:Calcul de nouvelles features}
+\end{figure}
+
 Cette représentation n'est pas fonctionnelle mais conceptuelle, i.e. qu'il ne s'agit pas d'une visualisation résultant d'un système fonctionnel de classification mais d'une idée haut niveau que l'on a de la sortie de notre système. 
 
 
