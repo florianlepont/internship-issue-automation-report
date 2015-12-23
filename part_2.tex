@@ -250,33 +250,33 @@
 %\label{Automatisation du processus d'investigation: Performances de la solution}
 %Une fois l'architecture du système définie, on souhaite mesurer les performances de l'algorithme.
 %
-%\subsection{Optimisation des paramètres du SVM}
-%\label{Industrialisation du produit: Performances de la solution:Optimisation des paramètres du SVM}
-%La prise de décision de l'algorithme du SVM peut être contrôlée via deux paramètres: C et gamma.
-%\begin{description}
-%	\item [C] Le paramètre C permet de modifier la valeur de la marge du SVM. \\
-%	Une valeur élevée du paramètre optimise la classification de chaque exemple en entrée, i.e. à trouver une ligne de décision permettant de classer au mieux chaque exemple. Cette optimisation de la classification se fait au dépend de la taille de la marge, qui sera réduite. \\
-%	Une valeur plus élevée de C permet au contraire d'optimiser la taille de la marge (i.e. la maximiser autant que possible), au préjudice de la classification des exemples.
-%	\item [gamma] Intuitivement, le paramètre gamma définit dans quelle mesure l'influence d'un exemple affecte la ligne de décision et la marge. Il peut être considéré comme l'inverse du rayon d'influence des échantillons sélectionnés par le modèle, en tant que vecteurs de support.
-%\end{description}
-%
-%Afin de déterminer la meilleure combinaison de valeurs des deux paramètres, on calcule les \emph{courbes de validation}. Cela consiste à faire varier chacun des deux paramètres sur une plage de données et à calculer la précision de l'algorithme pour chaque valeur. On conserve ensuite la valeur optimale. 
-%
-% \paragraph{Exemple}
-% On soumet en figure \ref{fig:Courbes de validation} les courbes de validation de la couche \emph{root cause} "frottement des freins de la hanche". On remarque que la valeur $C = 10$ optimise le mieux la précision de l'algorithme d'apprentissage. On remarque également que la valeur $gamma \approx 0.2$ optimise le mieux la précision de l'algorithme d'apprentissage.
-%
-% \begin{figure}[h]
-% 	\centering\includegraphics[width=12cm]{images/courbe_validation_c.png}
-% 	\caption[Courbes de validation du paramètre C]{Courbes de validation du paramètre C, pour la couche \emph{root cause} "frottement des freins de la hanche".}
-% 	\label{fig:Courbes de validation du paramètre C}
-% \end{figure}
-% 
-%  \begin{figure}[h]
-%  	\centering\includegraphics[width=12cm]{images/courbe_validation_gamma.png}
-%  	\caption[Courbes de validation du paramètre gamma]{Courbes de validation du paramètre gamma, pour la couche \emph{root cause} "frottement des freins de la hanche".}
-%  	\label{fig:Courbes de validation du paramètre gamma}
-%  \end{figure}
-%  
+\subsection{Optimisation des paramètres du SVM}
+\label{Industrialisation du produit: Performances de la solution:Optimisation des paramètres du SVM}
+La prise de décision de l'algorithme du SVM peut être contrôlée via deux paramètres: C et gamma.
+\begin{description}
+	\item [C] Le paramètre C permet de modifier la valeur de la marge du SVM. \\
+	Une valeur élevée du paramètre optimise la classification de chaque exemple en entrée, i.e. à trouver une ligne de décision permettant de classer au mieux chaque exemple. Cette optimisation de la classification se fait au dépend de la taille de la marge, qui sera réduite. \\
+	Une valeur plus élevée de C permet au contraire d'optimiser la taille de la marge (i.e. la maximiser autant que possible), au préjudice de la classification des exemples.
+	\item [gamma] Intuitivement, le paramètre gamma définit dans quelle mesure l'influence d'un exemple affecte la ligne de décision et la marge. Il peut être considéré comme l'inverse du rayon d'influence des échantillons sélectionnés par le modèle, en tant que vecteurs de support.
+\end{description}
+
+Afin de déterminer la meilleure combinaison de valeurs des deux paramètres, on calcule les \emph{courbes de validation}. Cela consiste à faire varier chacun des deux paramètres sur une plage de données et à calculer la précision de l'algorithme pour chaque valeur. On conserve ensuite la valeur optimale. 
+
+ \paragraph{Exemple}
+ On soumet en figure \ref{fig:Courbes de validation} les courbes de validation de la couche \emph{root cause} "frottement des freins de la hanche". On remarque que la valeur $C = 10$ optimise le mieux la précision de l'algorithme d'apprentissage. On remarque également que la valeur $gamma \approx 0.2$ optimise le mieux la précision de l'algorithme d'apprentissage.
+
+ \begin{figure}[h]
+ 	\centering\includegraphics[width=12cm]{images/courbe_validation_c.png}
+ 	\caption[Courbes de validation du paramètre C]{Courbes de validation du paramètre C, pour la couche \emph{root cause} "frottement des freins de la hanche".}
+ 	\label{fig:Courbes de validation du paramètre C}
+ \end{figure}
+ 
+  \begin{figure}[h]
+  	\centering\includegraphics[width=12cm]{images/courbe_validation_gamma.png}
+  	\caption[Courbes de validation du paramètre gamma]{Courbes de validation du paramètre gamma, pour la couche \emph{root cause} "frottement des freins de la hanche".}
+  	\label{fig:Courbes de validation du paramètre gamma}
+  \end{figure}
+  
 \subsection{Matrices de confusion}
 \label{Industrialisation du produit: Performances de la solution:Matrices de confusion}
 Au début du processus, on sépare la base de données d'exemples en deux groupes : le \emph{training set} et \emph{test set}. Le premier jeu sert à entraîner l'algorithme SVM et l'autre permet d'en tester les performances. On rappelle que chaque exemple est labellisé, i.e. on connait  la sortie à laquelle ils est corrélé (dans le cas de notre problématique, les labels étant \emph{root cause} présente ou non présente).
