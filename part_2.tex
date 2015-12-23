@@ -322,28 +322,28 @@
 %	\label{accuracy}
 %\end{equation}
 % 
-% \paragraph{Exemple}
-% On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement des freins de la hanche". 
-% 
-%\begin{table}[H]
-%	\centering
-%	\begin{tabular}{| c | c | c | c |}
-%		\hline
-%		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
-%		\cline{3-4}
-%		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
-%		\hline
-%		\multirow{2}*{Classe prédite} & Vrai & 45 & 0 \\
-%		\cline{2-4}
-%		& Faux & 0 & 15 \\
-%		\hline
-%	\end{tabular}
-%	\caption[Matrice de confusion de la root cause "frottement des freins de la hanche"]{Matrice de confusion de la root cause "frottement des freins de la hanche"}
-%	\label {tab:Matrice de confusion de la root cause "frottement des freins de la hanche"}
-%\end{table}
-%
-%On observe qu'il n'y a aucun faux négatif et faux positif. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme à parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement des freins de la hanche" était présente ou non dans le fichier log. D'après l'équation \ref{accuracy}, la précision de l'algorithme SVM de cette couche \emph{root cause} est donc de $100\%$.
-% 
+ \paragraph{Exemple}
+ On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement des freins de la hanche". 
+ 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
+		\cline{3-4}
+		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
+		\hline
+		\multirow{2}*{Classe prédite} & Vrai & 45 & 0 \\
+		\cline{2-4}
+		& Faux & 0 & 15 \\
+		\hline
+	\end{tabular}
+	\caption[Matrice de confusion de la root cause "frottement des freins de la hanche"]{Matrice de confusion de la root cause "frottement des freins de la hanche"}
+	\label {tab:Matrice de confusion de la root cause "frottement des freins de la hanche"}
+\end{table}
+
+On observe qu'il n'y a aucun faux négatif et faux positif. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme à parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement des freins de la hanche" était présente ou non dans le fichier log. D'après l'équation \ref{accuracy}, la précision de l'algorithme SVM de cette couche \emph{root cause} est donc de $100\%$.
+ 
 \subsection{Courbes d'apprentissage}
 \label{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}
 La courbe d'apprentissage représente la précision de l'algorithme d'apprentissage en fonction du nombre d'exemples utilisés dans le \emph{training set} et le \emph{test set}. Grâce à ces tracés, on est en mesure de déterminer la qualité de notre algorithme d'apprentissage et de la base de données d'exemples, de manière visuelle et intuitive. 
