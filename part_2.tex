@@ -25,7 +25,7 @@ On souhaite dans un premier temps mettre en place l'architecture permettant de d
 \end{figure}
 
 \paragraph{Utilisation du système de détection d'une root cause}
-Une fois nos différentes couches \emph{root cause} créées, on souhaite utiliser notre système pour détecter la cause ayant entrainé la chute d'un robot (c.f. figure \ref{fig:utilisation de la couche error name}). Pour cela, on place à l'entrée de notre couche \emph{error name} le fichier log que l'on souhaite analyser. Chaque couche \emph{root cause} extrait de ce fichier les features qui lui sont liées (e.g. la \emph{root cause} "frottement des freins de la hanche" est liée aux features senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche \emph{root cause} va alors émettre une décision quant à la présence ou non de leur \emph{root cause} dans le fichier log. Cette décision correspond à la probabilité que la \emph{ root cause} ait été détectée (en \%). La couche \emph{root cause} ayant la probabilité la plus élevée en sortie est considérée comme la \emph{root cause} ayant entrainé l'\emph{error name},  ici la chute du robot) 
+Une fois nos différentes couches \emph{root cause} créées, on souhaite utiliser notre système pour détecter la cause ayant entrainé la chute d'un robot (cf. figure \ref{fig:utilisation de la couche error name}). Pour cela, on place à l'entrée de notre couche \emph{error name} le fichier log que l'on souhaite analyser. Chaque couche \emph{root cause} extrait de ce fichier les features qui lui sont liées (e.g. la \emph{root cause} "frottement des freins de la hanche" est liée aux features senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche \emph{root cause} va alors émettre une décision quant à la présence ou non de leur \emph{root cause} dans le fichier log. Cette décision correspond à la probabilité que la \emph{ root cause} ait été détectée (en \%). La couche \emph{root cause} ayant la probabilité la plus élevée en sortie est considérée comme la \emph{root cause} ayant entrainé l'\emph{error name},  ici la chute du robot) 
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/synoptique_error.png}
@@ -33,7 +33,7 @@ Une fois nos différentes couches \emph{root cause} créées, on souhaite utilis
 	\label{fig:utilisation de la couche error name}
 \end{figure}
 
-Chaque couche \emph{root cause} peut être considérée comme un système d'apprentissage à part entière. Le schéma fonctionnel d'une \emph{root cause} (cf. figure 	\ref{fig:Synoptique d'une couche root cause}) reprend la même structure que celui du Machine Learning (c.f. \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}). En effet, chaque \emph{root cause} est constituée d'une instance de l'algorithme SVM. Dans la suite de notre étude de l'architecture haut niveau, on s'intéressera plus particulièrement  au fonctionnement de la couche \emph{root cause}, celle-ci contenant l'ensemble du traitement et de l'analyse des données.
+Chaque couche \emph{root cause} peut être considérée comme un système d'apprentissage à part entière. Le schéma fonctionnel d'une \emph{root cause} (cf. figure 	\ref{fig:Synoptique d'une couche root cause}) reprend la même structure que celui du Machine Learning (cf. figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}). En effet, chaque \emph{root cause} est constituée d'une instance de l'algorithme SVM. Dans la suite de notre étude de l'architecture haut niveau, on s'intéressera plus particulièrement  au fonctionnement de la couche \emph{root cause}, celle-ci contenant l'ensemble du traitement et de l'analyse des données.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/exemple_root.png}
@@ -43,7 +43,7 @@ Chaque couche \emph{root cause} peut être considérée comme un système d'appr
 
 \subsection{Les exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples}
-Les exemples sont les éléments permettant d'entraîner un algorithme d'apprentissage automatique (c.f. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Les données}). Dans le cadre de la résolution de notre problématique, ils correspondent aux données générées et enregistrées dans le fichier log lorsqu'une erreur (\emph{error name}) est détectée durant le Filtering Test.
+Les exemples sont les éléments permettant d'entraîner un algorithme d'apprentissage automatique (cf. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Les données}). Dans le cadre de la résolution de notre problématique, ils correspondent aux données générées et enregistrées dans le fichier log lorsqu'une erreur (\emph{error name}) est détectée durant le Filtering Test.
 
 \subsubsection{Structure du fichier log}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure du fichier log}
