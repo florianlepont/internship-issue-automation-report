@@ -277,38 +277,38 @@
 %  	\label{fig:Courbes de validation du paramètre gamma}
 %  \end{figure}
 %  
-%\subsection{Matrices de confusion}
-%\label{Industrialisation du produit: Performances de la solution:Matrices de confusion}
-%Au début du processus, on sépare la base de données d'exemples en deux groupes : le \emph{training set} et \emph{test set}. Le premier jeu sert à entraîner l'algorithme SVM et l'autre permet d'en tester les performances. On rappelle que chaque exemple est labellisé, i.e. on connait  la sortie à laquelle ils est corrélé (dans le cas de notre problématique, les labels étant \emph{root cause} présente ou non présente).
-%\newline
-%
-%Pour tester l'algorithme : 
-%\begin{enumerate}
-%	\item On commence par entrainer l'algorithme à partir des exemples du \emph{training set}.
-%	\item Une fois l'algorithme entraîné, on analyse chacun des exemples du \emph{test set}.
-%	\item On compare ensuite la sortie prédite par l'algorithme et la sortie réelle (i.e. le label associé à chaque exemple). 
-%\end{enumerate}
-%
-%Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une \emph{matrice de confusion}. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
-%
-%\begin{table}[H]
-%	\centering
-%	\begin{tabular}{| c | c | c | c |}
-%		\hline
-%		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
-%		\cline{3-4}
-%		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
-%		\hline
-%		\multirow{2}*{Classe prédite} & Vrai & TP & FP \\
-%		\cline{2-4}
-%		& Faux & FN & TN \\
-%		\hline
-%	\end{tabular}
-%	\caption[Matrice de confusion]{Matrice de confusion}
-%	\label {tab:Matrice de confusion}
-%\end{table}
-%
-%Avec : 
+\subsection{Matrices de confusion}
+\label{Industrialisation du produit: Performances de la solution:Matrices de confusion}
+Au début du processus, on sépare la base de données d'exemples en deux groupes : le \emph{training set} et \emph{test set}. Le premier jeu sert à entraîner l'algorithme SVM et l'autre permet d'en tester les performances. On rappelle que chaque exemple est labellisé, i.e. on connait  la sortie à laquelle ils est corrélé (dans le cas de notre problématique, les labels étant \emph{root cause} présente ou non présente).
+\newline
+
+Pour tester l'algorithme : 
+\begin{enumerate}
+	\item On commence par entrainer l'algorithme à partir des exemples du \emph{training set}.
+	\item Une fois l'algorithme entraîné, on analyse chacun des exemples du \emph{test set}.
+	\item On compare ensuite la sortie prédite par l'algorithme et la sortie réelle (i.e. le label associé à chaque exemple). 
+\end{enumerate}
+
+Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une \emph{matrice de confusion}. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
+		\cline{3-4}
+		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
+		\hline
+		\multirow{2}*{Classe prédite} & Vrai & TP & FP \\
+		\cline{2-4}
+		& Faux & FN & TN \\
+		\hline
+	\end{tabular}
+	\caption[Matrice de confusion]{Matrice de confusion}
+	\label {tab:Matrice de confusion}
+\end{table}
+
+Avec : 
 \begin{itemize}
 	\item TP = True positive (en français vrai positif) correspond au nombre de résultats prédits positifs, là où ils étaient effectivement positifs.
 	\item TN = True negative (en français vrai négatif) correspond au nombre de résultats prédits négatifs, là où ils étaient effectivement négatifs.
