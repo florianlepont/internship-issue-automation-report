@@ -220,7 +220,7 @@ Dans le cadre du développement de notre algorithme, le principe est le même: o
 \paragraph{Investigation}
 Lorsque l'on souhaite investiguer un fichier pour déterminer la \emph{root cause} qui a entrainé l'apparition de l'\emph{error name} lors du Filering Test, on commence par extraire la valeur des features du fichier log qui sont liées à la \emph{root cause}. Ensuite, on recherche le motif caractéristique. Pour cela, on découpe les courbes des features en plusieurs petits tronçons de la même taille que le motif caractéristique et on les compare avec celui-ci. Si ils sont globalement similaires au patron, on en déduit que la root cause a été détecté. Dans le cas contraire, on en déduit qu'elle n'a pas été détecté. En réalité, l'algorithme d'apprentissage automatique (SVM) nous retourne en sortie la probabilité avec laquelle le motif caractéristique semble détecté dans chacun des tronçons. On propose un exemple d'investigation en figure \ref{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}).
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering\includegraphics[width=12cm]{images/balayage_motif.png}
 	\caption[Balayage des features pour retrouver le motif caractéristique d'une root cause]{Balayage des features pour trouver le motif caractéristique d'une \emph{root cause}. On observe que le premier et le dernier tronçon de la courbe des features HipPitchPositionSensorValue et  HipPitchPositionActuatorValue ne correspondent pas au motif caractéristique de la \emph{root cause} "frottement des freins de la hanche". La probabilité en sortie du système est donc faible. Le deuxième tronçon correspond globaleau motif caractéristique de la courbe, la probabilité en sortie du système est donc élevée.}
 	\label{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}
@@ -228,7 +228,7 @@ Lorsque l'on souhaite investiguer un fichier pour déterminer la \emph{root caus
 
 L'ensemble des probabilités en sortie des différents tronçons étudiés forment une courbe de probabilité. Si cette courbe dépasse un certain seuil, on considère la \emph{root cause} comme ayant été détectée. On propose la courbe de probabilité de la \emph{root cause} "frottement des freins de la hanche" en figure \ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering\includegraphics[width=12cm]{images/proba_motif.png}
 	\caption[Courbe de probabilité de la root cause "frottement des freins de la hanche"]{Courbe de probabilité de la root cause "frottement des freins de la hanche".  On observe que lorsque l'on s'approche du motif caractéristique de la \emph{root cause}, la probabilité augmente fortement. Elle est au contraire faible sur les autres tronçons de la courbe.}
 	\label{fig:Représentation de la répartition des exemples et des classes en fonction des features, approche fonctionnelle}
