@@ -255,7 +255,7 @@ Une fois l'architecture du système définie, on souhaite mesurer les performanc
 La prise de décision de l'algorithme du SVM peut être contrôlée via deux paramètres: C et gamma.
 \begin{description}
 	\item [C] Le paramètre C permet de modifier la valeur de la marge du SVM. \\
-	Une valeur élevée du paramètre cherchera par exemple à optimiser la classification de chaque exemple en entrée, i.e. à trouver une ligne de décision permettant de classer au mieux chaque exemple. Cette optimisation de la classification se fait cependant au préjudice de la taille de la marge, qui sera réduite. \\
+	Une valeur élevée du paramètre optimise la classification de chaque exemple en entrée, i.e. à trouver une ligne de décision permettant de classer au mieux chaque exemple. Cette optimisation de la classification se fait cependant au préjudice de la taille de la marge, qui sera réduite. \\
 	Une valeur plus élevée de C permet au contraire d'optimiser la taille de la marge (i.e. la maximiser autant que possible), au préjudice de la classification des exemples.
 	\item [gamma] Intuitivement, le paramètre gamma définit dans quelle mesure l'influence d'un exemple affecte la ligne de décision et la marge. Il peut être considéré comme l'inverse du rayon d'influence des échantillons sélectionnés par le modèle, en tant que vecteurs de support.
 \end{description}
