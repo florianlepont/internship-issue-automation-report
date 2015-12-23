@@ -108,7 +108,7 @@ Tout comme la structure d'un fichier log (\ref{Automatisation du processus d'inv
 Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage, pour détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features "HipPitchPositionSensorValue" et "HipPitchPositionActuatorValue" de notre base de données.
 
 \subsubsection{Représentation des exemples et des classes}
-\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Exemples labellisés}
+\label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}
 Pour réaliser de l'apprentissage automatique, on rappelle que l'on a besoin d'exemples labellisés positifs (dans notre cas, le terme positif signifie des exemples de motifs caractéristiques de la \emph{root cause}) et des exemples labellisés négatifs (des exemples qui ne correspondent pas au motif caractéristique de la \emph{root cause}) . Ces exemples forment alors des classes. Dans le cadre de la \emph{root cause} "frottement des freins de la hanche", on peut visualiser l'ensemble de ces exemples et ces classes dans un repère construit à partir des features "position du senseur de la hanche" (clé HipPitchPositionSensorValue) et "position de l'actuateur de la hanche" (clé HipPitchPositionActuatorValue)
 
 
