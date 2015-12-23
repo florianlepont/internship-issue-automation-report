@@ -138,3 +138,225 @@ Chaque couche \emph{root cause} délivre en sortie la probabilité que la \emph{
 
 
 
+\section{Détection d'une root cause}
+\label{Automatisation du processus d'investigation: Détection d'une root cause}
+On souhaite réaliser de la reconnaissance de motifs grâce à l'utilisation du SVM, pour détecter la présence d'une \emph{root cause} dans un fichier log. L'utilisation de cette méthode répond notamment au problème causé par l'évolution temporelle des exemples utilisés pour l'entraînement de l'algorithme (cf. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). On présente dans cette partie les différentes solutions envisagées et les raisons ayant amené à utiliser la reconnaissance de motifs. \\
+
+\subsection{Différentes approches étudiées}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées}
+L'évolution temporelle des exemples utilisés pour l'entraînement de l'algorithme implique de prétraiter les données (cf. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}). Pour cela, différentes approches sont envisagées.
+
+\subsubsection{Création de nouvelles features}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Création de nouvelles features}
+On propose de créer de nouvelles features constantes. Elles sont des caractéristiques des features actuelles. Dans le cadre de cette étude, on les identifiera sous l'appellation de \emph{caractéristiques simplifiées}. Elles correspondent par exemple au calcul de la moyenne d'une feature, la valeur crête-à-crête, la valeur maximum, etc. On se sert ensuite de ces  \emph{caractéristiques simplifiées} pour réaliser l'entrainement de l'algorithme d'apprentissage automatique (cf. exemple figure \ref{fig:Calcul de nouvelles features}).
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/caracteristiques_simples_1.png}
+	\caption[Calcul des caractéristiques simplifiées]{Calcul des \emph{caractéristiques simplifiées}. La figure représente l'évolution de la feature "accélération du robot selon l'axe $z$",  caractéristique de la chute d'un robot. La ligne rouge représente sa valeur moyenne. la ligne noire correspond à sa valeur crête-à-crête. On a ainsi réduit notre feature à deux valeurs constantes. On peut  entraîner l'algorithme d'apprentissage automatique à partir de ces \emph{caractéristiques simplifiées}.}
+	\label{fig:Calcul de nouvelles features}
+\end{figure}
+
+Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques features (e.g. moyenne, valeur crête-à-crête). Comme le démontre la figure \ref{fig:Comparaison de deux caractéristiques}, cette diminution des informations peut entrainer des risques de confusion entre différentes features, i.e. deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose (cf. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}), le risque est que deux couches \emph{root cause} soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle \emph{root cause} est responsable de l'apparition d'une \emph{error name}.
+
+\begin{figure}[h]
+	\centering\includegraphics[width=15cm]{images/caracteristiques_simples_2.png}
+	\caption[Comparaison de deux caractéristiques]{Comparaison de deux caractéristiques. On retrouve sur la figure a) la valeur de l'accélération selon l'axe $z$ et ses caractéristiques simplifiées. Sur la figure b), on observe une autre feature et ses caractéristiques simplifiées. On remarque que, bien qu'il s'agisse de features différentes entres les figures a) et b), ces dernières possèdent les mêmes \emph{caractéristiques simplifiées}.}
+	\label{fig:Comparaison de deux caractéristiques}
+\end{figure}
+
+\subsubsection{Considérer chaque unité de temps comme une feature}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Considérer chaque unité de temps comme une feature}
+On propose de considérer chaque unité de temps comme une feature. Le nombre d'entrées du système d'apprentissage automatique est donc égal au nombre d'échantillons contenus dans un exemple. \\
+De manière intuitive, entrainer le modèle revient à créer un patron représentatif de la feature lorsque celle-ci est liée à la présence d'une \emph{root cause}. Une fois cette forme apprise, on la compare avec la feature que l'on souhaite analyser afin de savoir si la \emph{root cause} est présente ou non dans la feature.
+\newline
+
+\paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaitre lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. \\
+Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe $z$, fourni par l'accéléromètre de la base de Pepper (clé BaseAccZ). \\
+D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entrainement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
+On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}).
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/fall_not_fall.png}
+	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
+	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
+\end{figure}
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/patron.png}
+	\caption[Créer un patron caractéristique de la chute du robot]{Créer un patron caractéristique de la chute du robot. Chaque échantillon qui forme un exemple est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre la forme de BaseAccZ, dans le cas de robots tombés revient à créer un patron de BaseAccZ qui caractérise la chute. L'entrainement s'effectue à partir de différents exemples de la feature BaseAccZ lorsque le robot tombe.}
+	\label{fig:Créer un patron caractéristique de la chute du robot}
+\end{figure}
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/patron_comp.png}
+	\caption[Détection d'une chute à partir du patron de BaseAccZ]{Détection d'une chute à partir du patron de BaseAccZ. Afin de savoir si l'exemple que l'on étudie est lié à une chute de robot ou non, on compare la valeur BaseAccZ du fichier log au patron caractéristique d'une chute de BaseAccZ. Sur le graphique supérieur, on observe que BaseAccZ est globalement contenu dans le patron, il s'agit donc d'un fichier log généré lors de la chute d'un robot. On observe en revanche sur le graphique inférieur que BaseAccZ n'est que \textbf{partiellement} incluse dans le patron. Il ne s'agit donc pas d'un exemple caractéristique d'une chute. }
+	\label{fig:Détection d'une chute à partir du patron de BaseAccZ}
+\end{figure}
+
+Au vu des tests réalisés, cette méthode ne semble pas viable. En effet, comme on peut l'observer sur le graphique inférieur de la figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}, même si la feature BaseAccZ n'est pas totalement inclue dans le patron, elle l'est \emph{partiellement} et ce sur pratiquement la moitié de son évolution. A cause de cela,  l'algorithme considère parfois un exemple comme caractéristique d'une chute alors qu'il ne l'est pas en réalité. Pour répondre à ce problème on propose que, plutôt que de créer un patron de la totalité de la courbe, de seulement entraîner un algorithme à reconnaitre une certaine portion caractéristique de la courbe. Dans le cas de la détection d'une chute du robot, il s'agit du saut de valeur qui apparait sur la valeur de l'accélération en z du robot (BaseAccZ). On réalise ce qu'on appelle de la reconnaissance de motifs. 
+
+\subsection{Reconnaissance de motifs}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs}
+
+\subsubsection{Principe général}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}
+D'une certaine manière, la reconnaissance de motif s'appuie sur une stratégie d'investigation proche de celle de l'Homme. On se place par exemple dans le cas où on souhaite déterminer la cause ayant entraîné la chute d'un robot. La cause correspond à la \emph{root cause} et la chute du robot à \emph{l'error name}. En tant qu'humain, on visualise et analyse les différentes courbes contenues dans le fichier log, généré lors de la détection de la chute. On observe l'évolution de la position du senseur (clé HipPitchPositionSensorValue) et de l'actuateur (clé HipPitchPositionActuatorValue) de la hanche (cf. figure \ref{fig:Évolution de la position du senseur et de l'actuateur de la hanche}). On remarque qu' à $t \approx 440 s$, le senseur se met à ne plus suivre la valeur de l'actuateur. L'étude réalisée partie \ref{Introduction:Expression du besoin:Exemple d'analyse d'une anomalie} nous \textbf{apprend} que cette particularité est la caractéristique d'un frottement des freins de la hanche. Ainsi, si on étudie ultérieurement un autre fichier log généré lors de la chute d'un robot et qu'on découvre de nouveau ce motif, on en déduit aisément que le robot est également tombé à cause du frottement des freins de sa hanche. Plus on va observer de nouveaux cas, plus l'image que l'on aura du motif caractéristique de cette \emph{root cause} va se préciser.\\
+Dans le cadre du développement de notre algorithme, le principe est le même: on commence tout d'abord à apprendre la forme caractéristique de la\emph{ root cause} et une fois qu'on souhaite investiguer un nouveau fichier log, on compare ce motif caractéristique aux données du fichier. 
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/HipPitch.png}
+	\caption[Évolution de la position du senseur et de l'actuateur de la hanche]{Évolution de la position du senseur et de l'actuateur de la hanche.}
+	\label{fig:Évolution de la position du senseur et de l'actuateur de la hanche}
+\end{figure}
+
+\paragraph{Apprentissage} La phase d'apprentissage s'appuie sur les principes évoqués en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Considérer chaque unité de temps comme une feature}. On considère que chaque échantillon (ou unité de temps) qui compose un exemple devient l'entrée de notre système d'apprentissage. A la différence qu'on ne considère qu'une seule partie de la courbe de nos exemples, le motif caractéristique. Par exemple, si on souhaite créer une nouvelle root cause "frottement des freins de la hanche", on sélectionnera sur chaque exemple le motif caractéristique de celle-ci (cf. figure \ref{fig:Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"}). Le système d'apprentissage va donc uniquement apprendre le patron caractéristique du motif caractéristique et non de la courbe dans sa globalité. Les exemples devant être de la même taille on veille à sélectionner le même nombre d'échantillons pour chacun des motifs. On présente également au système des exemples ne contenant pas le motif, afin que l'algorithme bénéficie des deux types de labels pour son entrainement (root cause présente = 1, root cause non présente = 0).
+
+\begin{figure}[h]
+	\centering\includegraphics[width=14cm]{images/patron_motif.png}
+	\caption[Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"]{Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche". Chaque échantillon qui compose un motif est considéré comme une entrée du système d'apprentissage. Entraîner l'algorithme à reconnaitre le motif caractéristique formé par les courbes du HipPitchPositionSensorValue et HipPitchPositionActuatorValue revient à créer un patron caractéristique des deux features liées au frottement des freins de la hanche dans le cadre de la chute robot. L'entrainement s'effectue à partir de différents exemples de motifs des deux features.}
+	\label{fig:Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"}
+\end{figure}
+
+\paragraph{Investigation}
+Lorsque l'on souhaite investiguer un fichier pour déterminer la \emph{root cause} qui a entrainé l'apparition de l'\emph{error name} lors du Filering Test, on commence par extraire la valeur des features du fichier log qui sont liées à la \emph{root cause}. Ensuite, on recherche le motif caractéristique. Pour cela, on découpe les courbes des features en plusieurs petits tronçons de la même taille que le motif caractéristique et on les compare avec celui-ci. Si ils sont globalement similaires au patron, on en déduit que la root cause a été détecté. Dans le cas contraire, on en déduit qu'elle n'a pas été détecté. En réalité, l'algorithme d'apprentissage automatique (SVM) nous retourne en sortie la probabilité avec laquelle le motif caractéristique semble détecté dans chacun des tronçons. On propose un exemple d'investigation en figure \ref{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}).
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/balayage_motif.png}
+	\caption[Balayage des features pour retrouver le motif caractéristique d'une root cause]{Balayage des features pour trouver le motif caractéristique d'une \emph{root cause}. On observe que le premier et le dernier tronçon de la courbe des features HipPitchPositionSensorValue et  HipPitchPositionActuatorValue ne correspondent pas au motif caractéristique de la \emph{root cause} "frottement des freins de la hanche". La probabilité en sortie du système est donc faible. Le deuxième tronçon correspond globaleau motif caractéristique de la courbe, la probabilité en sortie du système est donc élevée.}
+	\label{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}
+\end{figure}
+
+L'ensemble des probabilités en sortie des différents tronçons étudiés forment une courbe de probabilité. Si cette courbe dépasse un certain seuil, on considère la \emph{root cause} comme ayant été détectée. On propose la courbe de probabilité de la \emph{root cause} "frottement des freins de la hanche" en figure \ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}.
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/proba_motif.png}
+	\caption[Courbe de probabilité de la root cause "frottement des freins de la hanche"]{Courbe de probabilité de la root cause "frottement des freins de la hanche".  On observe que lorsque l'on s'approche du motif caractéristique de la \emph{root cause}, la probabilité augmente fortement. Elle est au contraire faible sur les autres tronçons de la courbe.}
+	\label{fig:Représentation de la répartition des exemples et des classes en fonction des features, approche fonctionnelle}
+\end{figure}
+
+\subsubsection{Représentation des données}
+\label{Automatisation du processus d'investigation: Reconnaissance de motifs: Représentation des données}
+On souhaite représenter de manière intuitive la répartition des exemples et des classes en fonction des features. Contrairement à la visualisation conceptuelle des données proposée en partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}, on propose ici une représentation plus fonctionnelle (proche du fonctionnement de notre système). \\
+Chaque échantillon qui compose le motif caractéristique d'une \emph{root cause} devient lui même une feature (i.e. une entrée) du système d'apprentissage de l'algorithme SVM (cf figure \ref{fig:Créer un patron caractéristique de la chute du robot}). Par exemple, on se place de nouveau dans le cas de la \emph{root cause} "frottement des freins de la hanche". Si on s'intéresse aux features "HipPitchPositionSensorValue" et "HipPitchPositionSensorValue" et que l'on considère que le motif caractéristique à une taille de 125 échantillons, on aura donc 250 features en entrée de l'apprentissage ($125x2$ features). Cela signifie que si l'on souhaite représenter visuellement la répartition des exemples et des classes en fonction des features, on aurait un repère composé de 250 dimensions. On choisi au hasard deux de ses 250 dimensions et on les représente sur le repère figure 	\ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"} .
+
+\begin{figure}[h]
+	\centering\includegraphics[width=12cm]{images/classes_sys.png}
+	\caption[Représentation de la répartition des exemples et des classes en fonction des features,  approche fonctionnelle]{Représentation de la répartition des exemples et des classes en fonction des features. On a représenté ici deux graphiques dont chacun exprime la valeur des exemples en fonction de deux features choisies aléatoirement. Chaque feature correspond à un échantillon parmi les 250 qui composent chaque motif caractéristique de la \emph{root cause} "frottement des freins de la hanche".}
+	\label{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}
+\end{figure}
+
+
+\section{Performances de la solution}
+\label{Automatisation du processus d'investigation: Performances de la solution}
+Une fois l'architecture du système définie, on souhaite mesurer les performances de l'algorithme.
+
+\subsection{Optimisation des paramètres du SVM}
+\label{Industrialisation du produit: Performances de la solution:Optimisation des paramètres du SVM}
+La prise de décision de l'algorithme du SVM peut être contrôlée via deux paramètres: C et gamma.
+\begin{description}
+	\item [C] Le paramètre C permet de modifier la valeur de la marge du SVM. \\
+	Une valeur élevée du paramètre optimise la classification de chaque exemple en entrée, i.e. à trouver une ligne de décision permettant de classer au mieux chaque exemple. Cette optimisation de la classification se fait au dépend de la taille de la marge, qui sera réduite. \\
+	Une valeur plus élevée de C permet au contraire d'optimiser la taille de la marge (i.e. la maximiser autant que possible), au préjudice de la classification des exemples.
+	\item [gamma] Intuitivement, le paramètre gamma définit dans quelle mesure l'influence d'un exemple affecte la ligne de décision et la marge. Il peut être considéré comme l'inverse du rayon d'influence des échantillons sélectionnés par le modèle, en tant que vecteurs de support.
+\end{description}
+
+Afin de déterminer la meilleure combinaison de valeurs des deux paramètres, on calcule les \emph{courbes de validation}. Cela consiste à faire varier chacun des deux paramètres sur une plage de données et à calculer la précision de l'algorithme pour chaque valeur. On conserve ensuite la valeur optimale. 
+
+ \paragraph{Exemple}
+ On soumet en figure \ref{fig:Courbes de validation} les courbes de validation de la couche \emph{root cause} "frottement des freins de la hanche". On remarque que la valeur $C = 10$ optimise le mieux la précision de l'algorithme d'apprentissage. On remarque également que la valeur $gamma \approx 0.2$ optimise le mieux la précision de l'algorithme d'apprentissage.
+
+ \begin{figure}[h]
+ 	\centering\includegraphics[width=12cm]{images/courbe_validation_c.png}
+ 	\caption[Courbes de validation du paramètre C]{Courbes de validation du paramètre C, pour la couche \emph{root cause} "frottement des freins de la hanche".}
+ 	\label{fig:Courbes de validation du paramètre C}
+ \end{figure}
+ 
+  \begin{figure}[h]
+  	\centering\includegraphics[width=12cm]{images/courbe_validation_gamma.png}
+  	\caption[Courbes de validation du paramètre gamma]{Courbes de validation du paramètre gamma, pour la couche \emph{root cause} "frottement des freins de la hanche".}
+  	\label{fig:Courbes de validation du paramètre gamma}
+  \end{figure}
+  
+\subsection{Matrices de confusion}
+\label{Industrialisation du produit: Performances de la solution:Matrices de confusion}
+Au début du processus, on sépare la base de données d'exemples en deux groupes : le \emph{training set} et \emph{test set}. Le premier jeu sert à entraîner l'algorithme SVM et l'autre permet d'en tester les performances. On rappelle que chaque exemple est labellisé, i.e. on connait  la sortie à laquelle ils est corrélé (dans le cas de notre problématique, les labels étant \emph{root cause} présente ou non présente).
+\newline
+
+Pour tester l'algorithme : 
+\begin{enumerate}
+	\item On commence par entrainer l'algorithme à partir des exemples du \emph{training set}.
+	\item Une fois l'algorithme entraîné, on analyse chacun des exemples du \emph{test set}.
+	\item On compare ensuite la sortie prédite par l'algorithme et la sortie réelle (i.e. le label associé à chaque exemple). 
+\end{enumerate}
+
+Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une \emph{matrice de confusion}. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
+		\cline{3-4}
+		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
+		\hline
+		\multirow{2}*{Classe prédite} & Vrai & TP & FP \\
+		\cline{2-4}
+		& Faux & FN & TN \\
+		\hline
+	\end{tabular}
+	\caption[Matrice de confusion]{Matrice de confusion}
+	\label {tab:Matrice de confusion}
+\end{table}
+
+Avec : 
+\begin{itemize}
+	\item TP = True positive (en français vrai positif) correspond au nombre de résultats prédits positifs, là où ils étaient effectivement positifs.
+	\item TN = True negative (en français vrai négatif) correspond au nombre de résultats prédits négatifs, là où ils étaient effectivement négatifs.
+	\item FP = False positive (en français faux positif) correspond au nombre de résultats prédits positifs, là où ils étaient étaient en réalité négatifs.
+	\item FN = False negative ( en français faux négatif) correspond au nombre de résultats prédits négatifs, là où ils étaient étaient en réalité positifs.
+\end{itemize}
+ 
+A partir de ces résultats, il est possible de déterminer la précision de l'algorithme:
+\begin{equation}
+	\text{accuracy}= \frac{TP + TN}{TP + TN + FP + FN}
+	\label{accuracy}
+\end{equation}
+ 
+ \paragraph{Exemple}
+ On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement des freins de la hanche". 
+ 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		\multicolumn{2}{|c|}{}  & \multicolumn{2}{|c|}{Classe réelle } \\
+		\cline{3-4}
+		\multicolumn{2}{|c|}{}  & Vrai & Faux \\
+		\hline
+		\multirow{2}*{Classe prédite} & Vrai & 45 & 0 \\
+		\cline{2-4}
+		& Faux & 0 & 15 \\
+		\hline
+	\end{tabular}
+	\caption[Matrice de confusion de la root cause "frottement des freins de la hanche"]{Matrice de confusion de la root cause "frottement des freins de la hanche"}
+	\label {tab:Matrice de confusion de la root cause "frottement des freins de la hanche"}
+\end{table}
+
+On observe qu'il n'y a aucun faux négatif et faux positif. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme à parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement des freins de la hanche" était présente ou non dans le fichier log. D'après l'équation \ref{accuracy}, la précision de l'algorithme SVM de cette couche \emph{root cause} est donc de $100\%$.
+ 
+\subsection{Courbes d'apprentissage}
+\label{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}
+La courbe d'apprentissage représente la précision de l'algorithme d'apprentissage en fonction du nombre d'exemples utilisés dans le \emph{training set} et le \emph{test set}. Grâce à ces tracés, on est en mesure de déterminer la qualité de notre algorithme d'apprentissage et de la base de données d'exemples, de manière visuelle et intuitive. 
+\begin{itemize}
+	\item Si la distance entre les deux courbes est importante à la fin du graphe, cela signifie que l'on a pas utilisé suffisamment d'exemples pour l'entraînement de l'algorithme. On dit que l'algorithme a une \emph{variance} trop élevée. 
+	\item Si la valeur de convergence des deux courbes (précision) n'est pas assez élevé, cela signife que notre algorithme n'est pas suffisamment performant. On dit qu'il a un \emph{bias} trop élevé. Pour résoudre ce problème, on peut par exemple augmenter le nombre de features en entrée. Dans le cas de notre système, cela signifie augmenter la largeur des motifs caractéristiques d'une \emph{root cause}.
+\end{itemize}
+
+\paragraph{Exemple}
+On soumet en figure \ref{fig:Courbes d'apprentissage} les courbes d'apprentissage de la couche \emph{root cause} "frottement des freins de la hanche". On observe que les deux courbes convergent jusqu'à pratiquement se confondre. On en déduit que la \emph{variance} de l'algorithme est très faible et donc que le nombre d'exemples utilisés pour l'apprentissage de l'algorithme est suffisant. De plus, la valeur de convergence est aux alentours de 98\%, ce qui signifie que le \emph{bias} de l'algorithme est faible. On peut donc dire que les performances de l'algorithme de la couche \emph{root cause} "frottement des freins de la hanche" sont bonnes. 
+
+\begin{figure}[h]
+\centering\includegraphics[width=12cm]{images/courbe_apprentissage.png}
+\caption[Courbes d'apprentissage]{Courbes d'apprentissage de la couche \emph{root cause} "frottement des freins de la hanche".}
+\label{fig:Courbes d'apprentissage}
+\end{figure}
