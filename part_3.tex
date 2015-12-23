@@ -2,14 +2,14 @@
 \label{Industrialisation du produit}
 \thispagestyle{fancy}
 Une fois le processus fonctionnel de notre système défini, on l'industrialise. Cela signifie que l'on crée un ensemble d'outils permettant de l'utiliser de la manière la plus simple possible et en répondant au mieux à la problématique initiale. \\
-On soumet deux types d'outils: l'API, qui permet d'utiliser le système d'automatisation, et les outils graphiques, qui accompagnent l'usage de l'API et offrent à l'utilisateur un moyen d'interagir avec le programme.  
+On soumet deux types d'outils: l'API, qui permet d'utiliser le système d'automatisation et les outils graphiques, qui accompagnent l'usage de l'API et offrent à l'utilisateur un moyen d'interagir avec le programme.  
 
 \section{API}
 \label{Industrialisation du produit: API}
 L'API que l'on propose est composée de 3 modules :
 \begin{description}
 	\item [data base] Permet de gérer le stockage et la lecture des données nécessaires à l'exécution des algorithmes d'apprentissage. Deux types de fichiers y sont sauvegardés : les fichiers logs, qui fournissent l'ensemble des exemples permettant d'entraîner le SVM et les fichiers générés par l'algorithme lors de son apprentissage.
-	\item [data set] Permet de pré-traiter les exemples utilisés pour l'apprentissage.
+	\item [data set] Permet de prétraiter les exemples utilisés pour l'apprentissage.
 	\item [machine learning] Permet de créer un algorithme d'apprentissage, de l'entraîner et de l'utiliser pour investiguer la \emph{root cause} pour laquelle il a été créé.
 \end{description}
 
