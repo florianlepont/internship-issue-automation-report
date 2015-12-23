@@ -18,7 +18,7 @@ La librairie utilise le langage de programmation Python \cite{Python}. \\
 \subsection{Prétraitement des données}
 \label{Industrialisation du produit: API: Pré-traitement et traitement des données}
 Le module "Data set" de l'API permet de prétraiter les exemples et de les structurer, afin de pouvoir entraîner le SVM. 
-Le pré-traitement est composé de 5 étapes.
+Le prétraitement est composé de 5 étapes.
 \begin{description}
 	\item [Lecture] Consiste à lire les données contenues dans le fichier log. 
 	\item [Échantillonnage] Les fichiers logs générés par MEIGUI lors du déroulement du Filtering Test n'ont pas forcement tous la même période d'échantillonnage. Cela signifie que les exemples que l'on souhaite utiliser pour l'entraînement ne font pas tous la même taille. Or, les spécificités des fonctions de la librairie Scikit-learn utilisées pour l'entraînement nécessite que celles-ci aient le même nombre d'échantillons. Pour cette raison, on échantillonne les données extraites des fichiers logs ou le même nombre d'échantillons. Si le nombre d'échantillons contenus dans le fichier log est inférieur au nombre d'échantillons fixé par l'échantillonnage, on effectue un sur-échantillonnage, quand celui-ci n'altère les données. 
