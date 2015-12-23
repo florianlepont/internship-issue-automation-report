@@ -32,25 +32,25 @@
 %Comme étudié en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs}, la reconnaissance de motifs passe par la sélection des motifs caractéristiques de la root cause que l'on souhaite détecter, dans chaque exemple de notre base de données. Elle s'accompagne également de  la sélection de sections de la courbe ne présentant pas ce motif afin de pouvoir réaliser l'apprentissage de l'algorithme de manière optimale ( cf. partie \ref{Automatisation du processus d'investigation: Difficultés notoires rencontrées}).\\
 % Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entrainement. Cette taille dépend de la largeur globale du motif caractéristique et est déterminée par l'utilisateur lors de l'utilisation de l'interface graphique présentée partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}.   
 
-\subsubsection{Format des données de sortie}
-\label{Industrialisation du produit: API: Format des données de sortie}
-On présente dans le tableau \ref {tab: Structure de la base de données d'exemples après prétraitement} la structure des données en sortie du prétraitement des données. On a deux vecteurs : l'un contenant les exemples de motifs, l'autre contenant le label associé à chaque motif. Le label 1 signifie que le motif correspond à un motif caractéristique de la \emph{root cause} ; 0 signifie que le motif ne correspond pas à un motif caractéristique de la \emph{root cause}. 
-\begin{equation}
-\begin{blockarray}{cc}
-exemples & labels \\
-\begin{block}{[c][c]}
-exemple_1 &  1 \\
-exemple_2 & 0 \\
-exemple_3 & 0 \\
-exemple_4 & 1 \\
-... & ... \\
-exemple_m & 0 \\
-\end{block}
-\end{blockarray}
-\label {tab: Structure de la base de données d'exemples après prétraitement}
-\end{equation}
-On retrouve cette structure pour chaque \emph{set} (i.e. \emph{training set} et \emph{test set}). \\
-Chaque exemple correspond à une liste qui contient l'ensemble des échantillons contenus dans un motif.
+%\subsubsection{Format des données de sortie}
+%\label{Industrialisation du produit: API: Format des données de sortie}
+%On présente dans le tableau \ref {tab: Structure de la base de données d'exemples après prétraitement} la structure des données en sortie du prétraitement des données. On a deux vecteurs : l'un contenant les exemples de motifs, l'autre contenant le label associé à chaque motif. Le label 1 signifie que le motif correspond à un motif caractéristique de la \emph{root cause} ; 0 signifie que le motif ne correspond pas à un motif caractéristique de la \emph{root cause}. 
+%\begin{equation}
+%\begin{blockarray}{cc}
+%exemples & labels \\
+%\begin{block}{[c][c]}
+%exemple_1 &  1 \\
+%exemple_2 & 0 \\
+%exemple_3 & 0 \\
+%exemple_4 & 1 \\
+%... & ... \\
+%exemple_m & 0 \\
+%\end{block}
+%\end{blockarray}
+%\label {tab: Structure de la base de données d'exemples après prétraitement}
+%\end{equation}
+%On retrouve cette structure pour chaque \emph{set} (i.e. \emph{training set} et \emph{test set}). \\
+%Chaque exemple correspond à une liste qui contient l'ensemble des échantillons contenus dans un motif.
 
 \subsection{Module Marchine Learning}
 \label{Industrialisation du produit:  API: Le module Machine Learning}
