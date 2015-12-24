@@ -118,7 +118,7 @@ On présente ici un exemple d'analyse d'un fichier log :
 \subsubsection{Observation}
 \begin{itemize}
 	\item Lors du déroulement du Filtering test, le robot tombe à t = 16972 secondes, soit lorsqu'il réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute. (cf. figure \ref{fig:analyse d'une anomalie: accéléromètre})
-	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot pouvant avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le senseur du genou suit correctement la commande du moteur (cf. figure \ref{fig:analyse d'une anomalie: hipitch}).
+	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot qui peuvent avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le senseur du genou suit correctement la commande du moteur (cf. figure \ref{fig:analyse d'une anomalie: hipitch}).
 	\item On observe aussi une augmentation anormale du courant dans le moteur de l'articulation. 
 \end{itemize} 
 
@@ -141,7 +141,7 @@ On présente ici un exemple d'analyse d'un fichier log :
 \end{figure}
 
 \subsubsection{Hypothèse émise}
- Lors de l'exécution de l'animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche, causant un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro. Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation, ce qui entraine le passage en mode protégé du robot et a pour effet de désactiver sa rigidité. Sans cette rigidité, Pepper tombe (\emph{error name}). Une étude plus poussée nous apprendra que la\emph{ root cause } du problème correspondait à un frottement des freins de la hanche. 
+ Lors de l'exécution de l'animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche qui causent un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro. Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation, ce qui entraine le passage en mode protégé du robot et a pour effet de désactiver sa rigidité. Sans cette rigidité, Pepper tombe (\emph{error name}). Une étude plus poussée nous apprendra que la\emph{ root cause } du problème correspondait à un frottement des freins de la hanche. 
 
 
 \section{Solution proposée}
