@@ -175,7 +175,7 @@ Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'
 D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en fonctionnement normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
 On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}).
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering\includegraphics[width=13cm]{images/fall_not_fall.png}
 	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
 	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
@@ -220,7 +220,7 @@ Dans le cadre du développement de notre algorithme, le principe est le même: o
 \paragraph{Investigation}
 Lorsque l'on souhaite investiguer un fichier pour déterminer la \emph{root cause} qui a entrainé l'apparition de l'\emph{error name} lors du Filering Test, on commence par extraire la valeur des features du fichier log qui sont liées à la \emph{root cause}. Ensuite, on recherche le motif caractéristique. Pour ce faire, on découpe les courbes des features en plusieurs petits tronçons de la même taille que le motif caractéristique et on les compare avec celui-ci. S'ils sont globalement similaires au patron, on en déduit que la root cause a été détecté. Dans le cas contraire, on en déduit qu'elle n'a pas été détectée. En réalité, l'algorithme d'apprentissage automatique (SVM) nous retourne en sortie la probabilité avec laquelle le motif caractéristique semble avoir été détecté dans chacun des tronçons. On propose un exemple d'investigation en figure \ref{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}).
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/balayage_motif.png}
 	\caption[Balayage des features et motif caractéristique d'une root cause]{Balayage des features pour trouver le motif caractéristique d'une \emph{root cause}. On observe que le premier et le dernier tronçon de la courbe des features HipPitchPositionSensorValue et  HipPitchPositionActuatorValue ne correspondent pas au motif caractéristique de la \emph{root cause} "frottement des freins de la hanche". La probabilité en sortie du système est donc faible. Le deuxième tronçon correspond globalement au motif caractéristique de la courbe, la probabilité en sortie du système est donc élevée.}
 	\label{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}
@@ -228,7 +228,7 @@ Lorsque l'on souhaite investiguer un fichier pour déterminer la \emph{root caus
 
 L'ensemble des probabilités en sortie des différents tronçons étudiés forment une courbe de probabilité. Si cette courbe dépasse un certain seuil, on considère la \emph{root cause} comme ayant été détectée. On propose la courbe de probabilité de la \emph{root cause} "frottement des freins de la hanche" en figure \ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering\includegraphics[width=12cm]{images/proba_motif.png}
 	\caption[Courbe de probabilité de la root cause "frottement des freins de la hanche"]{Courbe de probabilité de la root cause "frottement des freins de la hanche".  On observe que lorsque l'on s'approche du motif caractéristique de la \emph{root cause}, la probabilité augmente fortement. Elle est au contraire faible sur les autres tronçons de la courbe.}
 	\label{fig:Représentation de la répartition des exemples et des classes en fonction des features, approche fonctionnelle}
@@ -302,7 +302,7 @@ Pour tester l'algorithme :
 
 Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une \emph{matrice de confusion}. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\begin{tabular}{| c | c | c | c |}
 		\hline
@@ -336,7 +336,7 @@ A partir de ces résultats, il est possible de déterminer la précision de l'al
  \paragraph{Exemple}
  On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement des freins de la hanche". 
  
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\begin{tabular}{| c | c | c | c |}
 		\hline
