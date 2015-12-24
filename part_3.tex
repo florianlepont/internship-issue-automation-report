@@ -139,7 +139,7 @@ Le control panel permet d'obtenir un certain nombre d'informations quant à la q
 On propose dans cette partie un exemple d'utilisation de l'API et des interfaces graphiques. Cette solution a été mise en place dans le cadre du stage afin de proposer un script qui permet d'ores et déjà de gérer la base de données, de créer de nouvelles couches \emph{root cause} et d'investiguer des fichiers logs. On s'appuie sur l'utilisation de la libraire python \emph{npyscreen} \cite{Npyscreen} qui permet de réaliser des interfaces utilisateurs simples, directement dans le terminal.
 \newline
 
-On s'intéressera ici au problème de frottement des freins de la hanche, qui entraîne la chute du robot durant le Filtering Test. Sa résolution passe donc par trois étapes: 
+On s'intéressera ici au problème de frottement des freins de la hanche, qui entraîne la chute du robot durant le Filtering Test. Sa résolution passe par trois étapes: 
 \begin{enumerate}
 	\item Créer une nouvelle couche \emph{error name} : la couche "chute du robot". 
 	\item Créer un nouvelle couche \emph{root cause} liée à la couche \emph{error name} "chute du robot" : la couche "frottement des freins de la hanche". Cela signifie que l'on va entraîner un nouvel algorithme à détecter le motif caractéristique de cette \emph{root cause}. 
