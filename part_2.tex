@@ -182,13 +182,13 @@ On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue da
 \end{figure}
 
 \begin{figure}[h]
-	\centering\includegraphics[width=11cm]{images/patron.png}
+	\centering\includegraphics[width=12cm]{images/patron.png}
 	\caption[Créer un patron caractéristique de la chute du robot]{Créer un patron caractéristique de la chute du robot. Chaque échantillon qui forme un exemple est considéré comme une entrée du système d'apprentissage, i.e. une feature. Entraîner l'algorithme à reconnaitre la forme de BaseAccZ, dans le cas de robots tombés revient à créer un patron de BaseAccZ qui caractérise la chute. L'entrainement s'effectue à partir de différents exemples de la feature BaseAccZ lorsque le robot tombe.}
 	\label{fig:Créer un patron caractéristique de la chute du robot}
 \end{figure}
 
 \begin{figure}[h]
-	\centering\includegraphics[width=11cm]{images/patron_comp.png}
+	\centering\includegraphics[width=12cm]{images/patron_comp.png}
 	\caption[Détection d'une chute à partir du patron de BaseAccZ]{Détection d'une chute à partir du patron de BaseAccZ. Afin de savoir si l'exemple que l'on étudie est lié à une chute de robot ou non, on compare la valeur BaseAccZ du fichier log au patron caractéristique d'une chute de BaseAccZ. Sur le graphique supérieur, on observe que BaseAccZ est globalement contenu dans le patron, il s'agit donc d'un fichier log généré lors de la chute d'un robot. On observe en revanche sur le graphique inférieur que BaseAccZ n'est que \textbf{partiellement} incluse dans le patron. Il ne s'agit donc pas d'un exemple caractéristique d'une chute. }
 	\label{fig:Détection d'une chute à partir du patron de BaseAccZ}
 \end{figure}
