@@ -106,7 +106,7 @@ Il existe certains cas où les valeurs de deux features étudiées sont trop él
 \label{Industrialisation du produit: Outils graphiques: Probability Visualization}
 Cette interface graphique permet de visualiser l'exemple que l'on investigue et la probabilité que le motif soit présent dans l'image. Elle est composée de deux parties. 
 \begin{itemize}
-	\item La première partie (encadré vert sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche les features de l'exemple que l'on investigue. Par exemple, dans le cas présent, on recherche la \emph{root cause} liée à l'\emph{error name} "chute du robot". Le système détecte que la \emph{root cause} est "le frottement des freins de la hanche". Il nous affiche donc les courbes du senseur et de l'actionneur de la hanche, sur lesquelles on observe le motif caractéristique de la \emph{root cause}.
+	\item La première partie (encadré vert sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche les features de l'exemple que l'on investigue. Par exemple, dans le cas présent, on recherche la \emph{root cause} liée à l'\emph{error name} "chute du robot". Le système détecte que la \emph{root cause} est "le frottement des freins de la hanche". Il nous affiche donc les courbes du capteur et de l'actionneur de la hanche, sur lesquelles on observe le motif caractéristique de la \emph{root cause}.
 	\item La deuxième partie (encadré rouge sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche la courbe de progression de la probabilité, au cours du balayage des features de l'exemple (cf. partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}). La ligne horizontale sur le graphique représente le seuil à partir duquel on considère que la \emph{root cause} est bien la cause ayant entraîné l'apparition de l'erreur.
 \end{itemize}
 
@@ -172,8 +172,8 @@ Le menu "Add a root cause to the knowledge base" (cf. figure \ref{fig:Menu princ
 Pour cela, on suit le processus suivant (cf. figure \ref{fig: Nouvelle root cause}) : 
 \begin{enumerate}
 	\item On sélectionne l'\emph{error name} à laquelle on souhaite lier cette nouvelle \emph{root cause}. On indique ensuite son nom. Dans le cas de la \emph{root cause} "frottement des freins de la hanche", on la lie à l'\emph{error name} "fall down" et on l'appelle "frottement des freins de la hanche". 
-	\item On sélectionne la/les feature(s) liée(s) à la \emph{root cause}. Dans le cas de la \emph{root cause} du "frottement des freins de la hanche", on sélectionne les clés HipPitchPositionSensorValue, HipPitchPositionActuatorValue, respectivement les valeurs du senseur et de l'actionneur de la hanche.
-	\item On utilise le Pattern Selector (cf. partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}) pour sélectionner les motifs caractéristiques de la \emph{root cause} que l'on étudie. Dans notre cas, il s'agit du moment où le senseur ne suit plus l'actionneur. On répète cette manipulation pour chaque exemple de la base de données.
+	\item On sélectionne la/les feature(s) liée(s) à la \emph{root cause}. Dans le cas de la \emph{root cause} du "frottement des freins de la hanche", on sélectionne les clés HipPitchPositionSensorValue, HipPitchPositionActuatorValue, respectivement les valeurs du capteur et de l'actionneur de la hanche.
+	\item On utilise le Pattern Selector (cf. partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}) pour sélectionner les motifs caractéristiques de la \emph{root cause} que l'on étudie. Dans notre cas, il s'agit du moment où le capteur ne suit plus l'actionneur. On répète cette manipulation pour chaque exemple de la base de données.
 \end{enumerate}
 
 \begin{figure}[h]
