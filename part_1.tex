@@ -470,15 +470,15 @@ On cherche à séparer des groupes de données homogènes dans un ensemble hét�
 On reprend l'exemple de la prévision saisonnière en partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on utilise de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans une des classes printemps ou hiver, en fonction de la température (cf. figure \ref{fig:Classification via regression linéaire}). \\
 Pour cela, on met en place un seuil de classification:
 \begin{itemize}
-	\item Si $h_\theta(x) > 0,5$ alors $y=1$
-	\item Si $h_\theta(x) < 0,5$ alors $y=0$
+	\item Si $h_\theta(x) > 0.5$ alors $y=1$
+	\item Si $h_\theta(x) < 0.5$ alors $y=0$
 \end{itemize}
 
 Où $y = 0$ correspond à la période hiver et $y = 1$ l'été. 
 
 \begin{figure}[h]
 	\centering\includegraphics[width=12cm]{images/class_reg_lineaire.png}
-	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5\degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque qu'une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15\degres C, ce qui n'est pas représentatif des exemples.}
+	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12.5\degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque qu'une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15\degres C, ce qui n'est pas représentatif des exemples.}
 	\label{fig:Classification via regression linéaire}
 \end{figure}
 
@@ -504,25 +504,25 @@ h_\theta(x)=\frac{1}{1 + e^{\theta^Tx}}
 	\label{fig:Fonction sigmoïde}
 \end{figure}
 
-D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$, cela signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1. 
+D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0.7$, cela signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.
 
 \subsubsection{Ligne de décision}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Ligne de décision}
 On a la propriété de la fonction sigmoïde suivante: 
 \begin{equation}
- g(z) \ge 0,5 \text{ lorsque } z \ge 0
+ g(z) \ge 0.5 \text{ lorsque } z \ge 0
 \end{equation}
 
 On a donc pour l'hypothèse la propriété suivante: 
 \begin{equation}
-h(x)=g(\theta^Tx) \ge 0,5 \text{ lorsque } \theta^Tx \ge 0
+h(x)=g(\theta^Tx) \ge 0.5 \text{ lorsque } \theta^Tx \ge 0
 \end{equation}
 
 On peut alors émettre les deux affirmations suivantes:
 \begin{equation}
 	\begin{split}
-	y=1 \text{ si }h_\theta(x) \ge 0,5 \text{ , soit } \theta^Tx \ge 0 \\
-	y=0 \text{ si }h_\theta(x) \le 0,5 \text{ , soit } \theta^Tx \le 0 
+	y=1 \text{ si }h_\theta(x) \ge 0.5 \text{ , soit } \theta^Tx \ge 0 \\
+	y=0 \text{ si }h_\theta(x) \le 0.5 \text{ , soit } \theta^Tx \le 0
 	\end{split}
 \end{equation}
 
