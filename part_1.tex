@@ -558,7 +558,7 @@ Cette frontière de décision correspond à l'équation d'un cercle. Plus le nom
 
 \subsubsection{Fonction coût}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Fonction coût}
-Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Pour la régression logistique, elle ne l'est plus (forme sigmoïde). La fonction coût n'est donc ici pas convexe (cf. figure \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}) et on ne peut pas déterminer le minimum global (et donc la valeur optimale des paramètres de l'hypothèse), celle-ci pouvant posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une reformulation de la fonction coût. \\
+Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Pour la régression logistique, elle ne l'est plus (forme sigmoïde). La fonction coût n'est dans ce cas pas forcément convexe (cf. figure \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}) et on ne peut pas déterminer le minimum global (et donc la valeur optimale des paramètres de l'hypothèse) avec la méthode de descente de gradient utilisée pour la régression linéaire. En effet, la fonction coût peut éventuellement posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une reformulation de la fonction coût. \\
 Soit la fonction coût utilisée pour la régression linéaire:
 \begin{equation}
 	J(\theta) = \frac{1}{m}\sum_{i=1}^{m}\frac{1}{2}(h_\theta(x^i)-y^i)^2
