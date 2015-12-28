@@ -29,7 +29,7 @@ Une fois nos différentes couches \emph{root cause} créées, on souhaite utilis
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/synoptique_error.png}
-	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche \emph{error name}. La couche \emph{error name} contient plusieurs couches \emph{root cause} (on dit qu'elles sont liées). On met en entrée du système le fichier log que l'on souhaite analyser, puis chaque couche \emph{root cause} va détecter la présence de sa \emph{root cause}. On obtient en sortie de la couche \emph{error name} la \emph{root cause}  ayant eu la plus forte probabilité d'avoir été reconnue.}
+	\caption[Utilisation de la couche error name]{Synoptique haut niveau de l'utilisation de la couche \emph{error name}. La couche \emph{error name} contient plusieurs couches \emph{root cause} (on dit qu'elles sont liées). On met en entrée du système le fichier log que l'on souhaite analyser. Chaque couche \emph{root cause} va alors chercher à détecter la présence de sa \emph{root cause}. On obtient en sortie de la couche \emph{error name} la \emph{root cause}  ayant eu la plus forte probabilité d'avoir été reconnue.}
 	\label{fig:utilisation de la couche error name}
 \end{figure}
 
