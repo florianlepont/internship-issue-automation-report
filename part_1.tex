@@ -61,7 +61,7 @@ Afin d'exposer de manière plus concrète le processus fonctionnel haut niveau d
 
 \textit{On cherche à déterminer la période de l'année à laquelle on se trouve actuellement (i.e. printemps, été, automne ou hiver) grâce à l'analyse de l'humidité, de la température et de la pression atmosphérique d'aujourd'hui. \\
 	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
-	Une fois le système entrainé, on attend de celui-ci ce type de comportement : \\
+	Une fois le système entraîné, on attend de celui-ci ce type de comportement : \\
 	On présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
 
 On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple (cf. figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}).
@@ -79,7 +79,7 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 \begin{description}
 	\item [Features] Le type de données présenté en entrée. \\
 	\textit{La température, la pression atmosphérique et l'humidité.}
-	\item [Echantillons ou exemples] Les données qui permettent d'entrainer le système ($x\_train$). \\
+	\item [Echantillons ou exemples] Les données qui permettent d'entraîner le système ($x\_train$). \\
 	\textit{Des échantillons de température, pression atmosphérique et humidité pris à différentes périodes de l'année.}
 	\item [Modèle d'apprentissage] Le cœur du système décisionnel ($f$).
 	\item [Décision] La sortie ou réponse du système ($y$) \\
@@ -198,13 +198,13 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 
 \begin{figure}[H]
 	\centering\includegraphics[width=13cm]{images/apprentissage_chat.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux features "taille" et "longueur de pelage". On remarque qu'il y a la formation de deux groupes de données homogènes: les animaux de taille globalement élevée avec un pelage court et les animaux de taille moindre avec un poil globalement plus long. Les données étant labellisées, on sait que le premier groupe correspond à des chiens et le deuxième à des chats. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains". On observe sur la figure a) les différents exemples d'entraînement exprimés dans un repère composé des deux features "taille" et "longueur de pelage". On remarque qu'il y a la formation de deux groupes de données homogènes: les animaux de taille globalement élevée avec un pelage court et les animaux de taille moindre avec un poil globalement plus long. Les données étant labellisées, on sait que le premier groupe correspond à des chiens et le deuxième à des chats. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}
 \end{figure}
 
 \begin{figure}[H]
 	\centering\includegraphics[width=13cm]{images/apprentissage_meteo.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y a la formation de deux groupes de données homogènes: un où les échantillons sont prélevés lors de saisons globalement chaudes et sèches, l'autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe à l'hiver. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entraînement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y a la formation de deux groupes de données homogènes: un où les échantillons sont prélevés lors de saisons globalement chaudes et sèches, l'autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe à l'hiver. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}
 \end{figure}
 
@@ -303,7 +303,7 @@ avec:
 \begin{itemize}
 	\item $J(\theta_0,\theta_1)$ la fonction coût
 	\item $\theta_0$ et $\theta_1$ les paramètres de l'hypothèse $h(x)$
-	\item $m$ le nombre d'exemples disponibles pour l'entrainement 
+	\item $m$ le nombre d'exemples disponibles pour l'entraînement
 	\item $h_\theta(x)$ l'hypothèse $h_\theta (x) = \theta_0 + \theta_1 x$
 	\item $x^i$ exemple $i$
 	\item $y^i$ sortie $i$
@@ -347,7 +347,7 @@ On peut réaliser de la régression linéaire avec plusieurs features en entrée
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
 Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple partie \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour qu'il corresponde à un problème multi-variable.
  
-On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages, en se basant sur les exemples de prix du parc immobilier. On a donc plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier multi}, les exemples $x$ utilisés pour l'entrainement.
+On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages, en se basant sur les exemples de prix du parc immobilier. On a donc plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier multi}, les exemples $x$ utilisés pour l'entraînement.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{ | p {2cm} | p {2cm} | p {2cm} |  p {2cm} |}
@@ -421,7 +421,7 @@ On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque 
 \label{gradient descent multivar}
 \end{equation}
 
-avec $x_j^i$ l'entrée $j$ de l'entrainement $i$.
+avec $x_j^i$ l'entrée $j$ de l'entraînement $i$.
 
 
 \subsubsection{Vectorisation des calculs}
@@ -658,11 +658,11 @@ Les fonctions noyaux (également appelées Kernel) permettent de résoudre des p
 
 \subsubsection{Avantages du SVM}
 \label{Le Machine Learning: Les différents algorithmes: SVM: Avantage du SVM}
-L'entrainement d'un algorithme de type SVM peut être effectué avec peu d'exemples. En effet, la marge maximale s'appuie sur les données en périphéries des ensembles homogènes.
+L'entraînement d'un algorithme de type SVM peut être effectué avec peu d'exemples. En effet, la marge maximale s'appuie sur les données en périphéries des ensembles homogènes.
 
 \subsection{Périmètres d'utilisation de la régression logistique et du SVM}
 \label{Le Machine Learning: Choix de la méthode à utiliser: Comparaison de la régression logistique et le SVM}
-La régression logistique et le SVM sont tous deux des algorithmes de classification. Le choix d'un modèle dépend du nombre d'exemples que l'on a pour l'entrainement et du nombre de features. On présente dans le tableau \ref {tab:Périmètre d'utilisation de la régression logistique et le SVM} les différents périmètres d'utilisation.
+La régression logistique et le SVM sont tous deux des algorithmes de classification. Le choix d'un modèle dépend du nombre d'exemples que l'on a pour l'entraînement et du nombre de features. On présente dans le tableau \ref {tab:Périmètre d'utilisation de la régression logistique et le SVM} les différents périmètres d'utilisation.
 
 \begin{table}[h]
 	\begin{tabular}{ | p{7cm} | p{7cm} |}

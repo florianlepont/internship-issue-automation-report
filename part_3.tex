@@ -34,7 +34,7 @@ Le prétraitement est composé de 5 étapes.
 \subsubsection{Sélection des motifs}
 \label{Industrialisation du produit: API: Sélection des motifs}
 Comme étudié en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs}, la reconnaissance de motifs passe par la sélection des motifs caractéristiques de la root cause que l'on souhaite détecter, dans chaque exemple de notre base de données.
- Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entrainement. Cette taille dépend de la largeur globale du motif caractéristique et est déterminée par l'utilisateur lors de l'utilisation de l'interface graphique présentée partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}.   
+ Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entraînement. Cette taille dépend de la largeur globale du motif caractéristique et est déterminée par l'utilisateur lors de l'utilisation de l'interface graphique présentée partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}.
 
 \subsubsection{Format des données de sortie}
 \label{Industrialisation du produit: API: Format des données de sortie}
@@ -120,7 +120,7 @@ Cette interface graphique permet de visualiser l'exemple que l'on investigue et 
 \label{Industrialisation du produit: Outils graphiques: Control panel}
 Le control panel permet d'obtenir un certain nombre d'informations quant à la qualité de la base de données d'exemple utilisée pour créer une nouvelle couche \emph{root cause}, ainsi que sur les performances de l'algorithme d'apprentissage automatique. La plupart de ces informations sont déterminées grâce aux outils soumis en partie \ref{Automatisation du processus d'investigation: Performances de la solution}. L'IHM est composé de trois parties.
 \begin{description}
-	\item [Data set features] (encadré vert sur la figure \ref{fig:Interface graphique du control pattern}) fournit un ensemble d'informations sur la base de données d'exemples utilisée pour l'entraînement de l'algorithme d'apprentissage automatique. 
+	\item [Data set features] (encadré vert sur la figure \ref{fig:Interface graphique du control pattern}) fournit un ensemble d'informations sur la base de données d'exemples utilisée pour l'entraînement de l'algorithme d'apprentissage automatique.
 	\item [Training panel features ](encadré rouge sur la figure \ref{fig:Interface graphique du control pattern})  livre des informations sur l'algorithme d'apprentissage automatique de la couche root cause analysée (e.g. valeur des paramètres, matrice de confusion, précision, etc). Ces données sont pour la plupart relatives aux explications fournies en partie \ref{Automatisation du processus d'investigation: Performances de la solution}.
 	\item [Training panel ](encadré bleu sur la figure \ref{fig:Interface graphique du control pattern}) permet d'analyser les courbes d'apprentissage (c.f. partie \ref{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}) et les courbes de validation (c.f. partie \ref{Industrialisation du produit: Performances de la solution:Optimisation des paramètres du SVM})
 \end{description}
@@ -215,7 +215,7 @@ Le menu "Open control panel" (cf. figure \ref{fig:Menu principal}) permet de sé
 
 \subsection{Mise à jour d'une root cause}
 \label{Industrialisation du produit: Utilisation suggérée des outils: Mise à jour d'une root cause}
-Le menu "Update a root cause"  (cf. figure \ref{fig:Menu principal}) permet d'ajouter des exemples à la base de données d'exemples et d'entrainer de nouveau l'algorithme d'apprentissage afin d'en améliorer les performances. Pour cela, on suit le processus suivant (cf. figure \ref{fig: Analyse des performances d'une couche root cause}) : 
+Le menu "Update a root cause"  (cf. figure \ref{fig:Menu principal}) permet d'ajouter des exemples à la base de données d'exemples et d'entraîner de nouveau l'algorithme d'apprentissage afin d'en améliorer les performances. Pour cela, on suit le processus suivant (cf. figure \ref{fig: Analyse des performances d'une couche root cause}) :
 \begin{enumerate}
 	\item On sélectionne dans l'arborescence des \emph{errors name} et des \emph{root cause}, la \emph{root cause} que l'on souhaite mettre à jour.
 	\item On sélectionne les motifs caractéristiques de la \emph{root cause} dans les exemples ajoutés via le Pattern Selector.
