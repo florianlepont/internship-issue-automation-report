@@ -38,12 +38,12 @@ Au regard des deux définitions stipulées ci-dessus, on peut représenter le pr
 	\label{fig:Schéma fonctionnel haut niveau du Machine Learning}
 \end{figure}
 
-L'apprentissage automatique peut être vu dans sa globalité comme un processus composé de deux étapes successives : 
+Il peut être vu dans sa globalité comme un processus composé de deux étapes successives : 
 \begin{enumerate}
 		\item [Apprentissage]
 		 \begin{enumerate}
-			\item  Un ensemble de données est mis à l'entrée du système lors de la phase d'apprentissage ($x\_train$).
-			\item A partir de ces informations, le système ($f$) apprend - s'entraîne - pour être en capacité de prendre une décision vis-à-vis de la tâche qui lui est demandée. 
+			\item  Un ensemble de données est mis en entrée du système lors de la phase d'apprentissage ($x\_train$).
+			\item A partir de ces informations, le système ($f$) apprend - s'entraîne- pour être en capacité de prendre une décision vis-à-vis de la tâche qui lui est demandée. 
 		\end{enumerate}
 		
 		\item [Prise de décision] 
@@ -60,9 +60,14 @@ L'apprentissage automatique peut être vu dans sa globalité comme un processus 
 Afin d'exposer de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on soumet l'exemple suivant:
 
 \textit{On cherche à déterminer la période de l'année à laquelle on se trouve actuellement (i.e. printemps, été, automne ou hiver) grâce à l'analyse de l'humidité, de la température et de la pression atmosphérique d'aujourd'hui. \\
+<<<<<<< HEAD
 	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
 	Une fois le système entraîné, on attend de celui-ci ce type de comportement : \\
 	On présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
+=======
+	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). Pour cela, on lui présente différents échantillons de températures, d'humidité et de pression prélevés à différentes périodes de l'année.\\
+	Une fois le système entrainé, on attend de celui-ci ce type de comportement : on présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
+>>>>>>> master
 
 On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple (cf. figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}).
 
@@ -91,7 +96,7 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 \subsection{Les exemples}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Les données}
 Les exemples sont les données utilisées pour entraîner l'algorithme d'apprentissage. On parle également d'échantillons. Ils sont regroupés en "features" (terme anglais, traduire par caractéristiques). 
-Pour reprendre l'exemple cité précédemment (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), les données sont regroupées en 3 features: la température, l'humidité et la pression atmosphérique. Ils sont donc structurés de la manière suivante: 
+Pour reprendre l'exemple cité précédemment (partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}), les données sont regroupées en 3 features: la température, l'humidité et la pression atmosphérique. Les échantillons sont donc structurés de la manière suivante: 
 
 \begin{equation}
 \begin{blockarray}{cccc}
@@ -159,7 +164,7 @@ Il existe différents types de sortie: continues et discrètes.
 \begin{description}
 	\item [Sorties continues] peuvent prendre n'importe quelle valeur. \\
 	 $y \in R$ \\
-	 \textit{Déterminer l'évolution de la température en fonction des échantillons enregistrés durant les mois précédents correspond à une sortie continue.}
+	 \textit{Déterminer automatiquement l'évolution de la température en fonction des échantillons enregistrés durant les mois précédents correspond à une sortie continue d'un système d'apprentissage.}
 	\item [Sorties discrètes] ne peuvent prendre que des valeurs prédéterminées. \\
 	 $y \in {1, 2, 3, ...,C}$ \\
 	\textit{ L'exemple de la prévision saisonnière partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} a une sortie discrète. En effet, la sortie ne peut prendre que des valeurs prédéterminées: printemps, été, automne et hiver.}
@@ -368,7 +373,7 @@ On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa su
 		163 & 7 & 0 & 334 \\
 		\hline 
 	\end{tabular}
-	\caption[Parc immobilier multi-variable]{Exemples du prix des logements en fonction de leur surface, du nombre d'étages et du nombre de pièces}
+	\caption[Parc immobilier multi-variable]{Exemples du prix des logements en fonction de leur surface, du nombre d'étages et du nombre de pièces.}
 	\label {tab:parc immobilier multi}
 \end{table}
 
@@ -504,7 +509,11 @@ h_\theta(x)=\frac{1}{1 + e^{\theta^Tx}}
 	\label{fig:Fonction sigmoïde}
 \end{figure}
 
+<<<<<<< HEAD
 D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0.7$, cela signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.
+=======
+D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$, veut dire que l'on a 70\% de chance que la variable de sortie soit égale à 1. 
+>>>>>>> master
 
 \subsubsection{Ligne de décision}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Ligne de décision}
@@ -626,7 +635,11 @@ Le Support Vector Machine (traduire en français par "machine à vecteurs de sup
 
 \subsubsection{Marge maximale}
 \label{Le Machine Learning: Les différents algorithmes: SVM: la marge maximale}
+<<<<<<< HEAD
 Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemple dans lequel les données sont séparables par une ligne de décision linéaire. Dans le cas de la figure \ref{fig:SVM: cas simple d'une regression logistique avec une hypothèse linéaire}, on a un problème de classification composé de deux classes. Le but est donc de déterminer une valeur de l'hypothèse (représentée par la frontière de décision) permettant de séparer ces deux régions. On remarque qu'elle peut prendre une infinité de valeurs, i.e. il existe une infinité de combinaisons de valeurs des paramètres $\theta$ de l'hypothèse qui résolvent la classification. On cherche donc à déterminer l'hypothèse permettant de répondre de manière optimale à ce problème. Pour cela, on introduit la notion de marge. Comme on peut l'observer sur la figure \ref{fig:SVM: optimisation du calcul de l'hypothèse par l'introduction de marges}, la ligne de décision est bordée de deux marges qui prennent appui sur les valeurs situées à l'extrémité de chacune des deux classes. Afin de déterminer la meilleur position pour la ligne de décision (et donc le paramétrage optimal de l'hypothèse), on maximise la distance entre ces deux lignes de décision.
+=======
+Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemple dans lequel les données sont séparables par une ligne de décision linéaire. Dans le cas de la figure \ref{fig:SVM: cas simple d'une regression logistique avec une hypothèse linéaire}, on a un problème de classification composé de deux classes. Le but est donc de déterminer une valeur de l'hypothèse (représentée par la frontière de décision) permettant de séparer ces deux régions. On remarque qu'elle peut prendre une infinité de valeurs, i.e. il existe une infinité de combinaisons de valeurs des paramètres $\theta$ de l'hypothèse qui résolvent la classification. On cherche donc à déterminer l'hypothèse qui permet de répondre de manière optimale à ce problème. Pour cela, on introduit la notion de marge. Comme on peut l'observer sur la figure \ref{fig:SVM: optimisation du calcul de l'hypothèse par l'introduction de marges}, la ligne de décision est bordée de deux marges qui prennent appui sur les valeurs situées à l'extrémité de chacune des deux classes. Afin de déterminer la meilleur position pour la ligne de décision (et donc le paramétrage optimal de l'hypothèse), on maximise la distance entre ces deux marges. 
+>>>>>>> master
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6cm]{images/svm_no_margin.png}
