@@ -17,10 +17,6 @@ Afin d'exposer de manière concrète le fonctionnement de l'architecture haut ni
 
 \paragraph{Mise en place du système de détection d'une root cause}
 On souhaite dans un premier temps mettre en place l'architecture qui permet de détecter la cause (\emph{root cause}) ayant entrainé la chute du robot lors du Filtering test (\emph{error name}). Cette étape consiste à créer les couches \emph{root cause}, i.e. entrainer différents algorithmes d'apprentissage automatique à reconnaître la \emph{root cause} pour laquelle ils ont été créés (figure \ref{fig:Creation des couches root cause}). Afin de les entraîner, on utilise les grandeurs liées à chaque \emph{root cause}, contenues dans le fichier log. Par exemple, dans le cas de la \emph{root cause} "frottement des freins de la hanche", on utilisera les données "valeurs du senseur de la hanche" et "valeurs de l'actuateur de la hanche". Ces deux grandeurs correspondent aux features de notre système d'apprentissage (cf. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). L'ensemble de ces couches \emph{root cause} sont liées à une couche \emph{error name}, ici la chute d'un robot.
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> correction_manu
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/synoptique_root.png}
