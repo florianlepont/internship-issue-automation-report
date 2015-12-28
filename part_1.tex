@@ -128,7 +128,7 @@ Exemple_n & 10 & 81 &  1032 & printemps\\
 \end{block}
 \end{blockarray}
 \end{equation}
-On connait la sortie qui correspond aux données d'entrée, i.e. qu'on sait à quelle période de l'année les échantillons ont été prélevés.
+On connaît la sortie qui correspond aux données d'entrée, i.e. qu'on sait à quelle période de l'année les échantillons ont été prélevés.
  
 \paragraph{Données non labellisées} 
 Les échantillons non labellisés ne sont quant à eux pas corrélés à une sortie. 
@@ -144,7 +144,7 @@ Exemple_n & 10 & 81 &  1032 & ??\\
 \end{block}
 \end{blockarray}
 \end{equation}
-On ne connait pas la sortie qui correspond aux données d'entrée, i.e. on \emph{ne} sait \emph{pas} à quelle période de l'année les échantillons ont été prélevés. 
+On ne connaît pas la sortie qui correspond aux données d'entrée, i.e. on \emph{ne} sait \emph{pas} à quelle période de l'année les échantillons ont été prélevés.
 
 
 
@@ -173,8 +173,8 @@ Il existe différents variétés d'apprentissage supervisé. Le choix d'un modè
 
 \subsubsection{Apprentissage supervisé et non supervisé} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle: apprentissage supervisé et non supervisé}
-L'apprentissage supervisé nécessite d'avoir des données labellisées en entrée, i.e. on connait le type de décision que l'on aura en sortie du système, en fonction des exemples en entrée: il y a une corrélation entre la sortie et l'entrée. C'est cette notion qui s'exprime au travers du terme \emph{supervisé}. 
-L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'exemples non labellisée pour son apprentissage, i.e qu'on ne connait pas le type de décision associé aux exemples en entrée. Dans ce cas, pour parvenir à prendre une décision, l'algorithme devra diviser les groupes de données hétérogènes en sous-groupes homogènes d'informations, aux caractéristiques similaires. On appelle ces subdivisions des \emph{clusters}.
+L'apprentissage supervisé nécessite d'avoir des données labellisées en entrée, i.e. on connaît le type de décision que l'on aura en sortie du système, en fonction des exemples en entrée: il y a une corrélation entre la sortie et l'entrée. C'est cette notion qui s'exprime au travers du terme \emph{supervisé}.
+L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'exemples non labellisée pour son apprentissage, i.e qu'on ne connaît pas le type de décision associé aux exemples en entrée. Dans ce cas, pour parvenir à prendre une décision, l'algorithme devra diviser les groupes de données hétérogènes en sous-groupes homogènes d'informations, aux caractéristiques similaires. On appelle ces subdivisions des \emph{clusters}.
 Afin de matérialiser les différences entres les deux méthodes et les applications possibles pour chacune d'elles, on propose deux exemples tableau \ref {tab: Comparaison des différentes méthodes d'apprentissage}.
 
 \begin{table}[H]
@@ -185,7 +185,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 	\hline
 	\begin{tabular}{c} exemple n\degres1:\\apprendre aux \\ humains \end{tabular}  &
 	 Une institutrice enseigne à ses élèves à différencier un chat d'un chien: c'est la \emph{décision} qu'on attend d'eux. Pour cela, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les \emph{exemples} utilisés pour l'\emph{apprentissage}. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc.: il s'agit des \emph{features}. Lorsque l'institutrice leur présente les différentes images, elle stipule clairement s'il s'agit d'un chien ou d'un chat: il y a donc une corrélation entre l'entrée et la sortie de l'apprentissage: les exemples sont \emph{labellisés} (cf. figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
-	 Une institutrice donne à ses élèves le même exercice que dans le cadre de l'apprentissage supervisé, à la différence que lorsqu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur des similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaitront certes pas le nom des deux animaux, mais ils auront su les différencier (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
+	 Une institutrice donne à ses élèves le même exercice que dans le cadre de l'apprentissage supervisé, à la différence que lorsqu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur des similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaîtront certes pas le nom des deux animaux, mais ils auront su les différencier (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
 	\hline 
 	\begin{tabular}{c} exemple n\degres2:\\prévisions \\saisonnières \\ \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}\end{tabular} &
 	On reprend l'exemple dans lequel on souhaite déterminer la période de l'année à laquelle on se trouve actuellement, en fonction des features humidité, température et pression atmosphérique. On prélève des échantillons à différentes périodes de l'année en notant à quelle saison ces données ont été prélevées: ce sont des \emph{exemples labellisés}, i.e. il y a une corrélation entre les données et la sortie du système. Il s'agit donc d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, a). &
@@ -221,7 +221,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 		\hline
 		régression & classification \\
 		\hline
-		On souhaite connaitre le temps (température et humidité) qu'il fera pendant les jours suivants. Pour cela, on s'appuie sur les différents échantillons de température et d'humidité enregistrés lors des mois et des années précédents (exemples labellisés). Le fait de déterminer la température des jours suivants relève de la \emph{prédiction} (figure \ref{fig:Comparaison par l'exemple de la régression et la classification}, b).  
+		On souhaite connaître le temps (température et humidité) qu'il fera pendant les jours suivants. Pour cela, on s'appuie sur les différents échantillons de température et d'humidité enregistrés lors des mois et des années précédents (exemples labellisés). Le fait de déterminer la température des jours suivants relève de la \emph{prédiction} (figure \ref{fig:Comparaison par l'exemple de la régression et la classification}, b).
 		 &  L'exemple de la prévision saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} est un problème de \emph{classification}: on cherche à classer notre donnée d'entrée parmi plusieurs groupes de données homogènes: printemps, été automne ou hiver (figure \ref{fig:Comparaison par l'exemple de la régression et la classification}, a). \\
 		\hline 
 	\end{tabular}
