@@ -10,7 +10,7 @@ L'API que l'on propose est composée de 3 modules :
 \begin{description}
 	\item [data base] Permet de gérer le stockage et la lecture des données nécessaires à l'exécution des algorithmes d'apprentissage. Deux types de fichiers y sont sauvegardés : les fichiers logs, qui fournissent l'ensemble des exemples permettant d'entraîner le SVM et les fichiers générés par l'algorithme lors de son apprentissage.
 	\item [data set] Permet de prétraiter les exemples utilisés pour l'apprentissage.
-	\item [machine learning] Permet de créer un algorithme d'apprentissage, de l'entraîner et de l'utiliser pour investiguer la \emph{root cause} pour laquelle il a été créé.
+	\item [machine learning] Permet de créer un algorithme d'apprentissage, de l'entraîner et de l'utiliser pour déterminer la \emph{root cause} pour laquelle il a été créé.
 \end{description}
 
 La librairie utilise le langage de programmation Python \cite{Python}. \\
@@ -62,7 +62,7 @@ Le module Machine Learning s'appuie sur l'utilisation de scikit-learn \cite{Scik
 
 \section{Outils graphiques}
 \label{Industrialisation du produit: Outils graphiques}
-On présente ici les différents outils graphiques qui permettent de réaliser la construction d'une nouvelle couche root cause (i.e. un nouvel algorithme pour détecter une \emph{root cause}), d'investiguer une \emph{error name} et d'obtenir des informations sur les performances de l'algorithme. 
+On présente ici les différents outils graphiques qui permettent de réaliser la construction d'une nouvelle couche root cause (i.e. un nouvel algorithme pour détecter une \emph{root cause}), d'étudier une \emph{error name} et d'obtenir des informations sur les performances de l'algorithme.
 
 \subsection{Pattern selector}
 \label{Industrialisation du produit: Outils graphiques: Pattern selection}
@@ -104,9 +104,9 @@ Il existe certains cas où les valeurs de deux features étudiées sont trop él
 
 \subsection{Probability Visualization}
 \label{Industrialisation du produit: Outils graphiques: Probability Visualization}
-Cette interface graphique permet de visualiser l'exemple que l'on investigue et la probabilité que le motif soit présent dans l'image. Elle est composée de deux parties. 
+Cette interface graphique permet de visualiser l'exemple que l'on étudie et la probabilité que le motif soit présent dans l'image. Elle est composée de deux parties.
 \begin{itemize}
-	\item La première partie (encadré vert sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche les features de l'exemple que l'on investigue. Par exemple, dans le cas présent, on recherche la \emph{root cause} liée à l'\emph{error name} "chute du robot". Le système détecte que la \emph{root cause} est "le frottement du frein de la hanche". Il nous affiche donc les courbes du capteur et de l'actionneur de la hanche, sur lesquelles on observe le motif caractéristique de la \emph{root cause}.
+	\item La première partie (encadré vert sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche les features de l'exemple que l'on étudie. Par exemple, dans le cas présent, on recherche la \emph{root cause} liée à l'\emph{error name} "chute du robot". Le système détecte que la \emph{root cause} est "le frottement du frein de la hanche". Il nous affiche donc les courbes du capteur et de l'actionneur de la hanche, sur lesquelles on observe le motif caractéristique de la \emph{root cause}.
 	\item La deuxième partie (encadré rouge sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche la courbe de progression de la probabilité, au cours du balayage des features de l'exemple (cf. partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}). La ligne horizontale sur le graphique représente le seuil à partir duquel on considère que la \emph{root cause} est bien la cause ayant entraîné l'apparition de l'erreur.
 \end{itemize}
 
@@ -133,7 +133,7 @@ Le control panel permet d'obtenir un certain nombre d'informations quant à la q
 
 \section{Utilisation suggérée des outils}
 \label{Industrialisation du produit: Utilisation suggérée des outils}
-On propose dans cette partie un exemple d'utilisation de l'API et des interfaces graphiques. Cette solution a été mise en place dans le cadre du stage afin de proposer un script qui permet d'ores et déjà de gérer la base de données, de créer de nouvelles couches \emph{root cause} et d'investiguer des fichiers logs. On s'appuie sur l'utilisation de la libraire python \emph{npyscreen} \cite{Npyscreen} qui permet de réaliser des interfaces utilisateurs simples, directement dans le terminal.
+On propose dans cette partie un exemple d'utilisation de l'API et des interfaces graphiques. Cette solution a été mise en place dans le cadre du stage afin de proposer un script qui permet d'ores et déjà de gérer la base de données, de créer de nouvelles couches \emph{root cause} et d'étudier des fichiers logs. On s'appuie sur l'utilisation de la libraire python \emph{npyscreen} \cite{Npyscreen} qui permet de réaliser des interfaces utilisateurs simples, directement dans le terminal.
 \newline
 
 On s'intéressera ici au problème de frottement du frein de la hanche, qui entraîne la chute du robot durant le Filtering Test. Sa résolution passe par trois étapes: 
