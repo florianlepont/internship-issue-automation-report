@@ -22,12 +22,12 @@ Le Machine Learning (traduire par apprentissage automatique) est une ramificatio
 
 \subsection{Définition et principes généraux du Machine Learning}
 \label{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général}
-Le champ d'étude et d'application du Machine Learning étant immense, on propose de redéfinir cette notion en l'adaptant à la résolution de notre problématique (i.e. automatiser l'analyse d'incidents révélés lors du filtering test).
+Le champ d'étude et d'application du Machine Learning étant immense, on propose de redéfinir cette notion en l'adaptant à la résolution de notre problématique (i.e. automatiser l'analyse d'incidents révélés lors du Filtering Test).
 On offre ici deux définitions de l'apprentissage automatique: une première dite "High Level" qui le caractérise de manière générale et une seconde qui reflète sa dimension algorithmique. 
 
 \begin{description}
 	\item[High Level]: Le Machine Learning permet à un système d'évoluer grâce à un processus d'apprentissage et ainsi de remplir des tâches qu'il est difficile, voire impossible, de remplir par d'autres moyens algorithmiques plus classiques. 
-	\item[Mathématique] Le Machine Learning fournit les outils pour prédire une/des donnée(s) de sortie Y à partir des données d'entrée X, via un processus d'apprentissage. 
+	\item[Mathématique]: Le Machine Learning fournit les outils pour prédire une/des donnée(s) de sortie Y à partir des données d'entrée X, via un processus d'apprentissage.
 \end{description}
  
 Au regard des deux définitions stipulées ci-dessus, on peut représenter le principe de base de l'apprentissage automatique sous la forme d'un schéma bloc (cf. figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning}).
@@ -60,8 +60,19 @@ Il peut être vu dans sa globalité comme un processus composé de deux étapes 
 Afin d'exposer de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on soumet l'exemple suivant:
 
 \textit{On cherche à déterminer la période de l'année à laquelle on se trouve actuellement (i.e. printemps, été, automne ou hiver) grâce à l'analyse de l'humidité, de la température et de la pression atmosphérique d'aujourd'hui. \\
+<<<<<<< HEAD
 	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). Pour cela, on lui présente différents échantillons de températures, d'humidité et de pression prélevés à différentes périodes de l'année.\\
 	Une fois le système entrainé, on attend de celui-ci ce type de comportement : on présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
+=======
+<<<<<<< HEAD
+	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
+	Une fois le système entraîné, on attend de celui-ci ce type de comportement : \\
+	On présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
+=======
+	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). Pour cela, on lui présente différents échantillons de températures, d'humidité et de pression prélevés à différentes périodes de l'année.\\
+	Une fois le système entrainé, on attend de celui-ci ce type de comportement : on présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
+>>>>>>> master
+>>>>>>> correction_manu
 
 On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple (cf. figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}).
 
@@ -78,7 +89,7 @@ Pour caractériser et  désigner plus précisément les différents éléments d
 \begin{description}
 	\item [Features] Le type de données présenté en entrée. \\
 	\textit{La température, la pression atmosphérique et l'humidité.}
-	\item [Echantillons ou exemples] Les données qui permettent d'entrainer le système ($x\_train$). \\
+	\item [Echantillons ou exemples] Les données qui permettent d'entraîner le système ($x\_train$). \\
 	\textit{Des échantillons de température, pression atmosphérique et humidité pris à différentes périodes de l'année.}
 	\item [Modèle d'apprentissage] Le cœur du système décisionnel ($f$).
 	\item [Décision] La sortie ou réponse du système ($y$) \\
@@ -127,7 +138,7 @@ Exemple_n & 10 & 81 &  1032 & printemps\\
 \end{block}
 \end{blockarray}
 \end{equation}
-On connait la sortie qui correspond aux données d'entrée, i.e. qu'on sait à quelle période de l'année les échantillons ont été prélevés.
+On connaît la sortie qui correspond aux données d'entrée, i.e. qu'on sait à quelle période de l'année les échantillons ont été prélevés.
  
 \paragraph{Données non labellisées} 
 Les échantillons non labellisés ne sont quant à eux pas corrélés à une sortie. 
@@ -143,7 +154,7 @@ Exemple_n & 10 & 81 &  1032 & ??\\
 \end{block}
 \end{blockarray}
 \end{equation}
-On ne connait pas la sortie qui correspond aux données d'entrée, i.e. on \emph{ne} sait \emph{pas} à quelle période de l'année les échantillons ont été prélevés. 
+On ne connaît pas la sortie qui correspond aux données d'entrée, i.e. on \emph{ne} sait \emph{pas} à quelle période de l'année les échantillons ont été prélevés.
 
 
 
@@ -172,9 +183,9 @@ Il existe différents variétés d'apprentissage supervisé. Le choix d'un modè
 
 \subsubsection{Apprentissage supervisé et non supervisé} 
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle: apprentissage supervisé et non supervisé}
-L'apprentissage supervisé nécessite d'avoir des données labellisées en entrée, i.e. on connait le type de décision que l'on aura en sortie du système, en fonction des exemples en entrée: il y a une corrélation entre la sortie et l'entrée. C'est cette notion qui s'exprime au travers du terme \emph{supervisé}. 
-L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'exemples non labellisée pour son apprentissage, i.e qu'on ne connait pas le type de décision associé aux exemples en entrée. Dans ce cas, pour parvenir à prendre une décision, l'algorithme devra diviser les groupes de données hétérogènes en sous-groupes homogènes d'informations, aux caractéristiques similaires. On appelle ces subdivisions des \emph{clusters}.
-Afin de matérialiser les différences entres les deux méthodes et les applications possibles pour chacune d'elles, on propose deux exemples tableau \ref {tab: Comparaison des différentes méthodes d'apprentissage}.
+L'apprentissage supervisé nécessite d'avoir des données labellisées en entrée, i.e. on connaît le type de décision que l'on aura en sortie du système, en fonction des exemples en entrée: il y a une corrélation entre la sortie et l'entrée. C'est cette notion qui s'exprime au travers du terme \emph{supervisé}.
+L'apprentissage non supervisé s'appuie quant à lui sur l'utilisation d'exemples non labellisés pour son apprentissage, i.e qu'on ne connaît pas le type de décision associé aux exemples en entrée. Dans ce cas, pour parvenir à prendre une décision, l'algorithme devra diviser les groupes de données hétérogènes en sous-groupes homogènes d'informations, aux caractéristiques similaires. On appelle ces subdivisions des \emph{clusters}.
+Afin de matérialiser les différences entres les deux méthodes et les applications possibles pour chacune d'elles, on propose deux exemples (tableau \ref {tab: Comparaison des différentes méthodes d'apprentissage}.)
 
 \begin{table}[H]
 	\centering
@@ -183,8 +194,8 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 	 & apprentissage supervisé & apprentissage non supervisé \\
 	\hline
 	\begin{tabular}{c} exemple n\degres1:\\apprendre aux \\ humains \end{tabular}  &
-	 Une institutrice enseigne à ses élèves à différencier un chat d'un chien: c'est la \emph{décision} qu'on attend d'eux. Pour cela, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les \emph{exemples} utilisés pour l'\emph{apprentissage}. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc: il s'agit des \emph{features}. Lorsque l'institutrice leur présente les différentes images, elle stipule clairement s'il s'agit d'un chien ou d'un chat: il y a donc une corrélation entre l'entrée et la sortie de l'apprentissage: les exemples sont \emph{labellisées} (cf. figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
-	 Une institutrice donne à ses élèves le même exercice que dans le cadre de l'apprentissage supervisé, à la différence que lorsqu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur des similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaitront certes pas le nom des deux animaux, mais ils auront su les différencier (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
+	 Une institutrice enseigne à ses élèves à différencier un chat d'un chien: c'est la \emph{décision} qu'on attend d'eux. Pour cela, l'éducatrice leur montre différentes photographies de chiens et de chats: ce sont les \emph{exemples} utilisés pour l'\emph{apprentissage}. Ces exemples peuvent être segmentés en différentes caractéristiques, comme la taille de l'animal, sa couleur, la longueur du poil, etc.: il s'agit des \emph{features}. Lorsque l'institutrice leur présente les différentes images, elle stipule clairement s'il s'agit d'un chien ou d'un chat: il y a donc une corrélation entre l'entrée et la sortie de l'apprentissage: les exemples sont \emph{labellisés} (cf. figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"},a).&
+	 Une institutrice donne à ses élèves le même exercice que dans le cadre de l'apprentissage supervisé, à la différence que lorsqu'elle présente les différentes images, elle \emph{ne} stipule \emph{pas} la race de l'animal: il n'y a donc aucune corrélation entre l'entrée et la sortie de l'apprentissage. Pour réussir cet exercice, les enfants devront donc regrouper les animaux en s'appuyant sur des similitudes physiques, i.e. leurs features (e.g. taille de l'animal, sa couleur, longueur du poil, etc.). Les élèves ne connaîtront certes pas le nom des deux animaux, mais ils auront su les différencier (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}, b). \\
 	\hline 
 	\begin{tabular}{c} exemple n\degres2:\\prévisions \\saisonnières \\ \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret}\end{tabular} &
 	On reprend l'exemple dans lequel on souhaite déterminer la période de l'année à laquelle on se trouve actuellement, en fonction des features humidité, température et pression atmosphérique. On prélève des échantillons à différentes périodes de l'année en notant à quelle saison ces données ont été prélevées: ce sont des \emph{exemples labellisés}, i.e. il y a une corrélation entre les données et la sortie du système. Il s'agit donc d'un apprentissage supervisé (figure \ref{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}, a). &
@@ -197,13 +208,13 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 
 \begin{figure}[H]
 	\centering\includegraphics[width=13cm]{images/apprentissage_chat.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux features "taille" et "longueur de pelage". On remarque qu'il y a la formation de deux groupes de données homogènes: les animaux de taille globalement élevée avec un pelage court et les animaux de taille moindre avec un poil globalement plus long. Les données étant labellisées, on sait que le premier groupe correspond à des chiens et le deuxième à des chats. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains". On observe sur la figure a) les différents exemples d'entraînement exprimés dans un repère composé des deux features "taille" et "longueur de pelage". On remarque qu'il y a la formation de deux groupes de données homogènes: les animaux de taille globalement élevée avec un pelage court et les animaux de taille moindre avec un poil globalement plus long. Les données étant labellisées, on sait que le premier groupe correspond à des chiens et le deuxième à des chats. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "apprendre aux humains"}
 \end{figure}
 
 \begin{figure}[H]
 	\centering\includegraphics[width=13cm]{images/apprentissage_meteo.jpeg}
-	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entrainement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y a la formation de deux groupes de données homogènes: un où les échantillons sont prélevés lors de saisons globalement chaudes et sèches, l'autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe à l'hiver. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
+	\caption[Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières"]{Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple "prévisions saisonnières". On observe sur la figure a) les différents exemples d'entraînement exprimés dans un repère composé des deux dimensions (features) "humidité" et "température". On remarque qu'il y a la formation de deux groupes de données homogènes: un où les échantillons sont prélevés lors de saisons globalement chaudes et sèches, l'autre où les échantillons sont enregistrés lors de périodes globalement froides et humides. Les données étant labellisées, on sait que le premier groupe correspond à l'été et l'autre groupe à l'hiver. Dans le cas de la figure b), les exemples n'étant pas labellisés, l'algorithme ne peut pas regrouper les données en fonction de leurs valeurs de sortie. Il réunit donc les ensembles homogènes de données en clusters.}
 	\label{fig:Comparaison d'un apprentissage supervisé et non supervisé dans le cadre de l'exemple prévision saisonnières}
 \end{figure}
 
@@ -212,7 +223,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 \label{Le Machine Learning: Généralités sur le Machine Learning: Le modèle:Regression et classification}
  La régression est un type d'apprentissage avec lequel on souhaite obtenir une sortie continue. Dit de manière différente, la régression implique le fait que l'on souhaite \emph{estimer} ou \emph{prédire} une réponse. La classification est quant à elle un type d'apprentissage avec lequel on souhaite obtenir une sortie discrète. Elle peut être vue comme un cas particulier de la régression, où les valeurs à prédire sont discrètes. Formulé autrement, la classification implique le fait que l'on souhaite \emph{classer} un exemple parmi différentes catégories. 
  \newline
- Afin de mettre en avant les nuances qui existent entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
+ Afin de mettre en avant les nuances qui existent entre les deux méthodes et les applications possibles pour chacune d'elle, on propose l'exemple (tableau \ref {tab: Comparaison des différentes catégories d'apprentissage supervisé}).
 
 \begin{table}[H]
 	\centering
@@ -220,7 +231,7 @@ Afin de matérialiser les différences entres les deux méthodes et les applicat
 		\hline
 		régression & classification \\
 		\hline
-		On souhaite connaitre le temps (température et humidité) qu'il fera pendant les jours suivants. Pour cela, on s'appuie sur les différents échantillons de température et d'humidité enregistrés lors des mois et des années précédentes (exemples labellisés). Le fait de déterminer la température des jours suivants relève de la \emph{prédiction} (figure \ref{fig:Comparaison par l'exemple de la régression et la classification}, b).  
+		On souhaite connaître le temps (température et humidité) qu'il fera pendant les jours suivants. Pour cela, on s'appuie sur les différents échantillons de température et d'humidité enregistrés lors des mois et des années précédents (exemples labellisés). Le fait de déterminer la température des jours suivants relève de la \emph{prédiction} (figure \ref{fig:Comparaison par l'exemple de la régression et la classification}, b).
 		 &  L'exemple de la prévision saisonnière \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} est un problème de \emph{classification}: on cherche à classer notre donnée d'entrée parmi plusieurs groupes de données homogènes: printemps, été automne ou hiver (figure \ref{fig:Comparaison par l'exemple de la régression et la classification}, a). \\
 		\hline 
 	\end{tabular}
@@ -283,7 +294,7 @@ La surface au sol est donc l'entrée $x$ de notre système et le prix la sortie 
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/graph_immobilier.png}
-	\caption[Évolution du prix de l'immobilier en fonction de la surface]{Évolution du prix de l'immobilier en fonction de la surface. L'ensemble des données semblent globalement évoluer de manière linéaire. Cette linéarité est représentée par l'hypothèse $h(x)$. Grâce à celle-ci, on peut déterminer le prix d'un logement en fonction de sa superficie, et inversement. Par exemple, un appartement d'une surface de 175 $m^2$ coutera aux alentours de 390k\euro.}
+	\caption[Évolution du prix de l'immobilier en fonction de la surface]{Évolution du prix de l'immobilier en fonction de la surface. L'ensemble des données semble globalement évoluer de manière linéaire. Cette linéarité est représentée par l'hypothèse $h(x)$. Grâce à celle-ci, on peut déterminer le prix d'un logement en fonction de sa superficie, et inversement. Par exemple, un appartement d'une surface de 175 $m^2$ coutera aux alentours de 390k\euro.}
 	\label{fig:Évolution du prix de l'immobilier en fonction de la surface}
 \end{figure}
 
@@ -302,7 +313,7 @@ avec:
 \begin{itemize}
 	\item $J(\theta_0,\theta_1)$ la fonction coût
 	\item $\theta_0$ et $\theta_1$ les paramètres de l'hypothèse $h(x)$
-	\item $m$ le nombre d'exemples disponibles pour l'entrainement 
+	\item $m$ le nombre d'exemples disponibles pour l'entraînement
 	\item $h_\theta(x)$ l'hypothèse $h_\theta (x) = \theta_0 + \theta_1 x$
 	\item $x^i$ exemple $i$
 	\item $y^i$ sortie $i$
@@ -310,7 +321,7 @@ avec:
 
 \begin{figure}[h]
 	\centering\includegraphics[width=12cm]{images/cost.png}
-	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcul de la fonction coût revient à minimiser la distance entre un exemple et l'hypothèse, et ce pour chaque exemple.}
+	\caption[Régression linéaire, optimisation de la fonction coût]{Régression linéaire, optimisation de la fonction coût. Le calcul de la fonction coût revient à minimiser le carré de la distance entre un exemple et l'hypothèse, et ce pour chaque exemple.}
 	\label{fig:Régression linéaire, optimisation de la fonction coût}
 \end{figure}
 
@@ -346,7 +357,7 @@ On peut réaliser de la régression linéaire avec plusieurs features en entrée
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Exemple de régression linéaire multi-variable}
 Afin de présenter ce qu'est la régression linéaire multi-variable, on ajuste l'exemple partie \ref{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire: Exemple de régression linéaire uni-variable} pour qu'il corresponde à un problème multi-variable.
  
-On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages, en se basant sur les exemples de prix du parc immobilier. On a donc plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier multi}, les exemples $x$ utilisés pour l'entrainement.
+On souhaite cette fois-ci déterminer le prix d'un logement en fonction de sa surface au sol, du nombre de pièces et du nombre d'étages, en se basant sur les exemples de prix du parc immobilier. On a donc plusieurs entrées (surface, nombre de pièces, nombre d'étages). Soit le tableau \ref {tab:parc immobilier multi}, les exemples $x$ utilisés pour l'entraînement.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{ | p {2cm} | p {2cm} | p {2cm} |  p {2cm} |}
@@ -379,7 +390,7 @@ La fonction hypothèse s'exprime alors sous cette forme:
 
 Où $X_1$, $X_2$ et $X_3$ correspondent respectivement aux features surface, nombre d'étages et nombre de pièces.
 
-\subsubsection{Généralisation de la fonction coût}
+\subsubsection{Généralisation de la fonction hypothèse}
 \label{Le Machine Learning:Les différents algorithmes d'apprentissage supervisé: La regression linéaire multi-variable: Généralisation de l'hypothèse}
 On peut la généraliser sous cette forme : 
 
@@ -420,7 +431,7 @@ On met à jour simultanément l'ensemble des valeurs de $\theta$ lors de chaque 
 \label{gradient descent multivar}
 \end{equation}
 
-avec $x_j^i$ l'entrée $j$ de l'entrainement $i$.
+avec $x_j^i$ l'entrée $j$ de l'entraînement $i$.
 
 
 \subsubsection{Vectorisation des calculs}
@@ -469,15 +480,15 @@ On cherche à séparer des groupes de données homogènes dans un ensemble hét�
 On reprend l'exemple de la prévision saisonnière en partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:un exemple concret} et on utilise de la régression linéaire afin de classer automatiquement l'échantillon qu'on lui présente en entrée dans une des classes printemps ou hiver, en fonction de la température (cf. figure \ref{fig:Classification via regression linéaire}). \\
 Pour cela, on met en place un seuil de classification:
 \begin{itemize}
-	\item Si $h_\theta(x) > 0,5$ alors $y=1$
-	\item Si $h_\theta(x) < 0,5$ alors $y=0$
+	\item Si $h_\theta(x) > 0.5$ alors $y=1$
+	\item Si $h_\theta(x) < 0.5$ alors $y=0$
 \end{itemize}
 
 Où $y = 0$ correspond à la période hiver et $y = 1$ l'été. 
 
 \begin{figure}[h]
 	\centering\includegraphics[width=12cm]{images/class_reg_lineaire.png}
-	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12,5\degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque qu'une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15\degres C, ce qui n'est pas représentatif des exemples.}
+	\caption[Classification via régression linéaire]{Classification via régression linéaire. On observe sur la figure a) que lorsque la température est inférieure à 12.5\degres C, le système considère que la valeur de sortie est 0 (hiver). Lorsque la température est au dessus, la valeur de sortie devient 1 (été). Ce cas particulier fonctionne car les exemples sont répartis de manière uniforme. Or, dans le cas de la figure b), on remarque qu'une répartition non uniforme des données entraîne un dysfonctionnement du classement. En effet, le seuil de différentiation entre les deux classes se situe aux alentours de  15\degres C, ce qui n'est pas représentatif des exemples.}
 	\label{fig:Classification via regression linéaire}
 \end{figure}
 
@@ -503,25 +514,33 @@ h_\theta(x)=\frac{1}{1 + e^{\theta^Tx}}
 	\label{fig:Fonction sigmoïde}
 \end{figure}
 
+<<<<<<< HEAD
 D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$, veut dire que l'on a 70\% de chance que la variable de sortie soit égale à 1. 
+=======
+<<<<<<< HEAD
+D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0.7$, cela signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.
+=======
+D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$, veut dire que l'on a 70\% de chance que la variable de sortie soit égale à 1. 
+>>>>>>> master
+>>>>>>> correction_manu
 
 \subsubsection{Ligne de décision}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Ligne de décision}
 On a la propriété de la fonction sigmoïde suivante: 
 \begin{equation}
- g(z) \ge 0,5 \text{ lorsque } z \ge 0
+ g(z) \ge 0.5 \text{ lorsque } z \ge 0
 \end{equation}
 
 On a donc pour l'hypothèse la propriété suivante: 
 \begin{equation}
-h(x)=g(\theta^Tx) \ge 0,5 \text{ lorsque } \theta^Tx \ge 0
+h(x)=g(\theta^Tx) \ge 0.5 \text{ lorsque } \theta^Tx \ge 0
 \end{equation}
 
 On peut alors émettre les deux affirmations suivantes:
 \begin{equation}
 	\begin{split}
-	y=1 \text{ si }h_\theta(x) \ge 0,5 \text{ , soit } \theta^Tx \ge 0 \\
-	y=0 \text{ si }h_\theta(x) \le 0,5 \text{ , soit } \theta^Tx \le 0 
+	y=1 \text{ si }h_\theta(x) \ge 0.5 \text{ , soit } \theta^Tx \ge 0 \\
+	y=0 \text{ si }h_\theta(x) \le 0.5 \text{ , soit } \theta^Tx \le 0
 	\end{split}
 \end{equation}
 
@@ -557,7 +576,7 @@ Cette frontière de décision correspond à l'équation d'un cercle. Plus le nom
 
 \subsubsection{Fonction coût}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Fonction coût}
-Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Pour la régression logistique, elle ne l'est plus (forme sigmoïde). La fonction coût n'est donc ici pas convexe (cf. figure \ref{fig:Régression linéaire, calcul des paramètres de l'hypothèse}) et on ne peut pas déterminer le minimum global (et donc la valeur optimale des paramètres de l'hypothèse), celle-ci pouvant posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une reformulation de la fonction coût. \\
+Dans le cadre d'une régression linéaire, la forme de l'hypothèse est linéaire. Pour la régression logistique, elle ne l'est plus (forme sigmoïde). La fonction coût n'est dans ce cas pas forcément convexe et on ne peut pas déterminer le minimum global (et donc la valeur optimale des paramètres de l'hypothèse) avec la méthode de descente de gradient utilisée pour la régression linéaire. En effet, la fonction coût peut éventuellement posséder plusieurs minimums locaux. Pour palier à ce problème, on s'appuie sur une reformulation de la fonction coût. \\
 Soit la fonction coût utilisée pour la régression linéaire:
 \begin{equation}
 	J(\theta) = \frac{1}{m}\sum_{i=1}^{m}\frac{1}{2}(h_\theta(x^i)-y^i)^2
@@ -594,7 +613,7 @@ Intuitivement:
 	\item lorsque l'on observe la forme de la fonction $-log(h(\theta))$ (cf. figure \ref{fig:fonctions -log(h(x)) et -log(1-h(x))}), vraie pour $y=1$, on remarque que lorsque $h(x)$ tend vers 1, le coût tend vers 0. Lorsque $h_\theta(x)$ tend vers 0, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=1), plus le coût est faible. Inversement, plus il s'en éloigne, plus il est élevé.
 	\item Lorsque l'on observe la forme de la fonction $-log(1-h(\theta))$ (cf. figure \ref{fig:fonctions -log(h(x)) et -log(1-h(x))}), vraie pour $y=0$, on remarque que lorsque $h(x)$ tend vers 0, le cout s'approche de 0. Lorsque $h_\theta(x)$ tend vers 1, le coût tend vers l'infini. Autrement dit, plus la valeur de l'hypothèse s'approche de la valeur de sortie réelle (y=0), plus le coût est faible et inversement, plus il s'en éloigne, plus il est élevé.
 \end{itemize}
-C'est le comportement que l'on attend de la fonction coût, i.e. optimiser l'hypothèse de manière à ce que celle-ci s'approche de la valeur de sortie réelle.
+C'est le comportement que l'on attend de la fonction coût, i.e. optimiser l'hypothèse de manière à ce que celle-ci s'approche le plus possible de la valeur de sortie réelle.
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/cost_log.png}
@@ -625,7 +644,15 @@ Le Support Vector Machine (traduire en français par "machine à vecteurs de sup
 
 \subsubsection{Marge maximale}
 \label{Le Machine Learning: Les différents algorithmes: SVM: la marge maximale}
+<<<<<<< HEAD
 Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemple dans lequel les données sont séparables par une ligne de décision linéaire. Dans le cas de la figure \ref{fig:SVM: cas simple d'une regression logistique avec une hypothèse linéaire}, on a un problème de classification composé de deux classes. Le but est donc de déterminer une valeur de l'hypothèse (représentée par la frontière de décision) permettant de séparer ces deux régions. On remarque qu'elle peut prendre une infinité de valeurs, i.e. il existe une infinité de combinaisons de valeurs des paramètres $\theta$ de l'hypothèse qui résolvent la classification. On cherche donc à déterminer l'hypothèse qui permet de répondre de manière optimale à ce problème. Pour cela, on introduit la notion de marge. Comme on peut l'observer sur la figure \ref{fig:SVM: optimisation du calcul de l'hypothèse par l'introduction de marges}, la ligne de décision est bordée de deux marges qui prennent appui sur les valeurs situées à l'extrémité de chacune des deux classes. Afin de déterminer la meilleur position pour la ligne de décision (et donc le paramétrage optimal de l'hypothèse), on maximise la distance entre ces deux marges. 
+=======
+<<<<<<< HEAD
+Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemple dans lequel les données sont séparables par une ligne de décision linéaire. Dans le cas de la figure \ref{fig:SVM: cas simple d'une regression logistique avec une hypothèse linéaire}, on a un problème de classification composé de deux classes. Le but est donc de déterminer une valeur de l'hypothèse (représentée par la frontière de décision) permettant de séparer ces deux régions. On remarque qu'elle peut prendre une infinité de valeurs, i.e. il existe une infinité de combinaisons de valeurs des paramètres $\theta$ de l'hypothèse qui résolvent la classification. On cherche donc à déterminer l'hypothèse permettant de répondre de manière optimale à ce problème. Pour cela, on introduit la notion de marge. Comme on peut l'observer sur la figure \ref{fig:SVM: optimisation du calcul de l'hypothèse par l'introduction de marges}, la ligne de décision est bordée de deux marges qui prennent appui sur les valeurs situées à l'extrémité de chacune des deux classes. Afin de déterminer la meilleur position pour la ligne de décision (et donc le paramétrage optimal de l'hypothèse), on maximise la distance entre ces deux lignes de décision.
+=======
+Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemple dans lequel les données sont séparables par une ligne de décision linéaire. Dans le cas de la figure \ref{fig:SVM: cas simple d'une regression logistique avec une hypothèse linéaire}, on a un problème de classification composé de deux classes. Le but est donc de déterminer une valeur de l'hypothèse (représentée par la frontière de décision) permettant de séparer ces deux régions. On remarque qu'elle peut prendre une infinité de valeurs, i.e. il existe une infinité de combinaisons de valeurs des paramètres $\theta$ de l'hypothèse qui résolvent la classification. On cherche donc à déterminer l'hypothèse qui permet de répondre de manière optimale à ce problème. Pour cela, on introduit la notion de marge. Comme on peut l'observer sur la figure \ref{fig:SVM: optimisation du calcul de l'hypothèse par l'introduction de marges}, la ligne de décision est bordée de deux marges qui prennent appui sur les valeurs situées à l'extrémité de chacune des deux classes. Afin de déterminer la meilleur position pour la ligne de décision (et donc le paramétrage optimal de l'hypothèse), on maximise la distance entre ces deux marges. 
+>>>>>>> master
+>>>>>>> correction_manu
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6cm]{images/svm_no_margin.png}
@@ -635,7 +662,7 @@ Afin d'expliquer ce qu'est la notion de marge maximale, on s'appuie sur un exemp
 
 \begin{figure}[h]
 	\centering\includegraphics[height=6cm]{images/svm_margin.png}
-	\caption[SVM: optimisation du calcul de l'hypothèse par l'introduction de marges]{SVM: optimisation du calcul de l'hypothèse par l'introduction de la notion de marges. Afin de déterminer la position optimale pour la frontière de décision, on introduit deux marges entre les échantillons à l'extrémité des classes et la ligne de décision. On cherche à maximiser la distance entre ces deux marges afin d'obtenir la frontière de décision qui optimise la classification.}
+	\caption[SVM: optimisation du calcul de l'hypothèse par l'introduction de marges]{SVM: optimisation du calcul de l'hypothèse par l'introduction de la notion de marges. Afin de déterminer la position optimale pour la frontière de décision, on introduit deux marges entre les échantillons à l'extrémité des classes et la ligne de décision. On cherche à maximiser la largeur de ces deux marges afin d'obtenir la frontière de décision qui optimise la classification.}
 	\label{fig:SVM: optimisation du calcul de l'hypothèse par l'introduction de marges}
 \end{figure}
 
@@ -657,11 +684,11 @@ Les fonctions noyaux (également appelées Kernel) permettent de résoudre des p
 
 \subsubsection{Avantages du SVM}
 \label{Le Machine Learning: Les différents algorithmes: SVM: Avantage du SVM}
-L'entrainement d'un algorithme de type SVM peut être effectué avec peu d'exemples. En effet, la marge maximale s'appuie sur les données en périphéries des ensembles homogènes.
+L'entraînement d'un algorithme de type SVM peut être effectué avec peu d'exemples. En effet, la marge maximale s'appuie sur les données en périphéries des ensembles homogènes.
 
 \subsection{Périmètres d'utilisation de la régression logistique et du SVM}
 \label{Le Machine Learning: Choix de la méthode à utiliser: Comparaison de la régression logistique et le SVM}
-La régression logistique et le SVM sont tous deux des algorithmes de classification. Le choix d'un modèle dépend du nombre d'exemples que l'on a pour l'entrainement et du nombre de features. On présente dans le tableau \ref {tab:Périmètre d'utilisation de la régression logistique et le SVM} les différents périmètres d'utilisation.
+La régression logistique et le SVM sont tous deux des algorithmes de classification. Le choix d'un modèle dépend du nombre d'exemples que l'on a pour l'entraînement et du nombre de features. On présente dans le tableau \ref {tab:Périmètre d'utilisation de la régression logistique et le SVM} les différents périmètres d'utilisation.
 
 \begin{table}[h]
 	\begin{tabular}{ | p{7cm} | p{7cm} |}

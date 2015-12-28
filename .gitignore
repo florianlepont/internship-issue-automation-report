@@ -19,4 +19,10 @@
 
 *.blg
 
-remerciements.pdf
+*.pdf
+
+*.ilg
+
+*.ind
+
+*.backup

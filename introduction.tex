@@ -30,24 +30,24 @@ Le robot Pepper est constitué de 20 moteurs dont il est possible de contrôler 
 	\label{fig:Répartition des actionneurs de Pepper}
 \end{figure}
 
-\subsubsection{Les Leds}
+\subsubsection{Les LEDs}
 \label{Introduction:Présentation du produit:Les actionneurs: Les leds}
-Les Leds placées sur les épaules de Pepper, autour de ses yeux et de ses oreilles permettent d'obtenir un certain nombre d'informations sur son état. Par exemple, des Leds bleues en rotations autour des yeux indiquent que le robot écoute.  
+Les LEDs placées sur les épaules de Pepper, autour de ses yeux et de ses oreilles permettent d'obtenir un certain nombre d'informations sur son état. Par exemple, des LEDs bleues en rotations autour des yeux indiquent que le robot écoute.
 
-\subsection{Les senseurs}
-\label{Introduction:Présentation du produit:Les senseurs}
-Pepper intègre également une multitude de capteurs. Certains d'entre eux sont utilisés pour s'assurer du bon comportement des parties mécaniques du robot, ou pour réaliser du contrôle-commande. D'autres senseurs sont en revanche intégrés sur le robot afin que l'utilisateur interagisse avec (tableau \ref{tab: Les différents capteurs de Pepper}).
+\subsection{Les capteurs}
+\label{Introduction:Présentation du produit:Les capteurs}
+Pepper intègre également une multitude de capteurs. Certains d'entre eux sont utilisés pour s'assurer du bon comportement des parties mécaniques du robot, ou pour réaliser du contrôle-commande. D'autres capteurs sont en revanche intégrés sur le robot afin que l'utilisateur puisse interagir avec lui (tableau \ref{tab: Les différents capteurs de Pepper}).
 
 \begin{table}[h]
 	\begin{tabular}{ | p{3cm} | p{4cm} | p{7cm} | }
 		\hline
-		Senseur & position & description \\
+		Capteur & Position & Description \\
 		\hline
-		Capteurs liés aux actionneurs & sur les moteurs & Chaque moteur du robot est lié à 3 senseurs, qui donnent des informations sur la valeur du courant délivré au moteur (A), la température du moteur (\degres C) et la position du moteur. \\
+		Capteurs liés aux actionneurs & sur les moteurs & Chaque moteur du robot est lié à 3 capteurs, qui donnent des informations sur la valeur du courant délivré au moteur (A), la température du moteur (\degres C) et la position du moteur. \\
 		\hline
-		Senseurs tactiles & 1 sur chaque main, 1 sur la tête & Permet à l'utilisateur d'interagir avec le robot en le touchant.	\\	
+		Capteurs tactiles & 1 sur chaque main, 3 sur la tête & Permet à l'utilisateur d'interagir avec le robot en le touchant.	\\	
 		\hline 
-		Les boutons & 1 bouton poussoir sur le buste, 3 bumpers sur la base & Les bumpers permettent au robot de détecter s'il rencontre un obstacle à proximité immédiate. Le bouton du buste permet quant à lui de modifier le mode dans lequel est le robot (autonome, veille). \\
+		Les boutons & 1 bouton poussoir sur le buste, 3 bumpers sur la base & Les bumpers permettent au robot de détecter s'il rencontre un obstacle à proximité immédiate. Le bouton du buste permet quant à lui d'allumer le robot et de modifier le mode dans lequel il est (autonome, veille). \\
 		\hline 
 		Centrale inertielle & 1 dans le buste, 1 dans la base & Informe sur la position et l'orientation du robot, ainsi que la vitesse et l'accélération. \\
 		\hline
@@ -82,7 +82,7 @@ L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une mont�
 Pour gérer au mieux les anomalies, celles-ci sont hiérarchisées en deux catégories: les \emph{errors name} et les \emph{root causes}.
 \begin{description}
 	\item [Error name] Cela correspond à l'erreur visible, i.e. la conséquence liée à une anomalie hardware ou software. Par exemple, il peut s'agir de la chute du robot. 
-	\item [root cause] Il s'agit de l'anomalie en elle même, i.e. la cause ayant entraînée l'apparition d'une \emph{error name}. Si l' \emph{error name} est la chute d'un robot, la \emph{root cause} peut par exemple être la détérioration d'un engrenage de la hanche.   
+	\item [Root cause] Il s'agit de l'anomalie en elle même, i.e. la cause ayant entraînée l'apparition d'une \emph{error name}. Si l'\emph{error name} est la chute d'un robot, la \emph{root cause} peut par exemple être la détérioration d'un engrenage de la hanche.
 \end{description} 
 
 En suivant la logique exprimée par ces définitions, une \emph{error name} peut être constituée d'une ou plusieurs \emph{root cause}. 
@@ -107,8 +107,8 @@ En suivant la logique exprimée par ces définitions, une \emph{error name} peut
 		\node[anchor=west,align=left] 
 		at ([xshift=-2cm]PDC.west|-SS) {Level 1\\Error name};
 	\end{forest}
-	\caption[Exemple d'un error name et ses root cause]{Exemple d'un error name et ses root cause}
-	\label {tab: Exemple d'un error name et ses root cause}
+	\caption[Exemple d'une error name et ses root causes]{Exemple d'un error name et ses root causes}
+	\label {tab: Exemple d'un error name et ses root causes}
 \end{table}
 
 \subsection{Exemple d'analyse d'une anomalie}
@@ -117,9 +117,9 @@ On présente ici un exemple d'analyse d'un fichier log :
 
 \subsubsection{Observation}
 \begin{itemize}
-	\item Lors du déroulement du Filtering test, le robot tombe à t = 16972 secondes, soit lorsqu'il réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute. (cf. figure \ref{fig:analyse d'une anomalie: accéléromètre})
-	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot qui peuvent avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le senseur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le senseur du genou suit correctement la commande du moteur (cf. figure \ref{fig:analyse d'une anomalie: hipitch}).
-	\item On observe aussi une augmentation anormale du courant dans le moteur de l'articulation. 
+	\item Lors du déroulement du Filtering Test, le robot tombe à t = 16 972 secondes, soit lorsqu'il réalise une séquence de mouvements particulière appelée "Heat Behavior". Les valeurs retournées par l'accéléromètre selon l'axe $Z$ attestent de cette chute. (cf. figure \ref{fig:analyse d'une anomalie: accéléromètre})
+	\item On analyse les données liées aux systèmes mécaniques et électroniques du robot qui peuvent avoir une relation directe ou indirecte avec sa chute.  Lorsque l'on étudie la vitesse de rotation du moteur de la hanche, on remarque qu'aux environs de  t = 16 970 secondes (c'est-à-dire 2 secondes avant la chute du robot), l'information fournie par le capteur ne suit plus la commande  envoyée au moteur (figure \ref{fig:analyse d'une anomalie: kneePitch}). On remarque également que le capteur du genou suit correctement la commande du moteur (cf. figure \ref{fig:analyse d'une anomalie: hipitch}).
+	\item On observe aussi une augmentation anormale du courant dans le moteur de l'articulation de la hanche.
 \end{itemize} 
 
 \begin{figure}[h]
@@ -130,18 +130,18 @@ On présente ici un exemple d'analyse d'un fichier log :
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/analyse_2.png}
-	\caption{Analyse d'une anomalie: les genoux}
+	\caption{Analyse d'une anomalie: la hanche}
 	\label{fig:analyse d'une anomalie: kneePitch}
 \end{figure}
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/analyse_3.png}
-	\caption{Analyse d'une anomalie: la hanche}
+	\caption{Analyse d'une anomalie: le genou}
 	\label{fig:analyse d'une anomalie: hipitch}
 \end{figure}
 
 \subsubsection{Hypothèse émise}
- Lors de l'exécution de l'animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche qui causent un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, celui-ci ne parvient pas à atteindre sa position zéro. Ce phénomène occasionne une augmentation du courant délivré dans le moteur de l'articulation, ce qui entraine le passage en mode protégé du robot et a pour effet de désactiver sa rigidité. Sans cette rigidité, Pepper tombe (\emph{error name}). Une étude plus poussée nous apprendra que la\emph{ root cause } du problème correspondait à un frottement des freins de la hanche. 
+ Lors de l'exécution de l'animation "Heat Behavior", le robot est amené à réaliser des mouvements amples au niveau de sa hanche qui causent un certain stress sur cette partie mécanique. Lorsque l'engrenage de la hanche arrive près de sa butée mécanique, un bloquage l'empêche d'atteindre sa position zéro. L'articulation de la hanche ne suit plus sa consigne, ce qui a pour effet de déséquilibrer le robot. Trop déséquilibré, Pepper tombe (\emph{error name}). Une étude plus poussée nous apprendra que la\emph{ root cause } du problème correspondait à un frottement du frein de la hanche. 
 
 
 \section{Solution proposée}

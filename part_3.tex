@@ -10,7 +10,7 @@ L'API que l'on propose est composée de 3 modules :
 \begin{description}
 	\item [data base] Permet de gérer le stockage et la lecture des données nécessaires à l'exécution des algorithmes d'apprentissage. Deux types de fichiers y sont sauvegardés : les fichiers logs, qui fournissent l'ensemble des exemples permettant d'entraîner le SVM et les fichiers générés par l'algorithme lors de son apprentissage.
 	\item [data set] Permet de prétraiter les exemples utilisés pour l'apprentissage.
-	\item [machine learning] Permet de créer un algorithme d'apprentissage, de l'entraîner et de l'utiliser pour investiguer la \emph{root cause} pour laquelle il a été créé.
+	\item [machine learning] Permet de créer un algorithme d'apprentissage, de l'entraîner et de l'utiliser pour déterminer la \emph{root cause} pour laquelle il a été créé.
 \end{description}
 
 La librairie utilise le langage de programmation Python \cite{Python}. \\
@@ -34,7 +34,7 @@ Le prétraitement est composé de 5 étapes.
 \subsubsection{Sélection des motifs}
 \label{Industrialisation du produit: API: Sélection des motifs}
 Comme étudié en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs}, la reconnaissance de motifs passe par la sélection des motifs caractéristiques de la root cause que l'on souhaite détecter, dans chaque exemple de notre base de données.
- Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entrainement. Cette taille dépend de la largeur globale du motif caractéristique et est déterminée par l'utilisateur lors de l'utilisation de l'interface graphique présentée partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}.   
+ Chaque motif sélectionné doit avoir la même taille i.e. le même nombre d'échantillons pour pouvoir réaliser l'entraînement. Cette taille dépend de la largeur globale du motif caractéristique et est déterminée par l'utilisateur lors de l'utilisation de l'interface graphique présentée partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}.
 
 \subsubsection{Format des données de sortie}
 \label{Industrialisation du produit: API: Format des données de sortie}
@@ -62,7 +62,7 @@ Le module Machine Learning s'appuie sur l'utilisation de scikit-learn \cite{Scik
 
 \section{Outils graphiques}
 \label{Industrialisation du produit: Outils graphiques}
-On présente ici les différents outils graphiques qui permettent de réaliser la construction d'une nouvelle couche root cause (i.e. un nouvel algorithme pour détecter une \emph{root cause}), d'investiguer une \emph{error name} et d'obtenir des informations sur les performances de l'algorithme. 
+On présente ici les différents outils graphiques qui permettent de réaliser la construction d'une nouvelle couche root cause (i.e. un nouvel algorithme pour détecter une \emph{root cause}), d'étudier une \emph{error name} et d'obtenir des informations sur les performances de l'algorithme.
 
 \subsection{Pattern selector}
 \label{Industrialisation du produit: Outils graphiques: Pattern selection}
@@ -70,7 +70,7 @@ Cet outil graphique permet de sélectionner les motifs contenus dans chaque exem
 Il est formé de trois parties:
 \begin{itemize}
 	\item La première partie (encadré vert de la figure \ref{fig:Interface graphique du pattern selector}) fournit des informations sur l'état actuel du prétraitement des données : la taille du motif sélectionné, le nom de l'exemple étudié et le nombre d'exemples restant à traiter. 
-	\item La seconde partie (encadré rouge de la figure  \ref{fig:Interface graphique du pattern selector}) affiche les features de l'exemple actuellement étudié. Dans le cas de la figure  \ref{fig:Interface graphique du pattern selector}, on réalise par exemple l'entraînement de l'algorithme pour que celui-ci puisse reconnaître le motif caractéristique de la root cause "frottement des freins de la hanche". La région de sélection en rouge permet de sélectionner le motif qui nous intéresse.
+	\item La seconde partie (encadré rouge de la figure  \ref{fig:Interface graphique du pattern selector}) affiche les features de l'exemple actuellement étudié. Dans le cas de la figure  \ref{fig:Interface graphique du pattern selector}, on réalise par exemple l'entraînement de l'algorithme pour que celui-ci puisse reconnaître le motif caractéristique de la root cause "frottement du frein de la hanche". La région de sélection en rouge permet de sélectionner le motif qui nous intéresse.
 	\item La dernière partie (encadré bleu de la figure  \ref{fig:Interface graphique du pattern selector}) est une succession de boutons qui permettent à l'utilisateur d'interagir avec les différents exemples. De gauche à droite :   
 	\begin{itemize}
 		\item Le  bouton "Previous" permet de revenir à l'exemple précédent.
@@ -104,9 +104,9 @@ Il existe certains cas où les valeurs de deux features étudiées sont trop él
 
 \subsection{Probability Visualization}
 \label{Industrialisation du produit: Outils graphiques: Probability Visualization}
-Cette interface graphique permet de visualiser l'exemple que l'on investigue et la probabilité que le motif soit présent dans l'image. Elle est composée de deux parties. 
+Cette interface graphique permet de visualiser l'exemple que l'on étudie et la probabilité que le motif soit présent dans l'image. Elle est composée de deux parties.
 \begin{itemize}
-	\item La première partie (encadré vert sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche les features de l'exemple que l'on investigue. Par exemple, dans le cas présent, on recherche la \emph{root cause} liée à l'\emph{error name} "chute du robot". Le système détecte que la \emph{root cause} est "le frottement des freins de la hanche". Il nous affiche donc les courbes du senseur et de l'actuateur de la hanche, sur lesquelles on observe le motif caractéristique de la \emph{root cause}. 
+	\item La première partie (encadré vert sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche les features de l'exemple que l'on étudie. Par exemple, dans le cas présent, on recherche la \emph{root cause} liée à l'\emph{error name} "chute du robot". Le système détecte que la \emph{root cause} est "le frottement du frein de la hanche". Il nous affiche donc les courbes du capteur et de l'actionneur de la hanche, sur lesquelles on observe le motif caractéristique de la \emph{root cause}.
 	\item La deuxième partie (encadré rouge sur la figure \ref{fig:Interface graphique du probability visualizator}) affiche la courbe de progression de la probabilité, au cours du balayage des features de l'exemple (cf. partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}). La ligne horizontale sur le graphique représente le seuil à partir duquel on considère que la \emph{root cause} est bien la cause ayant entraîné l'apparition de l'erreur.
 \end{itemize}
 
@@ -120,7 +120,7 @@ Cette interface graphique permet de visualiser l'exemple que l'on investigue et 
 \label{Industrialisation du produit: Outils graphiques: Control panel}
 Le control panel permet d'obtenir un certain nombre d'informations quant à la qualité de la base de données d'exemple utilisée pour créer une nouvelle couche \emph{root cause}, ainsi que sur les performances de l'algorithme d'apprentissage automatique. La plupart de ces informations sont déterminées grâce aux outils soumis en partie \ref{Automatisation du processus d'investigation: Performances de la solution}. L'IHM est composé de trois parties.
 \begin{description}
-	\item [Data set features] (encadré vert sur la figure \ref{fig:Interface graphique du control pattern}) fournit un ensemble d'informations sur la base de données d'exemples utilisée pour l'entraînement de l'algorithme d'apprentissage automatique. 
+	\item [Data set features] (encadré vert sur la figure \ref{fig:Interface graphique du control pattern}) fournit un ensemble d'informations sur la base de données d'exemples utilisée pour l'entraînement de l'algorithme d'apprentissage automatique.
 	\item [Training panel features ](encadré rouge sur la figure \ref{fig:Interface graphique du control pattern})  livre des informations sur l'algorithme d'apprentissage automatique de la couche root cause analysée (e.g. valeur des paramètres, matrice de confusion, précision, etc). Ces données sont pour la plupart relatives aux explications fournies en partie \ref{Automatisation du processus d'investigation: Performances de la solution}.
 	\item [Training panel ](encadré bleu sur la figure \ref{fig:Interface graphique du control pattern}) permet d'analyser les courbes d'apprentissage (c.f. partie \ref{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}) et les courbes de validation (c.f. partie \ref{Industrialisation du produit: Performances de la solution:Optimisation des paramètres du SVM})
 \end{description}
@@ -133,13 +133,13 @@ Le control panel permet d'obtenir un certain nombre d'informations quant à la q
 
 \section{Utilisation suggérée des outils}
 \label{Industrialisation du produit: Utilisation suggérée des outils}
-On propose dans cette partie un exemple d'utilisation de l'API et des interfaces graphiques. Cette solution a été mise en place dans le cadre du stage afin de proposer un script qui permet d'ores et déjà de gérer la base de données, de créer de nouvelles couches \emph{root cause} et d'investiguer des fichiers logs. On s'appuie sur l'utilisation de la libraire python \emph{npyscreen} \cite{Npyscreen} qui permet de réaliser des interfaces utilisateurs simples, directement dans le terminal.
+On propose dans cette partie un exemple d'utilisation de l'API et des interfaces graphiques. Cette solution a été mise en place dans le cadre du stage afin de proposer un script qui permet d'ores et déjà de gérer la base de données, de créer de nouvelles couches \emph{root cause} et d'étudier des fichiers logs. On s'appuie sur l'utilisation de la libraire python \emph{npyscreen} \cite{Npyscreen} qui permet de réaliser des interfaces utilisateurs simples, directement dans le terminal.
 \newline
 
-On s'intéressera ici au problème de frottement des freins de la hanche, qui entraîne la chute du robot durant le Filtering Test. Sa résolution passe par trois étapes: 
+On s'intéressera ici au problème de frottement du frein de la hanche, qui entraîne la chute du robot durant le Filtering Test. Sa résolution passe par trois étapes: 
 \begin{enumerate}
 	\item Créer une nouvelle couche \emph{error name} : la couche "chute du robot". 
-	\item Créer un nouvelle couche \emph{root cause} liée à la couche \emph{error name} "chute du robot" : la couche "frottement des freins de la hanche". Cela signifie que l'on va entraîner un nouvel algorithme à détecter le motif caractéristique de cette \emph{root cause}. 
+	\item Créer un nouvelle couche \emph{root cause} liée à la couche \emph{error name} "chute du robot" : la couche "frottement du frein de la hanche". Cela signifie que l'on va entraîner un nouvel algorithme à détecter le motif caractéristique de cette \emph{root cause}. 
 	\item vérifier les performances de la nouvelle couche \emph{root cause} créée via le Control Panel.
 	\item Investiguer un fichier log. 
 \end{enumerate}
@@ -171,9 +171,9 @@ Il suffit pour cela d'indiquer le nom de la couche \emph{error name} que l'on so
 Le menu "Add a root cause to the knowledge base" (cf. figure \ref{fig:Menu principal}) permet de créer une nouvelle \emph{root cause} (i.e. entraîner un nouvel algorithme d'apprentissage à reconnaître une \emph{root cause}), à la lier à une couche \emph{error name}, et à l'ajouter à la base de données. \\
 Pour cela, on suit le processus suivant (cf. figure \ref{fig: Nouvelle root cause}) : 
 \begin{enumerate}
-	\item On sélectionne l'\emph{error name} à laquelle on souhaite lier cette nouvelle \emph{root cause}. On indique ensuite son nom. Dans le cas de la \emph{root cause} "frottement des freins de la hanche", on la lie à l'\emph{error name} "fall down" et on l'appelle "frottement des freins de la hanche". 
-	\item On sélectionne la/les feature(s) liée(s) à la \emph{root cause}. Dans le cas de la \emph{root cause} du "frottement des freins de la hanche", on sélectionne les clés HipPitchPositionSensorValue, HipPitchPositionActuatorValue, respectivement les valeurs du senseur et de l'actuateur de la hanche. 
-	\item On utilise le Pattern Selector (cf. partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}) pour sélectionner les motifs caractéristiques de la \emph{root cause} que l'on étudie. Dans notre cas, il s'agit du moment où le senseur ne suit plus l'actuateur. On répète cette manipulation pour chaque exemple de la base de données.
+	\item On sélectionne l'\emph{error name} à laquelle on souhaite lier cette nouvelle \emph{root cause}. On indique ensuite son nom. Dans le cas de la \emph{root cause} "frottement du frein de la hanche", on la lie à l'\emph{error name} "fall down" et on l'appelle "frottement du frein de la hanche". 
+	\item On sélectionne la/les feature(s) liée(s) à la \emph{root cause}. Dans le cas de la \emph{root cause} du "frottement du frein de la hanche", on sélectionne les clés HipPitchPositionSensorValue, HipPitchPositionActuatorValue, respectivement les valeurs du capteur et de l'actionneur de la hanche.
+	\item On utilise le Pattern Selector (cf. partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}) pour sélectionner les motifs caractéristiques de la \emph{root cause} que l'on étudie. Dans notre cas, il s'agit du moment où le capteur ne suit plus l'actionneur. On répète cette manipulation pour chaque exemple de la base de données.
 \end{enumerate}
 
 \begin{figure}[h]
@@ -215,7 +215,7 @@ Le menu "Open control panel" (cf. figure \ref{fig:Menu principal}) permet de sé
 
 \subsection{Mise à jour d'une root cause}
 \label{Industrialisation du produit: Utilisation suggérée des outils: Mise à jour d'une root cause}
-Le menu "Update a root cause"  (cf. figure \ref{fig:Menu principal}) permet d'ajouter des exemples à la base de données d'exemples et d'entrainer de nouveau l'algorithme d'apprentissage afin d'en améliorer les performances. Pour cela, on suit le processus suivant (cf. figure \ref{fig: Analyse des performances d'une couche root cause}) : 
+Le menu "Update a root cause"  (cf. figure \ref{fig:Menu principal}) permet d'ajouter des exemples à la base de données d'exemples et d'entraîner de nouveau l'algorithme d'apprentissage afin d'en améliorer les performances. Pour cela, on suit le processus suivant (cf. figure \ref{fig: Analyse des performances d'une couche root cause}) :
 \begin{enumerate}
 	\item On sélectionne dans l'arborescence des \emph{errors name} et des \emph{root cause}, la \emph{root cause} que l'on souhaite mettre à jour.
 	\item On sélectionne les motifs caractéristiques de la \emph{root cause} dans les exemples ajoutés via le Pattern Selector.
@@ -231,7 +231,7 @@ Le menu "Update a root cause"  (cf. figure \ref{fig:Menu principal}) permet d'aj
 \section{Dimensionnement de la solution}
 \label{Industrialisation du produit: Dimensionnement de la solution}
 Contrairement à l'étude réalisée en partie \ref{Automatisation du processus d'investigation: Performances de la solution}, on ne désire pas mesurer les performances intrinsèques de l'algorithme, mais plutôt l'influence du facteur humain sur celle-ci. On s'intéresse notamment à l'impact qu'a l'évolution de la taille de la région de sélection du Pattern Selector (cf. partie \ref{Industrialisation du produit: Outils graphiques: Pattern selection}). En effet, cette variable dépend de la forme du motif, mais également de l'appréciation de l'utilisateur (quand commence le motif, quand se termine-t-il ?). \\
-Afin de quantifier cette influence, on effectue plusieurs fois la création de la couche \emph{root cause}  "frottement des freins de la hanche" en augmentant à chaque fois la taille de la région de sélection. On observe la variation de la précision à chaque itération sur le graphique de la figure \ref{fig: Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection}
+Afin de quantifier cette influence, on effectue plusieurs fois la création de la couche \emph{root cause}  "frottement du frein de la hanche" en augmentant à chaque fois la taille de la région de sélection. On observe la variation de la précision à chaque itération sur le graphique de la figure \ref{fig: Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection}
 
 \begin{figure}[h]
 	\centering\includegraphics[height=8cm]{images/precision_taille.png}
@@ -239,4 +239,4 @@ Afin de quantifier cette influence, on effectue plusieurs fois la création de l
 	\label{fig: Evolution de la précision de l'algorithme en fonction de la taille de la région de sélection}
 \end{figure} 
 
-Au regard des valeurs obtenues, on en déduit que l'algorithme est plus performant lorsque la région de sélection est petite. Or, le but est également de sélectionner le plus précisément possible le motif caractéristique d'une \emph{root cause}. Il faut donc analyser chaque situation au cas par cas,  en gardant en tête ces deux contraintes. Par exemple, si on souhaite apprendre à notre algorithme à reconnaitre une région ayant une taille de 50 échantillons, il sera peut-être plus judicieux d'apprendre l'algorithme à reconnaitre seulement une partie du motif (de 30 échantillons environ).
+Au regard des valeurs obtenues, on en déduit que l'algorithme est plus performant lorsque la région de sélection est petite. Or, le but est également de sélectionner le plus précisément possible le motif caractéristique d'une \emph{root cause}. Il faut donc analyser chaque situation au cas par cas,  en gardant en tête ces deux contraintes. Par exemple, si on souhaite apprendre à notre algorithme à reconnaître une région ayant une taille de 50 échantillons, il sera peut-être plus judicieux d'apprendre l'algorithme à reconnaître seulement une partie du motif (de 30 échantillons environ).

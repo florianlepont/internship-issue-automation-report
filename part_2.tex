@@ -1,7 +1,7 @@
 \chapter{Automatisation du processus d'investigation}
 \label{Automatisation du processus d'investigation}
 \thispagestyle{fancy}
-Lorsqu'une \emph{error name} est révélée durant le Filtering test, de nombreuses données sont enregistrées dans un fichier journal (que l'on retrouve plus souvent sous le terme anglais de fichier "log"). Une analyse poussée de ces informations permet de déterminer la \emph{root cause} liée à l'\emph{error name} (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}). Afin d'automatiser ce processus d'analyse, on s'appuie sur l'utilisation d'algorithmes d'apprentissage automatique. 
+Lorsqu'une \emph{error name} est révélée durant le Filtering Test, de nombreuses données sont enregistrées dans un fichier log. Une analyse poussée de ces informations permet de déterminer la \emph{root cause} liée à l'\emph{error name} (partie \ref{Introduction:Expression du besoin:Hiérarchisation des erreurs}). Afin d'automatiser ce processus d'analyse, on s'appuie sur l'utilisation d'algorithmes d'apprentissage automatique.
 
 \section{Architecture High Level du système proposé}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé}
@@ -9,7 +9,7 @@ L'architecture haut niveau de la solution que l'on propose est composée de deux
 \begin{description}
 	\item [Couche root cause] La couche \emph{root cause} permet de détecter la présence d'une \emph{root cause} dans le fichier log que l'on analyse. Elle contient un algorithme d'apprentissage automatique entraîné à effectuer cette tâche.
 	\item [Couche error name] La couche \emph{error name} est constituée d'un ensemble de couches \emph{root cause} de telle manière que lorsqu'un fichier log est mis en entrée du système, l'ensemble des couches \emph{root cause} sont activées. Ainsi, le système recherche la présence de chaque \emph{root cause} connue dans l'exemple étudié. On dit que les \emph{root causes} sont liées à l'\emph{error name}. On obtient en sortie de la couche \emph{error name} le nom de la \emph{root cause} ayant la plus forte probabilité d'avoir été reconnue.
-\end{description} 
+\end{description}
 
 \subsubsection{Exemple de mise en place  d'une couche error name et de ses couches root cause}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Exemple de mise en place  d'une couche error name et de ses couches root cause}
@@ -17,15 +17,27 @@ Afin d'exposer de manière concrète le fonctionnement de l'architecture haut ni
 
 \paragraph{Mise en place du système de détection d'une root cause}
 On souhaite dans un premier temps mettre en place l'architecture qui permet de détecter la cause (\emph{root cause}) ayant entrainé la chute du robot lors du Filtering test (\emph{error name}). Cette étape consiste à créer les couches \emph{root cause}, i.e. entrainer différents algorithmes d'apprentissage automatique à reconnaître la \emph{root cause} pour laquelle ils ont été créés (figure \ref{fig:Creation des couches root cause}). Afin de les entraîner, on utilise les grandeurs liées à chaque \emph{root cause}, contenues dans le fichier log. Par exemple, dans le cas de la \emph{root cause} "frottement des freins de la hanche", on utilisera les données "valeurs du senseur de la hanche" et "valeurs de l'actuateur de la hanche". Ces deux grandeurs correspondent aux features de notre système d'apprentissage (cf. partie \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). L'ensemble de ces couches \emph{root cause} sont liées à une couche \emph{error name}, ici la chute d'un robot.
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> correction_manu
 
 \begin{figure}[h]
 	\centering\includegraphics[height=7cm]{images/synoptique_root.png}
-	\caption[Création des couches root cause]{Synoptique haut niveau de la création des couches \emph{root cause}. Les couches \emph{root cause} correspondent à des algorithmes d'apprentissage automatique que l'on entraîne à détecter la \emph{root cause} à laquelle ils sont associés. Par exemple, créer la couche \emph{root cause} "frottement du frein de la hanche" revient à entraîner un algorithme d'apprentissage de type SVM à partir des valeurs senseurs et actuateurs de la hanche des fichiers logs.}
+	\caption[Création des couches root cause]{Synoptique haut niveau de la création des couches \emph{root cause}. Les couches \emph{root cause} correspondent à des algorithmes d'apprentissage automatique que l'on entraîne à détecter la \emph{root cause} à laquelle ils sont associés. Par exemple, créer la couche \emph{root cause} "frottement du frein de la hanche" revient à entraîner un algorithme d'apprentissage de type SVM à partir des valeurs capteurs et actionneurs de la hanche des fichiers logs.}
 	\label{fig:Creation des couches root cause}
 \end{figure}
 
 \paragraph{Utilisation du système de détection d'une root cause}
+<<<<<<< HEAD
 Une fois nos différentes couches \emph{root cause} créées, on souhaite utiliser notre système pour détecter la cause ayant entrainé la chute d'un robot (cf. figure \ref{fig:utilisation de la couche error name}). Pour cela, on place à l'entrée de notre couche \emph{error name} le fichier log que l'on souhaite analyser. Chaque couche \emph{root cause} extrait de ce fichier les features qui lui sont liées (e.g. la \emph{root cause} "frottement des freins de la hanche" est liée aux features senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche \emph{root cause} va alors émettre une décision quant à la présence ou non de leur \emph{root cause} dans le fichier log. Cette décision correspond à la probabilité que la \emph{ root cause} ait été détectée (en \%). La couche \emph{root cause} ayant la probabilité la plus élevée en sortie est considérée comme la \emph{root cause} ayant entrainé l'\emph{error name}. Il s'agit dans notre exemple de la chute du robot.
+=======
+<<<<<<< HEAD
+Une fois nos différentes couches \emph{root cause} créées, on souhaite utiliser notre système pour détecter la cause ayant entraîné la chute d'un robot (cf. figure \ref{fig:utilisation de la couche error name}). Pour cela, on place à l'entrée de notre couche \emph{error name} le fichier log que l'on souhaite analyser. Chaque couche \emph{root cause} extrait de ce fichier les features qui lui sont liées (e.g. la \emph{root cause} "frottement du frein de la hanche" est liée aux features capteurs et actionneurs de la hanche). L'algorithme SVM de chaque couche \emph{root cause} va alors émettre une décision quant à la présence ou non de leur \emph{root cause} dans le fichier log. Cette décision correspond à la probabilité que la \emph{ root cause} ait été détectée (en \%). La couche \emph{root cause} ayant la probabilité la plus élevée en sortie est considérée comme la \emph{root cause} ayant entraîné l'\emph{error name},  ici la chute du robot.
+=======
+Une fois nos différentes couches \emph{root cause} créées, on souhaite utiliser notre système pour détecter la cause ayant entrainé la chute d'un robot (cf. figure \ref{fig:utilisation de la couche error name}). Pour cela, on place à l'entrée de notre couche \emph{error name} le fichier log que l'on souhaite analyser. Chaque couche \emph{root cause} extrait de ce fichier les features qui lui sont liées (e.g. la \emph{root cause} "frottement des freins de la hanche" est liée aux features senseurs et actuateurs de la hanche). L'algorithme SVM de chaque couche \emph{root cause} va alors émettre une décision quant à la présence ou non de leur \emph{root cause} dans le fichier log. Cette décision correspond à la probabilité que la \emph{ root cause} ait été détectée (en \%). La couche \emph{root cause} ayant la probabilité la plus élevée en sortie est considérée comme la \emph{root cause} ayant entrainé l'\emph{error name}. Il s'agit dans notre exemple de la chute du robot.
+>>>>>>> master
+>>>>>>> correction_manu
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/synoptique_error.png}
@@ -37,7 +49,7 @@ Chaque couche \emph{root cause} peut être considérée comme un système d'appr
 
 \begin{figure}[h]
 	\centering\includegraphics[width=13cm]{images/exemple_root.png}
-	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche \emph{root cause}. Il correspond à celui du Machine Learning car chaque couche \emph{root cause} est en réalité un algorithme d'apprentissage supervisé SVM que l'on entraine à détecter une \emph{root cause} particulière.}
+	\caption[Synoptique d'une couche root cause]{Synoptique d'une couche \emph{root cause}. Il correspond à celui du Machine Learning car chaque couche \emph{root cause} est en réalité un algorithme d'apprentissage supervisé SVM que l'on entraîne à détecter une \emph{root cause} particulière.}
 	\label{fig:Synoptique d'une couche root cause}
 \end{figure}
 
@@ -47,7 +59,7 @@ Les exemples sont les éléments qui permettent d'entraîner l'algorithme d'appr
 
 \subsubsection{Structure du fichier log}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure du fichier log}
-Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Elles correspondent aux "rythmes vitaux" du robot. Le fichier contient par exemple l'évolution temporelle des différents actuateurs et senseurs de Pepper, la température de différentes pièces mécaniques, etc. Dans le cadre de l'entraînement de l'algorithme du Machine Learning (SVM), chacune de ces constantes correspond à une feature  (cf. partie  \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). Soit le tableau \ref {tab: Extrait du contenu d'un fichier log}, un extrait du contenu d'un fichier log:
+Le fichier log renferme un ensemble de données enregistrées lors de la détection d'une erreur durant le Filtering Test. Elles correspondent aux "rythmes vitaux" du robot. Le fichier contient par exemple l'évolution temporelle des différents actionneurs et capteurs de Pepper, la température de différentes pièces mécaniques, etc. Dans le cadre de l'entraînement de l'algorithme du Machine Learning (SVM), chacune de ces constantes correspond à une feature  (cf. partie  \ref{Le Machine Learning: Généralités sur le Machine Learning: Définition et principe général:Lexique}). Soit le tableau \ref {tab: Extrait du contenu d'un fichier log}, un extrait du contenu d'un fichier log:
 
 \begin{equation}
 \begin{blockarray}{ccccccc}
@@ -79,12 +91,27 @@ Avec :
 	\item $ X_6$ = KneePitchPositionActuatorValue
 \end{itemize}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Le fichier log, représenté par le tableau \ref {tab: Extrait du contenu d'un fichier log}, correspond à un exemple de la base de données qui sert à entraîner chacun de nos algorithmes. \\
+A chaque colonne du tableau correspond une feature. Chacune des lignes est la valeur des features à un instant t (une ligne ne correspond pas à un exemple !).
+
+\subsubsection{Structure de la base de données d'exemples}
+\label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure de la base de données d'exemples}
+La base de données est composée de plusieurs exemples qui correspondent à des fichiers logs. Par exemple, dans le cadre de la construction de couche \emph{error name} de la chute d'un robot, la base de données sera constituée de fichiers logs générés par plusieurs cas de chutes sur différents robots. On peut représenter la structure des données de la base de données par le tableau \ref {tab: Structure de la base de données d'exemples pour l'entraînement du SVM}
+=======
+>>>>>>> correction_manu
 Le fichier log, représenté dans le tableau \ref {tab: Extrait du contenu d'un fichier log}, correspond à un exemple de la base de données qui sert à entrainer chacun de nos algorithmes. \\ 
 A chaque colonne du tableau correspond une feature. Chacune des lignes est la valeur des features à un instant t (une ligne ne correspond pas à un exemple !). 
 
 \subsubsection{Structure de la base de données d'exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure de la base de données d'exemples}
 La base de données est composée de plusieurs exemples qui correspondent à des fichiers logs. Par exemple, dans le cadre de la construction de couche \emph{error name} de la chute d'un robot, la base de données sera constituée de fichiers logs générés par plusieurs cas de chutes de différents robots. On peut représenter la structure de la base de données par le tableau \ref {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> correction_manu
 
 \begin{equation}
 \begin{blockarray}{ccccccc}
@@ -98,32 +125,48 @@ exemple_4 & log_4 [X_1] & log_4 [X_2] & log_4 [X_3]& log_4 [X_4] & log_4 [X_5] &
 exemple_4 & log_4 [X_1] & log_n [X_2] & log_n [X_3]& log_n [X_4] & log_n [X_5] & log_n [X_6]  \\
 \end{block}
 \end{blockarray}
-\label {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}
+\label {tab: Structure de la base de données d'exemples pour l'entraînement du SVM}
 \end{equation}
 
 Tout comme la structure d'un fichier log (\ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure du fichier log}), chaque colonne correspond à une feature. Chaque ligne de ce tableau représente un exemple et correspond à un fichier log. Cela signifie que chaque ligne du tableau correspond au contenu d'un fichier log, présenté dans le tableau \ref {tab: Extrait du contenu d'un fichier log}.
 
 \subsubsection{Construction d'une couche root cause à partir de la base de données d'exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Construction d'une couche root cause à partir de la base de données d'exemples}
+<<<<<<< HEAD
 Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage à détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
+=======
+<<<<<<< HEAD
+Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage, pour détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement du frein de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
+=======
+Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage à détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
+>>>>>>> master
+>>>>>>> correction_manu
 
 \subsubsection{Représentation des exemples et des classes}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}
-Pour construire chaque couche \emph{root cause}, on doit entrainer l'algorithme de l'apprentissage automatique SVM. Pour cela, on a besoin d'exemples labellisés positifs (dans notre cas, le terme positif signifie que l'exemple est le motif caractéristique de la \emph{root cause}) et des exemples labellisés négatifs (des exemples qui ne correspondent pas au motif caractéristique de la \emph{root cause}). Ces deux groupes de données forment alors des classes. \\
-Dans le cadre de la \emph{root cause} "frottement des freins de la hanche", on peut visualiser l'ensemble des exemples et des classes dans un repère construit à partir des features "position du senseur de la hanche" (clé HipPitchPositionSensorValue) et "position de l'actuateur de la hanche" (clé HipPitchPositionActuatorValue) en figure \ref{fig:Représentation de la répartition des exemples et des classes en fonction des features}. Lors de la phase d'investigation, l'algorithme émet alors un choix entre ces deux classes: positive, i.e. présence de la \emph{root cause} dans le fichier log, négative, i.e. absence de la \emph{root cause} dans le fichier log. 
+Pour construire chaque couche \emph{root cause}, on doit entraîner l'algorithme de l'apprentissage automatique SVM. Pour cela, on a besoin d'exemples labellisés positifs (dans notre cas, le terme positif signifie que l'exemple est le motif caractéristique de la \emph{root cause}) et des exemples labellisés négatifs (des exemples qui ne correspondent pas au motif caractéristique de la \emph{root cause}). Ces deux groupes de données forment alors des classes. \\
+Dans le cadre de la \emph{root cause} "frottement du frein de la hanche", on peut visualiser l'ensemble des exemples et des classes dans un repère construit à partir des features "position du capteur de la hanche" (clé HipPitchPositionSensorValue) et "position de l'actionneur de la hanche" (clé HipPitchPositionActuatorValue) en figure \ref{fig:Représentation de la répartition des exemples et des classes en fonction des features}. Lors de la phase d'investigation, l'algorithme émet alors un choix entre ces deux classes: positive, i.e. présence de la \emph{root cause} dans le fichier log, négative, i.e. absence de la \emph{root cause} dans le fichier log.
 
 \begin{figure}[h]
 	\centering\includegraphics[width=9cm]{images/classes_log.png}
-	\caption[Représentation de la répartition des exemples et des classes en fonction des features]{Représentation de la répartition des exemples et des classes en fonction des features. On observe que lorsque l'on visualise les exemples contenus dans nos fichiers logs en fonction des deux features HipPitchPositionSensorValue et HipPitchPositionActuatorValue, ces derniers se regroupent en deux zones homogènes qui forment nos classes. Une classe correspond aux exemples de \emph{root cause} "frottement des freins de la hanche", l'autre classe aux exemples qui ne correspondent pas à des exemples de "frottement des freins de la hanche".}
+	\caption[Représentation de la répartition des exemples et des classes en fonction des features]{Représentation de la répartition des exemples et des classes en fonction des features. On observe que lorsque l'on visualise les exemples contenus dans nos fichiers logs en fonction des deux features HipPitchPositionSensorValue et HipPitchPositionActuatorValue, ces derniers se regroupent en deux zones homogènes qui forment nos classes. Une classe correspond aux exemples de \emph{root cause} "frottement du frein de la hanche", l'autre classe aux exemples qui ne correspondent pas à des exemples de "frottement du frein de la hanche".}
 	\label{fig:Représentation de la répartition des exemples et des classes en fonction des features}
 \end{figure}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+Cette représentation n'est pas fonctionnelle mais conceptuelle, i.e. qu'il ne s'agit pas d'une visualisation résultant d'un système fonctionnel mais d'une idée haut niveau que l'on a de la sortie de notre système.
+=======
+>>>>>>> correction_manu
 Cette représentation n'est pas fonctionnelle mais conceptuelle, i.e. qu'il ne s'agit pas d'une visualisation résultant d'un système fonctionnel mais d'une idée haut niveau que l'on a de la sortie de notre système. 
+>>>>>>> master
 
 
 \subsubsection{Parallèle avec l'exemple de la prévision saisonnière}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}
-Si on compare les échantillons utilisés dans l'exemple "prévision saisonnière" (cf. tableau \ref{exemples prévision saisonnière}) et ceux de notre solution (cf. tableau \ref {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}), on observe que dans les deux cas les données sont structurées en exemples et features. Cependant, dans la solution que l'on propose, les données de chaque exemple évoluent temporellement (e.g. la "HipPitchPositionSensorValue" de l'exemple 1 correspond à la colonne "HipPitchPositionSensorValue" du fichier $log_1$, qui a une évolution temporelle), alors que celles de la prévision saisonnière sont discrètes (e.g la température de l'exemple 1 est de -10\degres C, elle est discrète) \\
-Or, on ne peut pas réaliser de l'apprentissage supervisé avec des données temporelles. Sous leurs formes actuelles, nos exemples ne peuvent donc pas servir à entrainer les algorithmes SVM de nos couches \emph{root cause}.
+Si on compare les échantillons utilisés dans l'exemple "prévision saisonnière" (cf. tableau \ref{exemples prévision saisonnière}) et ceux de notre solution (cf. tableau \ref {tab: Structure de la base de données d'exemples pour l'entraînement du SVM}), on observe que dans les deux cas les données sont structurées en exemples et features. Cependant, dans la solution que l'on propose, les données de chaque exemple évoluent temporellement (e.g. la "HipPitchPositionSensorValue" de l'exemple 1 correspond à la colonne "HipPitchPositionSensorValue" du fichier $log_1$, qui a une évolution temporelle), alors que celles de la prévision saisonnière sont discrètes (e.g la température de l'exemple 1 est de -10\degres C, elle est discrète) \\
+Or, on ne peut pas réaliser de l'apprentissage supervisé avec des données temporelles. Sous leurs formes actuelles, nos exemples ne peuvent donc pas servir à entraîner les algorithmes SVM de nos couches \emph{root cause}.
 
 
 \subsection{Le modèle d'apprentissage}
@@ -147,7 +190,7 @@ L'évolution temporelle des exemples utilisés pour l'entraînement de l'algorit
 
 \subsubsection{Création de nouvelles features}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Création de nouvelles features}
-On propose de créer de nouvelles features constantes. Elles sont des caractéristiques des features actuelles. Dans le cadre de cette étude, on les identifiera sous l'appellation de \emph{caractéristiques simplifiées}. Elles correspondent par exemple au calcul de la moyenne d'une feature, la valeur crête-à-crête, la valeur maximum, etc. On se sert ensuite de ces  \emph{caractéristiques simplifiées} pour réaliser l'entrainement de l'algorithme d'apprentissage automatique (cf. exemple figure \ref{fig:Calcul de nouvelles features}).
+On propose de créer de nouvelles features constantes. Elles sont des caractéristiques des features actuelles. Dans le cadre de cette étude, on les identifiera sous l'appellation de \emph{caractéristiques simplifiées}. Elles correspondent par exemple au calcul de la moyenne d'une feature, la valeur crête-à-crête, la valeur maximum, etc. On se sert ensuite de ces  \emph{caractéristiques simplifiées} pour réaliser l'entraînement de l'algorithme d'apprentissage automatique (cf. exemple figure \ref{fig:Calcul de nouvelles features}).
 
 \begin{figure}[H]
 	\centering\includegraphics[width=12cm]{images/caracteristiques_simples_1.png}
@@ -155,7 +198,7 @@ On propose de créer de nouvelles features constantes. Elles sont des caractéri
 	\label{fig:Calcul de nouvelles features}
 \end{figure}
 
-Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques features (e.g. moyenne, valeur crête-à-crête). Comme le démontre la figure \ref{fig:Comparaison de deux caractéristiques}, cette diminution des informations peut entrainer des risques de confusion entre différentes features, i.e. deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose (cf. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}), le risque est que deux couches \emph{root cause} soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle \emph{root cause} est responsable de l'apparition d'une \emph{error name}.
+Le problème de cette approche est qu'elle réduit le nombre d'informations que contient une donnée à seulement quelques features (e.g. moyenne, valeur crête-à-crête). Comme le démontre la figure \ref{fig:Comparaison de deux caractéristiques}, cette diminution des informations peut entraîner des risques de confusion entre différentes features, i.e. deux features différentes peuvent avoir les mêmes caractéristiques. Or, si on souhaite utiliser cette approche dans l'architecture que l'on propose (cf. partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé}), le risque est que deux couches \emph{root cause} soient liées à des features dont les caractéristiques sont similaires. Dans ce cas, le système est incapable de déterminer quelle \emph{root cause} est responsable de l'apparition d'une \emph{error name}.
 
 \begin{figure}[H]
 	\centering\includegraphics[width=15cm]{images/caracteristiques_simples_2.png}
@@ -171,13 +214,21 @@ De manière intuitive, entraîner le modèle revient à créer un patron représ
 
 \paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaître lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. \\
 Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe $z$, fourni par l'accéléromètre de la base de Pepper (clé BaseAccZ). \\
+<<<<<<< HEAD
 D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
+=======
+<<<<<<< HEAD
+D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en fonctionnement normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaître la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
+=======
+D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
+>>>>>>> master
+>>>>>>> correction_manu
 On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}).
 
 \begin{figure}[h]
 	\centering\includegraphics[width=11cm]{images/fall_not_fall.png}
 	\caption[Formes caractéristiques de BaseAccZ en temps normal et en cas de chute]{Formes caractéristiques de BaseAccZ en temps normal et en cas de chute. On observe sur le graphe inférieur l'évolution de BaseAccZ lors d'un fonctionnement normal du robot. Sur le graphique supérieur, on observe l'évolution de BaseAccZ lorsque le robot chute. On remarque que celle-ci à la forme d'un échelon, centré sur l'instant où le robot tombe.}
-	\label{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}
+	\label{fig:Formes caractéristiques de BaseAccZ en fonctionnement normal et en cas de chute}
 \end{figure}
 
 \begin{figure}[h]
@@ -192,56 +243,56 @@ On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue da
 	\label{fig:Détection d'une chute à partir du patron de BaseAccZ}
 \end{figure}
 
-Au vu des tests réalisés, cette méthode ne semble pas viable. En effet, comme on peut l'observer sur le graphique inférieur de la figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}, même si la feature BaseAccZ n'est pas totalement inclue dans le patron, elle l'est \emph{partiellement}, et ce, sur pratiquement la moitié de son évolution. C'est pour cette raison que l'algorithme considère parfois un exemple comme caractéristique d'une chute alors qu'il ne l'est pas en réalité. Pour répondre à ce problème on propose, plutôt que de créer un patron de la totalité de la courbe, de seulement entraîner un algorithme à reconnaître une certaine portion caractéristique de la courbe. Dans le cas de la détection d'une chute du robot, il s'agit du saut de valeur qui apparaît sur la valeur de l'accélération en z du robot (BaseAccZ). On réalise ce qu'on appelle de la reconnaissance de motifs. 
+Au vu des tests réalisés, cette méthode ne semble pas viable. En effet, comme on peut l'observer sur le graphique inférieur de la figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}, même si la feature BaseAccZ n'est pas totalement inclue dans le patron, elle l'est \emph{partiellement}, et ce, sur pratiquement la moitié de son évolution. C'est pour cette raison que l'algorithme considère parfois un exemple comme caractéristique d'une chute alors qu'il ne l'est pas en réalité. Pour répondre à ce problème on propose, plutôt que de créer un patron de la totalité de la courbe, de seulement entraîner un algorithme à reconnaître une certaine portion caractéristique de la courbe. Dans le cas de la détection d'une chute du robot, il s'agit du saut de valeur qui apparaît sur la valeur de l'accélération en z du robot (BaseAccZ). On réalise ce qu'on appelle de la reconnaissance de motifs.
 
 \subsection{Reconnaissance de motifs}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs}
 
 \subsubsection{Principe général}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Principes généraux}
-D'une certaine manière, la reconnaissance de motif s'appuie sur une stratégie d'investigation proche de celle de l'Homme. On se place par exemple dans le cas où l'on souhaite déterminer la cause ayant entraîné la chute d'un robot. La cause correspond à la \emph{root cause} et la chute du robot à \emph{l'error name}. En tant qu'humain, on visualise et analyse les différentes courbes contenues dans le fichier log, généré lors de la détection de la chute. On observe l'évolution de la position du senseur (clé HipPitchPositionSensorValue) et de l'actuateur (clé HipPitchPositionActuatorValue) de la hanche (cf. figure \ref{fig:Évolution de la position du senseur et de l'actuateur de la hanche}). On remarque qu'à $t \approx 440 s$, le senseur se met à ne plus suivre la valeur de l'actuateur. L'étude réalisée partie \ref{Introduction:Expression du besoin:Exemple d'analyse d'une anomalie} nous \textbf{apprend} que cette particularité est la caractéristique d'un frottement des freins de la hanche. Ainsi, si on étudie ultérieurement un autre fichier log généré lors de la chute d'un robot et qu'on découvre de nouveau ce motif, on en déduit aisément que le robot est également tombé à cause du frottement des freins de sa hanche. Plus on va observer de nouveaux cas, plus l'image que l'on aura du motif caractéristique de cette \emph{root cause} va se préciser.\\
-Dans le cadre du développement de notre algorithme, le principe est le même: on commence tout d'abord à apprendre la forme caractéristique de la\emph{ root cause} et une fois que l'on souhaite investiguer un nouveau fichier log, on compare ce motif caractéristique aux données du fichier. 
+D'une certaine manière, la reconnaissance de motif s'appuie sur une stratégie de reconnaissance proche de celle de l'Homme. On se place par exemple dans le cas où l'on souhaite déterminer la cause ayant entraîné la chute d'un robot. La cause correspond à la \emph{root cause} et la chute du robot à \emph{l'error name}. En tant qu'humain, on visualise et analyse les différentes courbes contenues dans le fichier log, généré lors de la détection de la chute. On observe l'évolution de la position du capteur (clé HipPitchPositionSensorValue) et de l'actionneur (clé HipPitchPositionActuatorValue) de la hanche (cf. figure \ref{fig:Évolution de la position du capteur et de l'actionneur de la hanche}). On remarque qu'à $t \approx 440 s$, le capteur se met à ne plus suivre la valeur de l'actionneur. L'étude réalisée partie \ref{Introduction:Expression du besoin:Exemple d'analyse d'une anomalie} nous \textbf{apprend} que cette particularité est la caractéristique d'un frottement du frein de la hanche. Ainsi, si on étudie ultérieurement un autre fichier log généré lors de la chute d'un robot et qu'on découvre de nouveau ce motif, on en déduit aisément que le robot est également tombé à cause du frottement du frein de sa hanche. Plus on va observer de nouveaux cas, plus l'image que l'on aura du motif caractéristique de cette \emph{root cause} va se préciser.\\
+Dans le cadre du développement de notre algorithme, le principe est le même: on commence tout d'abord à apprendre la forme caractéristique de la\emph{ root cause} et une fois que l'on souhaite étudier un nouveau fichier log, on compare ce motif caractéristique aux données du fichier.
 
 \begin{figure}[h]
-	\centering\includegraphics[width=15cm]{images/HipPitch.png}
-	\caption[Évolution de la position du senseur et de l'actuateur de la hanche]{Évolution de la position du senseur et de l'actuateur de la hanche.}
-	\label{fig:Évolution de la position du senseur et de l'actuateur de la hanche}
+	\centering\includegraphics[width=15cm]{images/hipPitch.png}
+	\caption[Évolution de la position du capteur et de l'actionneur de la hanche]{Évolution de la position du capteur et de l'actionneur de la hanche.}
+	\label{fig:Évolution de la position du capteur et de l'actionneur de la hanche}
 \end{figure}
 
-\paragraph{Apprentissage} La phase d'apprentissage s'appuie sur les principes évoqués en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Considérer chaque unité de temps comme une feature}. On considère que chaque échantillon (ou unité de temps) qui compose un exemple devient l'entrée de notre système d'apprentissage à la différence qu'on ne considère qu'une seule partie de la courbe de nos exemples, le motif caractéristique. Par exemple, si on souhaite créer une nouvelle root cause "frottement des freins de la hanche", on sélectionnera sur chaque exemple le motif caractéristique de celle-ci (cf. figure \ref{fig:Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"}). Le système d'apprentissage va donc uniquement apprendre le patron du motif caractéristique et non de la courbe dans sa globalité. Les exemples devant être de la même taille, on veille à sélectionner le même nombre d'échantillons pour chacun des motifs. On présente également au système des exemples ne contenant pas le motif, afin que l'algorithme bénéficie des deux types de labels pour son entraînement (root cause présente = 1, root cause non présente = 0).
+\paragraph{Apprentissage} La phase d'apprentissage s'appuie sur les principes évoqués en partie \ref{Automatisation du processus d'investigation: Reconnaissance de motifs: Différentes approches étudiées: Considérer chaque unité de temps comme une feature}. On considère que chaque échantillon (ou unité de temps) qui compose un exemple devient l'entrée de notre système d'apprentissage à la différence qu'on ne considère qu'une seule partie de la courbe de nos exemples, le motif caractéristique. Par exemple, si on souhaite créer une nouvelle root cause "frottement du frein de la hanche", on sélectionnera sur chaque exemple le motif caractéristique de celle-ci (cf. figure \ref{fig:Créer un patron du motif caractéristique de la root cause "frottement du frein de la hanche"}). Le système d'apprentissage va donc uniquement apprendre le patron du motif caractéristique et non de la courbe dans sa globalité. Les exemples devant être de la même taille, on veille à sélectionner le même nombre d'échantillons pour chacun des motifs. On présente également au système des exemples ne contenant pas le motif, afin que l'algorithme bénéficie des deux types de labels pour son entraînement (root cause présente = 1, root cause non présente = 0).
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/patron_motif.png}
-	\caption[Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"]{Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche". Chaque échantillon qui compose un motif est considéré comme une entrée du système d'apprentissage. Entraîner l'algorithme à reconnaître le motif caractéristique formé par les courbes du HipPitchPositionSensorValue et HipPitchPositionActuatorValue revient à créer un patron caractéristique des deux features liées au frottement des freins de la hanche dans le cadre de la chute du robot. L'entraînement s'effectue à partir de différents exemples de motifs des deux features.}
-	\label{fig:Créer un patron du motif caractéristique de la root cause "frottement des freins de la hanche"}
+	\caption[Créer un patron du motif caractéristique de la root cause "frottement du frein de la hanche"]{Créer un patron du motif caractéristique de la root cause "frottement du frein de la hanche". Chaque échantillon qui compose un motif est considéré comme une entrée du système d'apprentissage. Entraîner l'algorithme à reconnaître le motif caractéristique formé par les courbes du HipPitchPositionSensorValue et HipPitchPositionActuatorValue revient à créer un patron caractéristique des deux features liées au frottement du frein de la hanche dans le cadre de la chute du robot. L'entraînement s'effectue à partir de différents exemples de motifs des deux features.}
+	\label{fig:Créer un patron du motif caractéristique de la root cause "frottement du frein de la hanche"}
 \end{figure}
 
 \paragraph{Investigation}
-Lorsque l'on souhaite investiguer un fichier pour déterminer la \emph{root cause} qui a entrainé l'apparition de l'\emph{error name} lors du Filering Test, on commence par extraire la valeur des features du fichier log qui sont liées à la \emph{root cause}. Ensuite, on recherche le motif caractéristique. Pour ce faire, on découpe les courbes des features en plusieurs petits tronçons de la même taille que le motif caractéristique et on les compare avec celui-ci. S'ils sont globalement similaires au patron, on en déduit que la root cause a été détecté. Dans le cas contraire, on en déduit qu'elle n'a pas été détectée. En réalité, l'algorithme d'apprentissage automatique (SVM) nous retourne en sortie la probabilité avec laquelle le motif caractéristique semble avoir été détecté dans chacun des tronçons. On propose un exemple d'investigation en figure \ref{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}).
+Lorsque l'on souhaite étudier un fichier pour déterminer la \emph{root cause} qui a entraîné l'apparition de l'\emph{error name} lors du Filering Test, on commence par extraire la valeur des features du fichier log qui sont liées à la \emph{root cause}. Ensuite, on recherche le motif caractéristique. Pour ce faire, on découpe les courbes des features en plusieurs petits tronçons de la même taille que le motif caractéristique et on les compare avec celui-ci. S'ils sont globalement similaires au patron, on en déduit que la root cause a été détecté. Dans le cas contraire, on en déduit qu'elle n'a pas été détectée. En réalité, l'algorithme d'apprentissage automatique (SVM) nous retourne en sortie la probabilité avec laquelle le motif caractéristique semble avoir été détecté dans chacun des tronçons. On propose un exemple d'investigation en figure \ref{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}).
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/balayage_motif.png}
-	\caption[Balayage des features et motif caractéristique d'une root cause]{Balayage des features pour trouver le motif caractéristique d'une \emph{root cause}. On observe que le premier et le dernier tronçon de la courbe des features HipPitchPositionSensorValue et  HipPitchPositionActuatorValue ne correspondent pas au motif caractéristique de la \emph{root cause} "frottement des freins de la hanche". La probabilité en sortie du système est donc faible. Le deuxième tronçon correspond globalement au motif caractéristique de la courbe, la probabilité en sortie du système est donc élevée.}
+	\caption[Balayage des features et motif caractéristique d'une root cause]{Balayage des features pour trouver le motif caractéristique d'une \emph{root cause}. On observe que le premier et le dernier tronçon de la courbe des features HipPitchPositionSensorValue et  HipPitchPositionActuatorValue ne correspondent pas au motif caractéristique de la \emph{root cause} "frottement du frein de la hanche". La probabilité en sortie du système est donc faible. Le deuxième tronçon correspond globalement au motif caractéristique de la courbe, la probabilité en sortie du système est donc élevée.}
 	\label{fig:Balayage des features pour retrouver le motif caractéristique d'une root cause}
 \end{figure}
 
-L'ensemble des probabilités en sortie des différents tronçons étudiés forment une courbe de probabilité. Si cette courbe dépasse un certain seuil, on considère la \emph{root cause} comme ayant été détectée. On propose la courbe de probabilité de la \emph{root cause} "frottement des freins de la hanche" en figure \ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}.
+L'ensemble des probabilités en sortie des différents tronçons étudiés forment une courbe de probabilité. Si cette courbe dépasse un certain seuil, on considère la \emph{root cause} comme ayant été détectée. On propose la courbe de probabilité de la \emph{root cause} "frottement du frein de la hanche" en figure \ref{fig:Courbe de probabilité de la root cause "frottement du frein de la hanche"}.
 
 \begin{figure}[h]
 	\centering\includegraphics[width=12cm]{images/proba_motif.png}
-	\caption[Courbe de probabilité de la root cause "frottement des freins de la hanche"]{Courbe de probabilité de la root cause "frottement des freins de la hanche".  On observe que lorsque l'on s'approche du motif caractéristique de la \emph{root cause}, la probabilité augmente fortement. Elle est au contraire faible sur les autres tronçons de la courbe.}
+	\caption[Courbe de probabilité de la root cause "frottement du frein de la hanche"]{Courbe de probabilité de la root cause "frottement du frein de la hanche".  On observe que lorsque l'on s'approche du motif caractéristique de la \emph{root cause}, la probabilité augmente fortement. Elle est au contraire faible sur les autres tronçons de la courbe.}
 	\label{fig:Représentation de la répartition des exemples et des classes en fonction des features, approche fonctionnelle}
 \end{figure}
 
 \subsubsection{Représentation des données}
 \label{Automatisation du processus d'investigation: Reconnaissance de motifs: Représentation des données}
 On souhaite représenter de manière intuitive la répartition des exemples et des classes en fonction des features. Contrairement à la visualisation conceptuelle des données proposée en partie \ref{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}, on propose ici une représentation plus fonctionnelle (proche du fonctionnement de notre système). \\
-Chaque échantillon qui compose le motif caractéristique d'une \emph{root cause} devient lui même une feature (i.e. une entrée) du système d'apprentissage de l'algorithme SVM (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). Par exemple, on se place de nouveau dans le cas de la \emph{root cause} "frottement des freins de la hanche". Si on s'intéresse aux features "HipPitchPositionSensorValue" et "HipPitchPositionSensorValue" et que l'on considère que le motif caractéristique a une taille de 125 échantillons, on aura donc 250 features en entrée de l'apprentissage ($125x2$ features). Cela signifie que si l'on souhaite représenter visuellement la répartition des exemples et des classes en fonction des features, on aurait un repère composé de 250 dimensions. On choisi au hasard deux des 250 dimensions et on les représente sur le repère figure 	\ref{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"} .
+Chaque échantillon qui compose le motif caractéristique d'une \emph{root cause} devient lui même une feature (i.e. une entrée) du système d'apprentissage de l'algorithme SVM (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). Par exemple, on se place de nouveau dans le cas de la \emph{root cause} "frottement du frein de la hanche". Si on s'intéresse aux features "HipPitchPositionSensorValue" et "HipPitchPositionSensorValue" et que l'on considère que le motif caractéristique a une taille de 125 échantillons, on aura donc 250 features en entrée de l'apprentissage ($125x2$ features). Cela signifie que si l'on souhaite représenter visuellement la répartition des exemples et des classes en fonction des features, on aurait un repère composé de 250 dimensions. On choisi au hasard deux des 250 dimensions et on les représente sur le repère figure 	\ref{fig:Courbe de probabilité de la root cause "frottement du frein de la hanche"} .
 
 \begin{figure}[h]
 	\centering\includegraphics[width=15cm]{images/classes_sys.png}
-	\caption[Représentation de la répartition des exemples et des classes en fonction des features,  approche fonctionnelle]{Représentation de la répartition des exemples et des classes en fonction des features. On a représenté ici deux graphiques dont chacun exprime la valeur des exemples en fonction de deux features choisies aléatoirement. Chaque feature correspond à un échantillon parmi les 250 qui composent chaque motif caractéristique de la \emph{root cause} "frottement des freins de la hanche".}
-	\label{fig:Courbe de probabilité de la root cause "frottement des freins de la hanche"}
+	\caption[Représentation de la répartition des exemples et des classes en fonction des features,  approche fonctionnelle]{Représentation de la répartition des exemples et des classes en fonction des features. On a représenté ici deux graphiques dont chacun exprime la valeur des exemples en fonction de deux features choisies aléatoirement. Chaque feature correspond à un échantillon parmi les 250 qui composent chaque motif caractéristique de la \emph{root cause} "frottement du frein de la hanche".}
+	\label{fig:Courbe de probabilité de la root cause "frottement du frein de la hanche"}
 \end{figure}
 
 
@@ -257,48 +308,48 @@ La prise de décision de l'algorithme du SVM peut être contrôlée via deux par
 	\item [gamma] Intuitivement, le paramètre gamma définit dans quelle mesure l'influence d'un exemple affecte la ligne de décision et la marge. Il peut être considéré comme l'inverse du rayon d'influence des échantillons sélectionnés par le modèle, en tant que vecteurs de support (cf.  \ref{fig:Variation des paramètres C et gamma}).
 \end{description}
 
-Afin de déterminer la meilleure combinaison de valeurs des deux paramètres, on calcule les \emph{courbes de validation}. Cela consiste à faire varier chacun des deux paramètres sur une plage de données et à calculer la précision de l'algorithme pour chaque valeur. On conserve ensuite la valeur optimale. 
+Afin de déterminer la meilleure combinaison de valeurs des deux paramètres, on calcule les \emph{courbes de validation}. Cela consiste à faire varier chacun des deux paramètres sur une plage de données et à calculer la précision de l'algorithme pour chaque valeur. On conserve ensuite la valeur optimale.
 
  \begin{figure}[h]
- 	\centering\includegraphics[width=10cm]{images/variation_c.png}
+ 	\centering\includegraphics[width=10cm]{images/variation_C.png}
  	\caption[Variation du paramètre C]{Variation du paramètre C.}
  	\label{fig:Variation du paramètre C}
  \end{figure}
- 
+
  \begin{figure}[h]
- 	\centering\includegraphics[width=10cm]{images/variation_c_gamma.png}
+ 	\centering\includegraphics[width=10cm]{images/variation_C_gamma.png}
  	\caption[Variation des paramètres C et gamma]{Variation des paramètres C et gamma.}
  	\label{fig:Variation des paramètres C et gamma}
  \end{figure}
 
  \paragraph{Exemple}
- On soumet en figure \ref{fig:Courbes de validation du paramètre C} et \ref{fig:Courbes de validation du paramètre gamma} les courbes de validation de la couche \emph{root cause} "frottement des freins de la hanche". On remarque que la valeur $C = 10$ optimise le mieux la précision de l'algorithme d'apprentissage. On remarque également que la valeur $gamma \approx 0.2$ optimise le mieux la précision de l'algorithme d'apprentissage.
+ On soumet en figure \ref{fig:Courbes de validation du paramètre C} et \ref{fig:Courbes de validation du paramètre gamma} les courbes de validation de la couche \emph{root cause} "frottement du frein de la hanche". On remarque que la valeur $C = 10$ optimise le mieux la précision de l'algorithme d'apprentissage. On remarque également que la valeur $gamma \approx 0.2$ optimise le mieux la précision de l'algorithme d'apprentissage.
 
  \begin{figure}[h]
  	\centering\includegraphics[width=15cm]{images/courbe_validation_c.png}
- 	\caption[Courbes de validation du paramètre C]{Courbes de validation du paramètre C, pour la couche \emph{root cause} "frottement des freins de la hanche".}
+ 	\caption[Courbes de validation du paramètre C]{Courbes de validation du paramètre C, pour la couche \emph{root cause} "frottement du frein de la hanche".}
  	\label{fig:Courbes de validation du paramètre C}
  \end{figure}
- 
+
   \begin{figure}[h]
   	\centering\includegraphics[width=15cm]{images/courbe_validation_gamma.png}
-  	\caption[Courbes de validation du paramètre gamma]{Courbes de validation du paramètre gamma, pour la couche \emph{root cause} "frottement des freins de la hanche".}
+  	\caption[Courbes de validation du paramètre gamma]{Courbes de validation du paramètre gamma, pour la couche \emph{root cause} "frottement du frein de la hanche".}
   	\label{fig:Courbes de validation du paramètre gamma}
   \end{figure}
-  
+
 \subsection{Matrices de confusion}
 \label{Industrialisation du produit: Performances de la solution:Matrices de confusion}
 Au début du processus, on sépare la base de données d'exemples en deux groupes : le \emph{training set} et \emph{test set}. Le premier jeu sert à entraîner l'algorithme SVM et l'autre permet d'en tester les performances. On rappelle que chaque exemple est labellisé, i.e. que l'on connaît  la sortie à laquelle il est corrélé (dans le cas de notre problématique, les labels étant \emph{root cause} présente ou non présente).
 \newline
 
-Pour tester l'algorithme : 
+Pour tester l'algorithme :
 \begin{enumerate}
 	\item On commence par entraîner l'algorithme à partir des exemples du \emph{training set}.
 	\item Une fois l'algorithme entraîné, on analyse chacun des exemples du \emph{test set}.
-	\item On compare ensuite la sortie prédite par l'algorithme et la sortie réelle (i.e. le label associé à chaque exemple). 
+	\item On compare ensuite la sortie prédite par l'algorithme et la sortie réelle (i.e. le label associé à chaque exemple).
 \end{enumerate}
 
-Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une \emph{matrice de confusion}. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement. 
+Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctement prédit la sortie et lorsqu'il ne l'a pas fait. Ces résultats peuvent être exprimés sous la forme d'une \emph{matrice de confusion}. Chaque colonne de la matrice représente le nombre d'occurrences d'une classe réelle (le label), tandis que chaque ligne représente le nombre d'occurrences de la classe prédite. Un des intérêts de la matrice de confusion est qu'elle montre rapidement si le système parvient à classifier correctement.
 
 \begin{table}[h]
 	\centering
@@ -317,23 +368,23 @@ Ainsi, on est capable de calculer le nombre de fois que l'algorithme a correctem
 	\label {tab:Matrice de confusion}
 \end{table}
 
-Avec : 
+Avec :
 \begin{itemize}
 	\item TP = True positive (en français vrai positif) correspond au nombre de résultats prédits positifs, là où ils étaient effectivement positifs.
 	\item TN = True negative (en français vrai négatif) correspond au nombre de résultats prédits négatifs, là où ils étaient effectivement négatifs.
 	\item FP = False positive (en français faux positif) correspond au nombre de résultats prédits positifs, là où ils étaient étaient en réalité négatifs.
 	\item FN = False negative ( en français faux négatif) correspond au nombre de résultats prédits négatifs, là où ils étaient étaient en réalité positifs.
 \end{itemize}
- 
+
 A partir de ces résultats, il est possible de déterminer la précision de l'algorithme:
 \begin{equation}
 	\text{accuracy}= \frac{TP + TN}{TP + TN + FP + FN}
 	\label{accuracy}
 \end{equation}
- 
+
  \paragraph{Exemple}
- On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement des freins de la hanche". 
- 
+ On soumet ici la matrice de confusion de la couche \emph{root cause} "frottement du frein de la hanche".
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{| c | c | c | c |}
@@ -347,25 +398,25 @@ A partir de ces résultats, il est possible de déterminer la précision de l'al
 		& Faux & 0 & 15 \\
 		\hline
 	\end{tabular}
-	\caption[Matrice de confusion de la root cause "frottement des freins de la hanche"]{Matrice de confusion de la root cause "frottement des freins de la hanche"}
-	\label {tab:Matrice de confusion de la root cause "frottement des freins de la hanche"}
+	\caption[Matrice de confusion de la root cause "frottement du frein de la hanche"]{Matrice de confusion de la root cause "frottement du frein de la hanche"}
+	\label {tab:Matrice de confusion de la root cause "frottement du frein de la hanche"}
 \end{table}
 
-On observe qu'il n'y a aucun faux négatif et faux positif. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme a parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement des freins de la hanche" était présente ou non dans le fichier log. D'après l'équation \ref{accuracy}, la précision de l'algorithme SVM de cette couche \emph{root cause} est donc de $100\%$.
- 
+On observe qu'il n'y a aucun faux négatif et faux positif. Cela signifie que pour chaque exemple du \emph{test set}, l'algorithme a parfaitement prédit la sortie, i.e. qu'il a su à chaque fois détecter correctement si la root cause "frottement du frein de la hanche" était présente ou non dans le fichier log. D'après l'équation \ref{accuracy}, la précision de l'algorithme SVM de cette couche \emph{root cause} est donc de $100\%$.
+
 \subsection{Courbes d'apprentissage}
 \label{Industrialisation du produit: Performances de la solution:Courbes d'apprentissage}
-La courbe d'apprentissage représente la précision de l'algorithme d'apprentissage en fonction du nombre d'exemples utilisés dans le \emph{training set} et le \emph{test set}. Grâce à ces tracés, on est en mesure de déterminer la qualité de notre algorithme d'apprentissage et de la base de données d'exemples, de manière visuelle et intuitive. 
+La courbe d'apprentissage représente la précision de l'algorithme d'apprentissage en fonction du nombre d'exemples utilisés dans le \emph{training set} et le \emph{test set}. Grâce à ces tracés, on est en mesure de déterminer la qualité de notre algorithme d'apprentissage et de la base de données d'exemples, de manière visuelle et intuitive.
 \begin{itemize}
-	\item Si la distance entre les deux courbes est importante à la fin du graphe, cela signifie que l'on n'a pas utilisé suffisamment d'exemples pour l'entraînement de l'algorithme. On dit que l'algorithme a une \emph{variance} trop élevée. 
-	\item Si la valeur de convergence des deux courbes (précision) n'est pas assez élevé, cela signife que notre algorithme n'est pas suffisamment performant. On dit qu'il a un \emph{bias} trop élevé. Pour résoudre ce problème, on peut par exemple augmenter le nombre de features en entrée. Dans le cas de notre système, cela signifie augmenter la largeur des motifs caractéristiques d'une \emph{root cause}.
+	\item Si la distance entre les deux courbes est importante à la fin du graphe, cela signifie que l'on n'a pas utilisé suffisamment d'exemples pour l'entraînement de l'algorithme. On dit que l'algorithme a une \emph{variance} trop élevée.
+	\item Si la valeur de convergence des deux courbes (précision) n'est pas assez élevé, cela signife que notre algorithme n'est pas suffisamment performant. On dit qu'il a un \emph{biais} trop élevé. Pour résoudre ce problème, on peut par exemple augmenter le nombre de features en entrée. Dans le cas de notre système, cela signifie augmenter la largeur des motifs caractéristiques d'une \emph{root cause}.
 \end{itemize}
 
 \paragraph{Exemple}
-On soumet en figure \ref{fig:Courbes d'apprentissage} les courbes d'apprentissage de la couche \emph{root cause} "frottement des freins de la hanche". On observe que les deux courbes convergent jusqu'à pratiquement se confondre. On en déduit que la \emph{variance} de l'algorithme est très faible et donc que le nombre d'exemples utilisés pour l'apprentissage de l'algorithme est suffisant. De plus, la valeur de convergence est aux alentours de 98\%, ce qui signifie que le \emph{bias} de l'algorithme est faible. On peut donc dire que les performances de l'algorithme de la couche \emph{root cause} "frottement des freins de la hanche" sont bonnes. 
+On soumet en figure \ref{fig:Courbes d'apprentissage} les courbes d'apprentissage de la couche \emph{root cause} "frottement du frein de la hanche". On observe que les deux courbes convergent jusqu'à pratiquement se confondre. On en déduit que la \emph{variance} de l'algorithme est très faible et donc que le nombre d'exemples utilisés pour l'apprentissage de l'algorithme est suffisant. De plus, la valeur de convergence est aux alentours de 98\%, ce qui signifie que le \emph{biais} de l'algorithme est faible. On peut donc dire que les performances de l'algorithme de la couche \emph{root cause} "frottement du frein de la hanche" sont bonnes.
 
 \begin{figure}[h]
 \centering\includegraphics[width=15cm]{images/courbe_apprentissage.png}
-\caption[Courbes d'apprentissage]{Courbes d'apprentissage de la couche \emph{root cause} "frottement des freins de la hanche".}
+\caption[Courbes d'apprentissage]{Courbes d'apprentissage de la couche \emph{root cause} "frottement du frein de la hanche".}
 \label{fig:Courbes d'apprentissage}
 \end{figure}
