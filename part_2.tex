@@ -86,7 +86,6 @@ A chaque colonne du tableau correspond une feature. Chacune des lignes est la va
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure de la base de données d'exemples}
 La base de données est composée de plusieurs exemples qui correspondent à des fichiers logs. Par exemple, dans le cadre de la construction de couche \emph{error name} de la chute d'un robot, la base de données sera constituée de fichiers logs générés par plusieurs cas de chutes de différents robots. On peut représenter la structure de la base de données par le tableau \ref {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}
 
-
 \begin{equation}
 \begin{blockarray}{ccccccc}
 \begin{block}{c[cccccc]}
@@ -106,15 +105,7 @@ Tout comme la structure d'un fichier log (\ref{Automatisation du processus d'inv
 
 \subsubsection{Construction d'une couche root cause à partir de la base de données d'exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Construction d'une couche root cause à partir de la base de données d'exemples}
-<<<<<<< HEAD
-Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage à détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
-=======
-<<<<<<< HEAD
 Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage, pour détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement du frein de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
-=======
-Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage à détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
->>>>>>> master
->>>>>>> correction_manu
 
 \subsubsection{Représentation des exemples et des classes}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}
@@ -126,16 +117,8 @@ Dans le cadre de la \emph{root cause} "frottement du frein de la hanche", on peu
 	\caption[Représentation de la répartition des exemples et des classes en fonction des features]{Représentation de la répartition des exemples et des classes en fonction des features. On observe que lorsque l'on visualise les exemples contenus dans nos fichiers logs en fonction des deux features HipPitchPositionSensorValue et HipPitchPositionActuatorValue, ces derniers se regroupent en deux zones homogènes qui forment nos classes. Une classe correspond aux exemples de \emph{root cause} "frottement du frein de la hanche", l'autre classe aux exemples qui ne correspondent pas à des exemples de "frottement du frein de la hanche".}
 	\label{fig:Représentation de la répartition des exemples et des classes en fonction des features}
 \end{figure}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
 Cette représentation n'est pas fonctionnelle mais conceptuelle, i.e. qu'il ne s'agit pas d'une visualisation résultant d'un système fonctionnel mais d'une idée haut niveau que l'on a de la sortie de notre système.
-=======
->>>>>>> correction_manu
-Cette représentation n'est pas fonctionnelle mais conceptuelle, i.e. qu'il ne s'agit pas d'une visualisation résultant d'un système fonctionnel mais d'une idée haut niveau que l'on a de la sortie de notre système. 
->>>>>>> master
-
 
 \subsubsection{Parallèle avec l'exemple de la prévision saisonnière}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Parallèle avec l'exemple de la prévision saisonnière}
@@ -188,15 +171,7 @@ De manière intuitive, entraîner le modèle revient à créer un patron représ
 
 \paragraph{Exemple} On souhaite créer une nouvelle couche \emph{root cause} (i.e. entraîner un algorithme d'apprentissage) capable de reconnaître lorsqu'un robot chute. Dans le cadre de notre problématique ce système n'a pas de réelle utilité, on le propose ici car le problème est simple à comprendre. \\
 Pour savoir si le robot chute ou non, on analyse l'évolution de la valeur de l'accélération selon l'axe $z$, fourni par l'accéléromètre de la base de Pepper (clé BaseAccZ). \\
-<<<<<<< HEAD
-D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
-=======
-<<<<<<< HEAD
 D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en fonctionnement normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaître la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
-=======
-D'après la figure \ref{fig:Formes caractéristiques de BaseAccZ en temps normal et en cas de chute}, on remarque que l'évolution de BaseAccZ enregistrée lors de la chute d'un robot, diffère de l'évolution de BaseAccZ lorsque le robot ne chute pas. On va entraîner l'algorithme à reconnaitre la forme caractéristique de l'évolution de l'accélération en $z$ lorsque le robot chute. Pour cela, on admet que chaque échantillon (chaque instant t) qui constitue la BaseAccZ devient une entrée (feature) pour l'entraînement de l'algorithme d'apprentissage (cf. figure \ref{fig:Créer un patron caractéristique de la chute du robot}). \\
->>>>>>> master
->>>>>>> correction_manu
 On compare ensuite ce patron à la courbe de l'accélération en $z$ contenue dans le fichier log que l'on souhaite étudier. Si elle est globalement similaire au patron, on en déduit que le robot a chuté. Dans le cas contraire, on en déduit que le robot n'a pas chuté (cf. figure \ref{fig:Détection d'une chute à partir du patron de BaseAccZ}).
 
 \begin{figure}[h]
