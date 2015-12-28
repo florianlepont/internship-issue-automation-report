@@ -84,7 +84,7 @@ A chaque colonne du tableau correspond une feature. Chacune des lignes est la va
 
 \subsubsection{Structure de la base de données d'exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Structure de la base de données d'exemples}
-La base de données est composée de plusieurs exemples qui correspondent à des fichiers logs. Par exemple, dans le cadre de la construction de couche \emph{error name} de la chute d'un robot, la base de données sera constituée de fichiers logs générés par plusieurs cas de chutes de différents robots. On peut représenter la structure des données de la base de données par le tableau \ref {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}
+La base de données est composée de plusieurs exemples qui correspondent à des fichiers logs. Par exemple, dans le cadre de la construction de couche \emph{error name} de la chute d'un robot, la base de données sera constituée de fichiers logs générés par plusieurs cas de chutes de différents robots. On peut représenter la structure de la base de données par le tableau \ref {tab: Structure de la base de données d'exemples pour l'entrainement du SVM}
 
 \begin{equation}
 \begin{blockarray}{ccccccc}
@@ -105,7 +105,7 @@ Tout comme la structure d'un fichier log (\ref{Automatisation du processus d'inv
 
 \subsubsection{Construction d'une couche root cause à partir de la base de données d'exemples}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Construction d'une couche root cause à partir de la base de données d'exemples}
-Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage, pour détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
+Lorsque l'on veut construire une nouvelle couche \emph{root cause}, i.e. entraîner un nouvel algorithme d'apprentissage à détecter la présence d'une \emph{root cause} particulière dans un fichier log, on sélectionne uniquement les features de la base de données d'exemples liées à celle-ci. Par exemple, si on veut créer une nouvelle couche root cause "frottement des freins de la hanche" (lié à l'error name chute du robot), on n'utilisera que les features HipPitchPositionSensorValue et HipPitchPositionActuatorValue de notre base de données.
 
 \subsubsection{Représentation des exemples et des classes}
 \label{Automatisation du processus d'investigation: Achitecture High Level du système proposé: Les exemples: Représentation des exemples et des classes}
