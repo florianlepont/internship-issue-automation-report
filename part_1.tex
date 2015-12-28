@@ -60,19 +60,9 @@ Il peut être vu dans sa globalité comme un processus composé de deux étapes 
 Afin d'exposer de manière plus concrète le processus fonctionnel haut niveau d'un algorithme d'apprentissage, on soumet l'exemple suivant:
 
 \textit{On cherche à déterminer la période de l'année à laquelle on se trouve actuellement (i.e. printemps, été, automne ou hiver) grâce à l'analyse de l'humidité, de la température et de la pression atmosphérique d'aujourd'hui. \\
-<<<<<<< HEAD
-	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). Pour cela, on lui présente différents échantillons de températures, d'humidité et de pression prélevés à différentes périodes de l'année.\\
-	Une fois le système entrainé, on attend de celui-ci ce type de comportement : on présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
-=======
-<<<<<<< HEAD
-	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
-	Une fois le système entraîné, on attend de celui-ci ce type de comportement : \\
-	On présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
-=======
-	La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). Pour cela, on lui présente différents échantillons de températures, d'humidité et de pression prélevés à différentes périodes de l'année.\\
-	Une fois le système entrainé, on attend de celui-ci ce type de comportement : on présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
->>>>>>> master
->>>>>>> correction_manu
+La première étape consiste à entraîner notre système afin que celui-ci soit en mesure de prendre une décision vis-à-vis des données qu'on lui présentera en entrée (i.e. l'humidité, la température et la pression atmosphérique d'aujourd'hui). \\
+Une fois le système entraîné, on attend de celui-ci ce type de comportement : \\
+On présente en entrée du système une température de -2\degres C, une pression atmosphérique de 1030hPa et un taux d'humidité de 81\%. La décision (sortie) espérée est: \emph{hiver}}.
 
 On peut adapter le schéma fonctionnel haut niveau du Machine Learning à notre exemple (cf. figure \ref{fig:Schéma fonctionnel haut niveau du Machine Learning, l'exemple prévision saisonnière}).
 
@@ -513,16 +503,7 @@ h_\theta(x)=\frac{1}{1 + e^{\theta^Tx}}
 	\caption[Fonction sigmoïde]{Fonction sigmoïde, également appelée fonction logistique.}
 	\label{fig:Fonction sigmoïde}
 \end{figure}
-
-<<<<<<< HEAD
-D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$, veut dire que l'on a 70\% de chance que la variable de sortie soit égale à 1. 
-=======
-<<<<<<< HEAD
 D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0.7$, cela signifie que l'on a 70\% de chance que la variable de sortie soit égale à 1.
-=======
-D'un point de vue probabiliste, cela signifie que l'hypothèse représente la probabilité estimée que la sortie y soit égale à 1. Par exemple, si $h_\theta(x)=0,7$, veut dire que l'on a 70\% de chance que la variable de sortie soit égale à 1. 
->>>>>>> master
->>>>>>> correction_manu
 
 \subsubsection{Ligne de décision}
 \label{Le Machine Learning: Les différents algorithmes: La regression logistique: Ligne de décision}
