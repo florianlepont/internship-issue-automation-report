@@ -67,14 +67,14 @@ Pepper intègre également une multitude de capteurs. Certains d'entre eux sont 
 
 \section{Expression du besoin}
 \label{Introduction:Expression du besoin}
-L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une montée en puissance de la production. Afin de la guider, des outils de vérification des produits en fin de ligne de production sont mis en place. Parmi eux, on retrouve le "Filtering Test" qui consiste à réaliser une série de tests durant six heures. Il vise notamment à stresser l'ensemble des parties mécaniques du robot afin de faire ressortir d'éventuelles erreurs.
+L'extension du marché visée par Aldebaran pour Pepper s'accompagne d'une montée en puissance de la production. Afin de la guider, des outils de vérification des produits en fin de ligne de production sont mis en place. Parmi eux, on retrouve le "Filtering Test" qui consiste à réaliser une série de tests durant six heures. Il vise à stresser l'ensemble des parties mécaniques du robot afin de faire ressortir d'éventuelles erreurs.
 
  \subsection{DExTER et MEIGUI}
  \label{Introduction:Expression du besoin:DExTER et MEIGUI}
  L'équipe de qualification hardware de Pepper a mis au point deux outils qui permettent de réaliser ces test et d'analyser les erreurs apparues.
  \begin{description}
- 	\item[MEIGUI :] Le Filtering Test est réalisé grâce à MEIGUI. Celui-ci fait effectuer au robot un ensemble de mouvements qui permettent de stresser ses parties mécaniques. Si une anomalie survient lors du déroulement du test, les différentes données relatives à l'état des systèmes mécaniques et électroniques de Pepper sont enregistrées dans un fichier log, aussi appelé fichier journal en Français (e.g. température des fusibles, valeur des accéléromètres, etc.).
- 	\item[DExTER :] Afin d'identifier les causes de l'apparition de problèmes sur le robot, un certain nombre d'hypothèses sont émises à partir de l'étude des données du fichier log. Pour cela, on s'appuie sur l'utilisation d'un autre outil, DExTER qui permet de visualiser les données du fichier log et d'obtenir des informations sur ces dernières (date d'apparition de l'erreur, nombre d'erreurs apparues, etc.).
+ 	\item[MEIGUI :] Le Filtering Test est réalisé grâce à MEIGUI. Celui-ci fait effectuer au robot un ensemble de mouvements qui permettent de stresser ses parties mécaniques. Si une anomalie survient lors du déroulement du test, les différentes données relatives à l'état des systèmes mécaniques et électroniques de Pepper sont enregistrées dans un fichier journal (e.g. température des fusibles, valeur des accéléromètres, etc.). 
+ 	\item[DExTER :] Afin d'identifier les causes de l'apparition de problèmes sur le robot, un certain nombre d'hypothèses sont émises à partir de l'étude des données du fichier log. Pour cela, on s'appuie sur l'utilisation d'un autre outil, DExTER, qui permet de visualiser les données du fichier log et d'obtenir des informations sur ces dernières (date d'apparition de l'erreur, nombre d'erreurs apparues, etc.).
  \end{description}
  
 \subsection{Hiérarchisation des erreurs}
@@ -98,7 +98,7 @@ En suivant la logique exprimée par ces définitions, une \emph{error name} peut
 			child anchor=north
 		},
 		[{Chute du robot}, align=center, name=SS
-			[{Engrenage cassé}, name=PDC]
+			[{Frottement des\\ freins de la hanche}, name=PDC]
 			[{Courant des\\fusibles trop élevé}]
 			[{Erreur sur la\\centrale inertielle}]
 		]
